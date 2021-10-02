@@ -1,0 +1,22 @@
+{
+  "name": "grupo_4_travelpoint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vibertone/grupo_4_TravelPoint.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vibertone/grupo_4_TravelPoint/issues"
+  },
+  "homepage": "https://github.com/vibertone/grupo_4_TravelPoint#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
