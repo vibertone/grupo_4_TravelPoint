@@ -30,4 +30,5 @@ KIWI.COM: https://www.kiwi.com/
 
 
 
-WIREFRAMES https://wireframe.cc/pro/pp/11bdd6f1a475724
+WIREFRAMES 
+https://github.com/vibertone/grupo_4_TravelPoint/tree/main/public/design
