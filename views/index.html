@@ -1,31 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-16">
-    <link rel="stylesheet" type="text/css" href="./fuentes/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="./fuentes/css/normalize.css">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/65ae70675e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/31b9fa39aa.js" crossorigin="anonymous"></script>
-     <title>Index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Proyecto</title>
 </head>
-<body>
- <h1>Index - Ejemplos para ver si funciona - a comentar</h1>
-    
-    <img src="/fuentes/img/img-samsung-galaxy-s10.jpg" width="10%" title="Ejemplo IMG" alt="Ejemplo de una imagen">
-   
-    <ul>
-        <li><a href="/productCart">Ejemplo link a carrito</a></li>
-        <li><a href="/productDetail">Ejemplo link a detalle de producto</a></li>
-        <li><a href="/register">Ejemplo link a registro</a></li>
-        <li><a href="/login">Ejemplo link a login</a></li>
-        <li><a href="/index">Ejemplo link a home</a></li>
-    </ul>
-       
-    
-    
-    
 
+<body>
+    <header>
+        <div class="logo-ayuda">
+            <img src="/img/Logo.png" alt="Logo" class="logo">
+            <div class="ayuda">
+                <i class="fas fa-phone-alt"></i>
+                <i class="fas fa-suitcase-rolling"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-question-circle"></i>
+            </div>
+        </div>
+        <div class="opciones1">
+            <i class="fas fa-plane"></i>
+            <i class="fas fa-concierge-bell"></i>
+            <i class="fas fa-suitcase"></i>
+            <i class="fas fa-briefcase-medical"></i>
+            <i class="fas fa-car-side"></i>
+            <i class="fas fa-skiing-nordic"></i>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="opcion-vuelo">
+                <span>Ida y Vuelta</span>
+                <span>Solo ida</span>
+                <span>Multidestino</span>
+            </div>
+        </section>
+        <section class="vuelos">
+            <article class="barcelona">
+                <p>Barcelona</p>
+                <p class="desde">Desde Buenos Aires</h5>
+                <p>$110.609</p>
+            </article>
+            <article class="bariloche">
+                <p>Bariloche</p>
+                <p class="desde">Desde Buenos Aires</h5>
+                <p>$8.861</p>
+            </article>
+            <article class="cancun">
+                <p>Cancun</p>
+                <p class="desde">Desde Buenos Aires</h5>
+                <p>$77.875</p>
+            </article>
+            <article class="madrid">
+                <p>Madrid</p>
+                <p class="desde">Desde Buenos Aires</h5>
+                <p>$106.127</p>
+            </article>
+            <article class="mendoza">
+                <p>Mendoza</p>
+                <p class="desde">Desde Buenos Aires</h5>
+                <p>$4.796</p>
+            </article>
+            <article class="miami">
+                <p>Miami</p>
+                <p class="desde">Desde Buenos Aires</h5>
+                <p>$79.230</p>
+            </article>
+            <article class="rio">
+                <p>Rio de Janeiro</p>
+                <p class="desde">Desde Buenos Aires</h5>
+                <p>$44.723</p>
+            </article>
+            <article class="tokio">
+                <p>Tokio</p>
+                <p class="desde">Desde Buenos Aires</h5>
+                <p>$153.560</p>
+            </article>
+            <form action="" class="buscar-vuelos-baratos">
+                <label for="destinos">¿Buscas vuelos baratos a otro destino?</label>
+                <input type="search" name="busqueda" placeholder="Quiero volar a...">
+                <button type="submit" class="button1">Buscar</button>
+            </form>
+        </section>
+    </main>
 </body>
+
+</html>
