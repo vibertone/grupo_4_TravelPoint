@@ -1,6 +1,5 @@
 *{
     box-sizing: border-box;
-    border: red solid 1px;
 }
 
 body{
@@ -31,144 +30,126 @@ body{
     font-size: 26px;
 }
 
+.opciones1 div{
+    text-align: center;
+}
+
+.opciones1 p{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
 .opciones1 i{
     border: black solid 1px;
     border-radius: 15px;
     padding: 8px;
 }
 
-.opcion-vuelo{
-    text-align: center;
+header{
+    margin-bottom: 20px;
+}
+
+.buscar-vuelo{
+    background-color: #c4e4ff;
+    
+}
+
+.opcion-destino{
+    display: flex;
+    justify-content: space-around;
     font-weight: 400;
+    margin: 0 100px;
+}
+
+.opcion-destino p{
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.opciones-vuelos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.opciones-vuelos p input{
+    border: none;
+    width: 45vw;
+    padding: 30px;
+    border-radius: 5px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.fecha-pasajeros{
+    display: flex;
+    justify-content: space-around;
+}
+
+.fecha-pasajeros p input{
+    border: none;
+    width: 45vw;
+    padding: 30px;
+    border-radius: 5px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.opcion-sin-fecha{
+    margin-top: 0;
+    padding-left: 15px;
+}
+
+.opcion-sin-fecha label{
+    padding-right: 15px;
+}
+
+.buscar-vuelo form button{
+    border: none;
+    border-radius: 5px;
+    background-color: #3495eb;
+    width: 100px;
+    padding: 15px;
+    display: block;
+    margin: auto;
+}
+
+article{
+    margin-bottom: 25px;
 }
 
 main{
     background-color: #e6e6e6;
 }
 
-.barcelona{
-    border: 1px solid black;
-    border-radius: 10px;
-    background-image: url(../img/barcelona.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 40%;
-    text-align: center;
-    color: white;
-    font-size: 22px;
-    line-height: 10px;
-    margin-bottom: 20px;
+.vuelos article .imagen-destino{
+    position: relative;
+    width: 45vw;
 }
 
-.bariloche{
-    border: 1px solid black;
-    border-radius: 10px;
-    background-image: url(../img/bariloche.jfif);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 40%;
-    text-align: center;
-    color: white;
-    font-size: 22px;
-    line-height: 10px;
-    margin-bottom: 20px;
-
+.vuelos article div img{
+    width: 45vw;
+    height: 40vw;
+    border-radius: 20px;
 }
 
-.cancun{
-    border: 1px solid black;
-    border-radius: 10px;
-    background-image: url(../img/cancun.jfif);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 40%;
-    text-align: center;
+.descripcion-vuelos{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     color: white;
-    font-size: 22px;
-    line-height: 10px;
-    margin-bottom: 20px;
-
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
 }
-
-.madrid{
-    border: 1px solid black;
-    border-radius: 10px;
-    background-image: url(../img/madrid.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 40%;
-    text-align: center;
-    color: white;
+.descripcion-vuelos p{
+    line-height: 0;
     font-size: 22px;
-    line-height: 10px;
-    margin-bottom: 20px;
-
-}
-
-.mendoza{
-    border: 1px solid black;
-    border-radius: 10px;
-    background-image: url(../img/mendoza.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 40%;
-    text-align: center;
-    color: white;
-    font-size: 22px;
-    line-height: 10px;
-    margin-bottom: 20px;
-
-}
-
-.miami{
-    border: 1px solid black;
-    border-radius: 10px;
-    background-image: url(../img/miami.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 40%;
-    text-align: center;
-    color: white;
-    font-size: 22px;
-    line-height: 10px;
-    margin-bottom: 20px;
-
-}
-
-.rio{
-    border: 1px solid black;
-    border-radius: 10px;
-    background-image: url(../img/rio_de_janeiro.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 40%;
-    text-align: center;
-    color: white;
-    font-size: 22px;
-    line-height: 10px;
-    margin-bottom: 20px;
-
-}
-
-.tokio{
-    border: 1px solid black;
-    border-radius: 10px;
-    background-image: url(../img/tokio.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 40%;
-    text-align: center;
-    color: white;
-    font-size: 22px;
-    line-height: 10px;
 }
 
 .vuelos{
@@ -177,6 +158,8 @@ main{
     justify-content: space-around;
     align-items: center;
     font-weight: 700;
+    margin-top: 40px;
+
 }
 
 .buscar-vuelos-baratos{
@@ -201,5 +184,4 @@ main{
 
 .desde{
     font-weight: 300;
-    line-height: 30px;
 }
