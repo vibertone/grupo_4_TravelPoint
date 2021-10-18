@@ -4,6 +4,12 @@
     <meta charset="UTF-16">
     <link rel="stylesheet" type="text/css" href="/fuentes/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/fuentes/css/normalize.css">
+    <style>
+        body{ background-image: url(/fuentes/img/img-desktop.png); background-repeat:no-repeat;}
+        .logo{border-radius: 200px;}
+        .container.header{display: flex;}
+
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,9 +17,21 @@
     <script src="https://kit.fontawesome.com/31b9fa39aa.js" crossorigin="anonymous"></script>
      <title>Login</title>
 </head>
-<body>
- <h1>login - Ejemplos para ver si funciona - a comentar</h1>
-    
-    <img src="/fuentes/img/img-samsung-galaxy-s10.jpg" width="10%" title="Ejemplo IMG" alt="Ejemplo de una imagen">
+<body class="login"> 
+    <header>
+        <img src="/fuentes/design/logo.png" width="10%" title="Logo" alt="Logo" class="logo">
+
+    </header>
+ <h1>Ingresa a tu cuenta o registrate..</h1>
+ <div class="container.header">
+
+        <div> <button>Google</button></div>
+        <div><button>facebook</button></div>
+        <div><input type="email" name="email" id="email" placeholder="Ingresa tu Email"></div>
+        <div><input type="password" name="password" id="password" placeholder="Contraseña"></div>
+    </div>
+
+ 
+
    
     
