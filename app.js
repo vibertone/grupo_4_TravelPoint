@@ -1,11 +1,9 @@
 const express = require("express");
-const { appendFile } = require("fs");
-const { dirname } = require("path");
 const path = require ("path");
 const app = express();
-const publicPath=path.join (__dirname,'./public');
 
-app.use("/fuentes",  express.static(publicPath));
+const publicPath = path.join(__dirname,'./public');
+app.use(express.static(publicPath));
 
 app.get("/index", (req,res)=>{
     res.sendFile(path.join(__dirname, './views/index.html'))
