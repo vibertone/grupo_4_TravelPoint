@@ -1,36 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-16">
-    <link rel="stylesheet" type="text/css" href="/fuentes/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="/fuentes/css/normalize.css">
-    <style>
-        body{ background-image: url(/fuentes/img/img-desktop.png); background-repeat:no-repeat;}
-        .logo{border-radius: 200px;}
-        .container.header{display: flex;}
-
-    </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/31b9fa39aa.js" crossorigin="anonymous"></script>
-     <title>Login</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script> window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '402008404714331',
+        cookie     : true,
+        xfbml      : true,
+        version    : '{api-version}'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+    
+    <meta name="google-signin-client_id" content="AIzaSyBrscPUe1Wa8k9ufXG9n5rUPN0gh-8WMJU">
+       <style>
+    
+    .login{display: flex;background-color: #c4e4ff;justify-items: center;flex-direction: column;}
+    .apis{margin-left: 30px;}
+    .buscar{display:block; color: blue;  align-items: center;}
+    .pass{padding-bottom: 20px;}
+    .email{padding-bottom: 20px; }
+    </style>
+    
+    <title>Login</title>
 </head>
-<body class="login"> 
+
+
+<body> <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v12.0" nonce="VFH2JtUh"></script>
+     
     <header>
-        <img src="/fuentes/design/logo.png" width="10%" title="Logo" alt="Logo" class="logo">
+           <div class="logo-ayuda">
+                <img src="/img/Logo.png" alt="Logo" class="logo">
+                <div class="ayuda">
+                    <i class="fas fa-phone-alt"></i>
+                    <i class="fas fa-suitcase-rolling"></i>
+                    <i class="fas fa-user"></i>
+                    <i class="fas fa-question-circle"></i>
+                </div>
+             </div>
 
     </header>
- <h1>Ingresa a tu cuenta o registrate..</h1>
- <div class="container.header">
+    <main class="login">
 
-        <div> <button>Google</button></div>
-        <div><button>facebook</button></div>
-        <div><input type="email" name="email" id="email" placeholder="Ingresa tu Email"></div>
-        <div><input type="password" name="password" id="password" placeholder="Contraseña"></div>
-    </div>
+        <h3 class="apis">Accede con tu cuenta favorita</h3>
+            <div class="apis">
+                 <form action="/" method="post">
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    <div class="fb-login-button" data-width="50px" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                    <h3>O Registrate con tus datos</h3>
+                    <div class="email"><input type="email" name="email" id="email" placeholder="Ingresa tu Email"></div>
+                    <div class="pass"><input type="password" name="password" id="password" placeholder="Contraseña"></div>
+                
+                </div>
+                 <div>
+                    <button type="submit">Accede</button>
+                 </div>
+                                   
+            </form>
 
+
+    </main>
  
 
    
