@@ -15,7 +15,7 @@
         appId      : '402008404714331',
         cookie     : true,
         xfbml      : true,
-        version    : '{api-version}'
+        version    : '11'
       });
         
       FB.AppEvents.logPageView();   
@@ -32,13 +32,27 @@
   </script>
     
     <meta name="google-signin-client_id" content="AIzaSyBrscPUe1Wa8k9ufXG9n5rUPN0gh-8WMJU">
-       <style>
     
-    .login{display: flex;background-color: #c4e4ff;justify-items: center;flex-direction: column;}
+    
+    <style>
+    .login{display: flex;background-color: #c4e4ff;justify-items: center;flex-direction: column;height: 710px;}
     .apis{margin-left: 30px;}
     .buscar{display:block; color: blue;  align-items: center;}
     .pass{padding-bottom: 20px;}
     .email{padding-bottom: 20px; }
+    input{width: 60%;
+        padding: 10px 40px;
+        margin: 8px 0;
+        border: gray 0%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: center;
+        border-style: none;    
+    }
+    button{border: solid 1px gray;
+    border-radius: 5px;align-content: center;
+     margin-left: 50px;  }
+    .accede{display: flex;margin-left: 30px  ;flex-direction: column; align-content: flex-start; text-align: start; }
+    
     </style>
     
     <title>Login</title>
@@ -67,15 +81,13 @@
                  <form action="/" method="post">
                     <div class="g-signin2" data-onsuccess="onSignIn"></div>
                     <div class="fb-login-button" data-width="50px" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-                    <h3>O Registrate con tus datos</h3>
+                    <h3>O Ingresa con tu email</h3>
+                </div> 
+                <div class="accede">   
                     <div class="email"><input type="email" name="email" id="email" placeholder="Ingresa tu Email"></div>
                     <div class="pass"><input type="password" name="password" id="password" placeholder="Contraseña"></div>
-                
-                </div>
-                 <div>
-                    <button type="submit">Accede</button>
-                 </div>
-                                   
+                    <div ><button type="submit">Accede</button></div>
+                </div>                   
             </form>
 
 
