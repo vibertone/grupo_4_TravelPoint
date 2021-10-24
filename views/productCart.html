@@ -53,6 +53,21 @@
     border-radius: 5px;align-content: center;
      margin-left: 50px;  }
     .accede{display: flex;margin-left: 30px  ;flex-direction: column; align-content: flex-start; text-align: start; }
+    .contain-subtitulo{
+        display: flex; 
+        justify-content: space-between;  
+        margin-left: 100px; 
+        margin-right: 100px;
+        margin-top: 20px;   
+    }
+    .subtitulo{font-size: 20px;}
+    .cabezera-main{
+        display: flex; 
+        justify-content: space-between; 
+        margin-left: 70px;
+        margin-right: 95px;
+        align-items: center;    
+    }
     
     </style>
     
@@ -77,9 +92,15 @@
     </header>
     <main class="login">
 
-        <h1 class="titulos">Mi compra</h1>
-                    <h3 class="titulos">Producto</h3>
-                </div> 
+        <div class="cabezera-main">
+            <h1 class="titulos">Mi compra</h1>
+            <div><button type="submit">Continuar</button></div>
+        </div>
+                    <div class="contain-subtitulo">
+                        <div class="subtitulo">producto</div>
+                        <div class="subtitulo">cantidad</div> 
+                        <div class="subtitulo">subtotal</div>
+                    </div>
                 <div class="accede">   
                     <div class="text"><input type="text" name="text" id="text" placeholder="Producto"></div>
                     <div ><button type="submit">Continuar</button></div>
