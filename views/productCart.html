@@ -36,7 +36,7 @@
     
     <style>
     .login{display: flex;background-color: #c4e4ff;justify-items: center;flex-direction: column;height: 710px;}
-    .titulos{margin-left: 30px;}
+    .titulos{margin-left: 5px;}
     .buscar{display:block; color: blue;  align-items: center;}
     .pass{padding-bottom: 20px;}
     .email{padding-bottom: 20px; }
@@ -52,23 +52,68 @@
     button{border: solid 1px gray;
     border-radius: 5px;align-content: center;
      margin-left: 50px;  }
-    .accede{display: flex;margin-left: 30px  ;flex-direction: column; align-content: flex-start; text-align: start; }
+    .accede{
+        display: flex;
+        margin: 0px  ;
+        flex-direction: row; 
+        align-content: flex-start; 
+        text-align: start; 
+    }
     .contain-subtitulo{
         display: flex; 
         justify-content: space-between;  
-        margin-left: 100px; 
-        margin-right: 100px;
+        margin-left: 70px; 
+        margin-right: 70px;
         margin-top: 20px;   
     }
     .subtitulo{font-size: 20px;}
     .cabezera-main{
         display: flex; 
         justify-content: space-between; 
-        margin-left: 70px;
-        margin-right: 95px;
+        margin-left: 63px;
+        margin-right: 63px;
         align-items: center;    
     }
-    
+    .cuerpo-carrito1{
+        background-color: white; 
+        width: 40%;
+        height: 100px;
+        margin-left: 60px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 2px 2px 5px #999;
+    }
+    .cuerpo-carrito2{
+        background-color: white; 
+        width: 30%;
+        height: 100px;
+        margin-left: 15px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 2px 2px 5px #999;
+    }
+
+    .cuerpo-carrito3{
+        background-color: white; 
+        width: 20%;
+        height: 100px;
+        margin-left: 15px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 2px 2px 5px #999;
+    }
+
+    form button{
+        margin-left: 1300px;
+        margin-top: 20px;
+    }
+
     </style>
     
     <title>Carrito</title>
@@ -101,11 +146,27 @@
                         <div class="subtitulo">cantidad</div> 
                         <div class="subtitulo">subtotal</div>
                     </div>
+            <form>
                 <div class="accede">   
-                    <div class="text"><input type="text" name="text" id="text" placeholder="Producto"></div>
-                    <div ><button type="submit">Continuar</button></div>
-                </div>                   
-            </form>
+                    <div class="cuerpo-carrito1">Nombre del producto</div>
+                    <div class="cuerpo-carrito2">Cantidad del producto</div>
+                    <div class="cuerpo-carrito3">Subtotal del producto</div>
+                </div> 
+
+                <div class="accede">   
+                    <div class="cuerpo-carrito1">Nombre del producto</div>
+                    <div class="cuerpo-carrito2">Cantidad del producto</div>
+                    <div class="cuerpo-carrito3">Subtotal del producto</div>
+                </div>
+
+                <div class="accede">   
+                    <div class="cuerpo-carrito1">Nombre del producto</div>
+                    <div class="cuerpo-carrito2">Cantidad del producto</div>
+                    <div class="cuerpo-carrito3">Subtotal del producto</div>
+                </div>
+                
+                <div><button type="submit">Continuar</button></div>
+            </form>                  
 
 
     </main>
