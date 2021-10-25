@@ -35,7 +35,7 @@
     
     
     <style>
-    .login{display: flex;background-color: #c4e4ff;justify-items: center;flex-direction: column;height: 710px;}
+    .login{display: flex;background-color: #c4e4ff;justify-items: center;flex-direction: column;height: 80%;}
     .titulos{margin-left: 5px;}
     .buscar{display:block; color: blue;  align-items: center;}
     .pass{padding-bottom: 20px;}
@@ -61,12 +61,17 @@
     }
     .contain-subtitulo{
         display: flex; 
-        justify-content: space-between;  
+      ;  
         margin-left: 70px; 
         margin-right: 70px;
-        margin-top: 20px;   
+        margin-top: 20px;
+        font-size: 20px;   
     }
-    .subtitulo{font-size: 20px;}
+    .subtitulo2{
+        margin-left: 660px;
+        margin-right: 160px;
+    }
+
     .cabezera-main{
         display: flex; 
         justify-content: space-between; 
@@ -76,22 +81,23 @@
     }
     .cuerpo-carrito1{
         background-color: white; 
-        width: 40%;
+        width: 50%;
         height: 100px;
         margin-left: 60px;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         border-radius: 20px;
         padding: 20px;
         box-shadow: 2px 2px 5px #999;
     }
     .cuerpo-carrito2{
         background-color: white; 
-        width: 30%;
+        width: 15%;
         height: 100px;
-        margin-left: 15px;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-left: 20px;
+        margin-right: 6px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         border-radius: 20px;
         padding: 20px;
         box-shadow: 2px 2px 5px #999;
@@ -99,11 +105,11 @@
 
     .cuerpo-carrito3{
         background-color: white; 
-        width: 20%;
+        width: 24%;
         height: 100px;
         margin-left: 15px;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         border-radius: 20px;
         padding: 20px;
         box-shadow: 2px 2px 5px #999;
@@ -112,6 +118,31 @@
     form button{
         margin-left: 1300px;
         margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .img-miami{
+        margin-left: 60px; 
+        margin-top: 20px;
+        width: 25%;
+        border-radius: 20px;
+        box-shadow: 2px 2px 5px #999
+    }
+
+    .subtitulo4{
+        font-size: 20px;
+        margin-left: 60px;
+        margin-top: 20px;
+    }
+
+    .detalle-compra{display: flex;}
+
+    .texto-detalle{
+        margin-left: 30px;
+        margin-top: 25px;
+    }
+    footer {
+        height: 200px;
     }
 
     </style>
@@ -142,27 +173,33 @@
             <div><button type="submit">Continuar</button></div>
         </div>
                     <div class="contain-subtitulo">
-                        <div class="subtitulo">producto</div>
-                        <div class="subtitulo">cantidad</div> 
-                        <div class="subtitulo">subtotal</div>
+                        <div class="subtitulo1">producto</div>
+                        <div class="subtitulo2">cantidad</div> 
+                        <div class="subtitulo3">subtotal</div>
                     </div>
             <form>
                 <div class="accede">   
                     <div class="cuerpo-carrito1">Nombre del producto</div>
-                    <div class="cuerpo-carrito2">Cantidad del producto</div>
+                    <input type="number" class="cuerpo-carrito2" placeholder="cantidad"></input>
                     <div class="cuerpo-carrito3">Subtotal del producto</div>
                 </div> 
 
                 <div class="accede">   
                     <div class="cuerpo-carrito1">Nombre del producto</div>
-                    <div class="cuerpo-carrito2">Cantidad del producto</div>
+                    <input type="number" class="cuerpo-carrito2" placeholder="cantidad"></input>
                     <div class="cuerpo-carrito3">Subtotal del producto</div>
                 </div>
 
                 <div class="accede">   
                     <div class="cuerpo-carrito1">Nombre del producto</div>
-                    <div class="cuerpo-carrito2">Cantidad del producto</div>
+                    <input type="number" class="cuerpo-carrito2" placeholder="cantidad"></input>
                     <div class="cuerpo-carrito3">Subtotal del producto</div>
+                </div>
+                <div class="subtitulo4">Detalles de su compra</div>
+                <div class="detalle-compra">
+                    <img src="./img/miami.jpg" class="img-miami">
+                    <div class="texto-detalle">IDA EZE-MIA</div>
+                    <div class="texto-detalle">VUELTA MIA-EZE</div>
                 </div>
                 
                 <div><button type="submit">Continuar</button></div>
