@@ -68,8 +68,8 @@
         font-size: 20px;   
     }
     .subtitulo2{
-        margin-left: 660px;
-        margin-right: 160px;
+        margin-left: 730px;
+        margin-right: 80px;
     }
 
     .cabezera-main{
@@ -81,7 +81,7 @@
     }
     .cuerpo-carrito1{
         background-color: white; 
-        width: 50%;
+        width: 55%;
         height: 100px;
         margin-left: 60px;
         margin-top: 10px;
@@ -92,7 +92,7 @@
     }
     .cuerpo-carrito2{
         background-color: white; 
-        width: 15%;
+        width: 9%;
         height: 100px;
         margin-left: 20px;
         margin-right: 6px;
@@ -126,7 +126,8 @@
         margin-top: 20px;
         width: 25%;
         border-radius: 20px;
-        box-shadow: 2px 2px 5px #999
+        box-shadow: 2px 2px 5px #999;
+        max-height: 270px;
     }
 
     .subtitulo4{
@@ -137,10 +138,31 @@
 
     .detalle-compra{display: flex;}
 
-    .texto-detalle{
-        margin-left: 30px;
+    .texto-idayvuelta{
+        margin-left: 25px;
         margin-top: 25px;
     }
+    .vuelta{
+        margin-left: 80px;
+    }
+    .texto-detalle{
+        display: flex;
+        flex-direction: column;
+    }
+    .hab-lujo{
+        margin-top: 30px;
+        margin-left: 25px;
+        max-width: 400px;
+    }
+    .texto-total{
+        margin-left: 25px;
+        margin-bottom: 50px;
+        margin-top: 12px;
+    }
+    .subtotal2{margin-left: 340px;}
+    .totalsinimp2{margin-left: 262px;}
+    .imp2{margin-left: 322px;}
+    .totalconimp2{margin-left: 205px;}
     footer {
         height: 200px;
     }
@@ -198,8 +220,33 @@
                 <div class="subtitulo4">Detalles de su compra</div>
                 <div class="detalle-compra">
                     <img src="./img/miami.jpg" class="img-miami">
-                    <div class="texto-detalle">IDA EZE-MIA</div>
-                    <div class="texto-detalle">VUELTA MIA-EZE</div>
+                    <div class="texto-detalle">
+                        <div class="texto-idayvuelta">
+                            <span class="ida">IDA EZE-MIA</span> 
+                            <span class="vuelta">VUELTA MIA-EZE</span> 
+                        </div>
+                        <div class="hab-lujo">Habitación Doble de Lujo con Vista al Océano</div>
+                        <div class="hab-lujo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                    </div>
+
+                    <div class="texto-total">
+                        <div class="texto-total">
+                            <span class="subtotal1">subtotal</span>
+                            <span class="subtotal2">$86.000</span> 
+                        </div>
+                        <div class="texto-total">
+                            <span class="totalsinimp1">total sin impuestos</span>
+                            <span class="totalsinimp2">$86.000</span> 
+                        </div>
+                        <div class="texto-total">
+                            <span class="imp1">impuestos</span>
+                            <span class="imp2">$86.000</span> 
+                        </div>
+                        <div class="texto-total">
+                            <span class="totalconimp1">total incluyendo impuestos</span>
+                            <span class="totalconimp2">$86.000</span> 
+                        </div>
+                    </div>
                 </div>
                 
                 <div><button type="submit">Continuar</button></div>
