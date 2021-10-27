@@ -11,9 +11,13 @@ body{
     width: 20vw;
 }
 
+.aero{
+    width: 2vw;}
+
+
 .logo-ayuda{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     margin-bottom: 20px;
 }
