@@ -198,7 +198,7 @@ main{
     .buscar{display:block; color: blue;  align-items: center;}
     .pass{padding-bottom: 20px;}
     .email{padding-bottom: 20px; }
-    input{width: 60%;
+    .accede input, .accede2 input{width: 60%;
         padding: 10px 40px;
         margin: 8px 0;
         border: gray 0%;
@@ -216,14 +216,6 @@ main{
     .buscar{display:block; color: blue;  align-items: center;}
     .pass{padding-bottom: 20px;}
     .email{padding-bottom: 20px; }
-    input{width: 60%;
-        padding: 10px 40px;
-        margin: 8px 0;
-        border: gray 0%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        text-align: center;
-        border-style: none;    
-    }
     .apis section button{border: solid 1px gray;
     border-radius: 5px;align-content: center;
      margin-left: 50px;  }
