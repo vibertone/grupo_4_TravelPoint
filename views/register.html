@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
@@ -10,121 +11,86 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/31b9fa39aa.js" crossorigin="anonymous"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script> window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '402008404714331',
-        cookie     : true,
-        xfbml      : true,
-        version    : '11'
-      });
-        
-      FB.AppEvents.logPageView();   
-        
-    };
-  
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
-    
-    <meta name="google-signin-client_id" content="AIzaSyBrscPUe1Wa8k9ufXG9n5rUPN0gh-8WMJU">
-    
-    
-    <style>
-        /*----a pasar a css - login + register*/
-    .login{display: flex;background-color: #c4e4ff;justify-items: center;flex-direction: column;height: 710px;}
-    .apis{margin-left: 30px;}
-    .buscar{display:block; color: blue;  align-items: center;}
-    .pass{padding-bottom: 20px;}
-    .email{padding-bottom: 20px; }
-    input{width: 60%;
-        padding: 10px 40px;
-        margin: 8px 0;
-        border: gray 0%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        text-align: center;
-        border-style: none;    
-    }
-    button{border: solid 1px gray;
-    border-radius: 5px;align-content: center;
-     margin-left: 50px;  }
-    .accede{display: flex;margin-left: 30px  ;flex-direction: column; align-content: flex-start; text-align: start; }
-    .accede2{display: flex;margin-left: 30px  ;flex-direction: column; align-content: flex-start; flex-wrap: wrap; align-content: flex-start; }
-    /*----exclusivo de register*/
-    .combo {width: 60%;
-        padding: 10px 40px;
-        margin: 8px 0;
-        border: gray 0%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        text-align: center;
-        border-style: none;    
-        color: gray; opacity:1; font-size: x-small
-    
-    }
-    label{font: gray 2px; font-size: smaller;}
-    ::placeholder{color: gray; opacity:1; font-size: small;}
+    <script> window.fbAsyncInit = function () {
+            FB.init({
+                appId: '402008404714331',
+                cookie: true,
+                xfbml: true,
+                version: '11'
+            });
 
-    </style>
-    
+            FB.AppEvents.logPageView();
+
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <meta name="google-signin-client_id" content="AIzaSyBrscPUe1Wa8k9ufXG9n5rUPN0gh-8WMJU">
+
     <title>Login</title>
 </head>
 
 
-<body> <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v12.0" nonce="VFH2JtUh"></script>
-     
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v12.0"
+        nonce="VFH2JtUh"></script>
+
     <header>
-           <div class="logo-ayuda">
-                <img src="/img/Logo.png" alt="Logo" class="logo">
-                <div class="ayuda">
-                    <i class="fas fa-phone-alt"></i>
-                    <i class="fas fa-suitcase-rolling"></i>
-                    <i class="fas fa-user"></i>
-                    <i class="fas fa-question-circle"></i>
-                </div>
-             </div>
+        <div class="logo-ayuda">
+            <img src="/img/Logo.png" alt="Logo" class="logo">
+            <div class="ayuda">
+                <i class="fas fa-phone-alt"></i>
+                <i class="fas fa-suitcase-rolling"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-question-circle"></i>
+            </div>
+        </div>
 
     </header>
     <main class="login">
 
         <h3 class="apis">Registrate con tu cuenta favorita</h3>
-            <div class="apis">
-                 <form action="/" method="post">
-                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                    <div class="fb-login-button" data-width="50px" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-                    <h3>O Ingresa con tu email</h3>
-                </div > 
-                <div class="accede">   
-                    <div class="email"><input type="email" name="email" id="email" placeholder="Ingresa tu Email"></div>
-                    <div class="pass"><input type="password" name="password" id="password" placeholder="Contraseña"></div>
-                    <div class="pass"><input type="password" name="password" id="password" placeholder="Repite Contraseña"></div>
-                   
-                </div>
-                <div class="accede2">
-                    <label for="Nme">Nombre</label>
-                    <div><input type="text" id="Nme" placeholder="NOMBRE"></div>
-                    <label for="Snme">Apellido</label>
-                    <div><input type="text" id="Snme" placeholder="APELLIDO"></div>
-                    <label for="PAIS">Origen</label>
-                    <div><select class="combo" id="PAIS" name="PAIS" aria-placeholder="PAIS">
-                        <option value="ARGENTINA">ARGENTINA</option>
-                        <option value="BRAZIL">BRAZIL</option>
-                        <option value="CHILE">CHILE</option></div>
-                    <h3>O Ingresa con tu email</h3>
-                 </div>
-            <section>
-                <button type="submit">Accede</button>
-            </section>                     
-            
-          
-            </form>
+        <div class="apis">
+            <form action="/" method="post">
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <div class="fb-login-button" data-width="50px" data-size="medium" data-button-type="login_with"
+                    data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                <h3>O Ingresa con tu email</h3>
+        </div>
+        <div class="accede">
+            <div class="email"><input type="email" name="email" id="email" placeholder="Ingresa tu Email"></div>
+            <div class="pass"><input type="password" name="password" id="password" placeholder="Contraseña"></div>
+            <div class="pass"><input type="password" name="password" id="password" placeholder="Repite Contraseña">
+            </div>
+
+        </div>
+        <div class="accede2">
+            <label for="Nme">Nombre</label>
+            <div><input type="text" id="Nme" placeholder="NOMBRE"></div>
+            <label for="Snme">Apellido</label>
+            <div><input type="text" id="Snme" placeholder="APELLIDO"></div>
+            <label for="PAIS">Origen</label>
+            <div><select class="combo" id="PAIS" name="PAIS" aria-placeholder="PAIS">
+                    <option value="ARGENTINA">ARGENTINA</option>
+                    <option value="BRAZIL">BRAZIL</option>
+                    <option value="CHILE">CHILE</option>
+            </div>
+            <h3>O Ingresa con tu email</h3>
+        </div>
+        <section>
+            <button type="submit">Accede</button>
+        </section>
+
+
+        </form>
 
 
     </main>
- 
-
-   
