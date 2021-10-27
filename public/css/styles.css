@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
 }
+input[type=date]{font-size:x-small;color: gray; opacity:1;background-color: white;}
 
 body{
     font-family: 'Roboto', sans-serif;
@@ -24,6 +25,11 @@ body{
 
 .logo-ayuda i, .opciones1 i, .vuelos article{
     cursor: pointer;
+}
+
+.vuelos article:hover{
+    transform: rotateZ(360deg);
+    transition: all 300ms;
 }
 
 .ayuda{
@@ -202,7 +208,7 @@ main{
     .buscar{display:block; color: blue;  align-items: center;}
     .pass{padding-bottom: 20px;}
     .email{padding-bottom: 20px; }
-    .accede input, .accede2 input{width: 60%;
+    .entrar input{width: 60%;
         padding: 10px 40px;
         margin: 8px 0;
         border: gray 0%;
@@ -213,7 +219,7 @@ main{
     button{border: solid 1px gray;
     border-radius: 5px;align-content: center;
      margin-left: 50px;  }
-    .accede{display: flex;margin-left: 30px  ;flex-direction: column; align-content: flex-start; text-align: start; }
+    .entrar{display: flex;margin-left: 30px  ;flex-direction: column; align-content: flex-start; text-align: start; }
 
     .login{display: flex;background-color: #c4e4ff;justify-items: center;flex-direction: column;height: 710px;}
     .apis{margin-left: 30px;}
@@ -223,8 +229,8 @@ main{
     .apis section button{border: solid 1px gray;
     border-radius: 5px;align-content: center;
      margin-left: 50px;  }
-    .accede{display: flex;margin-left: 30px  ;flex-direction: column; align-content: flex-start; text-align: start; }
-    .accede2{display: flex;margin-left: 30px  ;flex-direction: column; align-content: flex-start; flex-wrap: wrap; align-content: flex-start; }
+    .entrar{display: flex;margin-left: 30px  ;flex-direction: column; align-content: flex-start; text-align: start; }
+    .entrar2{display: flex;margin-left: 30px  ;flex-direction: column; align-content: flex-start; flex-wrap: wrap; align-content: flex-start; }
     /*----exclusivo de register*/
     .combo {width: 60%;
         padding: 10px 40px;
@@ -236,7 +242,7 @@ main{
         color: gray; opacity:1; font-size: x-small
     
     }
-    .accede2 label{font: gray 2px; font-size: smaller;}
+    .entrar2 label{font: gray 2px; font-size: smaller;}
     ::placeholder{color: gray; opacity:1; font-size: small;}
 
     /* Feli */
@@ -246,7 +252,7 @@ main{
     .buscar{display:block; color: blue;  align-items: center;}
     .pass{padding-bottom: 20px;}
     .email{padding-bottom: 20px; }
-    input{width: 80%;
+    .formularios input{width: 80%;
         height: 80%;
         padding: 100px;
         margin: 30px 100px;
@@ -373,3 +379,59 @@ main{
     footer {
         height: 200px;
     }
+
+    /* PRODUCT DETAIL */
+    .Produ{
+        margin: 40px 0 40px 40px;
+        width: 60%;
+        background-color: white;
+        border-radius: 25px;
+        padding-right: 20px;
+        padding: 20px;
+        
+        
+    }
+    .Produ:hover{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0;
+    }
+    .Producto{
+        padding-top: 40px;
+        margin: auto;
+    }
+    .price{
+        font-size: 30px;
+        font-weight: 600;
+    }
+ 
+    /* ESTILOS DEL FOOTER/
+
+footer{margin: 1em 1.5em 1em 1.5em;}
+
+.tarjetas /container de secciones del footer*/
+{display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    align-items: center;}
+.icono{
+    size: 2em;
+    text-align: center;
+    color: #1259c3;
+    font-size: 30px;
+    margin: 1em 0em 10px 0em;}
+
+ h4.anunfoot{font-weight: 700; 
+    font-size: 20px; 
+    text-align: center; 
+    font-size: medium;
+    color:#666; 
+    margin-bottom: 2px;}
+ .anun_des{font-size: 12px; 
+        font-weight: normal;
+        text-align: center;
+        width: 80%; color:#666; 
+        justify-content: center;
+        text-justify: distribute; 
+        justify-items: center; }
+
+.cpyrgt{text-align: left; font-size: x-small; margin: 0px;}

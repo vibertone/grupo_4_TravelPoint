@@ -17,6 +17,9 @@
 *integrantes:*
 Victoria Francisco Federico Felipe
 
+*Plataforma utilizada para organizar el trabajo*
+https://github.com/vibertone/grupo_4_TravelPoint/projects/1
+
 5 sitios de referencia:
 DESPEGAR https://www.despegar.com.ar
 

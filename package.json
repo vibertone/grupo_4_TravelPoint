@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/vibertone/grupo_4_TravelPoint#readme",
   "dependencies": {
+    "bootstrap": "^5.1.3",
     "express": "^4.17.1"
   }
 }
