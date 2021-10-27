@@ -22,7 +22,6 @@
             FB.AppEvents.logPageView();
 
         };
-
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) { return; }
@@ -31,65 +30,68 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-
     <meta name="google-signin-client_id" content="AIzaSyBrscPUe1Wa8k9ufXG9n5rUPN0gh-8WMJU">
-
-    <title>Login</title>
+    <title>Creá tu cuenta</title>
 </head>
-
 
 <body>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v12.0"
         nonce="VFH2JtUh"></script>
-
     <header>
         <div class="logo-ayuda">
-            <img src="/img/Logo.png" alt="Logo" class="logo">
+            <a href="/"><img src="/img/Logo.png" alt="Logo" class="logo"></a>
             <div class="ayuda">
                 <i class="fas fa-phone-alt"></i>
-                <i class="fas fa-suitcase-rolling"></i>
-                <i class="fas fa-user"></i>
+                <a href="/productcart"><i class="fas fa-suitcase-rolling"></i></a>
+                <a href="/login"><i class="fas fa-user"></i></a>
                 <i class="fas fa-question-circle"></i>
             </div>
         </div>
-
     </header>
-    <main class="login">
-
-        <h3 class="apis">Registrate con tu cuenta favorita</h3>
-        <div class="apis">
-            <form action="/" method="post">
+    <main>
+        <div class="login">
+            <h3>Registrate con tu cuenta favorita</h3>
+            <div class="apis">
                 <div class="g-signin2" data-onsuccess="onSignIn"></div>
                 <div class="fb-login-button" data-width="50px" data-size="medium" data-button-type="login_with"
                     data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-                <h3>O Ingresa con tu email</h3>
-        </div>
-        <div class="entrar">
-            <div class="email"><input type="email" name="email" id="email" placeholder="Ingresa tu Email"></div>
-            <div class="pass"><input type="password" name="password" id="password" placeholder="Contraseña"></div>
-            <div class="pass"><input type="password" name="password" id="password" placeholder="Repite Contraseña">
             </div>
+            <form action="/" method="">
+                <h3>O registrate con tu Email</h3>
+                <div>
+                    <p>
+                        <input type="email" name="email" id="email" placeholder="Ingresa tu Email" required>
+                    </p>
+                    <p>
+                        <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                    </p>
+                    <p>
+                        <input type="password" name="password" id="password" placeholder="Repite Contraseña" required>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <input type="text" id="Nme" placeholder="Nombre" required>
+                    </p>
+                    <p>
+                        <input type="text" id="snme" placeholder="Apellido" required>
+                    </p>
+                    <p>
+                        <select id="pais" name="pais" required>
+                            <option value="nacionalidad" selected>Nacionalidad</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Brasil">Brasil</option>
+                            <option value="Chile">Chile</option>
+                        </select>
+                    </p>
+                </div>
+                <p>
+                    <button type="submit">Registrarse</button>
+                </p>
+            </form>
         </div>
-        <div class="entrar2">
-            <label for="Nme">Nombre</label>
-            <div><input type="text" id="Nme" placeholder="NOMBRE"></div>
-            <label for="Snme">Apellido</label>
-            <div><input type="text" id="Snme" placeholder="APELLIDO"></div>
-            <label for="PAIS">Origen</label>
-            <div><select class="combo" id="PAIS" name="PAIS" aria-placeholder="PAIS">
-                    <option value="ARGENTINA">ARGENTINA</option>
-                    <option value="BRAZIL">BRAZIL</option>
-                    <option value="CHILE">CHILE</option>
-            </div>
-            <h3>O Ingresa con tu email</h3>
-        </div>
-        <section>
-            <button type="submit">Accede</button>
-        </section>
-
-
-        </form>
-
-
     </main>
+</body>
+
+</html>

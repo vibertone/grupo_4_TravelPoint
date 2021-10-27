@@ -35,7 +35,7 @@
   <meta name="google-signin-client_id" content="AIzaSyBrscPUe1Wa8k9ufXG9n5rUPN0gh-8WMJU">
 
 
-  <title>Login</title>
+  <title>Ingresá</title>
 </head>
 
 
@@ -46,32 +46,40 @@
 
   <header>
     <div class="logo-ayuda">
-      <img src="/img/Logo.png" alt="Logo" class="logo">
+      <a href="/"><img src="/img/Logo.png" alt="Logo" class="logo"></a>
       <div class="ayuda">
         <i class="fas fa-phone-alt"></i>
-        <i class="fas fa-suitcase-rolling"></i>
-        <i class="fas fa-user"></i>
+        <a href="/productcart"><i class="fas fa-suitcase-rolling"></i></a>
+        <a href="/login"><i class="fas fa-user"></i></a>
         <i class="fas fa-question-circle"></i>
       </div>
     </div>
-
   </header>
-  <main class="login">
-
-    <h3 class="apis">Accede con tu cuenta favorita</h3>
-    <div class="apis">
-      <form action="/" method="post">
+  <main>
+    <div class="login">
+      <h3>Accede con tu cuenta favorita</h3>
+      <div class="apis">
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <div class="fb-login-button" data-width="50px" data-size="medium" data-button-type="login_with"
           data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+      </div>
+      <form action="/" method="">
         <h3>O Ingresa con tu email</h3>
+        <div>
+          <p>
+            <input type="email" name="email" id="email" placeholder="Ingresa tu Email">
+          </p>
+          <p>
+            <input type="password" name="password" id="password" placeholder="Contraseña">
+          </p>
+          <p>
+            <button type="submit">Ingresar</button>
+          </p>
+        </div>
+      </form>
+      <p>Si todavía no tenés una cuenta, registrate haciendo click <a href="/register">acá</a></p>
     </div>
-    <div class="accede">
-      <div class="email"><input type="email" name="email" id="email" placeholder="Ingresa tu Email"></div>
-      <div class="pass"><input type="password" name="password" id="password" placeholder="Contraseña"></div>
-      <div><button type="submit">Accede</button></div>
-    </div>
-    </form>
-
-
   </main>
+</body>
+
+</html>
