@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+/* Fede */
+
 body {
     font-family: 'Roboto', sans-serif;
     width: 100vw;
@@ -234,14 +236,10 @@ main {
 }
 
 /* Feli */
-/* 
- .carrito{
-    display: flex;
+
+.carrito {
     background-color: #c4e4ff;
-    justify-items: center;
-    flex-direction: column;
-    height: 80%;
-} */
+}
 
 .titulos {
     margin-left: 5px;
@@ -291,6 +289,7 @@ main {
     margin-left: 730px;
     margin-right: 80px;
 }
+
 .cuerpo-carrito1 {
     background-color: white;
     width: 55%;
@@ -397,26 +396,32 @@ main {
 
 footer {
     height: 200px;
-} 
+}
 
 /* PRODUCT DETAIL */
 
-.Produ {
-    margin: 40px 0 40px 40px;
-    width: 60%;
+.div-vuelo {
+    width: 80%;
     background-color: white;
     border-radius: 25px;
-    padding-right: 20px;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
-.Produ:hover {
+.div-vuelo:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0;
 }
 
-.Producto {
+.vuelos {
     padding-top: 40px;
     margin: auto;
+}
+
+.escalas{
+    text-decoration: underline;
+    opacity: 0.5;
+    font-size: 14px;
+    font-weight: 200;
 }
 
 .price {
@@ -424,9 +429,35 @@ footer {
     font-weight: 600;
 }
 
+.price-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    border-top: 1px solid gray;
+    padding-top: 15px;
+}
+
+.price-button button{
+    border: none;
+    border-radius: 5px;
+    background-color: #3495eb;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.detalle-de-vuelo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* ESTILOS DEL FOOTER*/
 
-footer{
+footer {
     margin: 1em 1.5em 1em 1.5em;
 }
 

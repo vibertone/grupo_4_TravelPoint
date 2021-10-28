@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,126 +10,200 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-     <title>Detalle de Producto</title>
+    <title>Detalle de Producto</title>
 </head>
+
 <body>
     <header>
-        <header>
-            <div class="logo-ayuda">
-                <img src="/img/Logo.png" alt="Logo" class="logo">
-                <div class="ayuda">
-                    <i class="fas fa-phone-alt"></i>
-                    <i class="fas fa-suitcase-rolling"></i>
-                    <i class="fas fa-user"></i>
-                    <i class="fas fa-question-circle"></i>
-                </div>
+        <div class="logo-ayuda">
+            <a href="/"><img src="/img/Logo.png" alt="Logo" class="logo"></a>
+            <div class="ayuda">
+                <i class="fas fa-phone-alt"></i>
+                <a href="/productcart"><i class="fas fa-suitcase-rolling"></i></a>
+                <a href="/login"><i class="fas fa-user"></i></a>
+                <i class="fas fa-question-circle"></i>
             </div>
-            <div class="opciones1">
-                <div>
-                    <i class="fas fa-plane"></i>
-                    <p> Vuelos </p>
-                </div>
-                <div>
-                    <i class="fas fa-concierge-bell"></i>
-                    <p> Hoteles </p>
-                </div>
-                <div>
-                    <i class="fas fa-suitcase"></i>
-                    <p> Paquetes </p>
-                </div>
-                <div>
-                    <i class="fas fa-briefcase-medical"></i>
-                    <p> Asistencias </p>
-                </div>
-                <div>
-                    <i class="fas fa-car-side"></i>
-                    <p> Autos </p>
-                </div>
-                <div>
-                    <i class="fas fa-skiing-nordic"></i>
-                    <p> Actividades </p>
-                </div>
+        </div>
+        <div class="opciones1">
+            <div>
+                <i class="fas fa-plane"></i>
+                <p> Vuelos </p>
             </div>
-
+            <div>
+                <i class="fas fa-concierge-bell"></i>
+                <p> Hoteles </p>
+            </div>
+            <div>
+                <i class="fas fa-suitcase"></i>
+                <p> Paquetes </p>
+            </div>
+            <div>
+                <i class="fas fa-briefcase-medical"></i>
+                <p> Asistencias </p>
+            </div>
+            <div>
+                <i class="fas fa-car-side"></i>
+                <p> Autos </p>
+            </div>
+            <div>
+                <i class="fas fa-skiing-nordic"></i>
+                <p> Actividades </p>
+            </div>
+        </div>
     </header>
     <main>
-        <section class="Producto">
-            <div class= "Produ">
-                <h2> Buenos Aires -> Cancun </h2>
-                <img class="aero" src="img/latam-logo.jpg" alt="">
+        <section class="vuelos">
+            <div class="div-vuelo">
+                <!-- <img class="aero" src="img/latam-logo.jpg" alt=""> -->
                 <h3>IDA - Duración 27h 17min</h3>
-                    <div>Salida 19:06</div>
-                    <div>EZE</div> 
-                    <div>Llegada 21:24</div>
-                    <div>SCL</div>
-                 <h3>VUELTA- Duración 22h 00min</h3>
-                    <div>Salida 08:06</div>
-                    <div>SCL</div> 
-                    <div>Llegada 7:24</div>
-                    <div>EZE</div>
+                <div class="detalle-de-vuelo">
+                    <div>
+                        <div>19:06</div>
+                        <div>EZE</div>
+                    </div>
+                    <div class="escalas">
+                        Directo
+                    </div>
+                    <div>
+                        <div>21:24</div>
+                        <div>SCL</div>
+                    </div>
+                </div>
+                <h3>VUELTA- Duración 22h 00min</h3>
+                <div class="detalle-de-vuelo">
+                    <div>
+                        <div>08:06</div>
+                        <div>SCL</div>
+                    </div>
+                    <div class="escalas">
+                        Directo
+                    </div>
+                    <div>
+                        <div>7:24</div>
+                        <div>EZE</div>
+                    </div>
+                </div>
+                <div class="price-button">
                     <div class="price">
                         $35.000
                     </div>
+                    <div>
+                        <button type="submit">Seleccionar</button>
+                    </div>
+                </div>
             </div>
-            <div class= "Produ">
-                <h2> Buenos Aires -> MIAMI  </h2>
-                <img class="aero" src="img/latam-logo.jpg" alt="">
+            <div class="div-vuelo">
+                <!-- <img class="aero" src="img/latam-logo.jpg" alt=""> -->
                 <h3>IDA - Duración 27h 17min</h3>
-                    <div>Salida 19:06</div>
-                    <div>EZE</div> 
-                    <div>Llegada 21:24</div>
-                    <div>SCL</div>
-                 <h3>VUELTA- Duración 22h 00min</h3>
-                    <div>Salida 08:06</div>
-                    <div>SCL</div> 
-                    <div>Llegada 7:24</div>
-                    <div>EZE</div>
+                <div class="detalle-de-vuelo">
+                    <div>
+                        <div>19:06</div>
+                        <div>EZE</div>
+                    </div>
+                    <div class="escalas">
+                        1 Escala
+                    </div>
+                    <div>
+                        <div>21:24</div>
+                        <div>SCL</div>
+                    </div>
+                </div>
+                <h3>VUELTA- Duración 22h 00min</h3>
+                <div class="detalle-de-vuelo">
+                    <div>
+                        <div>08:06</div>
+                        <div>SCL</div>
+                    </div>
+                    <div class="escalas">
+                        Directo
+                    </div>
+                    <div>
+                        <div>7:24</div>
+                        <div>EZE</div>
+                    </div>
+                </div>
+                <div class="price-button">
+                    <div class="price">
+                        $22.000
+                    </div>
+                    <div>
+                        <button type="submit">Seleccionar</button>
+                    </div>
+                </div>
             </div>
 
-            <div class= "Produ">
-                <h2> Buenos Aires -> MIAMI  </h2>
-                <img class="aero" src="img/latam-logo.jpg" alt="">
+            <div class="div-vuelo">
+                <!-- <img class="aero" src="img/latam-logo.jpg" alt=""> -->
                 <h3>IDA - Duración 27h 17min</h3>
-                    <div>Salida 19:06</div>
-                    <div>EZE</div> 
-                    <div>Llegada 21:24</div>
-                    <div>SCL</div>
-                 <h3>VUELTA- Duración 22h 00min</h3>
-                    <div>Salida 08:06</div>
-                    <div>SCL</div> 
-                    <div>Llegada 7:24</div>
-                    <div>EZE</div>
+                <div class="detalle-de-vuelo">
+                    <div>
+                        <div>19:06</div>
+                        <div>EZE</div>
+                    </div>
+                    <div class="escalas">
+                        Directo
+                    </div>
+                    <div>
+                        <div>21:24</div>
+                        <div>SCL</div>
+                    </div>
+                </div>
+                <h3>VUELTA- Duración 22h 00min</h3>
+                <div class="detalle-de-vuelo">
+                    <div>
+                        <div>08:06</div>
+                        <div>SCL</div>
+                    </div>
+                    <div class="escalas">
+                        1 Escala
+                    </div>
+                    <div>
+                        <div>7:24</div>
+                        <div>EZE</div>
+                    </div>
+                </div>
+                <div class="price-button">
+                    <div class="price">
+                        $27.500
+                    </div>
+                    <div>
+                        <button type="submit">Seleccionar</button>
+                    </div>
+                </div>
             </div>
         </section>
 
 
     </main>
- 
+
     <footer>
         <section class="tarjetas">
-            <div class="icono"><p class="icono fas fa-credit-card"></p></div>
+            <div class="icono">
+                <p class="icono fas fa-credit-card"></p>
+            </div>
             <h4 class="anunfoot">Pagá con tarjeta o en efectivo</h4>
-            <p class="anun_des">Con TV Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>
-            
+            <p class="anun_des">Con TV Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y
+                siempre es seguro!</p>
+
         </section>
         <section class="tarjetas">
             <div class="icono"><i class="icono fas fa-gift"></i></div>
             <h4 class="anunfoot">Ahorra hasta $2.500</h4>
-            <p class="anun_des">Solo por estar registrad@ en TP tenés envíos gratis en miles de productos. Es un beneficio de TP Puntos.</p>
+            <p class="anun_des">Solo por estar registrad@ en TP tenés envíos gratis en miles de productos. Es un
+                beneficio de TP Puntos.</p>
 
-        </section> 
+        </section>
         <section class="tarjetas">
             <div class="icono"><i class="icono fas fa-user-shield"></i></div>
             <h4 class="anunfoot">Seguridad, de principio a fin</h4>
-            <p class="anun_des">¿Tuviste problemas? ¡Reclamalo! En TP, no hay nada que no puedas hacer, porque estás siempre protegid@.</p>
-        </section> 
+            <p class="anun_des">¿Tuviste problemas? ¡Reclamalo! En TP, no hay nada que no puedas hacer, porque estás
+                siempre protegid@.</p>
+        </section>
         <div class="spc"></div>
         <span>
             <p class="cpyrgt">Copyright © 1999-2020 TravelPoint S.R.L.</p>
-        </span>  
-
-</footer>
+        </span>
 
     </footer>
-   
-   
+
+    </footer>
