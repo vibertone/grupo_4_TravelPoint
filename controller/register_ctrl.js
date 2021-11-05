@@ -1,6 +1,13 @@
-const register_ctrl = {register:(req,res)=>{
-    return res.render("register");
-    },
+const express = require ("express");
+const router = express.Router();
 
-}
-module.exports=register_ctrl
+router.get ("/register", (req,res)=>{
+    res.render("register",{
+         menu:"register"
+    
+    });
+
+});
+
+
+module.exports = router ;

@@ -1,14 +1,9 @@
-const express = require ('express');
+const ENDPOINTS = {
 
-const ENDPOINTS = express.Router();
-const index_ctrl = require("../controllers/index_ctrl");
-const login_ctrl = require("../controllers/login_ctrl");
-const register_ctrl = require("../controllers/register_ctrl");
+index:"/index",
+register:"/register",
+login:"/login",
 
+};
 
-ENDPOINTS.get('/',index);
-ENDPOINTS.get('/login',login);
-ENDPOINTS.get('/register',register);
-
-
-module.exports=ENDPOINTS;
+module.exports = ENDPOINTS;

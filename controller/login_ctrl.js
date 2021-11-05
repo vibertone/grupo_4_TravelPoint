@@ -1,6 +1,11 @@
-const login_ctrl = {login:(req,res)=>{
-    return res.render("login");
-    },
+const express = require ("express");
+const router = express.Router();
 
-}
-module.exports=login_ctrl
+router.get ("/login", (req,res)=>{
+    res.render("login",{
+         menu:"login"
+    
+    });
+
+});
+module.exports = router ;

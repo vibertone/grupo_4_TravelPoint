@@ -2,38 +2,24 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
-const publicPath = path.join(__dirname,'./public');
-app.use(express.static(publicPath));
+const index_ctrl = require ("./controller/index_ctrl");
+const login_ctrl = require ("./controller/login_ctrl");
+const register_ctrl = require ("./controller/register_ctrl");
+const ENDPOINTS = require("./routes/endpoints");
+//
+
+
+app.use(express.static(path.resolve(__dirname,"public")));
 app.listen(5000, ()=> {console.log("Levantando un servidor con Express pto 5000")});
 
-const endpoints = require("./routes/endpoints");
+
+
 app.set("view engine", "ejs"); 
-app.set('views',__dirname + '/views');
-app.use('/',endpoints);
+app.set('views',path.resolve(__dirname,"views"));
 
 
 
-//app.get("/", (req, res) => {
-//     let index = path.resolve(__dirname, "views/index.html");
-//     res.sendFile(index)
-// });
+app.use(ENDPOINTS.index, index_ctrl);
+app.use(ENDPOINTS.register, register_ctrl);
+app.use(ENDPOINTS.login, login_ctrl);
 
-// app.get("/register", (req, res) => {
-//     let register = path.resolve(__dirname, "views/register.html");
-//     res.sendFile(register)
-// })
-
-// app.get("/login", (req, res) => {
-//     let login = path.resolve(__dirname, "views/login.html");
-//     res.sendFile(login)
-// })
-
-// app.get("/productCart", (req, res) => {
-//     let productCart = path.resolve(__dirname, "views/productCart.html");
-//     res.sendFile(productCart)
-// })
-
-// app.get("/productDetail", (req, res) => {
-//     let productDetail = path.resolve(__dirname, "views/productDetail.html");
-//     res.sendFile(productDetail)
-// })
