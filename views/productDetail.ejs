@@ -2,55 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/65ae70675e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <title>Detalle de Producto</title>
+    <%- include('./partials/head') %> 
+    <title>Detalle del Producto</title>
 </head>
 
 <body>
-    <header>
-        <div class="logo-ayuda">
-            <a href="/"><img src="/img/Logo.png" alt="Logo" class="logo"></a>
-            <div class="ayuda">
-                <i class="fas fa-phone-alt"></i>
-                <a href="/productcart"><i class="fas fa-suitcase-rolling"></i></a>
-                <a href="/login"><i class="fas fa-user"></i></a>
-                <i class="fas fa-question-circle"></i>
-            </div>
-        </div>
-        <div class="opciones1">
-            <div>
-                <i class="fas fa-plane"></i>
-                <p> Vuelos </p>
-            </div>
-            <div>
-                <i class="fas fa-concierge-bell"></i>
-                <p> Hoteles </p>
-            </div>
-            <div>
-                <i class="fas fa-suitcase"></i>
-                <p> Paquetes </p>
-            </div>
-            <div>
-                <i class="fas fa-briefcase-medical"></i>
-                <p> Asistencias </p>
-            </div>
-            <div>
-                <i class="fas fa-car-side"></i>
-                <p> Autos </p>
-            </div>
-            <div>
-                <i class="fas fa-skiing-nordic"></i>
-                <p> Actividades </p>
-            </div>
-        </div>
-    </header>
+    <%- include('./partials/header') %>
     <main>
         <section class="vuelos">
             <div class="div-vuelo">

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>Detalle de tu vuelo</title>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+        <div>
+            <div>
+                <i class="fas fa-shopping-cart"></i>
+                <div>
+                    Detalle de tu compra
+                    Jue 22/10 al Mie 07/11 - 2 persona(s)
+                </div>
+            </div>
+            <div><i class="fas fa-angle-down"></i></div>
+            <div>
+                <p>TOTAL</p>
+                <p>$71.540</p>
+            </div>
+        </div>
+        <div class="apurate">
+            ¡Apurate, sólo quedan 2 lugares!
+        </div>
+        <div class="pago">
+            <div>¿Como querés pagar?</div>
+            <ul>
+                <li>
+                    <input type="radio" name="pago" id="pago" value="credito"><label for="pago">Tarjeta de
+                        crédito</label>
+                    <input type="radio" name="pago" id="pago" value="debito"><label for="pago">Tarjeta de débito</label>
+                    <input type="radio" name="pago" id="pago" value="2 tarjetas"><label for="pago">Pagar con 2
+                        tarjetas</label>
+                </li>
+            </ul>
+        </div>
+        <form action="/" method="">
+            <h2>Ingresá los datos de la tarjeta</h2>
+            <p>
+                <label for="nro-tarjeta">NÚMERO DE TARJETA</label>
+                <input type="number" name="nro-tarjeta" id="nro-tarjeta" placeholder="Ingresá el número de tu tarjeta"
+                    required>
+            </p>
+            <p>
+                <label for="titular-tarjeta">TITULAR DE LA TARJETA</label>
+                <input type="text" name="titular-tarjeta" id="titular-tarjeta" placeholder="Como figura en la tarjeta"
+                    required>
+            </p>
+            <p>
+                <label for="vencimiento-tarjeta">VENCIMIENTO DE LA TARJETA</label>
+                <input type="text" name="vencimiento-tarjeta" id="vencimiento-tarjeta" placeholder="MM/AA" maxlength="5"
+                    required>
+            </p>
+            <p>
+                <label for="codigo-tarjeta">COD. DE SEGURIDAD</label>
+                <input type="number" name="codigo-tarjeta" id="codigo-tarjeta" maxlength="4" required>
+            </p>
+            <p>
+                <label for="documento-tarjeta">DOCUMENTO DEL TITULAR DE LA TARJETA</label>
+                <input type="number" name="documento-tarjeta" id="documento-tarjeta" placeholder="Ej: 12549325"
+                    maxlength="8" required>
+            </p>
+            <p>
+            <p>SEXO</p>
+            <label for="sexo">M</label><input type="radio" name="sexo" id="M" value="M" checked>
+            <label for="sexo">F</label><input type="radio" name="sexo" id="F" value="F">
+            </p>
+            <hr>
+            <p>
+                <select id="cuotas" name="cuotas" required>
+                    <option value="cuotas" selected>Cuotas</option>
+                    <option value="1">1 cuota</option>
+                    <option value="2">2 cuotas</option>
+                    <option value="3">3 cuotas</option>
+                    <option value="4">4 cuotas</option>
+                    <option value="5">5 cuotas</option>
+                    <option value="6">6 cuotas</option>
+                </select>
+            </p>
+        </form>
+
+</body>
+
+</html>

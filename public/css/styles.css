@@ -26,6 +26,10 @@ body {
     justify-content: space-around;
 }
 
+.ayuda a{
+    color: #222222;
+}
+
 .opciones1 {
     display: flex;
     justify-content: space-around;
