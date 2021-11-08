@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <%- include('./partials/header') %>
+   <main> <%- include('./partials/header') %>
     <h1 class="titulo-productos">Lista de Productos</h1>
 
     <form>
@@ -16,16 +16,54 @@
         </div>
     
         <div class="producto">
-            <h4>Ida EZE-MIA | Vuelta MIA-EZE</h4>
-            <button type="button">Editar</button>
+            <div class="tituloydescrip">
+                <img src="./img/miami.jpg" class="img-miami1">
+                <h4>Ida EZE-MIA | Vuelta MIA-EZE</h4>
+            </div>
+            <button type="button" class="boton-edit">Editar</button>
         </div>
             
         <div class="producto">
-            <h4>The Ritz-Carlton Bal Harbour, Miami</h4>
-            <button type="button">Editar</button>
+            <div class="tituloydescrip">
+                <img src="./img/miami.jpg" class="img-miami1">
+                <h4>The Ritz-Carlton Bal Harbour, Miami</h4>
+            </div>
+            <button type="button" class="boton-edit">Editar</button>
         </div>
     
     </form>
+
+   </main>
+
+   <footer>
+    <section class="tarjetas">
+        <div class="icono">
+            <p class="icono fas fa-credit-card"></p>
+        </div>
+        <h4 class="anunfoot">Pagá con tarjeta o en efectivo</h4>
+        <p class="anun_des">Con TV Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y
+            siempre es seguro!</p>
+
+    </section>
+    <section class="tarjetas">
+        <div class="icono"><i class="icono fas fa-gift"></i></div>
+        <h4 class="anunfoot">Ahorra hasta $2.500</h4>
+        <p class="anun_des">Solo por estar registrad@ en TP tenés envíos gratis en miles de productos. Es un
+            beneficio de TP Puntos.</p>
+
+    </section>
+    <section class="tarjetas">
+        <div class="icono"><i class="icono fas fa-user-shield"></i></div>
+        <h4 class="anunfoot">Seguridad, de principio a fin</h4>
+        <p class="anun_des">¿Tuviste problemas? ¡Reclamalo! En TP, no hay nada que no puedas hacer, porque estás
+            siempre protegid@.</p>
+    </section>
+    <div class="spc"></div>
+    <span>
+        <p class="cpyrgt">Copyright © 1999-2020 TravelPoint S.R.L.</p>
+    </span>
+
+</footer> 
 
 
 </body>

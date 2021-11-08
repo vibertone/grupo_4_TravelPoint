@@ -528,4 +528,25 @@ h4.anunfoot {
     display: flex;
     justify-content: flex-end;
     margin-right: 30px;
+    height: 30px;
+}
+
+.boton-edit {
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+}
+
+.img-miami1 {
+    width: 20%;
+    border-radius: 10px;
+}
+
+.tituloydescrip {
+    display: flex;
+}
+
+.tituloydescrip h4 {
+    margin-left: 20px;
+    max-width: 30%;
 }
