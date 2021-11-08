@@ -9,6 +9,8 @@ const registerRoutes = require("./routes/register")
 const productDetailRoutes = require("./routes/productDetail");
 const productCartRoutes = require("./routes/productCart");
 const flightDetail = require("./routes/flightDetail");
+const { productList } = require("./controllers/productList_ctrl");
+const productListRoutes = require ("./routes/productList");
 
 app.use(express.static('./public'));
 app.listen(5000, () => {
@@ -24,3 +26,4 @@ app.use(('/register'), registerRoutes);
 app.use(('/productDetail'), productDetailRoutes);
 app.use(('/productCart'), productCartRoutes);
 app.use(('/flightDetail'), flightDetail);
+app.use (('/productList'), productListRoutes)

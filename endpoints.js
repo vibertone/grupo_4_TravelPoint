@@ -4,7 +4,8 @@ const ENDPOINTS = {
     "LOGIN": "/",
     "PRODUCTDETAIL": "/",
     "PRODUCTCART": "/",
-    "FLIGHTDETAIL": "/"
+    "FLIGHTDETAIL": "/",
+    "PRODUCTLIST": "/",
 };
 
 module.exports = ENDPOINTS;
