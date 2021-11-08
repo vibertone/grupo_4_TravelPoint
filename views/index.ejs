@@ -2,55 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/65ae70675e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <title>Proyecto</title>
+    <%- include('./partials/head') %> 
+    <title>Inicio</title>
 </head>
 
 <body>
-    <header>
-        <div class="logo-ayuda">
-            <a href="/"><img src="/img/Logo.png" alt="Logo" class="logo"></a>
-            <div class="ayuda">
-                <i class="fas fa-phone-alt"></i>
-                <a href="/productcart"><i class="fas fa-suitcase-rolling"></i></a>
-                <a href="/login"><i class="fas fa-user"></i></a>
-                <i class="fas fa-question-circle"></i>
-            </div>
-        </div>
-        <div class="opciones1">
-            <div>
-                <i class="fas fa-plane"></i>
-                <p> Vuelos </p>
-            </div>
-            <div>
-                <i class="fas fa-concierge-bell"></i>
-                <p> Hoteles </p>
-            </div>
-            <div>
-                <i class="fas fa-suitcase"></i>
-                <p> Paquetes </p>
-            </div>
-            <div>
-                <i class="fas fa-briefcase-medical"></i>
-                <p> Asistencias </p>
-            </div>
-            <div>
-                <i class="fas fa-car-side"></i>
-                <p> Autos </p> 
-            </div>
-            <div>
-                <i class="fas fa-skiing-nordic"></i>
-                <p> Actividades </p>
-            </div>
-        </div>
-    </header>
+    <%- include('./partials/header') %>
     <main>
         <div class="buscar-vuelo">
             <div class="opcion-destino">
@@ -85,16 +42,18 @@
             </form>
         </div>
         <section class="vuelos">
-            <a href="/productdetail"><article>
-                <div class="imagen-destino">
-                    <img src="/img/barcelona.jpg" alt="barcelona">
-                    <div class="descripcion-vuelos">
-                        <p>Barcelona</p>
-                        <p class="desde">Desde Buenos Aires</h5>
-                        <p>$110.609</p>
+            <a href="/productDetail">
+                <article>
+                    <div class="imagen-destino">
+                        <img src="/img/barcelona.jpg" alt="barcelona">
+                        <div class="descripcion-vuelos">
+                            <p>Barcelona</p>
+                            <p class="desde">Desde Buenos Aires</h5>
+                            <p>$110.609</p>
+                        </div>
                     </div>
-                </div>
-            </article></a>
+                </article>
+            </a>
             <article>
                 <div class="imagen-destino">
                     <img src="/img/bariloche.jfif" alt="bariloche">
