@@ -1,13 +1,534 @@
 * {
     box-sizing: border-box;
 }
-
+header{background-color: #154b9c;}
 /* Fede */
 
 body {
     font-family: 'Roboto', sans-serif;
     width: 100vw;
+    
 }
+header p{color: white;}
+main p{color: black;}
+
+/*clases de header*/
+
+.logo { width: 20vw;}
+
+.logo-ayuda {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     
+}
+
+.ayuda {
+    width: 40vw;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ayuda a{
+    color: #222222;
+}
+
+.opciones1 {
+    display: flex;
+    justify-content: space-around;
+    font-size: 26px;
+    background-color: #154b9c;
+
+}
+
+.opciones1 div {
+    text-align: center;
+}
+
+.opciones1 p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+.opciones1 i {
+    border: none;
+    border-radius: 15px;
+    padding: 8px;
+    color: white;
+}
+
+header {
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.buscar-vuelo {
+    background-color: #c4e4ff;
+    
+}
+
+.opcion-destino {
+    display: flex;
+    justify-content: space-around;
+    font-weight: 400;
+    margin: 0 100px;
+}
+
+.opcion-destino p {
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.opciones-vuelos {
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+}
+
+.opciones-vuelos p input {
+    border: none;
+    width: 45vw;
+    padding: 25px;
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: center;
+    background-color: white;
+}
+
+.fecha-pasajeros {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fecha-pasajeros p input {
+    border: none;
+    width: 45vw;
+    padding: 25px;
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: center;
+    background-color: white;
+}
+
+.opcion-sin-fecha {
+    margin-top: 0;
+    padding-left: 15px;
+}
+
+.opcion-sin-fecha label {
+    padding-right: 15px;
+}
+
+.buscar-vuelo form button {
+    border: none;
+    border-radius: 5px;
+    background-color: #154b9c;
+    width: 100px;
+    padding: 15px;
+    display: block;
+    
+}
+
+article {
+    margin-bottom: 25px;
+}
+
+main {
+    background-color: #e6e6e6;
+}
+
+.vuelos article .imagen-destino {
+    position: relative;
+    width: 45vw;
+}
+
+.vuelos article div img {
+    width: 45vw;
+    height: 40vw;
+    border-radius: 20px;
+}
+
+.descripcion-vuelos {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.descripcion-vuelos p {
+    line-height: 0;
+    font-size: 22px;
+}
+
+.vuelos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+.buscar-vuelos-baratos {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.buscar-vuelos-baratos input {
+    margin-top: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 50%;
+    height: 30px;
+}
+
+.button1 {
+    border: solid 1px gray;
+    border-radius: 5px;
+}
+
+.desde {
+    font-weight: 300;
+}
+
+/* Vicky */
+
+.login {
+
+    
+    width: 100vw;
+    background-color: #c4e4ff;
+    margin: auto;
+    padding: 0px;
+    text-align: center;
+}
+
+.apis {
+    display: flex;
+    justify-content: center;
+}
+
+.login button {
+    border: solid 1px gray;
+    border-radius: 5px;
+    width: 100px;
+    padding: 10px;
+}
+
+/*----exclusivo de register*/
+
+.login input {
+    width: 60%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: gray 0%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-style: none;
+}
+
+.login select {
+    width: 60%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border: none;
+    color: gray;
+}
+
+/* Feli */
+
+.carrito {
+    background-color: #c4e4ff;
+}
+
+.titulos {
+    margin-left: 5px;
+}
+
+.buscar {
+    display: block;
+    color: #154b9c;
+}
+
+.pass {
+    padding-bottom: 20px;
+}
+
+.email {
+    padding-bottom: 20px;
+}
+
+.formularios input {
+    width: 80%;
+    height: 80%;
+    padding: 100px;
+    margin: 30px 100px;
+    border: gray 0%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-style: none;
+}
+
+.carrito button {
+    border: solid 1px gray;
+    border-radius: 5px;
+    align-content: center;
+    margin-left: 50px;
+}
+
+.contain-subtitulo {
+    display: flex;
+    ;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.subtitulo2 {
+    margin-left: 730px;
+    margin-right: 80px;
+}
+
+.cuerpo-carrito1 {
+    background-color: white;
+    width: 55%;
+    height: 100px;
+    margin-left: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px #999;
+}
+
+.cuerpo-carrito2 {
+    background-color: white;
+    width: 9%;
+    height: 100px;
+    margin-left: 20px;
+    margin-right: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px #999;
+}
+
+.cuerpo-carrito3 {
+    background-color: white;
+    width: 24%;
+    height: 100px;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px #999;
+}
+
+.formularios button {
+    margin-left: 1300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.img-miami {
+    margin-left: 60px;
+    margin-top: 20px;
+    width: 25%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px #999;
+    max-height: 270px;
+}
+
+.subtitulo4 {
+    font-size: 20px;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.detalle-compra {
+    display: flex;
+}
+
+.texto-idayvuelta {
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+.vuelta {
+    margin-left: 80px;
+}
+
+.texto-detalle {
+    display: flex;
+    flex-direction: column;
+}
+
+.hab-lujo {
+    margin-top: 30px;
+    margin-left: 25px;
+    max-width: 400px;
+}
+
+.texto-total {
+    margin-left: 25px;
+    margin-bottom: 50px;
+    margin-top: 12px;
+}
+
+.subtotal2 {
+    margin-left: 340px;
+}
+
+.totalsinimp2 {
+    margin-left: 262px;
+}
+
+.imp2 {
+    margin-left: 322px;
+}
+
+.totalconimp2 {
+    margin-left: 205px;
+}
+
+footer {
+    height: 200px;
+}
+
+/* PRODUCT DETAIL */
+
+.div-vuelo {
+    width: 95%;
+    background-color: white;
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.div-vuelo:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0;
+}
+
+.vuelos {
+    padding-top: 40px;
+    margin: auto;
+}
+
+.escalas{
+    opacity: 0.5;
+    font-size: 14px;
+    font-weight: 200;
+    text-align: center;
+    width: 30%;
+}
+
+.div-vuelo h3{
+    background-color: #e6e6e6;
+}
+
+.price {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.price-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    border-top: 1px solid gray;
+    padding-top: 15px;
+}
+
+.price-button button{
+    border: none;
+    border-radius: 10px;
+    background-color: #154b9c;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.detalle-de-vuelo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ESTILOS DEL FOOTER*/
+
+footer {
+    margin: 1em 1.5em 1em 1.5em;
+}
+
+.tarjetas {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.icono {
+    size: 2em;
+    text-align: center;
+    color: #154b9c;
+    font-size: 30px;
+    margin: 1em 0em 10px 0em;
+}
+
+h4.anunfoot {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    font-size: medium;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.anun_des {
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    width: 80%;
+    color: #666;
+    justify-content: center;
+    text-justify: distribute;
+    justify-items: center;
+}
+
+.cpyrgt {
+    text-align: left;
+    font-size: x-small;
+    margin: 0px;
+}
+
+@media (min-width:460px) {/*tablet*/
+
+}
+
+@media (min-width:768px) {/*desktop*/
+
+}/*clases de header*/
 
 .logo {
     width: 20vw;
@@ -47,7 +568,7 @@ body {
 }
 
 .opciones1 i {
-    border: black solid 1px;
+    border: none;
     border-radius: 15px;
     padding: 8px;
 }
@@ -64,8 +585,9 @@ header {
 .opcion-destino {
     display: flex;
     justify-content: space-around;
-    font-weight: 400;
+    font-weight:700;
     margin: 0 100px;
+    font-size: smaller;
 }
 
 .opcion-destino p {
@@ -98,7 +620,7 @@ header {
     width: 45vw;
     padding: 25px;
     border-radius: 5px;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     background-color: white;
 }
@@ -106,6 +628,7 @@ header {
 .opcion-sin-fecha {
     margin-top: 0;
     padding-left: 15px;
+    font-size: x-small;
 }
 
 .opcion-sin-fecha label {
@@ -115,8 +638,9 @@ header {
 .buscar-vuelo form button {
     border: none;
     border-radius: 5px;
-    background-color: #3495eb;
+    background-color: #154b9c;
     width: 100px;
+    color:white ;
     padding: 15px;
     display: block;
     margin: auto;
@@ -215,6 +739,8 @@ main {
     border-radius: 5px;
     width: 100px;
     padding: 10px;
+    color: white;
+    background-color: #154b9c;
 }
 
 /*----exclusivo de register*/
@@ -251,7 +777,7 @@ main {
 
 .buscar {
     display: block;
-    color: blue;
+    color: #154b9c;
 }
 
 .pass {
@@ -481,7 +1007,7 @@ footer {
 .icono {
     size: 2em;
     text-align: center;
-    color: #1259c3;
+    color: #154b9c;
     font-size: 30px;
     margin: 1em 0em 10px 0em;
 }
