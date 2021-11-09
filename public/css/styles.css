@@ -138,6 +138,8 @@ article {
 
 main {
     background-color: #e6e6e6;
+    padding: 0.5%;
+    padding-bottom: 5%;
 }
 
 .vuelos article .imagen-destino {
@@ -1114,7 +1116,12 @@ h4.anunfoot {
 }
 
 .img-miami1 {
-    width: 20%;
+    width: 27%;
+    border-radius: 10px;
+}
+
+.img-ritz {
+    width: 36%;
     border-radius: 10px;
 }
 
@@ -1125,4 +1132,16 @@ h4.anunfoot {
 .tituloydescrip h4 {
     margin-left: 20px;
     max-width: 30%;
+}
+
+.tituloydescrip p {
+    margin-left: 20px;
+}
+
+.tituloydescrip h3 {
+    margin-left: 20px;
+}
+
+.descrip-producto {
+    width: 70%;
 }
