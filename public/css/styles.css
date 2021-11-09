@@ -3,6 +3,7 @@
 }
 
 /* Fede */
+/* index */
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -24,6 +25,10 @@ body {
     font-size: 25px;
     display: flex;
     justify-content: space-around;
+}
+
+.ayuda a{
+    color: #222222;
 }
 
 .opciones1 {
@@ -124,6 +129,7 @@ article {
 
 main {
     background-color: #e6e6e6;
+    padding-top: 20px;
 }
 
 .vuelos article .imagen-destino {
@@ -188,6 +194,54 @@ main {
 
 .desde {
     font-weight: 300;
+}
+
+/* flight detail */
+
+.container-1 {
+    width: 95%;
+    background-color: white;
+    border-radius: 25px;
+    padding: 20px;
+    margin: auto;
+}
+
+.container-1 .sub-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-1 .sub-1 .info{
+    padding: 0 70px 0 10px;
+}
+
+.container-1 .sub-1 .icon-cart{
+    font-size: 22px;
+}
+
+.container-1 .sub-1 .flecha{
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.info-fecha{
+    font-size: 12px;
+}
+
+.container-1 .sub-2{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.container-1 .sub-2 .total{
+    font-size: 20px;
+}
+
+.container-1 .sub-2 .valor{
+    font-size: 24px;
+    font-weight: 700;
 }
 
 /* Vicky */
@@ -506,4 +560,43 @@ h4.anunfoot {
     text-align: left;
     font-size: x-small;
     margin: 0px;
+}
+
+.producto {
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.titulo-productos {
+    margin-left: 30px;
+}
+
+.btn-agregarproducto {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+    height: 30px;
+}
+
+.boton-edit {
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+}
+
+.img-miami1 {
+    width: 20%;
+    border-radius: 10px;
+}
+
+.tituloydescrip {
+    display: flex;
+}
+
+.tituloydescrip h4 {
+    margin-left: 20px;
+    max-width: 30%;
 }

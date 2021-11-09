@@ -2,38 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/31b9fa39aa.js" crossorigin="anonymous"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script> window.fbAsyncInit = function () {
-            FB.init({
-                appId: '402008404714331',
-                cookie: true,
-                xfbml: true,
-                version: '11'
-            });
-
-            FB.AppEvents.logPageView();
-
-        };
-
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-
-    <meta name="google-signin-client_id" content="AIzaSyBrscPUe1Wa8k9ufXG9n5rUPN0gh-8WMJU">
-
+    <%- include('./partials/head') %> 
     <title>Carrito</title>
 </head>
 
@@ -42,92 +11,81 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v12.0"
         nonce="VFH2JtUh"></script>
-
-    <header>
-        <div class="logo-ayuda">
-            <a href="/"><img src="/img/Logo.png" alt="Logo" class="logo"></a>
-            <div class="ayuda">
-                <i class="fas fa-phone-alt"></i>
-                <a href="/productcart"><i class="fas fa-suitcase-rolling"></i></a>
-                <a href="/login"><i class="fas fa-user"></i></a>
-                <i class="fas fa-question-circle"></i>
+    <%- include('./partials/header') %>
+        <main class="carrito">
+            <div class="cabezera-main">
+                <h1 class="titulos">Mi compra</h1>
+                <div><button type="submit">Continuar</button></div>
             </div>
-        </div>
-
-    </header>
-    <main class="carrito">
-
-        <div class="cabezera-main">
-            <h1 class="titulos">Mi compra</h1>
-            <div><button type="submit">Continuar</button></div>
-        </div>
-        <div class="contain-subtitulo">
-            <div class="subtitulo1">producto</div>
-            <div class="subtitulo2">cantidad</div>
-            <div class="subtitulo3">subtotal</div>
-        </div>
-        <form class="formularios">
-            <div class="accede">
-                <div class="cuerpo-carrito1">Nombre del producto</div>
-                <input type="number" class="cuerpo-carrito2" placeholder="cantidad"></input>
-                <div class="cuerpo-carrito3">Subtotal del producto</div>
+            <div class="contain-subtitulo">
+                <div class="subtitulo1">producto</div>
+                <div class="subtitulo2">cantidad</div>
+                <div class="subtitulo3">subtotal</div>
             </div>
-
-            <div class="accede">
-                <div class="cuerpo-carrito1">Nombre del producto</div>
-                <input type="number" class="cuerpo-carrito2" placeholder="cantidad"></input>
-                <div class="cuerpo-carrito3">Subtotal del producto</div>
-            </div>
-
-            <div class="accede">
-                <div class="cuerpo-carrito1">Nombre del producto</div>
-                <input type="number" class="cuerpo-carrito2" placeholder="cantidad"></input>
-                <div class="cuerpo-carrito3">Subtotal del producto</div>
-            </div>
-            <div class="subtitulo4">Detalles de su compra</div>
-            <div class="detalle-compra">
-                <img src="./img/miami.jpg" class="img-miami">
-                <div class="texto-detalle">
-                    <div class="texto-idayvuelta">
-                        <span class="ida">IDA EZE-MIA</span>
-                        <span class="vuelta">VUELTA MIA-EZE</span>
-                    </div>
-                    <div class="hab-lujo">Habitación Doble de Lujo con Vista al Océano</div>
-                    <div class="hab-lujo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            <form class="formularios">
+                <div class="accede">
+                    <div class="cuerpo-carrito1">Nombre del producto</div>
+                    <input type="number" class="cuerpo-carrito2" placeholder="cantidad"></input>
+                    <div class="cuerpo-carrito3">Subtotal del producto</div>
                 </div>
 
-                <div class="texto-total">
-                    <div class="texto-total">
-                        <span class="subtotal1">subtotal</span>
-                        <span class="subtotal2">$86.000</span>
+                <div class="accede">
+                    <div class="cuerpo-carrito1">Nombre del producto</div>
+                    <input type="number" class="cuerpo-carrito2" placeholder="cantidad"></input>
+                    <div class="cuerpo-carrito3">Subtotal del producto</div>
+                </div>
+
+                <div class="accede">
+                    <div class="cuerpo-carrito1">Nombre del producto</div>
+                    <input type="number" class="cuerpo-carrito2" placeholder="cantidad"></input>
+                    <div class="cuerpo-carrito3">Subtotal del producto</div>
+                </div>
+                <div class="subtitulo4">Detalles de su compra</div>
+                <div class="detalle-compra">
+                    <img src="./img/miami.jpg" class="img-miami">
+                    <div class="texto-detalle">
+                        <div class="texto-idayvuelta">
+                            <span class="ida">IDA EZE-MIA</span>
+                            <span class="vuelta">VUELTA MIA-EZE</span>
+                        </div>
+                        <div class="hab-lujo">Habitación Doble de Lujo con Vista al Océano</div>
+                        <div class="hab-lujo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit
+                            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                     </div>
+
                     <div class="texto-total">
-                        <span class="totalsinimp1">total sin impuestos</span>
-                        <span class="totalsinimp2">$86.000</span>
-                    </div>
-                    <div class="texto-total">
-                        <span class="imp1">impuestos</span>
-                        <span class="imp2">$86.000</span>
-                    </div>
-                    <div class="texto-total">
-                        <span class="totalconimp1">total incluyendo impuestos</span>
-                        <span class="totalconimp2">$86.000</span>
+                        <div class="texto-total">
+                            <span class="subtotal1">subtotal</span>
+                            <span class="subtotal2">$86.000</span>
+                        </div>
+                        <div class="texto-total">
+                            <span class="totalsinimp1">total sin impuestos</span>
+                            <span class="totalsinimp2">$86.000</span>
+                        </div>
+                        <div class="texto-total">
+                            <span class="imp1">impuestos</span>
+                            <span class="imp2">$86.000</span>
+                        </div>
+                        <div class="texto-total">
+                            <span class="totalconimp1">total incluyendo impuestos</span>
+                            <span class="totalconimp2">$86.000</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <button type="reset">Borrar</button>
-            <button type="submit">Continuar</button>
-        </form>
-
-    </main>
-    <footer>
+                <button type="reset">Borrar</button>
+                <button type="submit">Continuar</button>
+            </form>
+        </main>
+        <footer>
 
 
-    </footer>
+        </footer>
 </body>
 
 </html>
