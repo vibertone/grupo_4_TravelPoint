@@ -1,27 +1,38 @@
 * {
     box-sizing: border-box;
 }
-header{background-color: #154b9c;}
+
+header {
+    background-color: #154b9c;
+}
+
 /* Fede */
+
 /* index */
 
 body {
     font-family: 'Roboto', sans-serif;
     width: 100vw;
-    
 }
-header p{color: white;}
-main p{color: black;}
+
+header p {
+    color: white;
+}
+
+main p {
+    color: black;
+}
 
 /*clases de header*/
 
-.logo { width: 20vw;}
+.logo {
+    width: 20vw;
+}
 
 .logo-ayuda {
     display: flex;
     justify-content: space-between;
     align-items: center;
-     
 }
 
 .ayuda {
@@ -31,7 +42,7 @@ main p{color: black;}
     justify-content: space-around;
 }
 
-.ayuda a{
+.ayuda a {
     color: #222222;
 }
 
@@ -40,7 +51,6 @@ main p{color: black;}
     justify-content: space-around;
     font-size: 26px;
     background-color: #154b9c;
-
 }
 
 .opciones1 div {
@@ -67,7 +77,6 @@ header {
 
 .buscar-vuelo {
     background-color: #c4e4ff;
-    
 }
 
 .opcion-destino {
@@ -129,7 +138,6 @@ header {
     width: 100px;
     padding: 15px;
     display: block;
-    
 }
 
 article {
@@ -209,8 +217,6 @@ main {
 /* Vicky */
 
 .login {
-
-    
     width: 100vw;
     background-color: #c4e4ff;
     margin: auto;
@@ -434,7 +440,7 @@ footer {
     margin: auto;
 }
 
-.escalas{
+.escalas {
     opacity: 0.5;
     font-size: 14px;
     font-weight: 200;
@@ -442,7 +448,7 @@ footer {
     width: 30%;
 }
 
-.div-vuelo h3{
+.div-vuelo h3 {
     background-color: #e6e6e6;
 }
 
@@ -451,7 +457,7 @@ footer {
     font-weight: 600;
 }
 
-.price-button{
+.price-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -460,7 +466,7 @@ footer {
     padding-top: 15px;
 }
 
-.price-button button{
+.price-button button {
     border: none;
     border-radius: 10px;
     background-color: #154b9c;
@@ -471,7 +477,7 @@ footer {
     cursor: pointer;
 }
 
-.detalle-de-vuelo{
+.detalle-de-vuelo {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -525,13 +531,15 @@ h4.anunfoot {
     margin: 0px;
 }
 
-@media (min-width:460px) {/*tablet*/
-
+@media (min-width:460px) {
+    /*tablet*/
 }
 
-@media (min-width:768px) {/*desktop*/
+@media (min-width:768px) {
+    /*desktop*/
+}
 
-}/*clases de header*/
+/*clases de header*/
 
 .logo {
     width: 20vw;
@@ -550,7 +558,7 @@ h4.anunfoot {
     justify-content: space-around;
 }
 
-.ayuda a{
+.ayuda a {
     color: #222222;
 }
 
@@ -588,7 +596,7 @@ header {
 .opcion-destino {
     display: flex;
     justify-content: space-around;
-    font-weight:700;
+    font-weight: 700;
     margin: 0 100px;
     font-size: smaller;
 }
@@ -643,7 +651,7 @@ header {
     border-radius: 5px;
     background-color: #154b9c;
     width: 100px;
-    color:white ;
+    color: white;
     padding: 15px;
     display: block;
     margin: auto;
@@ -732,40 +740,40 @@ main {
     margin: auto;
 }
 
-.container-1 .sub-1{
+.container-1 .sub-1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.container-1 .sub-1 .info{
+.container-1 .sub-1 .info {
     padding: 0 70px 0 10px;
 }
 
-.container-1 .sub-1 .icon-cart{
+.container-1 .sub-1 .icon-cart {
     font-size: 22px;
 }
 
-.container-1 .sub-1 .flecha{
+.container-1 .sub-1 .flecha {
     font-size: 22px;
     cursor: pointer;
 }
 
-.info-fecha{
+.info-fecha {
     font-size: 12px;
 }
 
-.container-1 .sub-2{
+.container-1 .sub-2 {
     display: flex;
     justify-content: space-between;
     padding: 0 10px;
 }
 
-.container-1 .sub-2 .total{
+.container-1 .sub-2 .total {
     font-size: 20px;
 }
 
-.container-1 .sub-2 .valor{
+.container-1 .sub-2 .valor {
     font-size: 24px;
     font-weight: 700;
 }
@@ -999,7 +1007,7 @@ footer {
     margin: auto;
 }
 
-.escalas{
+.escalas {
     opacity: 0.5;
     font-size: 14px;
     font-weight: 200;
@@ -1007,7 +1015,7 @@ footer {
     width: 30%;
 }
 
-.div-vuelo h3{
+.div-vuelo h3 {
     background-color: #e6e6e6;
 }
 
@@ -1016,7 +1024,7 @@ footer {
     font-weight: 600;
 }
 
-.price-button{
+.price-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1025,7 +1033,7 @@ footer {
     padding-top: 15px;
 }
 
-.price-button button{
+.price-button button {
     border: none;
     border-radius: 10px;
     background-color: #3495eb;
@@ -1036,7 +1044,7 @@ footer {
     cursor: pointer;
 }
 
-.detalle-de-vuelo{
+.detalle-de-vuelo {
     display: flex;
     justify-content: space-between;
     align-items: center;
