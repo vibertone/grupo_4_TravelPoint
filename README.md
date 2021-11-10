@@ -15,7 +15,7 @@
 - Por otro lado los servicios de hoteleria forman parte de nuestra clientela ya que nosotros nos relacionamos con ellos en el area de vuelos + estadía.
 
 *integrantes:*
-Victoria Francisco Federico Felipe
+Victoria Federico Felipe
 
 *Plataforma utilizada para organizar el trabajo*
 https://github.com/vibertone/grupo_4_TravelPoint/projects/1
@@ -35,3 +35,7 @@ KIWI.COM: https://www.kiwi.com/
 
 WIREFRAMES 
 https://github.com/vibertone/grupo_4_TravelPoint/tree/main/public/design
+
+
+Retrospectivas y otras ceremonias
+https://github.com/vibertone/grupo_4_TravelPoint/public/otros/
