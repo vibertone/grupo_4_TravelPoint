@@ -2,135 +2,136 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head') %> 
-    <title>Inicio</title>
+    <%- include('./partials/head') %>
+        <title>Inicio</title>
 </head>
 
 <body>
     <%- include('./partials/header') %>
-    <main>
-        <div class="buscar-vuelo">
-            <div class="opcion-destino">
-                <p>Ida y Vuelta</p>
-                <p>Solo ida</p>
-                <p>Multidestino</p>
+        <main>
+            <div class="buscar-vuelo">
+                <div class="opcion-destino">
+                    <p>Ida y Vuelta</p>
+                    <p>Solo ida</p>
+                    <p>Multidestino</p>
+                </div>
+                <form action="/" method="">
+                    <div class="opciones-vuelos">
+                        <p>
+                            <input type="search" name="Origen" placeholder="Origen">
+                        </p>
+                        <p>
+                            <input type="search" name="Destino" placeholder="Destino">
+                        </p>
+                    </div>
+                    <div class="fecha-pasajeros">
+                        <p>
+                            <input type="date" name="fechas" id="fechas">
+                        </p>
+                        <p>
+                            <input type="number" name="cant-pasajeros" id="cant-pasajeros" placeholder="Pasajeros">
+                        </p>
+                    </div>
+                    <p class="opcion-sin-fecha">
+                        <label for="sin fecha">Todavía no decidí la fecha</label><input type="checkbox" name="sin fecha"
+                            id="sin fecha">
+                    </p>
+                    <p>
+                        <button type="submit">Buscar</button>
+                    </p>
+                </form>
             </div>
-            <form action="/" method="">
-                <div class="opciones-vuelos">
-                    <p>
-                        <input type="search" name="Origen" placeholder="Origen">
-                    </p>
-                    <p>
-                        <input type="search" name="Destino" placeholder="Destino">
-                    </p>
-                </div>
-                <div class="fecha-pasajeros">
-                    <p>
-                        <input type="date" name="fechas" id="fechas">
-                    </p>
-                    <p>
-                        <input type="number" name="cant-pasajeros" id="cant-pasajeros" placeholder="Pasajeros">
-                    </p>
-                </div>
-                <p class="opcion-sin-fecha">
-                    <label for="sin fecha">Todavía no decidí la fecha</label><input type="checkbox" name="sin fecha"
-                        id="sin fecha">
-                </p>
-                <p>
-                    <button type="submit">Buscar</button>
-                </p>
-            </form>
-        </div>
-        <section class="vuelos">
-            <a href="/productDetail">
+            <section class="vuelos">
+                <a href="/productDetail">
+                    <article>
+                        <div class="imagen-destino">
+                            <img src="/img/barcelona.jpg" alt="barcelona">
+                            <div class="descripcion-vuelos">
+                                <p>Barcelona</p>
+                                <p class="desde">Desde Buenos Aires</p>
+                                <p>$110.609</p>
+                            </div>
+                        </div>
+                    </article>
+                </a>
                 <article>
                     <div class="imagen-destino">
-                        <img src="/img/barcelona.jpg" alt="barcelona">
+                        <img src="/img/bariloche.jfif" alt="bariloche">
                         <div class="descripcion-vuelos">
-                            <p>Barcelona</p>
-                            <p class="desde">Desde Buenos Aires</h5>
-                            <p>$110.609</p>
+                            <p>Bariloche</p>
+                            <p class="desde">Desde Buenos Aires</p>
+                            <p>$8.861</p>
                         </div>
                     </div>
                 </article>
-            </a>
-            <article>
-                <div class="imagen-destino">
-                    <img src="/img/bariloche.jfif" alt="bariloche">
-                    <div class="descripcion-vuelos">
-                        <p>Bariloche</p>
-                        <p class="desde">Desde Buenos Aires</h5>
-                        <p>$8.861</p>
+                <article>
+                    <div class="imagen-destino">
+                        <img src="/img/cancun.jfif" alt="cancun">
+                        <div class="descripcion-vuelos">
+                            <p>Cancun</p>
+                            <p class="desde">Desde Buenos Aires</p>
+                            <p>$77.875</p>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <article>
-                <div class="imagen-destino">
-                    <img src="/img/cancun.jfif" alt="cancun">
-                    <div class="descripcion-vuelos">
-                        <p>Cancun</p>
-                        <p class="desde">Desde Buenos Aires</h5>
-                        <p>$77.875</p>
+                </article>
+                <article>
+                    <div class="imagen-destino">
+                        <img src="/img/madrid.jpg" alt="madrid">
+                        <div class="descripcion-vuelos">
+                            <p>Madrid</p>
+                            <p class="desde">Desde Buenos Aires</p>
+                            <p>$106.127</p>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <article>
-                <div class="imagen-destino">
-                    <img src="/img/madrid.jpg" alt="madrid">
-                    <div class="descripcion-vuelos">
-                        <p>Madrid</p>
-                        <p class="desde">Desde Buenos Aires</h5>
-                        <p>$106.127</p>
+                </article>
+                <article>
+                    <div class="imagen-destino">
+                        <img src="/img/mendoza.jpg" alt="mendoza">
+                        <div class="descripcion-vuelos">
+                            <p>Mendoza</p>
+                            <p class="desde">Desde Buenos Aires</p>
+                            <p>$4.796</p>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <article>
-                <div class="imagen-destino">
-                    <img src="/img/mendoza.jpg" alt="mendoza">
-                    <div class="descripcion-vuelos">
-                        <p>Mendoza</p>
-                        <p class="desde">Desde Buenos Aires</h5>
-                        <p>$4.796</p>
+                </article>
+                <article>
+                    <div class="imagen-destino">
+                        <img src="/img/miami.jpg" alt="miami">
+                        <div class="descripcion-vuelos">
+                            <p>Miami</p>
+                            <p class="desde">Desde Buenos Aires</p>
+                            <p>$79.230</p>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <article>
-                <div class="imagen-destino">
-                    <img src="/img/miami.jpg" alt="miami">
-                    <div class="descripcion-vuelos">
-                        <p>Miami</p>
-                        <p class="desde">Desde Buenos Aires</h5>
-                        <p>$79.230</p>
+                </article>
+                <article>
+                    <div class="imagen-destino">
+                        <img src="/img/rio_de_janeiro.jpg" alt="rio">
+                        <div class="descripcion-vuelos">
+                            <p>Rio de Janeiro</p>
+                            <p class="desde">Desde Buenos Aires</p>
+                            <p>$44.723</p>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <article>
-                <div class="imagen-destino">
-                    <img src="/img/rio_de_janeiro.jpg" alt="rio">
-                    <div class="descripcion-vuelos">
-                        <p>Rio de Janeiro</p>
-                        <p class="desde">Desde Buenos Aires</h5>
-                        <p>$44.723</p>
+                </article>
+                <article>
+                    <div class="imagen-destino">
+                        <img src="/img/tokio.jpg" alt="tokio">
+                        <div class="descripcion-vuelos">
+                            <p>Tokio</p>
+                            <p class="desde">Desde Buenos Aires</p>
+                            <p>$153.560</p>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <article>
-                <div class="imagen-destino">
-                    <img src="/img/tokio.jpg" alt="tokio">
-                    <div class="descripcion-vuelos">
-                        <p>Tokio</p>
-                        <p class="desde">Desde Buenos Aires</h5>
-                        <p>$153.560</p>
-                    </div>
-                </div>
-            </article>
-            <form action="" class="buscar-vuelos-baratos">
-                <label for="destinos">¿Buscas vuelos baratos a otro destino?</label>
-                <input type="search" name="busqueda" placeholder="Quiero volar a...">
-                <button type="submit" class="button1">Buscar</button>
-            </form>
-        </section>
-    </main>
+                </article>
+                <form action="" class="buscar-vuelos-baratos">
+                    <label for="destinos">¿Buscas vuelos baratos a otro destino?</label>
+                    <input type="search" name="busqueda" placeholder="Quiero volar a...">
+                    <button type="submit" class="button1">Buscar</button>
+                </form>
+            </section>
+        </main>
+        <%- include('./partials/footer') %>
 </body>
 
 </html>

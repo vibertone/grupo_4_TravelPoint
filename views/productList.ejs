@@ -3,81 +3,52 @@
 
 <head>
     <%- include('./partials/head') %>
-    <title>Lista de Productos</title>
+        <title>Lista de Productos</title>
 </head>
 
 <body>
-   <header><%- include('./partials/header') %></header>
-   <main>
-    <h1 class="titulo-productos">Lista de Productos</h1>
+    <header>
+        <%- include('./partials/header') %>
+    </header>
+    <main>
+        <h1 class="titulo-productos">Lista de Productos</h1>
 
-    <form>
-        <div class="btn-agregarproducto">
-            <button type="button">Agregar producto</button>
-        </div>
-    
-        <div class="producto">
-            <div class="tituloydescrip">
-                <img src="./img/miami.jpg" class="img-miami1">
-                <div class="descrip-producto">
-                    <h4>Vuelo Ida y Vuelta a Miami</h4>
-                    <p>01 Enero 2022 - 15 Enero 2022</p>
-                    <p>EZE - MIA | MIA - EZE</p>
-                    <h3>$200.000</h3>
-                </div>
+        <form>
+            <div class="btn-agregarproducto">
+                <button type="button">Agregar producto</button>
             </div>
-            <button type="button" class="boton-edit">Editar</button>
-        </div>
-            
-        <div class="producto">
-            <div class="tituloydescrip">
-                <img src="./img/ritzcarlton.jpg" class="img-ritz">
-                <div class="descrip-producto">
-                    <h4>The Ritz-Carlton Bal Harbour, Miami</h4>
-                    <p>01 Enero 2022 - 15 Enero 2022</p>
-                    <p>King Room with Partial Ocean View with Balcony</p>
-                    <p>1 extra-large double bed</p>
-                    <h3>$150.000</h3>
+
+            <div class="producto">
+                <div class="tituloydescrip">
+                    <img src="./img/miami.jpg" class="img-miami1">
+                    <div class="descrip-producto">
+                        <h4>Vuelo Ida y Vuelta a Miami</h4>
+                        <p>01 Enero 2022 - 15 Enero 2022</p>
+                        <p>EZE - MIA | MIA - EZE</p>
+                        <h3>$200.000</h3>
+                    </div>
                 </div>
+                <button type="button" class="boton-edit">Editar</button>
             </div>
-            <button type="button" class="boton-edit">Editar</button>
-        </div>
-    
-    </form>
 
-   </main>
+            <div class="producto">
+                <div class="tituloydescrip">
+                    <img src="./img/ritzcarlton.jpg" class="img-ritz">
+                    <div class="descrip-producto">
+                        <h4>The Ritz-Carlton Bal Harbour, Miami</h4>
+                        <p>01 Enero 2022 - 15 Enero 2022</p>
+                        <p>King Room with Partial Ocean View with Balcony</p>
+                        <p>1 extra-large double bed</p>
+                        <h3>$150.000</h3>
+                    </div>
+                </div>
+                <button type="button" class="boton-edit">Editar</button>
+            </div>
 
-   <footer>
-    <section class="tarjetas">
-        <div class="icono">
-            <p class="icono fas fa-credit-card"></p>
-        </div>
-        <h4 class="anunfoot">Pagá con tarjeta o en efectivo</h4>
-        <p class="anun_des">Con TV Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y
-            siempre es seguro!</p>
+        </form>
 
-    </section>
-    <section class="tarjetas">
-        <div class="icono"><i class="icono fas fa-gift"></i></div>
-        <h4 class="anunfoot">Ahorra hasta $2.500</h4>
-        <p class="anun_des">Solo por estar registrad@ en TP tenés envíos gratis en miles de productos. Es un
-            beneficio de TP Puntos.</p>
-
-    </section>
-    <section class="tarjetas">
-        <div class="icono"><i class="icono fas fa-user-shield"></i></div>
-        <h4 class="anunfoot">Seguridad, de principio a fin</h4>
-        <p class="anun_des">¿Tuviste problemas? ¡Reclamalo! En TP, no hay nada que no puedas hacer, porque estás
-            siempre protegid@.</p>
-    </section>
-    <div class="spc"></div>
-    <span>
-        <p class="cpyrgt">Copyright © 1999-2020 TravelPoint S.R.L.</p>
-    </span>
-
-</footer> 
-
-
+    </main>
+    <%- include('./partials/footer') %>
 </body>
 
 </html>

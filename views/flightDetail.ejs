@@ -30,14 +30,20 @@
             </div>
             <br>
             <div class="container-3">
-                <div>¿Como querés pagar?</div>
+                <h2>¿Como querés pagar?</h2>
                 <ul>
                     <li>
                         <input type="radio" name="pago" id="credito" value="credito" checked><label
                             for="credito">Tarjeta de
                             crédito</label>
+                    </li>
+                    <hr>
+                    <li>
                         <input type="radio" name="pago" id="debito" value="debito"><label for="debito">Tarjeta de
                             débito</label>
+                    </li>
+                    <hr>
+                    <li>
                         <input type="radio" name="pago" id="2tarjetas" value="2 tarjetas"><label for="2tarjetas">Pagar
                             con 2
                             tarjetas</label>
@@ -45,51 +51,57 @@
                 </ul>
             </div>
             <br>
-            <form action="/" method="">
-                <h2>Ingresá los datos de la tarjeta</h2>
-                <p>
-                    <label for="nro-tarjeta">NÚMERO DE TARJETA</label>
-                    <input type="number" name="nro-tarjeta" id="nro-tarjeta"
+            <div class="datos-de-pago">
+                <form action="/" method="">
+                    <h2>Ingresá los datos de la tarjeta</h2>
+                    <p>
+                    <h5><label for="nro-tarjeta">NÚMERO DE TARJETA</label></h5>
+                    <input class="input-width" type="number" name="nro-tarjeta" id="nro-tarjeta"
                         placeholder="Ingresá el número de tu tarjeta" required>
-                </p>
-                <p>
-                    <label for="titular-tarjeta">TITULAR DE LA TARJETA</label>
-                    <input type="text" name="titular-tarjeta" id="titular-tarjeta"
+                    </p>
+                    <p>
+                    <h5><label for="titular-tarjeta">TITULAR DE LA TARJETA</label></h5>
+                    <input class="input-width" type="text" name="titular-tarjeta" id="titular-tarjeta"
                         placeholder="Como figura en la tarjeta" required>
-                </p>
-                <p>
-                    <label for="vencimiento-tarjeta">VENCIMIENTO DE LA TARJETA</label>
-                    <input type="text" name="vencimiento-tarjeta" id="vencimiento-tarjeta" placeholder="MM/AA"
-                        maxlength="5" required>
-                </p>
-                <p>
-                    <label for="codigo-tarjeta">COD. DE SEGURIDAD</label>
-                    <input type="number" name="codigo-tarjeta" id="codigo-tarjeta" maxlength="4" required>
-                </p>
-                <p>
-                    <label for="documento-tarjeta">DOCUMENTO DEL TITULAR DE LA TARJETA</label>
-                    <input type="number" name="documento-tarjeta" id="documento-tarjeta" placeholder="Ej: 12549325"
+                    </p>
+                    <div class="venc-cod">
+                        <div>
+                            <h5><label for="vencimiento-tarjeta">VENCIMIENTO</label></h5>
+                            <input class="input-width" type="text" name="vencimiento-tarjeta" id="vencimiento-tarjeta" placeholder="MM/AA"
+                                maxlength="5" required>
+                        </div>
+                        <div>
+                            <h5><label for="codigo-tarjeta">COD. DE SEGURIDAD</label></h5>
+                            <input class="input-width" type="number" name="codigo-tarjeta" id="codigo-tarjeta" maxlength="4" required>
+                        </div>
+                    </div>
+                    <p>
+                    <h5><label for="documento-tarjeta">DOCUMENTO DEL TITULAR DE LA TARJETA</label></h5>
+                    <input class="input-width" type="number" name="documento-tarjeta" id="documento-tarjeta" placeholder="Ej: 12549325"
                         maxlength="8" required>
-                </p>
-                <p>
-                <p>SEXO</p>
-                <label for="M">M</label><input type="radio" name="sexo" id="M" value="M" checked>
-                <label for="F">F</label><input type="radio" name="sexo" id="F" value="F">
-                </p>
-                <hr>
-                <p>
-                    <select id="cuotas" name="cuotas" required>
-                        <option value="cuotas" selected>Cuotas</option>
-                        <option value="1">1 cuota</option>
-                        <option value="2">2 cuotas</option>
-                        <option value="3">3 cuotas</option>
-                        <option value="4">4 cuotas</option>
-                        <option value="5">5 cuotas</option>
-                        <option value="6">6 cuotas</option>
-                    </select>
-                </p>
-            </form>
+                    </p>
+                    <p>
+                    <h5>SEXO</h5>
+                    <div class="input-genero">
+                        <div class="M"><label for="M">Masculino</label><input type="radio" name="sexo" id="M" value="M" checked></div>
+                        <div><label for="F">Femenino</label><input type="radio" name="sexo" id="F" value="F"></div>
+                    </div>
+                    </p>
+                    <p>
+                        <select id="cuotas" name="cuotas" required>
+                            <option value="cuotas" selected>Cuotas</option>
+                            <option value="1">1 cuota</option>
+                            <option value="2">2 cuotas</option>
+                            <option value="3">3 cuotas</option>
+                            <option value="4">4 cuotas</option>
+                            <option value="5">5 cuotas</option>
+                            <option value="6">6 cuotas</option>
+                        </select>
+                    </p>
+                </form>
+            </div>
         </main>
+        <%- include('./partials/footer') %>
 </body>
 
 </html>
