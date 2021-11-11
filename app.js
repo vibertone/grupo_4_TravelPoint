@@ -32,4 +32,8 @@ app.use(('/register'), registerRoutes);
 app.use(('/productDetail'), productDetailRoutes);
 app.use(('/productCart'), productCartRoutes);
 app.use(('/flightDetail'), flightDetail);
-app.use (('/productList'), productListRoutes)
+app.use (('/productList'), productListRoutes);
+
+app.use((req, res, next) => {
+    res.status(404).render('not-found')
+});
