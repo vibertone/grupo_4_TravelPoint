@@ -297,11 +297,12 @@ main {
     margin-bottom: 2px;
 }
 
-.datos-de-pago form .input-width{
+.datos-de-pago form .input-styles{
     width: 90%;
     border: 1px solid silver;
     border-radius: 5px;
     height: 35px;
+    padding: 0 10px;
 }
 
 .venc-cod{
@@ -329,6 +330,43 @@ main {
     margin-right: 15px;
     padding: 0 15px;
     border-right: solid silver 1px;
+}
+
+.price-button a {
+    text-decoration: none;
+}
+
+.datos-de-pago .cant-cuotas select{
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.datos-de-pasajeros{
+    width: 95%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+}
+
+.datos-de-pasajeros form .input-styles{
+    width: 90%;
+    border: 1px solid silver;
+    border-radius: 5px;
+    height: 35px;
+    padding: 0 10px;
+}
+
+.datos-de-pasajeros h5 {
+    margin-bottom: 2px;
+}
+
+.datos-de-pasajeros .residencia {
+    width: 60%;
+    border: 1px solid silver;
+    border-radius: 5px;
+    height: 35px;
+    padding: 0 10px;
 }
 
 /* Vicky */

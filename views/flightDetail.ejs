@@ -56,38 +56,41 @@
                     <h2>Ingresá los datos de la tarjeta</h2>
                     <p>
                     <h5><label for="nro-tarjeta">NÚMERO DE TARJETA</label></h5>
-                    <input class="input-width" type="number" name="nro-tarjeta" id="nro-tarjeta"
+                    <input class="input-styles" type="number" name="nro-tarjeta" id="nro-tarjeta"
                         placeholder="Ingresá el número de tu tarjeta" required>
                     </p>
                     <p>
                     <h5><label for="titular-tarjeta">TITULAR DE LA TARJETA</label></h5>
-                    <input class="input-width" type="text" name="titular-tarjeta" id="titular-tarjeta"
+                    <input class="input-styles" type="text" name="titular-tarjeta" id="titular-tarjeta"
                         placeholder="Como figura en la tarjeta" required>
                     </p>
                     <div class="venc-cod">
                         <div>
                             <h5><label for="vencimiento-tarjeta">VENCIMIENTO</label></h5>
-                            <input class="input-width" type="text" name="vencimiento-tarjeta" id="vencimiento-tarjeta" placeholder="MM/AA"
-                                maxlength="5" required>
+                            <input class="input-styles" type="text" name="vencimiento-tarjeta" id="vencimiento-tarjeta"
+                                placeholder="MM/AA" maxlength="5" required>
                         </div>
                         <div>
                             <h5><label for="codigo-tarjeta">COD. DE SEGURIDAD</label></h5>
-                            <input class="input-width" type="number" name="codigo-tarjeta" id="codigo-tarjeta" maxlength="4" required>
+                            <input class="input-styles" type="number" name="codigo-tarjeta" id="codigo-tarjeta"
+                                maxlength="4" required>
                         </div>
                     </div>
                     <p>
                     <h5><label for="documento-tarjeta">DOCUMENTO DEL TITULAR DE LA TARJETA</label></h5>
-                    <input class="input-width" type="number" name="documento-tarjeta" id="documento-tarjeta" placeholder="Ej: 12549325"
-                        maxlength="8" required>
+                    <input class="input-styles" type="number" name="documento-tarjeta" id="documento-tarjeta"
+                        placeholder="Ej: 12549325" maxlength="8" required>
                     </p>
                     <p>
                     <h5>SEXO</h5>
                     <div class="input-genero">
-                        <div class="M"><label for="M">Masculino</label><input type="radio" name="sexo" id="M" value="M" checked></div>
+                        <div class="M"><label for="M">Masculino</label><input type="radio" name="sexo" id="M" value="M"
+                                checked></div>
                         <div><label for="F">Femenino</label><input type="radio" name="sexo" id="F" value="F"></div>
                     </div>
                     </p>
-                    <p>
+                    <hr>
+                    <p class="cant-cuotas">
                         <select id="cuotas" name="cuotas" required>
                             <option value="cuotas" selected>Cuotas</option>
                             <option value="1">1 cuota</option>
@@ -98,6 +101,28 @@
                             <option value="6">6 cuotas</option>
                         </select>
                     </p>
+                </form>
+            </div>
+            <br>
+            <div class="datos-de-pasajeros">
+                <form action="/" method="">
+                    <h2>Datos de los pasajeros</h2>
+                    <h5><label for="nombre">NOMBRES</label></h5>
+                    <input type="text" name="nombre" id="nombre" class="input-styles"
+                        placeholder="Como figura en el documento de viaje">
+                    <h5><label for="apellido">APELLIDOS</label></h5>
+                    <input type="text" name="apellido" id="apellido" class="input-styles"
+                        placeholder="Como figura en el documento de viaje">
+                    <h5>PAIS DE RESIDENCIA</h5>
+                    <select class="residencia" id="residencia" name="residencia" required>
+                        <option value="Argentina" selected>ARGENTINA</option>
+                        <option value="Afganistan">AFGANISTAN</option>
+                        <option value="Alemania">ALEMANIA</option>
+                        <option value="Brasil">BRASIL</option>
+                        <option value="Chile">CHILE</option>
+                        <option value="Colombia">COLOMBIA</option>
+                        <option value="Dinamarca">DINAMARCA</option>
+                    </select>
                 </form>
             </div>
         </main>
