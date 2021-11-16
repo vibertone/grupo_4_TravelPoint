@@ -326,7 +326,7 @@ main {
     margin-right: 10px;
 }
 
-.input-genero .M{
+.input-genero .M-card{
     margin-right: 15px;
     padding: 0 15px;
     border-right: solid silver 1px;
@@ -361,13 +361,45 @@ main {
     margin-bottom: 2px;
 }
 
-.datos-de-pasajeros .residencia {
+.datos-de-pasajeros #residencia {
     width: 60%;
     border: 1px solid silver;
     border-radius: 5px;
     height: 35px;
     padding: 0 10px;
 }
+
+div #tipo-de-documento {
+    border-radius: 5px;
+    padding: 5px;
+    width: 30%;
+}
+
+div #nro-documento {
+    width: 60%;
+    border: 1px solid silver;
+    border-radius: 5px;
+    height: 35px;
+    padding: 0 10px;
+    margin-left: 10px;
+}
+
+#dia-nac, #mes-nac, #año-nac {
+    width: 30%;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#dia-nac, #mes-nac {
+    margin-right: 10px;
+}
+
+.input-genero .M{
+    margin-right: 15px;
+    padding: 0 15px;
+    border-right: solid silver 1px;
+}
+
 
 /* Vicky */
 
@@ -649,7 +681,7 @@ footer {
 }
 
 footer .container-footer-1 {
-    width: 70%;
+    width: 80%;
     background-color: white;
     border-radius: 25px;
     padding: 20px;
@@ -658,6 +690,13 @@ footer .container-footer-1 {
 
 .container-footer-1 h5{
     margin-bottom: 0;
+}
+
+.container-footer-1 .btn-arrepentimiento {
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #c8e4e6;
 }
 
 /* PRODUCT LIST */

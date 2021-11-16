@@ -84,9 +84,9 @@
                     <p>
                     <h5>SEXO</h5>
                     <div class="input-genero">
-                        <div class="M"><label for="M">Masculino</label><input type="radio" name="sexo" id="M" value="M"
+                        <div class="M-card"><label for="M-card">Masculino</label><input type="radio" name="sexo-card" id="M-card" value="M-car"
                                 checked></div>
-                        <div><label for="F">Femenino</label><input type="radio" name="sexo" id="F" value="F"></div>
+                        <div><label for="F-card">Femenino</label><input type="radio" name="sexo-card" id="F-card" value="F-card"></div>
                     </div>
                     </p>
                     <hr>
@@ -109,12 +109,12 @@
                     <h2>Datos de los pasajeros</h2>
                     <h5><label for="nombre">NOMBRES</label></h5>
                     <input type="text" name="nombre" id="nombre" class="input-styles"
-                        placeholder="Como figura en el documento de viaje">
+                        placeholder="Como figura en el documento de viaje" required>
                     <h5><label for="apellido">APELLIDOS</label></h5>
                     <input type="text" name="apellido" id="apellido" class="input-styles"
-                        placeholder="Como figura en el documento de viaje">
+                        placeholder="Como figura en el documento de viaje" required>
                     <h5>PAIS DE RESIDENCIA</h5>
-                    <select class="residencia" id="residencia" name="residencia" required>
+                    <select id="residencia" name="residencia" required>
                         <option value="Argentina" selected>ARGENTINA</option>
                         <option value="Afganistan">AFGANISTAN</option>
                         <option value="Alemania">ALEMANIA</option>
@@ -123,6 +123,55 @@
                         <option value="Colombia">COLOMBIA</option>
                         <option value="Dinamarca">DINAMARCA</option>
                     </select>
+                    <h5>TIPO Y NUMERO DE DOCUMENTO</h5>
+                    <div>
+                        <select id="tipo-de-documento" name="tipo-de-documento" required>
+                            <option value="DNI" selected>DNI</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                        </select>
+                        <input type="number" name="nro-documento" id="nro-documento" required>
+                    </div>
+                    <h5>FECHA DE NACIMIENTO</h5>
+                    <div>
+                        <select id="dia-nac" name="dia-nac" required>
+                            <option value="Dia" selected>Dia</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                        <select id="mes-nac" name="mes-nac" required>
+                            <option value="Mes" selected>Mes</option>
+                            <option value="Enero">Enero</option>
+                            <option value="Febrero">Febrero</option>
+                            <option value="Marzo">Marzo</option>
+                            <option value="Abril">Abril</option>
+                            <option value="Mayo">Mayo</option>
+                            <option value="Junio">Junio</option>
+                            <option value="Julio">Julio</option>
+                        </select>
+                        <select id="año-nac" name="año-nac" required>
+                            <option value="año" selected>Año</option>
+                            <option value="2000">2000</option>
+                            <option value="1999">1999</option>
+                            <option value="1998">1998</option>
+                            <option value="1997">1997</option>
+                            <option value="1996">1996</option>
+                            <option value="1995">1995</option>
+                            <option value="1994">1994</option>
+                        </select>
+                    </div>
+                    <p>
+                    <h5>SEXO</h5>
+                    <div class="input-genero">
+                        <div class="M"><label for="M">Masculino</label><input type="radio" name="sexo" id="M" value="M"
+                                checked></div>
+                        <div><label for="F">Femenino</label><input type="radio" name="sexo" id="F" value="F"></div>
+                    </div>
+                    </p>
                 </form>
             </div>
         </main>
