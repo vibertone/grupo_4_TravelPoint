@@ -38,61 +38,52 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v12.0"
         nonce="VFH2JtUh"></script>
-    <header>
-        <div class="logo-ayuda">
-            <a href="/"><img src="/img/Logo.png" alt="Logo" class="logo"></a>
-            <div class="ayuda">
-                <i class="fas fa-phone-alt"></i>
-                <a href="/productCart"><i class="fas fa-suitcase-rolling"></i></a>
-                <a href="/login"><i class="fas fa-user"></i></a>
-                <i class="fas fa-question-circle"></i>
-            </div>
-        </div>
-    </header>
-    <main>
-        <div class="login">
-            <h3>Registrate con tu cuenta favorita</h3>
-            <div class="apis">
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                <div class="fb-login-button" data-width="50px" data-size="medium" data-button-type="login_with"
-                    data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-            </div>
-            <form action="/" method="">
-                <h3>O registrate con tu Email</h3>
-                <div>
-                    <p>
-                        <input type="email" name="email" id="email" placeholder="Ingresa tu Email" required>
-                    </p>
-                    <p>
-                        <input type="password" name="password" id="password" placeholder="Contraseña" required>
-                    </p>
-                    <p>
-                        <input type="password" name="password" id="password" placeholder="Repite Contraseña" required>
-                    </p>
+    <%- include('./partials/header') %>
+        <main>
+            <div class="login">
+                <h3>Registrate con tu cuenta favorita</h3>
+                <div class="apis">
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    <div class="fb-login-button" data-width="50px" data-size="medium" data-button-type="login_with"
+                        data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
                 </div>
-                <div>
+                <form action="/" method="">
+                    <h3>O registrate con tu Email</h3>
+                    <div>
+                        <p>
+                            <input type="email" name="email" id="email" placeholder="Ingresa tu Email" required>
+                        </p>
+                        <p>
+                            <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                        </p>
+                        <p>
+                            <input type="password" name="password" id="password" placeholder="Repite Contraseña"
+                                required>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <input type="text" id="Nme" placeholder="Nombre" required>
+                        </p>
+                        <p>
+                            <input type="text" id="snme" placeholder="Apellido" required>
+                        </p>
+                        <p>
+                            <select id="pais" name="pais" required>
+                                <option value="nacionalidad" selected>Nacionalidad</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Chile">Chile</option>
+                            </select>
+                        </p>
+                    </div>
                     <p>
-                        <input type="text" id="Nme" placeholder="Nombre" required>
+                        <button type="submit">Registrarse</button>
                     </p>
-                    <p>
-                        <input type="text" id="snme" placeholder="Apellido" required>
-                    </p>
-                    <p>
-                        <select id="pais" name="pais" required>
-                            <option value="nacionalidad" selected>Nacionalidad</option>
-                            <option value="Argentina">Argentina</option>
-                            <option value="Brasil">Brasil</option>
-                            <option value="Chile">Chile</option>
-                        </select>
-                    </p>
-                </div>
-                <p>
-                    <button type="submit">Registrarse</button>
-                </p>
-            </form>
-        </div>
-    </main>
-    <%- include('./partials/footer') %>
+                </form>
+            </div>
+        </main>
+        <%- include('./partials/footer') %>
 </body>
 
 </html>

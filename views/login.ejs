@@ -43,44 +43,33 @@
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v12.0"
     nonce="VFH2JtUh"></script>
-
-  <header>
-    <div class="logo-ayuda">
-      <a href="/"><img src="/img/Logo.png" alt="Logo" class="logo"></a>
-      <div class="ayuda">
-        <i class="fas fa-phone-alt"></i>
-        <a href="/productCart"><i class="fas fa-suitcase-rolling"></i></a>
-        <a href="/login"><i class="fas fa-user"></i></a>
-        <i class="fas fa-question-circle"></i>
-      </div>
-    </div>
-  </header>
-  <main>
-    <div class="login">
-      <h3>Accede con tu cuenta favorita</h3>
-      <div class="apis">
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        <div class="fb-login-button" data-width="50px" data-size="medium" data-button-type="login_with"
-          data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-      </div>
-      <form action="/" method="">
-        <h3>O Ingresa con tu email</h3>
-        <div>
-          <p>
-            <input type="email" name="email" id="email" placeholder="Ingresa tu Email">
-          </p>
-          <p>
-            <input type="password" name="password" id="password" placeholder="Contraseña">
-          </p>
-          <p>
-            <button type="submit">Ingresar</button>
-          </p>
+  <%- include('./partials/header') %>
+    <main>
+      <div class="login">
+        <h3>Accede con tu cuenta favorita</h3>
+        <div class="apis">
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          <div class="fb-login-button" data-width="50px" data-size="medium" data-button-type="login_with"
+            data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
         </div>
-      </form>
-      <p>Si todavía no tenés una cuenta, registrate haciendo click <a href="/register">acá</a></p>
-    </div>
-  </main>
-  <%- include('./partials/footer') %>
+        <form action="/" method="">
+          <h3>O Ingresa con tu email</h3>
+          <div>
+            <p>
+              <input type="email" name="email" id="email" placeholder="Ingresa tu Email">
+            </p>
+            <p>
+              <input type="password" name="password" id="password" placeholder="Contraseña">
+            </p>
+            <p>
+              <button type="submit">Ingresar</button>
+            </p>
+          </div>
+        </form>
+        <p>Si todavía no tenés una cuenta, registrate haciendo click <a href="/register">acá</a></p>
+      </div>
+    </main>
+    <%- include('./partials/footer') %>
 </body>
 
 </html>

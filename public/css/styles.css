@@ -15,61 +15,62 @@ body {
     width: 100vw;
 }
 
-header .opciones1 {
+header {
     background-color: #154b9c;
+    padding-bottom: 20px;
 }
 
-header p {
-    color: white;
+.container-header {
+    display: grid;
+    grid-template-columns: 25% auto 40%;
+    grid-template-rows: repeat(2, 60px);
+    grid-gap: 10px;
 }
 
-.logo {
-    width: 20vw;
+.header-box1 a img {
+    max-height: 100%;
+    max-width: 100%;
 }
 
-.logo-ayuda {
+.header-box1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.header-box2 {
+    grid-column: 1/4;
+    grid-row: 2/3;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin: auto;
+    grid-gap: 10px;
 }
 
-.ayuda {
-    width: 40vw;
-    font-size: 25px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.ayuda a {
-    color: #222222;
-}
-
-.opciones1 {
-    display: flex;
-    justify-content: space-around;
-    font-size: 26px;
-}
-
-.opciones1 div {
+.header-box2 div {
     text-align: center;
 }
 
-.opciones1 p {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 16px;
-}
-
-.opciones1 i {
-    border: none;
-    border-radius: 15px;
-    padding: 8px;
+.header-box2 {
+    font-size: 30px;
+    margin: auto;
     color: white;
 }
 
-header {
-    margin-bottom: 20px;
-    background-color: white;
+.header-box2 p {
+    font-size: 3.5vw;
+}
+
+.header-box3 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    font-size: 7vw;
+    grid-gap: 10px;
+}
+
+.header-box3 div a{
+    color: #5962ff;
 }
 
 .buscar-vuelo {
@@ -432,6 +433,8 @@ div #nro-documento {
     border-right: solid silver 1px;
 }
 
+
+@media()
 
 /* Vicky */
 
