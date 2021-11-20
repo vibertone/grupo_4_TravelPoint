@@ -23,8 +23,7 @@ header {
 .container-header {
     display: grid;
     grid-template-columns: 25% auto 40%;
-    grid-template-rows: repeat(2, 60px);
-    grid-gap: 10px;
+    grid-template-rows: 60px 10px 60px;
 }
 
 .header-box1 a img {
@@ -39,20 +38,16 @@ header {
 
 .header-box2 {
     grid-column: 1/4;
-    grid-row: 2/3;
+    grid-row: 3/4;
     display: flex;
-    margin: auto;
+    justify-content: center;
     grid-gap: 10px;
+    font-size: 30px;
+    color: white;
 }
 
 .header-box2 div {
     text-align: center;
-}
-
-.header-box2 {
-    font-size: 30px;
-    margin: auto;
-    color: white;
 }
 
 .header-box2 p {
@@ -62,14 +57,14 @@ header {
 .header-box3 {
     grid-column: 3/4;
     grid-row: 1/2;
-    text-align: center;
-    margin: auto;
     display: flex;
+    text-align: center;
+    justify-content: space-around;
     font-size: 7vw;
-    grid-gap: 10px;
+    align-items: center;
 }
 
-.header-box3 div a{
+.header-box3 div a {
     color: #5962ff;
 }
 
@@ -149,9 +144,18 @@ main {
     padding-top: 20px;
 }
 
-.vuelos article .imagen-destino {
+.vuelos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+.vuelos article {
     position: relative;
-    width: 45vw;
+
 }
 
 .vuelos article div img {
@@ -177,16 +181,7 @@ main {
 
 .descripcion-vuelos p {
     line-height: 0;
-    font-size: 22px;
-}
-
-.vuelos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    font-weight: 700;
-    margin-top: 40px;
+    font-size: 4.5vw;
 }
 
 .buscar-vuelos-baratos {
@@ -301,7 +296,7 @@ main {
     color: white;
 }
 
-.container-3{
+.container-3 {
     width: 95%;
     background-color: white;
     border-radius: 10px;
@@ -309,16 +304,16 @@ main {
     margin: auto;
 }
 
-.container-3 ul hr{
+.container-3 ul hr {
     opacity: 0.3;
 }
 
-.container-3 ul{
+.container-3 ul {
     list-style: none;
     padding: 0;
 }
 
-.datos-de-pago{
+.datos-de-pago {
     width: 95%;
     background-color: white;
     border-radius: 10px;
@@ -326,11 +321,11 @@ main {
     margin: auto;
 }
 
-.datos-de-pago h5{
+.datos-de-pago h5 {
     margin-bottom: 2px;
 }
 
-.datos-de-pago form .input-styles{
+.datos-de-pago form .input-styles {
     width: 90%;
     border: 1px solid silver;
     border-radius: 5px;
@@ -338,15 +333,15 @@ main {
     padding: 0 10px;
 }
 
-.venc-cod{
+.venc-cod {
     display: flex;
 }
 
-.venc-cod div{
+.venc-cod div {
     width: 50%;
 }
 
-.input-genero{
+.input-genero {
     display: flex;
     border: 1px solid silver;
     max-width: 250px;
@@ -355,26 +350,32 @@ main {
     align-items: center;
 }
 
-.input-genero label{
+.input-genero label {
     margin-right: 10px;
 }
 
-.input-genero .M-card{
+.input-genero .M-card {
     margin-right: 15px;
     padding: 0 15px;
     border-right: solid silver 1px;
 }
 
-.price-button a {
-    text-decoration: none;
+.price-button p {
+    font-size: 16px;
+    margin: 0 0 0 18px;
 }
 
-.datos-de-pago .cant-cuotas select{
+.price-button a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.datos-de-pago .cant-cuotas select {
     border-radius: 5px;
     padding: 5px;
 }
 
-.datos-de-pasajeros{
+.datos-de-pasajeros {
     width: 95%;
     background-color: white;
     border-radius: 10px;
@@ -382,7 +383,7 @@ main {
     margin: auto;
 }
 
-.datos-de-pasajeros form .input-styles{
+.datos-de-pasajeros form .input-styles {
     width: 90%;
     border: 1px solid silver;
     border-radius: 5px;
@@ -427,11 +428,12 @@ div #nro-documento {
     margin-right: 10px;
 }
 
-.input-genero .M{
+.input-genero .M {
     margin-right: 15px;
     padding: 0 15px;
     border-right: solid silver 1px;
 }
+
 
 /* Vicky */
 
@@ -649,9 +651,9 @@ div #nro-documento {
     margin-bottom: 20px;
 }
 
-.div-vuelo:hover {
+/* .div-vuelo:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0;
-}
+} */
 
 .vuelos {
     padding-top: 40px;
@@ -689,7 +691,6 @@ div #nro-documento {
     border-radius: 10px;
     background-color: #3495eb;
     text-align: center;
-    display: flex;
     padding: 10px;
     color: white;
 }
@@ -702,7 +703,7 @@ div #nro-documento {
 
 /*FOOTER*/
 
-footer hr{
+footer hr {
     width: 90%;
 }
 
@@ -711,19 +712,19 @@ footer {
     background-color: #e6e6e6;
 }
 
-footer .container-footer-1 {
-    width: 80%;
+footer .container-footer-2 {
+    width: 90vw;
     background-color: white;
     border-radius: 25px;
     padding: 20px;
     margin: auto;
 }
 
-.container-footer-1 h5{
+.container-footer-2 h5 {
     margin-bottom: 0;
 }
 
-.container-footer-1 .btn-arrepentimiento {
+.container-footer-2 .btn-arrepentimiento {
     border: 1px solid silver;
     border-radius: 5px;
     padding: 5px;
@@ -786,4 +787,78 @@ footer .container-footer-1 {
 
 .descrip-producto {
     width: 70%;
+}
+
+@media (min-width: 481px) {
+    .container-header {
+        grid-template-columns: 25% auto 30%;
+        grid-template-rows: 70px 10px 60px;
+    }
+
+    .header-box2 p {
+        font-size: 60%;
+    }
+
+    .header-box3 {
+        font-size: 5vw;
+    }
+
+    .buscar-vuelo form button {
+        width: 150px;
+        padding: 20px;
+        font-size: 22px;
+    }
+
+    .vuelos article div img {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .descripcion-vuelos p {
+        font-size: 3vw;
+    }
+
+    .container-footer-1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    footer .container-footer-2 {
+        width: 95vw;
+    }
+
+    .container-footer-1 .container-footer-2 {
+        width: 45%;
+        height: 50vw;
+        max-height: 250px;
+    }
+
+    /* PRODUCT DETAIL */
+
+    .div-vuelo {
+        display: flex;
+    }
+
+    .ida-y-vuelta {
+        width: 80%;
+        border-right: 1px solid silver;
+        padding-right: 20px;
+    }
+
+    .price {
+        font-size: 4.5vw;
+    }
+
+    .price-button {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        border-top: none;
+        padding-left: 10px;
+    }
+
+    .price-button button {
+        font-size: 2.7vw;
+    }
 }
