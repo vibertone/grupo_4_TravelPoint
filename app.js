@@ -17,6 +17,7 @@ const productCartRoutes = require("./routes/productCart");
 const flightDetail = require("./routes/flightDetail");
 const { productList } = require("./controllers/productList_ctrl");
 const productListRoutes = require ("./routes/productList");
+const usersListRoutes = require ("./routes/usersList");
 
 app.use(express.static('./public'));
 app.listen(5000, () => {
@@ -33,6 +34,7 @@ app.use(('/productDetail'), productDetailRoutes);
 app.use(('/productCart'), productCartRoutes);
 app.use(('/flightDetail'), flightDetail);
 app.use (('/productList'), productListRoutes);
+app.use (('/usersList'), usersListRoutes);
 
 app.use((req, res, next) => {
     res.status(404).render('not-found')

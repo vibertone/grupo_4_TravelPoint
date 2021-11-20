@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>Lista de Usuarios</title>
+</head>
+
+<body>
+    <header>
+        <%- include('./partials/header') %>
+    </header>
+    <main>
+        <h1 class="titulo-productos">Lista de Usuarios</h1>
+
+        <form>
+            <div class="btn-agregarproducto">
+                <button type="button">Agregar producto</button>
+            </div>
+
+            <div class="producto">
+                <div class="tituloydescrip">
+                    <img src="./img/miami.jpg" class="img-miami1">
+                    <div class="descrip-producto">
+                        <h4>Vuelo Ida y Vuelta a Miami</h4>
+                        <p>01 Enero 2022 - 15 Enero 2022</p>
+                        <p>EZE - MIA | MIA - EZE</p>
+                        <h3>$200.000</h3>
+                    </div>
+                </div>
+                <button type="button" class="boton-edit">Editar</button>
+            </div>
+
+            <div class="producto">
+                <div class="tituloydescrip">
+                    <img src="./img/ritzcarlton.jpg" class="img-ritz">
+                    <div class="descrip-producto">
+                        <h4>The Ritz-Carlton Bal Harbour, Miami</h4>
+                        <p>01 Enero 2022 - 15 Enero 2022</p>
+                        <p>King Room with Partial Ocean View with Balcony</p>
+                        <p>1 extra-large double bed</p>
+                        <h3>$150.000</h3>
+                    </div>
+                </div>
+                <button type="button" class="boton-edit">Editar</button>
+            </div>
+
+        </form>
+
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+
+</html>
