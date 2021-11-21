@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "destiny": "Barcelona",
+        "price": "$110.609",
+        "image": "barcelona.jpg",
+        "from": "Desde Buenos Aires"
+    },
+    {
+        "id": 2,
+        "destiny": "Bariloche",
+        "price": "$25.120",
+        "image": "bariloche.jfif",
+        "from": "Desde Buenos Aires"
+    },
+    {
+        "id": 3,
+        "destiny": "Cancun",
+        "price": "$75.510",
+        "image": "cancun.jfif",
+        "from": "Desde Buenos Aires"
+    },
+    {
+        "id": 4,
+        "destiny": "Madrid",
+        "price": "$80.540",
+        "image": "madrid.jpg",
+        "from": "Desde Buenos Aires"
+    },
+    {
+        "id": 5,
+        "destiny": "Mendoza",
+        "price": "$11.750",
+        "image": "mendoza.jpg",
+        "from": "Desde Buenos Aires"
+    },
+    {
+        "id": 6,
+        "destiny": "Miami",
+        "price": "$76.209",
+        "image": "miami.jpg",
+        "from": "Desde Buenos Aires"
+    },
+    {
+        "id": 7,
+        "destiny": "Rio de Janeiro",
+        "price": "$45.520",
+        "image": "rio_de_janeiro.jpg",
+        "from": "Desde Buenos Aires"
+    },
+    {
+        "id": 8,
+        "destiny": "Tokio",
+        "price": "$145.000",
+        "image": "tokio.jpg",
+        "from": "Desde Buenos Aires"
+    }
+]

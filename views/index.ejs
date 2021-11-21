@@ -42,93 +42,25 @@
                 </form>
             </div>
             <section class="vuelos">
-                <a href="/productDetail">
-                    <article>
-                        <div class="imagen-destino">
-                            <img src="/img/barcelona.jpg" alt="barcelona">
-                            <div class="descripcion-vuelos">
-                                <p>Barcelona</p>
-                                <p class="desde">Desde Buenos Aires</p>
-                                <p>$110.609</p>
+                <% data.forEach(function(flight){ %>
+                    <a href="/productDetail">
+                        <article>
+                            <div class="imagen-destino">
+                                <img src="/img/<%= flight.image %>" alt="imagen de <%= flight.destiny %>">
+                                <div class="descripcion-vuelos">
+                                    <p><%= flight.destiny %></p>
+                                    <p class="desde"><%= flight.from %></p>
+                                    <p><%= flight.price %></p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </a>
-                <article>
-                    <div class="imagen-destino">
-                        <img src="/img/bariloche.jfif" alt="bariloche">
-                        <div class="descripcion-vuelos">
-                            <p>Bariloche</p>
-                            <p class="desde">Desde Buenos Aires</p>
-                            <p>$8.861</p>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <div class="imagen-destino">
-                        <img src="/img/cancun.jfif" alt="cancun">
-                        <div class="descripcion-vuelos">
-                            <p>Cancun</p>
-                            <p class="desde">Desde Buenos Aires</p>
-                            <p>$77.875</p>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <div class="imagen-destino">
-                        <img src="/img/madrid.jpg" alt="madrid">
-                        <div class="descripcion-vuelos">
-                            <p>Madrid</p>
-                            <p class="desde">Desde Buenos Aires</p>
-                            <p>$106.127</p>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <div class="imagen-destino">
-                        <img src="/img/mendoza.jpg" alt="mendoza">
-                        <div class="descripcion-vuelos">
-                            <p>Mendoza</p>
-                            <p class="desde">Desde Buenos Aires</p>
-                            <p>$4.796</p>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <div class="imagen-destino">
-                        <img src="/img/miami.jpg" alt="miami">
-                        <div class="descripcion-vuelos">
-                            <p>Miami</p>
-                            <p class="desde">Desde Buenos Aires</p>
-                            <p>$79.230</p>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <div class="imagen-destino">
-                        <img src="/img/rio_de_janeiro.jpg" alt="rio">
-                        <div class="descripcion-vuelos">
-                            <p>Rio de Janeiro</p>
-                            <p class="desde">Desde Buenos Aires</p>
-                            <p>$44.723</p>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <div class="imagen-destino">
-                        <img src="/img/tokio.jpg" alt="tokio">
-                        <div class="descripcion-vuelos">
-                            <p>Tokio</p>
-                            <p class="desde">Desde Buenos Aires</p>
-                            <p>$153.560</p>
-                        </div>
-                    </div>
-                </article>
-                <form action="" class="buscar-vuelos-baratos">
-                    <label for="destinos">¿Buscas vuelos baratos a otro destino?</label>
-                    <input type="search" name="busqueda" placeholder="Quiero volar a...">
-                    <button type="submit" class="button1">Buscar</button>
-                </form>
+                        </article>
+                    </a>
+                    <% }); %>
+                    <form action="" class="buscar-vuelos-baratos">
+                        <label for="destinos">¿Buscas vuelos baratos a otro destino?</label>
+                        <input type="search" name="busqueda" placeholder="Quiero volar a...">
+                        <button type="submit" class="button1">Buscar</button>
+                    </form>
             </section>
         </main>
         <%- include('./partials/footer') %>
