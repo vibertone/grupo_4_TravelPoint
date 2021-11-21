@@ -861,4 +861,10 @@ footer .container-footer-2 {
     .price-button button {
         font-size: 2.7vw;
     }
+
+    /* FLIGHT DETAIL */
+
+    .container-1 .sub-1 .info {
+        padding: 0 40% 0 10px;
+    }
 }

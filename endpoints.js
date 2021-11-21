@@ -6,7 +6,8 @@ const ENDPOINTS = {
     "PRODUCTCART": "/",
     "FLIGHTDETAIL": "/",
     "PRODUCTLIST": "/",
-    "USERSLIST": "/"
+    "USERSLIST": "/",
+    "MYACOOUNT": "/"
 };
 
 module.exports = ENDPOINTS;

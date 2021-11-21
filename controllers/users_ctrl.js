@@ -4,6 +4,12 @@ const controllers = {
     },
     login: (req, res) => {
         res.render('login');
+    },
+    myAccount: (req, res) => {
+        res.render ('myAccount');
+    },
+    createMyAccount: (req, res) => {
+        res.redirect('/')
     }
 };
 
