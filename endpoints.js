@@ -2,12 +2,14 @@ const ENDPOINTS = {
     "INDEX": "/",
     "REGISTER": "/",
     "LOGIN": "/",
-    "PRODUCTDETAIL": "/",
-    "PRODUCTCART": "/",
     "FLIGHTDETAIL": "/",
-    "PRODUCTLIST": "/",
     "USERSLIST": "/",
-    "MYACOOUNT": "/"
+    "MYACCOUNT": "/",
+    "ADDPRODUCT": "/",
+    "PRODUCTLIST": "/",
+    "PRODUCTCART": "/productcart",
+    "PRODUCTDETAIL": "/productdetail",
 };
+
 
 module.exports = ENDPOINTS;

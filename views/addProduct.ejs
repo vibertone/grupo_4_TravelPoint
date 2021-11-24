@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/31b9fa39aa.js" crossorigin="anonymous"></script>
+        <title>Creá un producto</title>
+</head>
+
+<body>
+    
+    
+    <%- include('./partials/header') %>
+        <main>
+            <div class="login">
+                <h3>Agrega un Vuelo</h3>
+                
+                <form action="/create" method="POST">
+                  
+                    <div>
+                        <p><input type="text" name="Id" placeholder="ID"></p>
+                        
+                        <p><input type="text" name="destiny" placeholder="destino"></p>
+                        
+                        <p>
+                            <input type="text" name="Name" id="email" placeholder="Ida y Vuelta a MIAMI , Hotel Ritz" required>
+                        </p>
+                        <p>
+                            <input type="text" name="fechadesdehasta" id="fechadesdehasta" placeholder="Fecha desde / Fecha hasta" required>
+                        </p>
+                        <p>
+                            <input type="text" name="detalle" id="detalle" placeholder="Detalle"
+                                >
+                        </p>
+                    </div>
+                    
+                    <p>
+                        <button type="submit">Agregar</button>
+                    </p>
+                </form>
+            </div>
+        </main>
+        <%- include('./partials/footer') %>
+</body>
+
+</html>
