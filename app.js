@@ -11,7 +11,7 @@ app.use(express.json());
 const indexRoutes = require("./routes/index");
 const loginRoutes = require("./routes/login");
 const registerRoutes = require("./routes/register")
-//const productDetailRoutes = require("./routes/productDetail");
+const productDetailRoutes = require("./routes/productDetail");
 //const productCartRoutes = require("./routes/productCart");
 const flightDetail = require("./routes/flightDetail");
 //const productListRoutes = require("./routes/productList");
