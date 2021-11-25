@@ -9,15 +9,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 const indexRoutes = require("./routes/index");
-const loginRoutes = require("./routes/login");
-const registerRoutes = require("./routes/register")
-const productDetailRoutes = require("./routes/productDetail");
-//const productCartRoutes = require("./routes/productCart");
-const flightDetail = require("./routes/flightDetail");
-//const productListRoutes = require("./routes/productList");
-//const usersListRoutes = require("./routes/usersList");
-const myAccountRoutes = require("./routes/myAccount")
-const productRoutes = require("./routes/products")
+const usersRoutes = require("./routes/users");
+const productsRoutes = require("./routes/products");
+const adminRoutes = require("./routes/admin");
 
 app.use(cors());
 app.use(express.static('./public'));
@@ -29,16 +23,9 @@ app.set("view engine", "ejs");
 app.set('views', path.resolve(__dirname, "views"));
 
 app.use('/', indexRoutes);
-app.use('/login', loginRoutes);
-app.use('/register', registerRoutes);
-app.use('/productDetail', productDetailRoutes);
-//app.use(('/productCart'), productCartRoutes);
-app.use('/flightDetail', flightDetail);
-//app.use(('/productList'), productListRoutes);
-//app.use(('/usersList'), usersListRoutes);
-app.use('/myaccount', myAccountRoutes);
-
-app.use('/products', productRoutes);   
+app.use('/user', usersRoutes);
+app.use('/products', productsRoutes);
+app.use('/admin', adminRoutes);
 
 
 app.use((req, res, next) => {

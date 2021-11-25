@@ -1,14 +1,21 @@
 const ENDPOINTS = {
-    "INDEX": "/",
-    "REGISTER": "/",
-    "LOGIN": "/",
-    "FLIGHTDETAIL": "/",
-    "USERSLIST": "/",
-    "MYACCOUNT": "/",
-    "ADDPRODUCT": "/",
-    "PRODUCTLIST": "/",
-    "PRODUCTCART": "/productcart",
-    "PRODUCTDETAIL": "/productdetail",
+    index: {
+        "INDEX": "/"
+    },
+    user: {
+        "REGISTER": "/register",
+        "LOGIN": "/login",
+        "MYACCOUNT": "/myaccount"
+    },
+    flights: {
+        "FLIGHTDETAIL": "/flightdetail",
+        "PRODUCTDETAIL": "/productdetail"
+    },
+    administrator: {
+        "USERSLIST": "/userlist",
+        "ADDPRODUCT": "/userlist",
+        "PRODUCTLIST": "/productlist"
+    }
 };
 
 

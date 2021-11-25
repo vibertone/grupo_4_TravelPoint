@@ -26,9 +26,7 @@
                     </div>
                     <div class="fecha-pasajeros">
                         <p>
-                            <input type="text" placeholder="MM/DD/YYYY" name= "fechas" id="fechas"
-                    onfocus="(this.type='date')"
-                
+                            <input type="text" placeholder="MM/DD/YYYY" name= "fechas" id="fechas">
                         </p>
                         <p>
                             <input type="number" name="cant-pasajeros" id="cant-pasajeros" placeholder="Pasajeros">
@@ -45,7 +43,7 @@
             </div>
             <section class="vuelos">
                 <% data.forEach(function(flight){ %>
-                    <a href="/productDetail">
+                    <a href="/products/productDetail">
                         <article>
                             <div class="imagen-destino">
                                 <img src="/img/<%= flight.image %>" alt="imagen de <%= flight.destiny %>">
