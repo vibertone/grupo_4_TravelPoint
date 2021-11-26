@@ -15,8 +15,8 @@ router.get(ENDPOINTS.administrator.PRODUCTLIST, controllers.list);
 
 
 
-/*** Detalle de un producto particular ***/
-//router.get('/products/:id/', controllers.detail); 
+/*** Detalle de un producto particular admin ***/
+router.get(ENDPOINTS.administrator.PRODUCTREVIEW, controllers.productReview); 
 
 /*** EDITAR UN PRODUCTO ***/
 //router.get('/products/:id/edit', controllers.edit); 

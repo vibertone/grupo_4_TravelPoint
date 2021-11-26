@@ -14,7 +14,8 @@ const ENDPOINTS = {
     administrator: {
         "USERSLIST": "/userlist",
         "ADDPRODUCT": "/userlist",
-        "PRODUCTLIST": "/productlist"
+        "PRODUCTLIST": "/productlist",
+        "PRODUCTREVIEW":"/productreview/:id"
     }
 };
 
