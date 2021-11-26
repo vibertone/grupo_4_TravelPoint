@@ -66,6 +66,17 @@ header {
 
 .header-box3 div a {
     color: #5962ff;
+    
+   
+}
+
+.header-box4 {
+    color: #5962ff;
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    margin-right: 10px;
+   
 }
 
 .buscar-vuelo {
