@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const ENDPOINTS = require("../endpoints");
-const controllers = require("../controllers/products")
+const controllers = require("../controllers/products_ctrl")
 
 router.get(ENDPOINTS.flights.PRODUCTDETAIL, controllers.productDetail);
 
 router.get(ENDPOINTS.flights.FLIGHTDETAIL, controllers.flightDetail);
 
 /*** LISTADO DE PRODUCTOS ***/
-//router.get('/products', controllers.products); 
+router.get(ENDPOINTS.administrator.PRODUCTLIST, controllers.list);
 
 /*** Formulario de creación de productos + Acción de creación***/
 //router.get(ENDPOINTS.ADDPRODUCT,controllers.create)

@@ -11,7 +11,7 @@ app.use(express.json());
 const indexRoutes = require("./routes/index");
 const usersRoutes = require("./routes/users");
 const productsRoutes = require("./routes/products");
-const adminRoutes = require("./routes/admin");
+const adminRoutes = require("./routes/products");
 
 app.use(cors());
 app.use(express.static('./public'));
@@ -24,7 +24,7 @@ app.set('views', path.resolve(__dirname, "views"));
 
 app.use('/', indexRoutes);
 app.use('/user', usersRoutes);
-app.use('/products', productsRoutes);
+app.use('/administrator', productsRoutes);
 app.use('/admin', adminRoutes);
 
 
