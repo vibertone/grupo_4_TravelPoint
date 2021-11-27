@@ -24,7 +24,7 @@ app.set('views', path.resolve(__dirname, "views"));
 
 app.use('/', indexRoutes);
 app.use('/user', usersRoutes);
-app.use('/administrator', productsRoutes);
+app.use('/products', productsRoutes);
 app.use('/admin', adminRoutes);
 
 
