@@ -15,6 +15,9 @@ const controllers = {
     productCreate: (req, res) => {
         res.render('productCreate')
     },
+    productEdit: (req, res) => {
+        res.render('productEdit', {data: flights})
+    },
     store: (req, res) => {
         const { origen, destino, precio, tipo, ida, vuelta, horarioIda, horarioVuelta, escalas } = req.body;
 

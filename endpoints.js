@@ -15,7 +15,8 @@ const ENDPOINTS = {
         "USERSLIST": "/userlist",
         "PRODUCTLIST": "/productlist",
         "PRODUCTCREATE": "/productcreate",
-        "PRODUCTREVIEW":"/productreview/:id"
+        "PRODUCTREVIEW":"/productreview/:id",
+        "PRODUCTEDIT": "/productedit/:id"
     }
 };
 
