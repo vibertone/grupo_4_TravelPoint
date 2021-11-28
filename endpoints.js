@@ -8,8 +8,8 @@ const ENDPOINTS = {
         "MYACCOUNT": "/myaccount"
     },
     flights: {
-        "FLIGHTDETAIL": "/flightdetail",
-        "PRODUCTDETAIL": "/productdetail"
+        "SHOPPINGDETAIL": "/shoppingdetail",
+        "PRODUCTDETAIL": "/productdetail/:id"
     },
     administrator: {
         "USERSLIST": "/userlist",

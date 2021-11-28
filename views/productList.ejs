@@ -11,33 +11,50 @@
         <%- include('./partials/header') %>
     </header>
     <main>
-        <h1 class="titulo-productos">Lista de Productos</h1>
 
-        <form>
-            <div class="btn-agregarproducto">
-                <a href="/admin/productcreate"><button type="button">Agregar producto</button></a>
-            </div>
-
-            <div class="producto">
-                <div class="tituloydescrip">
-                    <div class="descrip-producto">
-                        <% data.forEach(function(flight){ %>
-                        <p>Tipo: <%= flight.tipo %></p>
-                        <p>Origen: <%= flight.origen %></p>
-                        <p>Destino: <%= flight.destino %></p>
-                        <p>ida: <%= flight.ida %></p>
-                        <p>vuelta: <%= flight.vuelta %></p>
-                        <p>Horario de ida: <%= flight.horarioIda %></p>
-                        <p>Horario de vuelta: <%= flight.horarioVuelta %></p>
-                        <p>escalas: <%= flight.escalas %></p>
-                        <p>precio: <%= flight.precio %></p>
-                        <br><br><br>
-                        <% }); %>
-                    </div>
+        <div class="titulo-productlist">
+            <h1>Lista de Productos</h1>
+            <a href="/admin/productcreate"><button type="submit">Agregar producto</button></a>
+        </div>
+        <form class="product-list">
+            <% data.forEach(function(flight){ %>
+                <div class="descripcion-producto">
+                    <p>Nro de ID: <%= flight.id %>
+                    </p>
+                    <p>Tipo: <%= flight.tipo %>
+                    </p>
+                    <p>Origen: <%= flight.origen %>
+                            <%= flight.aeropuertoOrigen %>
+                    </p>
+                    <p>Destino: <%= flight.destino %>
+                            <%= flight.aeropuertoDestino %>
+                    </p>
+                    <p>ida: <%= flight.ida %>
+                    </p>
+                    <p>vuelta: <%= flight.vuelta %>
+                    </p>
+                    <p>Horario de ida: <%= flight.horarioIda %>
+                    </p>
+                    <p>Horario de llegada: <%= flight.horarioLlegadaIda %>
+                    </p>
+                    <p>Duración: <%= flight.duracionIda %>
+                    </p>
+                    <p>Escalas: <%= flight.escalasIda %>
+                    </p>
+                    <p>Horario de vuelta: <%= flight.horarioVuelta %>
+                    </p>
+                    <p>Horario de llegada: <%= flight.horarioLlegadaVuelta %>
+                    </p>
+                    <p>Duración: <%= flight.duracionVuelta %>
+                    </p>
+                    <p>Escalas: <%= flight.escalasVuelta %>
+                    </p>
+                    <p>Precio: <%= flight.precio %>
+                    </p>
+                    <a href=""><button type="submit">Editar producto</button></a>
                 </div>
-                <button type="button" class="boton-edit">Editar</button>
-            </div>
-
+                <br><br>
+                <% }); %>
         </form>
 
     </main>

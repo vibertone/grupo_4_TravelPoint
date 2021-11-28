@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "tipo-de-producto": "Barcelona",
+        "destiny": "Barcelona",
         "price": "$110.609",
         "image": "barcelona.jpg",
         "from": "Desde Buenos Aires"
