@@ -1,58 +1,26 @@
 [
     {
         "id": 1,
-        "destiny": "Barcelona",
-        "price": "$110.609",
-        "image": "barcelona.jpg",
-        "from": "Desde Buenos Aires"
+        "origen": "Buenos Aires",
+        "destino": "Barcelona",
+        "precio": "$110.609",
+        "tipo": "Vuelo",
+        "ida": "25/11/2021",
+        "vuelta": "14/12/2021",
+        "horarioIda": "14:22",
+        "horarioVuelta": "11:15",
+        "escalas": "Sin Escalas"
     },
     {
         "id": 2,
-        "destiny": "Bariloche",
-        "price": "$25.120",
-        "image": "bariloche.jfif",
-        "from": "Desde Buenos Aires"
-    },
-    {
-        "id": 3,
-        "destiny": "Cancun",
-        "price": "$75.510",
-        "image": "cancun.jfif",
-        "from": "Desde Buenos Aires"
-    },
-    {
-        "id": 4,
-        "destiny": "Madrid",
-        "price": "$80.540",
-        "image": "madrid.jpg",
-        "from": "Desde Buenos Aires"
-    },
-    {
-        "id": 5,
-        "destiny": "Mendoza",
-        "price": "$11.750",
-        "image": "mendoza.jpg",
-        "from": "Desde Buenos Aires"
-    },
-    {
-        "id": 6,
-        "destiny": "Miami",
-        "price": "$76.209",
-        "image": "miami.jpg",
-        "from": "Desde Buenos Aires"
-    },
-    {
-        "id": 7,
-        "destiny": "Rio de Janeiro",
-        "price": "$45.520",
-        "image": "rio_de_janeiro.jpg",
-        "from": "Desde Buenos Aires"
-    },
-    {
-        "id": 8,
-        "destiny": "Tokio",
-        "price": "$145.000",
-        "image": "tokio.jpg",
-        "from": "Desde Buenos Aires"
+        "origen": "Buenos Aires",
+        "destino": "Barcelona",
+        "precio": "$126.250",
+        "tipo": "Vuelo",
+        "ida": "16/12/2021",
+        "vuelta": "30/12/2021",
+        "horarioIda": "18:02",
+        "horarioVuelta": "12:25",
+        "escalas": "Sin Escalas"
     }
 ]

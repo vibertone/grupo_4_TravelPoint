@@ -13,8 +13,8 @@ const ENDPOINTS = {
     },
     administrator: {
         "USERSLIST": "/userlist",
-        "ADDPRODUCT": "/userlist",
         "PRODUCTLIST": "/productlist",
+        "PRODUCTCREATE": "/productcreate",
         "PRODUCTREVIEW":"/productreview/:id"
     }
 };

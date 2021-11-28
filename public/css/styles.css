@@ -445,6 +445,41 @@ div #nro-documento {
     border-right: solid silver 1px;
 }
 
+.product-create {
+    background-color: #c4e4ff;
+    padding: 10px 0 10px 5%;
+}
+
+.product-create form p label, .product-create form span {
+    margin-right: 20px;
+}
+
+.product-create form button {
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    padding: 10px;
+    color: white;
+    background-color: #154b9c;
+}
+
+.product-create form input {
+    width: 50%;
+    border: 1px solid silver;
+    border-radius: 5px;
+    height: 35px;
+    padding: 0 10px;
+    background-color: white;
+}
+
+.product-create form select {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid silver;
+    height: 35px;
+}
+
 
 /* Vicky */
 
@@ -794,10 +829,6 @@ footer .container-footer-2 {
 
 .tituloydescrip h3 {
     margin-left: 20px;
-}
-
-.descrip-producto {
-    width: 70%;
 }
 
 @media (min-width: 481px) {

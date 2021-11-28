@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/31b9fa39aa.js" crossorigin="anonymous"></script>
+    <title>Creá un producto</title>
+</head>
+
+<body>
+
+
+    <%- include('./partials/header') %>
+        <main>
+            <div class="product-create">
+                <h3>Agrega un producto</h3>
+
+                <form action="/admin/productcreate" method="POST">
+                    <span>Tipo de producto:</span><select name="tipo" id="tipo" required>
+                        <option value="vuelo">Vuelo</option>
+                        <option value="hospedaje">Hospedaje</option>
+                        <option value="actividad">Actividad</option>
+                        <option value="auto">Auto</option>
+                        <option value="paquete">Paquete</option>
+                    </select>
+                    <p><label for="origen">Origen:</label><input type="text" name="origen" id="origen"></p>
+                    <p><label for="destino">Destino:</label><input type="text" name="destino" id="destino"></p>
+                    <p><label for="ida">Fecha de ida:</label><input type="date" name="ida" id="ida">
+                    </p>
+                    <p><label for="vuelta">Fecha de vuelta:</label><input type="date" name="vuelta"
+                            id="vuelta"></p>
+                    <p><label for="horarioIda">Horario de ida:</label><input type="text" name="horarioIda"
+                            id="horarioIda" placeholder="hora:min"></p>
+                    <p><label for="horarioVuelta">Horario de vuelta:</label><input type="text" name="horarioVuelta"
+                            id="horarioVuelta" placeholder="hora:min"></p>
+                    <span>Cantidad de escalas:</span><select name="escalas" id="escalas" required>
+                        <option value="sin-escalas">Sin escalas</option>
+                        <option value="1 escala">1 Escala</option>
+                        <option value="2 escalas">2 Escalas</option>
+                        <option value="3 escalas">3 Escalas</option>
+                    </select>
+                    <p><label for="precio">Precio:</label><input type="text" name="precio"
+                        id="precio" placeholder=""></p>
+                    <br><br>
+                    <p><button type="submit">Agregar producto</button></p>
+                </form>
+            </div>
+        </main>
+        <%- include('./partials/footer') %>
+</body>
+
+</html>

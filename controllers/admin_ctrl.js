@@ -1,57 +1,42 @@
 const fs = require('fs');
 const path = require('path');
-const productsFilePath = path.join(__dirname, '../data/flights.json');
+
+const flightsFilePath = path.join(__dirname, '../data/flights.json');
+const flights = JSON.parse(fs.readFileSync(flightsFilePath, 'utf-8'));
 
 const controllers = {
 
     productList: (req, res) => {
-        res.render('productList');
+        res.render('productList', {data: flights});
     },
     usersList: (req, res) => {
         res.render('usersList');
     },
+    productCreate: (req, res) => {
+        res.render('productCreate')
+    },
+    store: (req, res) => {
+        const { origen, destino, precio, tipo, ida, vuelta, horarioIda, horarioVuelta, escalas } = req.body;
 
-    //Nuevos metodos Sprint #4
-    // Root - Show all products
+        const data = {
+            origen: origen,
+            destino: destino,
+            precio: precio,
+            tipo: tipo,
+            ida: ida,
+            vuelta: vuelta,
+            horarioIda: horarioIda,
+            horarioVuelta: horarioVuelta,
+            escalas: escalas
+        };
 
+        flights.push(data);
 
-    // Detail - Detail from one product
-    //detail: (req, res) => {
-    //	idProd=req.params.id;
-    //	producto = products.find(function(producto){
-    //		return producto.id==idProd;
-    //	})
-    //	res.render('detail',{producto})
-    //},
+        fs.writeFileSync(flightsFilePath, JSON.stringify(flights), 'utf-8');
 
-    // Create - Form to create
-    /* addProduct: (req, res) => {
-            res.render('addProduct');
-            }, */
-
-
-    // Create -  Method to store
-    // store: (req, res) => {
-
-    // },
-
-    // Update - Form to edit
-    // edit: (req, res) => {
-    // res.render('product-edit-form')
-    //},
-    // Update - Method to update
-    //update: (req, res) => {
-    //res.render('product-edit-form')
-    //},
-
-    // Delete - Delete one product from DB
-    //  destroy : (req, res) => {
-    //  res.render('product-edit-form')
-    //}
-
-};
-
-
+        res.redirect('/admin/productlist');
+    }
+}
 
 
 module.exports = controllers;
