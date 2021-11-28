@@ -66,17 +66,6 @@ header {
 
 .header-box3 div a {
     color: #5962ff;
-    
-   
-}
-
-.header-box4 {
-    color: #5962ff;
-    display: flex;
-    width: 80%;
-    justify-content: space-between;
-    margin-right: 10px;
-   
 }
 
 .buscar-vuelo {
@@ -528,165 +517,6 @@ div #nro-documento {
     color: gray;
 }
 
-/* Feli */
-
-.carrito {
-    background-color: #c4e4ff;
-}
-
-.titulos {
-    margin-left: 5px;
-}
-
-.buscar {
-    display: block;
-    color: #154b9c;
-}
-
-.pass {
-    padding-bottom: 20px;
-}
-
-.email {
-    padding-bottom: 20px;
-}
-
-.formularios input {
-    width: 80%;
-    height: 80%;
-    padding: 100px;
-    margin: 30px 100px;
-    border: gray 0%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-    border-style: none;
-}
-
-.carrito button {
-    border: solid 1px gray;
-    border-radius: 5px;
-    align-content: center;
-    margin-left: 50px;
-}
-
-.contain-subtitulo {
-    display: flex;
-    ;
-    margin-left: 70px;
-    margin-right: 70px;
-    margin-top: 20px;
-    font-size: 20px;
-}
-
-.subtitulo2 {
-    margin-left: 730px;
-    margin-right: 80px;
-}
-
-.cuerpo-carrito1 {
-    background-color: white;
-    width: 55%;
-    height: 100px;
-    margin-left: 60px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 2px 2px 5px #999;
-}
-
-.cuerpo-carrito2 {
-    background-color: white;
-    width: 9%;
-    height: 100px;
-    margin-left: 20px;
-    margin-right: 6px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 2px 2px 5px #999;
-}
-
-.cuerpo-carrito3 {
-    background-color: white;
-    width: 24%;
-    height: 100px;
-    margin-left: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 2px 2px 5px #999;
-}
-
-.formularios button {
-    margin-left: 1300px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.img-miami {
-    margin-left: 60px;
-    margin-top: 20px;
-    width: 25%;
-    border-radius: 20px;
-    box-shadow: 2px 2px 5px #999;
-    max-height: 270px;
-}
-
-.subtitulo4 {
-    font-size: 20px;
-    margin-left: 60px;
-    margin-top: 20px;
-}
-
-.detalle-compra {
-    display: flex;
-}
-
-.texto-idayvuelta {
-    margin-left: 25px;
-    margin-top: 25px;
-}
-
-.vuelta {
-    margin-left: 80px;
-}
-
-.texto-detalle {
-    display: flex;
-    flex-direction: column;
-}
-
-.hab-lujo {
-    margin-top: 30px;
-    margin-left: 25px;
-    max-width: 400px;
-}
-
-.texto-total {
-    margin-left: 25px;
-    margin-bottom: 50px;
-    margin-top: 12px;
-}
-
-.subtotal2 {
-    margin-left: 340px;
-}
-
-.totalsinimp2 {
-    margin-left: 262px;
-}
-
-.imp2 {
-    margin-left: 322px;
-}
-
-.totalconimp2 {
-    margin-left: 205px;
-}
-
 /* PRODUCT DETAIL */
 
 .div-vuelo {
@@ -779,56 +609,36 @@ footer .container-footer-2 {
 
 /* PRODUCT LIST */
 
-.producto {
-    margin-left: 30px;
-    margin-right: 30px;
+.titulo-productlist {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    align-items: center;
+    padding: 0 25px;
 }
 
-.titulo-productos {
-    margin-left: 30px;
-}
-
-.btn-agregarproducto {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 30px;
-    height: 30px;
-}
-
-.boton-edit {
-    width: 100px;
-    height: 30px;
-    margin-top: 15px;
-}
-
-.img-miami1 {
-    width: 27%;
+.titulo-productlist a button {
+    background-color: #588de2;
+    padding: 8px 20px;
+    border: white solid 1px;
     border-radius: 10px;
+    color: white;
 }
 
-.img-ritz {
-    width: 36%;
-    border-radius: 10px;
+.product-list .descripcion-producto button {
+    background-color: #837e7e;
+    padding: 5px 20px;
+    border: white solid 1px;
+    border-radius: 5px;
+    color: white;
 }
 
-.tituloydescrip {
-    display: flex;
-}
-
-.tituloydescrip h4 {
-    margin-left: 20px;
-    max-width: 30%;
-}
-
-.tituloydescrip p {
-    margin-left: 20px;
-}
-
-.tituloydescrip h3 {
-    margin-left: 20px;
+.product-list .descripcion-producto {
+    border-radius: 30px;
+    width: 90%;
+    background-color: #c4e4ff;
+    padding: 20px 10%;
+    text-align: left;
+    margin: auto;
 }
 
 @media (min-width: 481px) {
@@ -908,5 +718,18 @@ footer .container-footer-2 {
 
     .container-1 .sub-1 .info {
         padding: 0 40% 0 10px;
+    }
+
+     /* PRODUCT LIST */
+
+    .product-list .descripcion-producto {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+
+    .product-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 }

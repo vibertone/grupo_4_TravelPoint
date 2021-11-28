@@ -1,18 +1,15 @@
 let fs = require('fs');
 const path = require('path');
 
-//listado de productos
-/* let productListPath = path.join(__dirname,'../data/flights.json')
-let productsListJSON = fs.readFileSync(productListPath, {encoding: 'utf-8'});
-let productList = JSON.parse(productsListJSON);
- */
+const flightsFilePath = path.join(__dirname, '../data/flights.json');
+const flights = JSON.parse(fs.readFileSync(flightsFilePath, 'utf-8'));
 
 const controllers = {
     productDetail: (req, res) => {
-        res.render('productDetail');
+        res.render('productDetail', {data: flights});
     },
-    flightDetail: (req, res) => {
-        res.render('flightDetail');
+    shoppingDetail: (req, res) => {
+        res.render('shoppingDetail');
     }
     /*
     list: (req, res) => {

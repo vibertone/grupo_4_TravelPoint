@@ -5,7 +5,7 @@ const controllers = require("../controllers/products_ctrl")
 
 router.get(ENDPOINTS.flights.PRODUCTDETAIL, controllers.productDetail);
 
-router.get(ENDPOINTS.flights.FLIGHTDETAIL, controllers.flightDetail);
+router.get(ENDPOINTS.flights.SHOPPINGDETAIL, controllers.shoppingDetail);
 /*** Formulario de creación de productos + Acción de creación***/
 //router.get(ENDPOINTS.ADDPRODUCT,controllers.create)
 

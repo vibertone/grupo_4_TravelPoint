@@ -10,141 +10,53 @@
     <%- include('./partials/header') %>
         <main>
             <section class="vuelos">
-                <div class="div-vuelo">
-                    <div class="ida-y-vuelta">
-                        <h3>IDA</h3>
-                        <div class="detalle-de-vuelo">
-                            <div>
-                                <div>19:06</div>
-                                <div>EZE</div>
+                <% data.forEach(function(flight){ %>
+                    <div class="div-vuelo">
+                        <div class="ida-y-vuelta">
+                            <h3>IDA - <%= flight.ida %></h3>
+                            <div class="detalle-de-vuelo">
+                                <div>
+                                    <div><%= flight.horarioIda %></div>
+                                    <div><%= flight.aeropuertoOrigen %></div>
+                                </div>
+                                <div class="escalas">
+                                    <div><%= flight.escalasIda %></div>
+                                    <hr>
+                                    <div><%= flight.duracionIda %></div>
+                                </div>
+                                <div>
+                                    <div><%= flight.horarioLlegadaIda %></div>
+                                    <div><%= flight.aeropuertoDestino %></div>
+                                </div>
                             </div>
-                            <div class="escalas">
-                                <div>Directo</div>
-                                <hr>
-                                <div>12h 45min</div>
-                            </div>
-                            <div>
-                                <div>21:24</div>
-                                <div>BCN</div>
-                            </div>
-                        </div>
-                        <h3>VUELTA</h3>
-                        <div class="detalle-de-vuelo">
-                            <div>
-                                <div>08:06</div>
-                                <div>BCN</div>
-                            </div>
-                            <div class="escalas">
-                                <div>1 Escala</div>
-                                <hr>
-                                <div>15h 20min</div>
-                            </div>
-                            <div>
-                                <div>7:24</div>
-                                <div>EZE</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="price-button">
-                        <div class="price">
-                            <span>$35.000</span>
-                            <a href="/"><p>Ver detalle</p></a>
-                        </div>
-                        <div>
-                            <a href="/products/flightDetail"><button type="submit">Seleccionar</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="div-vuelo">
-                    <div class="ida-y-vuelta">
-                        <h3>IDA</h3>
-                        <div class="detalle-de-vuelo">
-                            <div>
-                                <div>19:06</div>
-                                <div>EZE</div>
-                            </div>
-                            <div class="escalas">
-                                <div>1 Escala</div>
-                                <hr>
-                                <div>14h 40min</div>
-                            </div>
-                            <div>
-                                <div>21:24</div>
-                                <div>BCN</div>
+                            <h3>VUELTA - <%= flight.vuelta %></h3>
+                            <div class="detalle-de-vuelo">
+                                <div>
+                                    <div><%= flight.horarioVuelta %></div>
+                                    <div><%= flight.aeropuertoDestino %></div>
+                                </div>
+                                <div class="escalas">
+                                    <div><%= flight.escalasVuelta %></div>
+                                    <hr>
+                                    <div><%= flight.duracionVuelta %></div>
+                                </div>
+                                <div>
+                                    <div><%= flight.horarioLlegadaVuelta %></div>
+                                    <div><%= flight.aeropuertoOrigen %></div>
+                                </div>
                             </div>
                         </div>
-                        <h3>VUELTA</h3>
-                        <div class="detalle-de-vuelo">
-                            <div>
-                                <div>08:06</div>
-                                <div>BCN</div>
-                            </div>
-                            <div class="escalas">
-                                <div>Directo</div>
-                                <hr>
-                                <div>12h 0min</div>
+                        <div class="price-button">
+                            <div class="price">
+                                <span><%= flight.precio %></span>
+                                <a href="/"><p>Ver detalle</p></a>
                             </div>
                             <div>
-                                <div>7:24</div>
-                                <div>EZE</div>
+                                <a href="/products/shoppingDetail"><button type="submit">Seleccionar</button></a>
                             </div>
                         </div>
                     </div>
-                    <div class="price-button">
-                        <div class="price">
-                            <span>$22.000</span>
-                            <a href="/"><p>Ver detalle</p></a>
-                        </div>
-                        <div>
-                            <button type="submit">Seleccionar</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="div-vuelo">
-                    <div class="ida-y-vuelta">
-                        <h3>IDA</h3>
-                        <div class="detalle-de-vuelo">
-                            <div>
-                                <div>19:06</div>
-                                <div>EZE</div>
-                            </div>
-                            <div class="escalas">
-                                <div>Directo</div>
-                                <hr>
-                                <div>12h 45min</div>
-                            </div>
-                            <div>
-                                <div>21:24</div>
-                                <div>BCN</div>
-                            </div>
-                        </div>
-                        <h3>VUELTA</h3>
-                        <div class="detalle-de-vuelo">
-                            <div>
-                                <div>08:06</div>
-                                <div>BCN</div>
-                            </div>
-                            <div class="escalas">
-                                <div>Directo</div>
-                                <hr>
-                                <div>12h 20min</div>
-                            </div>
-                            <div>
-                                <div>7:24</div>
-                                <div>EZE</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="price-button">
-                        <div class="price">
-                            <span>$27.500</span>
-                            <a href="/"><p>Ver detalle</p></a>
-                        </div>
-                        <div>
-                            <button type="submit">Seleccionar</button>
-                        </div>
-                    </div>
-                </div>
+                    <% }) %>
             </section>
         </main>
         <%- include('./partials/footer') %>

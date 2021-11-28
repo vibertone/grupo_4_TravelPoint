@@ -43,7 +43,7 @@
             </div>
             <section class="vuelos">
                 <% data.forEach(function(flight){ %>
-                    <a href="/products/productDetail">
+                    <a href="/products/productDetail/<%= flight.id %>">
                         <article>
                             <div class="imagen-destino">
                                 <img src="/img/<%= flight.image %>" alt="imagen de <%= flight.destiny %>">
