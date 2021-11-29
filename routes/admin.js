@@ -12,6 +12,7 @@ router.get(ENDPOINTS.administrator.USERSLIST, controllers.usersList);
 router.get(ENDPOINTS.administrator.PRODUCTCREATE, controllers.productCreate);
 router.post(ENDPOINTS.administrator.PRODUCTCREATE, controllers.store);
 
-router.get (ENDPOINTS.administrator.PRODUCTEDIT, controllers.productEdit);
+router.get(ENDPOINTS.administrator.PRODUCTEDIT, controllers.productEdit);
+router.put(ENDPOINTS.administrator.PRODUCTEDIT, controllers.update);
 
 module.exports = router;
