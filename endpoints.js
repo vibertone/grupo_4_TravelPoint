@@ -16,7 +16,8 @@ const ENDPOINTS = {
         "PRODUCTLIST": "/productlist",
         "PRODUCTCREATE": "/productcreate",
         "PRODUCTREVIEW":"/productreview/:id",
-        "PRODUCTEDIT": "/productedit/:id"
+        "PRODUCTEDIT": "/productedit/:id",
+        "PRODUCTDELETE":"/productdelete/:id"
     }
 };
 
