@@ -1,171 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <%- include('./partials/head') %>
-        <title>Hola Admin - Revisa este vuelo</title>
+    <%- include('./partials/head') %>
+        <title>Hola Admin - Revisa este vuelo</title>
 </head>
-
 <body>
-    <%- include('./partials/header') %>
-        <main>
-            <div class="producto">
-                <div class="tituloydescrip">
-                    <img src="./img/<%= productList.image %>" class="img-ritz">
-                    <div class="descrip-producto">
-                        <h4><%= productList.destiny %></h4>
-                        <p>01 Enero 2022 - 15 Enero 2022</p>
-                        <p><%= productList.from %></p>
-                        <p>1 extra-large double bed</p>
-                        <h3><%= productList.price %></h3>
+    <%- include('./partials/header') %>
+        <main>
+            <h2>Estas seguro que queres eliminar este Vuelo?</h2>
+            
+                <form class= product-list action="/admin/productDelete/<%= flight.id %>?_method=delete" method="post">
+                <div class="titulo-productlist">
+                    <div class="descripcion-producto">
+                        <p>Nro de ID: <%= flight.id %></p>
+                        <p>Tipo: <%= flight.tipo %></p>
+                        <p>Origen: <%= flight.origen %> <%= flight.aeropuertoOrigen %></p>
+                        <p>Destino: <%= flight.destino %> <%= flight.aeropuertoDestino %> </p>
+                        <p>ida: <%= flight.ida %></p>
+                        <p>vuelta: <%= flight.vuelta %></p>
+                        <p>Horario de ida: <%= flight.horarioIda %></p>
+                        <p>Horario de llegada: <%= flight.horarioLlegadaIda %></p>
+                        <p>Duración: <%= flight.duracionIda %> </p>
+                        <p>Escalas: <%= flight.escalasIda %> </p>
+                        <p>Horario de vuelta: <%= flight.horarioVuelta %></p>
+                        <p>Horario de llegada: <%= flight.horarioLlegadaVuelta %></p>
+                        <p>Duración: <%= flight.duracionVuelta %></p>
+                        <p>Escalas: <%= flight.escalasVuelta %></p>
+                        <p>Precio: <%= flight.precio %></p>
+                   
+                         <button type="submit">CONFIRMA ELIMINACIÓN</button>
                     </div>
                 </div>
-                <form action="/productDetail" method="get"></form>
-                <a href="administrator/productreview/<%= productList.id %>">
-                <button type="button"  class="boton-edit">VER</button>
-            </a>
-            </div>
+                    </form>
+          
 
-
-
-            <section class="vuelos">
-                <div class="div-vuelo">
-                    <div class="ida-y-vuelta">
-                        <h3>IDA</h3>
-                        <div class="detalle-de-vuelo">
-                            <div>
-                                <div>19:06</div>
-                                <div>EZE</div>
-                            </div>
-                            <div class="escalas">
-                                <div>Directo</div>
-                                <hr>
-                                <div>12h 45min</div>
-                            </div>
-                            <div>
-                                <div>21:24</div>
-                                <div>BCN</div>
-                            </div>
-                        </div>
-                        <h3>VUELTA</h3>
-                        <div class="detalle-de-vuelo">
-                            <div>
-                                <div>08:06</div>
-                                <div>BCN</div>
-                            </div>
-                            <div class="escalas">
-                                <div>1 Escala</div>
-                                <hr>
-                                <div>15h 20min</div>
-                            </div>
-                            <div>
-                                <div>7:24</div>
-                                <div>EZE</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="price-button">
-                        <div class="price">
-                            <span>$35.000</span>
-                            <a href="/"><p>Ver detalle</p></a>
-                        </div>
-                        <div>
-                            <a href="/products/flightDetail"><button type="submit">Seleccionar</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="div-vuelo">
-                    <div class="ida-y-vuelta">
-                        <h3>IDA</h3>
-                        <div class="detalle-de-vuelo">
-                            <div>
-                                <div>19:06</div>
-                                <div>EZE</div>
-                            </div>
-                            <div class="escalas">
-                                <div>1 Escala</div>
-                                <hr>
-                                <div>14h 40min</div>
-                            </div>
-                            <div>
-                                <div>21:24</div>
-                                <div>BCN</div>
-                            </div>
-                        </div>
-                        <h3>VUELTA</h3>
-                        <div class="detalle-de-vuelo">
-                            <div>
-                                <div>08:06</div>
-                                <div>BCN</div>
-                            </div>
-                            <div class="escalas">
-                                <div>Directo</div>
-                                <hr>
-                                <div>12h 0min</div>
-                            </div>
-                            <div>
-                                <div>7:24</div>
-                                <div>EZE</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="price-button">
-                        <div class="price">
-                            <span>$22.000</span>
-                            <a href="/"><p>Ver detalle</p></a>
-                        </div>
-                        <div>
-                            <button type="submit">Seleccionar</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="div-vuelo">
-                    <div class="ida-y-vuelta">
-                        <h3>IDA</h3>
-                        <div class="detalle-de-vuelo">
-                            <div>
-                                <div>19:06</div>
-                                <div>EZE</div>
-                            </div>
-                            <div class="escalas">
-                                <div>Directo</div>
-                                <hr>
-                                <div>12h 45min</div>
-                            </div>
-                            <div>
-                                <div>21:24</div>
-                                <div>BCN</div>
-                            </div>
-                        </div>
-                        <h3>VUELTA</h3>
-                        <div class="detalle-de-vuelo">
-                            <div>
-                                <div>08:06</div>
-                                <div>BCN</div>
-                            </div>
-                            <div class="escalas">
-                                <div>Directo</div>
-                                <hr>
-                                <div>12h 20min</div>
-                            </div>
-                            <div>
-                                <div>7:24</div>
-                                <div>EZE</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="price-button">
-                        <div class="price">
-                            <span>$27.500</span>
-                            <a href="/"><p>Ver detalle</p></a>
-                        </div>
-                        <div>
-                            <button type="submit">Seleccionar</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <%- include('./partials/footer') %>
-
+        </main>
+        <%- include('./partials/footer') %>
 </html>
