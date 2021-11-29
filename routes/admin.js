@@ -15,4 +15,7 @@ router.post(ENDPOINTS.administrator.PRODUCTCREATE, controllers.store);
 router.get(ENDPOINTS.administrator.PRODUCTEDIT, controllers.productEdit);
 router.put(ENDPOINTS.administrator.PRODUCTEDIT, controllers.update);
 
+router.get(ENDPOINTS.administrator.PRODUCTREVIEW, controllers.productReview);
+router.delete (ENDPOINTS.administrator.PRODUCTDELETE, controllers.productDelete);
+
 module.exports = router;

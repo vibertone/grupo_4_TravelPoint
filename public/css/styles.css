@@ -624,7 +624,7 @@ footer .container-footer-2 {
     color: white;
 }
 
-.product-list .descripcion-producto button {
+.product-list .descripcion-producto button, main form .product-review button {
     background-color: #837e7e;
     padding: 5px 20px;
     border: white solid 1px;
@@ -632,13 +632,17 @@ footer .container-footer-2 {
     color: white;
 }
 
-.product-list .descripcion-producto {
+.product-list .descripcion-producto, main form .product-review {
     border-radius: 30px;
     width: 90%;
     background-color: #c4e4ff;
     padding: 20px 10%;
     text-align: left;
     margin: auto;
+}
+
+.titulo-productreview {
+    margin-left: 30px;
 }
 
 @media (min-width: 481px) {
@@ -731,5 +735,9 @@ footer .container-footer-2 {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+    }
+
+    main form .product-review {
+    width: 80vw;
     }
 }

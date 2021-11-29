@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const flightsFilePath = path.join(__dirname, '../data/flights.json');
-const flights = JSON.parse(fs.readFileSync(flightsFilePath, 'utf-8'));
+let flightsFilePath = path.join(__dirname, '../data/flights.json');
+let flights = JSON.parse(fs.readFileSync(flightsFilePath, 'utf-8'));
 
 const controllers = {
 
@@ -66,8 +66,27 @@ const controllers = {
         fs.writeFileSync(flightsFilePath, JSON.stringify(flights), 'utf-8');
 
         res.redirect('/admin/productlist');
-    }
+    },
+
+    productReview: (req, res) => {
+                elID = req.params.id;
+                let flightID = flights.find(oneFlight => {
+                    if(oneFlight.id == elID) {
+                        return oneFlight;
+                    }
+                });
+                res.render('productReview', { flight: flightID });
+            },
+    productDelete:(req,res) =>{
+                        let elID=req.params.id;
+                         flights = flights.filter(oneflight =>{
+                            return oneflight.id !=elID;
+                        })
+                let newProductList= JSON.stringify(flights);
+                fs.writeFileSync(flightsFilePath, newProductList)
+                res.redirect("/admin/productlist")
+                    }
 }
 
 
-module.exports = controllers;
+module.exports = controllers; 
