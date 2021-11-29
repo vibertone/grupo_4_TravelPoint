@@ -20,35 +20,51 @@
         <main>
             <div class="product-create">
                 <h3>Edite el producto</h3>
-
-                <form action="/admin/productedit/:id?_method=PUT" method="POST">
-                    <span>Tipo de producto:</span><select name="tipo" id="tipo" required>
+                <form action="/admin/productedit/<%=data.id%>?_method=PUT" method="POST">
+                    <p><label for="id">Nro de ID:</label><input type="number" name="id" value="<%= data.id %>"></p>
+                    <span>Tipo de producto:</span><select name="tipo" id="tipo" value="<%= data.tipo %>" required>
                         <option value="vuelo">Vuelo</option>
                         <option value="hospedaje">Hospedaje</option>
                         <option value="actividad">Actividad</option>
                         <option value="auto">Auto</option>
                         <option value="paquete">Paquete</option>
                     </select>
-                    <p><label for="origen">Origen:</label><input type="text" name="origen" id="origen"></p>
-                    <p><label for="destino">Destino:</label><input type="text" name="destino" id="destino"></p>
-                    <p><label for="ida">Fecha de ida:</label><input type="date" name="ida" id="ida">
+                    <p><label for="origen">Origen:</label><input type="text" name="origen" id="origen" value="<%= data.origen %>" required></p>
+                    <p><label for="aeropuertoOrigen">Aeropuerto de origen:</label><input type="text" name="aeropuertoOrigen" id="aeropuertoOrigen" value="<%= data.aeropuertoOrigen %>" required></p>
+                    <p><label for="destino">Destino:</label><input type="text" name="destino" id="destino" value="<%= data.destino %>" required></p>
+                    <p><label for="aeropuertoDestino">Aeropuerto de Destino:</label><input type="text" name="aeropuertoDestino" id="aeropuertoDestino" value="<%= data.aeropuertoDestino %>" required></p>
+                    <p><label for="ida">Fecha de ida:</label><input type="date" name="ida" id="ida" value="<%= data.ida %>" required>
                     </p>
-                    <p><label for="vuelta">Fecha de vuelta:</label><input type="date" name="vuelta"
-                            id="vuelta"></p>
-                    <p><label for="horarioIda">Horario de ida:</label><input type="text" name="horarioIda"
-                            id="horarioIda" placeholder="hora:min"></p>
-                    <p><label for="horarioVuelta">Horario de vuelta:</label><input type="text" name="horarioVuelta"
-                            id="horarioVuelta" placeholder="hora:min"></p>
-                    <span>Cantidad de escalas:</span><select name="escalas" id="escalas" required>
+                    <p><label for="vuelta">Fecha de vuelta:</label><input type="date" name="vuelta" id="vuelta" value="<%= data.vuelta %>"
+                            required></p>
+                    <p><label for="horarioIda">Horario de salida (Ida):</label><input type="text" name="horarioIda" value="<%= data.horarioIda %>" 
+                            id="horarioIda" placeholder="hora:min" required></p>
+                    <p><label for="horarioLlegadaIda">Horario de llegada:</label><input type="text"
+                            name="horarioLlegadaIda" id="horarioLlegadaIda" placeholder="hora:min" required></p> <%= data.id %>
+                    <span>Escalas:</span><select name="escalasIda" id="escalasIda" required>
                         <option value="sin-escalas">Sin escalas</option>
                         <option value="1 escala">1 Escala</option>
                         <option value="2 escalas">2 Escalas</option>
                         <option value="3 escalas">3 Escalas</option>
                     </select>
-                    <p><label for="precio">Precio:</label><input type="text" name="precio"
-                        id="precio" placeholder=""></p>
+                    <p><label for="duracionIda">Duración viaje de ida:</label><input type="text"
+                        name="duracionIda" id="duracionIda" placeholder="Ej: 10h 30min" required></p>
+                    <p><label for="horarioVuelta">Horario de salida (Vuelta):</label><input type="text" name="horarioVuelta"
+                            id="horarioVuelta" placeholder="hora:min" required></p>
+                    <p><label for="horarioLlegadaVuelta">Horario de llegada:</label><input type="text"
+                            name="horarioLlegadaVuelta" id="horarioLlegadaVuelta" placeholder="hora:min" required></p>
+                    <span>Escalas:</span><select name="escalasVuelta" id="escalasVuelta" required>
+                        <option value="sin-escalas">Sin escalas</option>
+                        <option value="1 escala">1 Escala</option>
+                        <option value="2 escalas">2 Escalas</option>
+                        <option value="3 escalas">3 Escalas</option>
+                    </select>
+                    <p><label for="duracionVuelta">Duración viaje de vuelta:</label><input type="text"
+                        name="duracionVuelta" id="duracionVuelta" placeholder="Ej: 10h 30min" required></p>
+                    <p><label for="precio">Precio:</label><input type="text" name="precio" id="precio" placeholder="Ej: $50.000"
+                            required></p>
                     <br><br>
-                    <p><button type="submit">Editar producto</button></p>
+                    <p><button type="submit">Editar producto</button></p> 
                 </form>
             </div>
         </main>

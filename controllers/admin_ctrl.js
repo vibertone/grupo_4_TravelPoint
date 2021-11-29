@@ -16,7 +16,46 @@ const controllers = {
         res.render('productCreate')
     },
     productEdit: (req, res) => {
-        res.render('productEdit', {data: flights})
+        elId = req.params.id;
+        let flightID = flights.find (oneFlight => {
+            if (oneFlight.id == elId){
+                return oneFlight
+            };
+        });
+        res.render('productEdit', {data: flightID})
+    },
+    update: (req, res) => {
+        const {
+            id, origen, destino, precio, tipo, ida, vuelta, horarioIda, horarioLlegadaIda,
+            duracionIda, escalasIda, horarioVuelta, horarioLlegadaVuelta, duracionVuelta,
+            escalasVuelta, aeropuertoOrigen, aeropuertoDestino
+        } = req.body;
+
+        const data = {
+            id: id,
+            origen: origen,
+            destino: destino,
+            precio: precio,
+            tipo: tipo,
+            ida: ida,
+            vuelta: vuelta,
+            horarioIda: horarioIda,
+            horarioLlegadaIda: horarioLlegadaIda,
+            duracionIda: duracionIda,
+            escalasIda: escalasIda,
+            horarioVuelta: horarioVuelta,
+            horarioLlegadaVuelta: horarioLlegadaVuelta,
+            duracionVuelta: duracionVuelta,
+            escalasVuelta: escalasVuelta,
+            aeropuertoOrigen: aeropuertoOrigen,
+            aeropuertoDestino: aeropuertoDestino
+        };
+
+        flights.push(data);
+
+        fs.writeFileSync(flightsFilePath, JSON.stringify(flights), 'utf-8');
+
+        res.redirect('/admin/productlist');
     },
     store: (req, res) => {
         const {
