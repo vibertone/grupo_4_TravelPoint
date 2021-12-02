@@ -9,18 +9,18 @@
 <body>
     <%- include('./partials/header') %>
         <main>
-            <div class="login">
+            <div class="my-account">
                 <h1>Mi perfil</h1>
-                <div>
                     <div>
-                        <img src="" alt="foto-perfil">
+                        <form>
+                            <input type="file" name="foto-perfil" class="foto-perfil">
+                        </form>
+                        <h3>Datos personales:</h3>
+                        <p>Nombre:</p>
+                        <p>Email:</p>
+                        <p>Nacionalidad:</p>
+                        <a href=""><button type="submit">Editar</button></a>
                     </div>
-                    <h3>Datos personales:</h3>
-                    <p>Nombre: Federico Barrionuevo</p>
-                    <p>Email: fede.barrionuevo@hotmail.com</p>
-                    <p>Nacionalidad: Argentina</p>
-                </div>
-                <a href=""><button type="submit">Editar</button></a>
             </div>
         </main>
         <%- include('./partials/footer') %>

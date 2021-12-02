@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const cors = require("cors")
 const methodOverride = require("method-override");
+const multer = require('multer')
 
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));

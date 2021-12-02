@@ -469,6 +469,18 @@ div #nro-documento {
     height: 35px;
 }
 
+.my-account {
+    border-radius: 40px;
+    width: 80%;
+    background-color: #c4e4ff;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.my-account input {
+    width: 90%;
+}
 
 /* Vicky */
 
