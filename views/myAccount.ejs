@@ -12,8 +12,9 @@
             <div class="my-account">
                 <h1>Mi perfil</h1>
                     <div>
-                        <form>
-                            <input type="file" name="foto-perfil" class="foto-perfil">
+                        <form action="/user/myaccount" method="POST" enctype="multipart/form-data">
+                            <input type="file" name="profilePicture" class="profilePicture">
+                            <button>Subir foto</button>
                         </form>
                         <h3>Datos personales:</h3>
                         <p>Nombre:</p>

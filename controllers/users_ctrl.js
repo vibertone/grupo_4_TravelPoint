@@ -12,7 +12,16 @@ const controllers = {
         res.render('login');
     },
     myAccount: (req, res) => {
-        res.render ('myAccount', {data: users});
+        res.render('myAccount');
+    },
+    myProfilePicture: (req, res) => {
+        if(req.file){
+            let profilePicture = req.body;
+
+            res.redirect('myAccount')
+        } else {
+            res.redirect('myAccount')
+        }
     },
     createMyAccount: (req, res) => {
         const {

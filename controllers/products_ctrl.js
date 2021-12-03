@@ -11,15 +11,6 @@ const controllers = {
     shoppingDetail: (req, res) => {
         res.render('shoppingDetail');
     }
-    /*
-    list: (req, res) => {
-        res.render('productList',{productList})
-      },
-    productReview:(req,res)=>{
-        let id =req.params.id
-        let productToShow =id -1
-        res.render('productreview',{productList:productList[productToShow]})
-    }, */
 };
 
 module.exports = controllers;
