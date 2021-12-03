@@ -48,46 +48,54 @@
                         data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
                 </div>
                 <% if (locals.errors) { %>
-                    <% for(let oneError in errors) { %>
-                        <p><%= errors[oneError].msg %></p>
-                        <% } %>
                             <% } %>
                                 <form action="/user/register" method="POST">
                                     <h3>O registrate con tu Email</h3>
                                     <div>
-                                        <p>
+                                        <p class="register">
                                             <input type="email" name="email" id="email" placeholder="Ingresa tu Email"
                                                 value="<%= locals.old && old.email ? old.email : '' %>">
                                         </p>
                                         <% if(locals.errors && errors.email) { %>
-                                            <p><%= errors.email.msg %></p>
+                                            <p class="msg-error-register"><%= errors.email.msg %></p>
                                         <% } %> 
-                                        <p>
+                                        <p class="register">
                                             <input type="password" name="password" id="password"
                                                 placeholder="Contraseña">
                                         </p>
-                                        <p>
-                                            <input type="password" name="password" id="password"
+                                        <% if(locals.errors && errors.password) { %>
+                                            <p class="msg-error-register"><%= errors.password.msg %></p>
+                                        <% } %>
+                                        <p class="register">
+                                            <input type="password" name="repeatPassword" id="repeat-password"
                                                 placeholder="Repite Contraseña">
                                         </p>
+                                        <% if(locals.errors && errors.repeatPassword) { %>
+                                            <p class="msg-error-register"><%= errors.repeatPassword.msg %></p>
+                                        <% } %>
                                     </div>
                                     <div>
-                                        <p>
+                                        <p class="register">
                                             <input type="text" id="name" name="name" placeholder="Nombre"
                                                 value="<%= locals.old && old.name ? old.name : '' %>">
                                         </p>
-                                        <p>
+                                        <% if(locals.errors && errors.name) { %>
+                                            <p class="msg-error-register"><%= errors.name.msg %></p>
+                                        <% } %> 
+                                        <p class="register">
                                             <input type="text" id="last-name" name="lastName" placeholder="Apellido"
-                                                value="<%= locals.old && old.lastName ? old.lastName : '' %>">
+                                                value="<%= locals.old && old.lastName ? old.lastName : '' %>" class="form-control is-invalid">
                                         </p>
-                                        <p>
+                                        <% if(locals.errors && errors.lastName) { %>
+                                            <p class="msg-error-register"><%= errors.lastName.msg %></p>
+                                        <% } %> 
+                                        <p class="register">
                                             <select id="pais" name="pais">
-                                                <option value="nacionalidad">Nacionalidad</option>
-                                                <option value="Argentina"<%= locals.old && old.category === 'Argentina'
-                                                    ? 'selected' : '' ;%>>Argentina</option>
-                                                <option value="Brasil"<%= locals.old && old.category === 'Brasil'
-                                                ? 'selected' : '' ;%>>Brasil</option>
-                                                <option value="Chile">Chile</option>
+                                                <option value="">Nacionalidad</option>
+                                                <% let paises = ["Argentina", "Brasil", "Chile", "Venezuela", "Uruguay", "Peru"] %> 
+                                                <% for (const unPais of paises) { %> 
+                                                <option value="<% unPais %>" <%= locals.old && unPais === old.pais
+                                                    ? 'selected' : '' ;%>><% unPais %> </option>
                                             </select>
                                         </p>
                                     </div>

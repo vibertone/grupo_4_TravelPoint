@@ -483,6 +483,7 @@ div #nro-documento {
     margin: auto;
 }
 
+
 /* Vicky */
 
 .login {
@@ -528,6 +529,16 @@ div #nro-documento {
     text-align: center;
     border: none;
     color: gray;
+}
+
+form .register {
+    margin-bottom: 0;
+}
+
+.msg-error-register {
+    margin-top: 0;
+    color: red;
+    font-size: 17px;
 }
 
 /* PRODUCT DETAIL */
