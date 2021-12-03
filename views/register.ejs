@@ -47,40 +47,54 @@
                     <div class="fb-login-button" data-width="50px" data-size="medium" data-button-type="login_with"
                         data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
                 </div>
-                <form action="/user/register" method="POST">
-                    <h3>O registrate con tu Email</h3>
-                    <div>
-                        <p>
-                            <input type="email" name="email" id="email" placeholder="Ingresa tu Email" required>
-                        </p>
-                        <p>
-                            <input type="password" name="password" id="password" placeholder="Contraseña" required>
-                        </p>
-                        <p>
-                            <input type="password" name="password" id="password" placeholder="Repite Contraseña"
-                                required>
-                        </p>
-                    </div>
-                    <div>
-                        <p>
-                            <input type="text" id="name" name="name" placeholder="Nombre" required>
-                        </p>
-                        <p>
-                            <input type="text" id="last-name" name="lastName" placeholder="Apellido" required>
-                        </p>
-                        <p>
-                            <select id="pais" name="pais" required>
-                                <option value="nacionalidad" selected>Nacionalidad</option>
-                                <option value="Argentina">Argentina</option>
-                                <option value="Brasil">Brasil</option>
-                                <option value="Chile">Chile</option>
-                            </select>
-                        </p>
-                    </div>
-                    <p>
-                        <button type="submit">Registrarse</button>
-                    </p>
-                </form>
+                <% if (locals.errors) { %>
+                    <% for(let oneError in errors) { %>
+                        <p><%= errors[oneError].msg %></p>
+                        <% } %>
+                            <% } %>
+                                <form action="/user/register" method="POST">
+                                    <h3>O registrate con tu Email</h3>
+                                    <div>
+                                        <p>
+                                            <input type="email" name="email" id="email" placeholder="Ingresa tu Email"
+                                                value="<%= locals.old && old.email ? old.email : '' %>">
+                                        </p>
+                                        <% if(locals.errors && errors.email) { %>
+                                            <p><%= errors.email.msg %></p>
+                                        <% } %> 
+                                        <p>
+                                            <input type="password" name="password" id="password"
+                                                placeholder="Contraseña">
+                                        </p>
+                                        <p>
+                                            <input type="password" name="password" id="password"
+                                                placeholder="Repite Contraseña">
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            <input type="text" id="name" name="name" placeholder="Nombre"
+                                                value="<%= locals.old && old.name ? old.name : '' %>">
+                                        </p>
+                                        <p>
+                                            <input type="text" id="last-name" name="lastName" placeholder="Apellido"
+                                                value="<%= locals.old && old.lastName ? old.lastName : '' %>">
+                                        </p>
+                                        <p>
+                                            <select id="pais" name="pais">
+                                                <option value="nacionalidad">Nacionalidad</option>
+                                                <option value="Argentina"<%= locals.old && old.category === 'Argentina'
+                                                    ? 'selected' : '' ;%>>Argentina</option>
+                                                <option value="Brasil"<%= locals.old && old.category === 'Brasil'
+                                                ? 'selected' : '' ;%>>Brasil</option>
+                                                <option value="Chile">Chile</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <p>
+                                        <button type="submit">Registrarse</button>
+                                    </p>
+                                </form>
             </div>
         </main>
         <%- include('./partials/footer') %>

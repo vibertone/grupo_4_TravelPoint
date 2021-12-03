@@ -2,8 +2,7 @@ const express = require("express");
 const router = express.Router();
 const ENDPOINTS = require("../endpoints");
 const controllers = require("../controllers/admin_ctrl");
-const { productCreate } = require("../controllers/admin_ctrl");
-
+const {body} = require('express-validator');
 
 router.get(ENDPOINTS.administrator.PRODUCTLIST, controllers.productList);
 
