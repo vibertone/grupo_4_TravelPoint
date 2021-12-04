@@ -2,29 +2,9 @@ const express = require("express");
 const router = express.Router();
 const ENDPOINTS = require("../endpoints");
 const controllers = require("../controllers/users_ctrl");
-const multer = require('multer')
-const { v4: uuidv4 } = require('uuid');
-const {body} = require('express-validator');
+const validations = require('../middlewares/registerMiddlewares');
+const multerMiddleware = require('../middlewares/multerMiddleware')
 
-const validations = [
-    body('email').notEmpty().withMessage('Tienes que escribir un mail'),
-    body('password').notEmpty().withMessage('Tienes que crear una contraseña'),
-    body('repeatPassword').notEmpty().withMessage('Tienes que repetir la contraseña creada'),
-    body('name').notEmpty().withMessage('Tienes que escribir tu nombre'),
-    body('lastName').notEmpty().withMessage('Tienes que escribir tu apellido')
-]
-
-
-var multerConfig = multer.diskStorage({
-    destination: function(req, file, cb){
-        cb(null, './public/uploads')
-    },
-    filename: function(req, file, cb){
-        cb(null, uuidv4() + "." + file.originalname)
-    }
-});
-
-var multerMiddleware = multer({storage: multerConfig})
 
 router.get(ENDPOINTS.user.LOGIN, controllers.login);
 

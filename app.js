@@ -3,10 +3,12 @@ const app = express();
 const path = require("path");
 const cors = require("cors")
 const methodOverride = require("method-override");
+const session = require('express-session')
 
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(session({secret: "Secreto"}));
 
 // rutas
 const indexRoutes = require("./routes/index");

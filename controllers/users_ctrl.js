@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {validationResult} = require('express-validator');
+const { validationResult } = require('express-validator');
 
 let usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -16,7 +16,7 @@ const controllers = {
         res.render('myAccount');
     },
     myProfilePicture: (req, res) => {
-        if(req.file){
+        if (req.file) {
             let profilePicture = req.body;
 
             res.redirect('myAccount')
@@ -26,24 +26,27 @@ const controllers = {
     },
     createMyAccount: (req, res) => {
         let errors = validationResult(req);
-        if(errors.errors.length > 0){
+        if (errors.errors.length > 0) {
             return res.render('register', {
                 errors: errors.mapped(),
                 old: req.body
             });
         } else {
+            const lastIndex = users.length - 1;
+            const id = users[lastIndex].id + 1;
+
             const {
-                email, password, name, lastName, pais
+                email, password, name, lastName, country
             } = req.body;
-    
+
             const data = {
-                email: email, password: password, name: name, lastName: lastName, pais: pais
+                id: id, email: email, password: password, name: name, lastName: lastName, country: country, image: ""
             };
-            
+
             users.push(data);
-    
+
             fs.writeFileSync(usersFilePath, JSON.stringify(users), 'utf-8');
-    
+
             res.redirect('/user/login');
         }
     }

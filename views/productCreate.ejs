@@ -20,50 +20,162 @@
         <main>
             <div class="product-create">
                 <h3>Agregá un producto</h3>
-
+                <% if (locals.errors) { %>
+                    <% } %>
                 <form action="/admin/productcreate" method="POST">
-                    <p><label for="id">Nro de ID:</label><input type="number" name="id"></p>
-                    <span>Tipo de producto:</span><select name="tipo" id="tipo" required>
-                        <option value="vuelo">Vuelo</option>
-                        <option value="hospedaje">Hospedaje</option>
-                        <option value="actividad">Actividad</option>
-                        <option value="auto">Auto</option>
-                        <option value="paquete">Paquete</option>
-                    </select>
-                    <p><label for="origen">Origen:</label><input type="text" name="origen" id="origen" required></p>
-                    <p><label for="aeropuertoOrigen">Aeropuerto de origen:</label><input type="text" name="aeropuertoOrigen" id="aeropuertoOrigen" required></p>
-                    <p><label for="destino">Destino:</label><input type="text" name="destino" id="destino" required></p>
-                    <p><label for="aeropuertoDestino">Aeropuerto de Destino:</label><input type="text" name="aeropuertoDestino" id="aeropuertoDestino" required></p>
-                    <p><label for="ida">Fecha de ida:</label><input type="date" name="ida" id="ida" required>
+                    <p class="inputClass-forValidation">
+                        <span>Tipo de producto:</span>
+                        <select name="tipo" id="tipo">
+                            <option value="">Selecciona producto</option>
+                            <% let productos=["Vuelo", "Hospedaje" , "Actividad" , "Auto", "Paquete"] %>
+                            <% for (const unProducto of productos) { %>
+                                <option value="<%= unProducto %>" <%=locals.old && unProducto === old.tipo ? 'selected' : null %>>
+                                    <%= unProducto %></option>
+                            <% } %>
+                        </select>
+                        <% if (locals.errors && errors.tipo) { %>
+                            <p class="msg-error-form">
+                                <%= errors.tipo.msg %>
+                            </p>
+                            <% } %>
                     </p>
-                    <p><label for="vuelta">Fecha de vuelta:</label><input type="date" name="vuelta" id="vuelta"
-                            required></p>
-                    <p><label for="horarioIda">Horario de salida (Ida):</label><input type="text" name="horarioIda"
-                            id="horarioIda" placeholder="hora:min" required></p>
-                    <p><label for="horarioLlegadaIda">Horario de llegada:</label><input type="text"
-                            name="horarioLlegadaIda" id="horarioLlegadaIda" placeholder="hora:min" required></p>
-                    <span>Escalas:</span><select name="escalasIda" id="escalasIda" required>
-                        <option value="sin escalas">Sin escalas</option>
-                        <option value="1 escala">1 Escala</option>
-                        <option value="2 escalas">2 Escalas</option>
-                        <option value="3 escalas">3 Escalas</option>
-                    </select>
-                    <p><label for="duracionIda">Duración viaje de ida:</label><input type="text"
-                        name="duracionIda" id="duracionIda" placeholder="Ej: 10h 30min" required></p>
-                    <p><label for="horarioVuelta">Horario de salida (Vuelta):</label><input type="text" name="horarioVuelta"
-                            id="horarioVuelta" placeholder="hora:min" required></p>
-                    <p><label for="horarioLlegadaVuelta">Horario de llegada:</label><input type="text"
-                            name="horarioLlegadaVuelta" id="horarioLlegadaVuelta" placeholder="hora:min" required></p>
-                    <span>Escalas:</span><select name="escalasVuelta" id="escalasVuelta" required>
-                        <option value="sin escalas">Sin escalas</option>
-                        <option value="1 escala">1 Escala</option>
-                        <option value="2 escalas">2 Escalas</option>
-                        <option value="3 escalas">3 Escalas</option>
-                    </select>
-                    <p><label for="duracionVuelta">Duración viaje de vuelta:</label><input type="text"
-                        name="duracionVuelta" id="duracionVuelta" placeholder="Ej: 10h 30min" required></p>
-                    <p><label for="precio">Precio:</label><input type="text" name="precio" id="precio" placeholder="Ej: $50.000"
-                            required></p>
+
+                    <p class="inputClass-forValidation"><label for="origen">Origen:</label><input type="text" name="origen" id="origen" 
+                        value="<%= locals.old && old.origen ? old.origen : '' %>"></p>
+                        <% if(locals.errors && errors.origen) { %>
+                            <p class="msg-error-form">
+                                <%= errors.origen.msg %>
+                            </p>
+                            <% } %>
+
+                    <p class="inputClass-forValidation"><label for="aeropuertoOrigen">Aeropuerto de origen:</label><input type="text" name="aeropuertoOrigen" 
+                        id="aeropuertoOrigen" value="<%= locals.old && old.aeropuertoOrigen ? old.aeropuertoOrigen : '' %>"></p>
+                        <% if(locals.errors && errors.aeropuertoOrigen) { %>
+                            <p class="msg-error-form">
+                                <%= errors.aeropuertoOrigen.msg %>
+                            </p>
+                            <% } %>
+
+                    <p class="inputClass-forValidation"><label for="destino">Destino:</label><input type="text" name="destino" id="destino" 
+                        value="<%= locals.old && old.destino ? old.destino : '' %>"></p>
+                        <% if(locals.errors && errors.destino) { %>
+                            <p class="msg-error-form">
+                                <%= errors.destino.msg %>
+                            </p>
+                            <% } %>
+
+                    <p class="inputClass-forValidation"><label for="aeropuertoDestino">Aeropuerto de Destino:</label><input type="text" name="aeropuertoDestino" 
+                        id="aeropuertoDestino" value="<%= locals.old && old.aeropuertoDestino ? old.aeropuertoDestino : '' %>"></p>
+                        <% if(locals.errors && errors.aeropuertoDestino) { %>
+                            <p class="msg-error-form">
+                                <%= errors.aeropuertoDestino.msg %>
+                            </p>
+                            <% } %>
+
+                    <p class="inputClass-forValidation"><label for="ida">Fecha de ida:</label><input type="date" name="ida" id="ida" 
+                        value="<%= locals.old && old.ida ? old.ida : '' %>"></p>
+                        <% if(locals.errors && errors.ida) { %>
+                            <p class="msg-error-form">
+                                <%= errors.ida.msg %>
+                            </p>
+                            <% } %>
+
+                    <p class="inputClass-forValidation"><label for="vuelta">Fecha de vuelta:</label><input type="date" name="vuelta" id="vuelta"
+                        value="<%= locals.old && old.vuelta ? old.vuelta : '' %>"></p>
+                        <% if(locals.errors && errors.vuelta) { %>
+                            <p class="msg-error-form">
+                                <%= errors.vuelta.msg %>
+                            </p>
+                            <% } %>
+
+                    <p class="inputClass-forValidation"><label for="horarioIda">Horario de salida (Ida):</label><input type="text" name="horarioIda"
+                            id="horarioIda" placeholder="hora:min" value="<%= locals.old && old.horarioIda ? old.horarioIda : '' %>"></p>
+                            <% if(locals.errors && errors.horarioIda) { %>
+                                <p class="msg-error-form">
+                                    <%= errors.horarioIda.msg %>
+                                </p>
+                                <% } %>
+
+                    <p class="inputClass-forValidation"><label for="horarioLlegadaIda">Horario de llegada:</label><input type="text" name="horarioLlegadaIda" 
+                        id="horarioLlegadaIda" placeholder="hora:min" value="<%= locals.old && old.horarioLlegadaIda ? old.horarioLlegadaIda : '' %>"></p>
+                        <% if(locals.errors && errors.horarioLlegadaIda) { %>
+                            <p class="msg-error-form">
+                                <%= errors.horarioLlegadaIda.msg %>
+                            </p>
+                            <% } %>
+
+                    <p class="inputClass-forValidation">
+                        <span>Escalas:</span>
+                        <select name="escalasIda" id="escalasIda">
+                            <option value="">Selecciona escalas</option>
+                            <% let cantEscalasIda=["Sin escalas", "1 escala" , "2 escalas" , "3 escalas", "4 escalas"] %>
+                            <% for (const cantEscalas of cantEscalasIda) { %>
+                                <option value="<%= cantEscalas %>" <%=locals.old && cantEscalas === old.escalasIda ? 'selected' : null %>>
+                                    <%= cantEscalas %></option>
+                            <% } %>
+                        </select>
+                        <% if (locals.errors && errors.escalasIda) { %>
+                            <p class="msg-error-form">
+                                <%= errors.escalasIda.msg %>
+                            </p>
+                            <% } %>
+                    </p>
+                    
+                    <p class="inputClass-forValidation"><label for="duracionIda">Duración viaje de ida:</label><input type="text"
+                        name="duracionIda" id="duracionIda" placeholder="Ej: 10h 30min" value="<%= locals.old && old.duracionIda ? old.duracionIda : '' %>"></p>
+                        <% if(locals.errors && errors.duracionIda) { %>
+                            <p class="msg-error-form">
+                                <%= errors.duracionIda.msg %>
+                            </p>
+                            <% } %>
+
+                    <p class="inputClass-forValidation"><label for="horarioVuelta">Horario de salida (Vuelta):</label><input type="text" name="horarioVuelta"
+                            id="horarioVuelta" placeholder="hora:min" value="<%= locals.old && old.horarioVuelta ? old.horarioVuelta : '' %>"></p>
+                            <% if(locals.errors && errors.horarioVuelta) { %>
+                                <p class="msg-error-form">
+                                    <%= errors.horarioVuelta.msg %>
+                                </p>
+                                <% } %>
+
+                    <p class="inputClass-forValidation"><label for="horarioLlegadaVuelta">Horario de llegada:</label><input type="text" name="horarioLlegadaVuelta" 
+                        id="horarioLlegadaVuelta" placeholder="hora:min" value="<%= locals.old && old.horarioLlegadaVuelta ? old.horarioLlegadaVuelta : '' %>"></p>
+                        <% if(locals.errors && errors.horarioLlegadaVuelta) { %>
+                            <p class="msg-error-form">
+                                <%= errors.horarioLlegadaVuelta.msg %>
+                            </p>
+                            <% } %>
+
+                    <p class="inputClass-forValidation">
+                        <span>Escalas:</span>
+                        <select name="escalasVuelta" id="escalasVuelta">
+                            <option value="">Selecciona escalas</option>
+                            <% let cantEscalasVuelta=["Sin escalas", "1 escala" , "2 escalas" , "3 escalas", "4 escalas"] %>
+                            <% for (const cantEscalas of cantEscalasVuelta) { %>
+                                <option value="<%= cantEscalas %>" <%=locals.old && cantEscalas === old.escalasVuelta ? 'selected' : null %>>
+                                    <%= cantEscalas %></option>
+                            <% } %>
+                        </select>
+                        <% if (locals.errors && errors.escalasVuelta) { %>
+                            <p class="msg-error-form">
+                                <%= errors.escalasVuelta.msg %>
+                            </p>
+                            <% } %>
+
+                    <p class="inputClass-forValidation"><label for="duracionVuelta">Duración viaje de vuelta:</label><input type="text" name="duracionVuelta" 
+                        id="duracionVuelta" placeholder="Ej: 10h 30min" value="<%= locals.old && old.duracionVuelta ? old.duracionVuelta : '' %>"></p>
+                        <% if(locals.errors && errors.duracionVuelta) { %>
+                            <p class="msg-error-form">
+                                <%= errors.duracionVuelta.msg %>
+                            </p>
+                            <% } %>
+
+                    <p class="inputClass-forValidation"><label for="precio">Precio:</label><input type="text" name="precio" id="precio" placeholder="Ej: $50.000"
+                        value="<%= locals.old && old.precio ? old.precio : '' %>"></p>
+                        <% if(locals.errors && errors.precio) { %>
+                            <p class="msg-error-form">
+                                <%= errors.precio.msg %>
+                            </p>
+                            <% } %>
                     <br><br>
                     <p><button type="submit">Agregar producto</button></p>
                 </form>

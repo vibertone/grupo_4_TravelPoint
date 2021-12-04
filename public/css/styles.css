@@ -531,11 +531,11 @@ div #nro-documento {
     color: gray;
 }
 
-form .register {
+form .inputClass-forValidation {
     margin-bottom: 0;
 }
 
-.msg-error-register {
+.msg-error-form {
     margin-top: 0;
     color: red;
     font-size: 17px;

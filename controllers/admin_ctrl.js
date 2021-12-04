@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require('express-validator');
 
 let flightsFilePath = path.join(__dirname, '../data/flights.json');
 let flights = JSON.parse(fs.readFileSync(flightsFilePath, 'utf-8'));
@@ -47,25 +48,36 @@ const controllers = {
         res.redirect('/admin/productList')
     },
     store: (req, res) => {
-        const {
-            id, origen, destino, precio, tipo, ida, vuelta, horarioIda, horarioLlegadaIda,
-            duracionIda, escalasIda, horarioVuelta, horarioLlegadaVuelta, duracionVuelta,
-            escalasVuelta, aeropuertoOrigen, aeropuertoDestino
-        } = req.body;
-
-        const data = {
-            id: id, origen: origen, destino: destino, precio: precio, tipo: tipo, ida: ida,
-            vuelta: vuelta, horarioIda: horarioIda, horarioLlegadaIda: horarioLlegadaIda, duracionIda: duracionIda,
-            escalasIda: escalasIda, horarioVuelta: horarioVuelta, horarioLlegadaVuelta: horarioLlegadaVuelta,
-            duracionVuelta: duracionVuelta, escalasVuelta: escalasVuelta, aeropuertoOrigen: aeropuertoOrigen,
-            aeropuertoDestino: aeropuertoDestino
-        };
-
-        flights.push(data);
-
-        fs.writeFileSync(flightsFilePath, JSON.stringify(flights), 'utf-8');
-
-        res.redirect('/admin/productlist');
+        let errors = validationResult(req);
+        if (errors.errors.length > 0) {
+            return res.render('productCreate', {
+                errors: errors.mapped(),
+                old: req.body
+            });
+        } else {
+            const lastIndex = flights.length - 1;
+            const id = flights[lastIndex].id + 1;
+    
+            const {
+                origen, destino, precio, tipo, ida, vuelta, horarioIda, horarioLlegadaIda,
+                duracionIda, escalasIda, horarioVuelta, horarioLlegadaVuelta, duracionVuelta,
+                escalasVuelta, aeropuertoOrigen, aeropuertoDestino
+            } = req.body;
+    
+            const data = {
+                id: id, origen: origen, destino: destino, precio: precio, tipo: tipo, ida: ida,
+                vuelta: vuelta, horarioIda: horarioIda, horarioLlegadaIda: horarioLlegadaIda, duracionIda: duracionIda,
+                escalasIda: escalasIda, horarioVuelta: horarioVuelta, horarioLlegadaVuelta: horarioLlegadaVuelta,
+                duracionVuelta: duracionVuelta, escalasVuelta: escalasVuelta, aeropuertoOrigen: aeropuertoOrigen,
+                aeropuertoDestino: aeropuertoDestino
+            };
+    
+            flights.push(data);
+    
+            fs.writeFileSync(flightsFilePath, JSON.stringify(flights), 'utf-8');
+    
+            res.redirect('/admin/productlist');
+        }
     },
 
     productReview: (req, res) => {

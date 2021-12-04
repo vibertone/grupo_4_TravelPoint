@@ -5,8 +5,8 @@
         "password": "GNy5EW",
         "name": "Cyndi",
         "lastName": "Labarre",
-        "pais": "Argentina",
-        "Imagen": "user_1.jpg"
+        "country": "Argentina",
+        "image": "user_1.jpg"
     },
     {
         "id": 2,
@@ -14,8 +14,8 @@
         "password": "AL9YDY0",
         "name": "Alfons",
         "lastName": "Sikora",
-        "pais": "Argentina",
-        "Imagen": "user_2.jpg"
+        "country": "Argentina",
+        "image": "user_2.jpg"
     },
     {
         "id": 3,
@@ -23,8 +23,8 @@
         "password": "ijrqj4Klx3",
         "name": "Ingeberg",
         "lastName": "Balstone",
-        "pais": "Argentina",
-        "Imagen": "user_3.jpg"
+        "country": "Argentina",
+        "image": "user_3.jpg"
     },
     {
         "id": 4,
@@ -32,8 +32,8 @@
         "password": "sMY2kxNULB4",
         "name": "Quent",
         "lastName": "Onge",
-        "pais": "Argentina",
-        "Imagen": "user_4.jpg"
+        "country": "Argentina",
+        "image": "user_4.jpg"
     },
     {
         "id": 5,
@@ -41,8 +41,8 @@
         "password": "1dCxP28S23j",
         "name": "Camey",
         "lastName": "Likly",
-        "pais": "Uruguay",
-        "Imagen": "user_5.jpg"
+        "country": "Uruguay",
+        "image": "user_5.jpg"
     },
     {
         "id": 6,
@@ -50,8 +50,8 @@
         "password": "u79dU0Be4",
         "name": "Homer",
         "lastName": "Veillard",
-        "pais": "Argentina",
-        "Imagen": "user_6.jpg"
+        "country": "Argentina",
+        "image": "user_6.jpg"
     },
     {
         "id": 7,
@@ -59,8 +59,8 @@
         "password": "BGlvTFIZKn",
         "name": "Jacinthe",
         "lastName": "Stopford",
-        "pais": "Argentina",
-        "Imagen": "user_7.jpg"
+        "country": "Argentina",
+        "image": "user_7.jpg"
     },
     {
         "id": 8,
@@ -68,8 +68,8 @@
         "password": "6qn1SY7uayCU",
         "name": "Edgard",
         "lastName": "Kirsz",
-        "pais": "Brasil",
-        "Imagen": "user_8.jpg"
+        "country": "Brasil",
+        "image": "user_8.jpg"
     },
     {
         "id": 9,
@@ -77,8 +77,8 @@
         "password": "ioSNi3",
         "name": "Laura",
         "lastName": "Saunder",
-        "pais": "Argentina",
-        "Imagen": "user_9.jpg"
+        "country": "Argentina",
+        "image": "user_9.jpg"
     },
     {
         "id": 10,
@@ -86,8 +86,8 @@
         "password": "g3ck5ttNtnQ",
         "name": "Ave",
         "lastName": "Keelinge",
-        "pais": "Argentina",
-        "Imagen": "user_10.jpg"
+        "country": "Argentina",
+        "image": "user_10.jpg"
     },
     {
         "id": 11,
@@ -95,8 +95,8 @@
         "password": "BOpz6JQRZ",
         "name": "Mohammed",
         "lastName": "Verner",
-        "pais": "Holanda",
-        "Imagen": "user_11.jpg"
+        "country": "Holanda",
+        "image": "user_11.jpg"
     },
     {
         "id": 12,
@@ -104,8 +104,8 @@
         "password": "EC9uvSf8qIg",
         "name": "Cobb",
         "lastName": "Davidavidovics",
-        "pais": "Argentina",
-        "Imagen": "user_12.jpg"
+        "country": "Argentina",
+        "image": "user_12.jpg"
     },
     {
         "id": 13,
@@ -113,8 +113,8 @@
         "password": "DSgsU6FJS",
         "name": "Isiahi",
         "lastName": "Leyden",
-        "pais": "Argentina",
-        "Imagen": "user_13.jpg"
+        "country": "Argentina",
+        "image": "user_13.jpg"
     },
     {
         "id": 14,
@@ -122,8 +122,8 @@
         "password": "bIuljZ",
         "name": "Jory",
         "lastName": "Nellis",
-        "pais": "Uruguay",
-        "Imagen": "user_14.jpg"
+        "country": "Uruguay",
+        "image": "user_14.jpg"
     },
     {
         "id": 15,
@@ -131,8 +131,8 @@
         "password": "VyvXJRzxr840",
         "name": "Konrad",
         "lastName": "Meikle",
-        "pais": "Argentina",
-        "Imagen": "user_15.jpg"
+        "country": "Argentina",
+        "image": "user_15.jpg"
     },
     {
         "id": 16,
@@ -140,8 +140,8 @@
         "password": "kjTtjlOlSG",
         "name": "Mara",
         "lastName": "Droogan",
-        "pais": "Alemania",
-        "Imagen": "user_16.jpg"
+        "country": "Alemania",
+        "image": "user_16.jpg"
     },
     {
         "id": 17,
@@ -149,8 +149,8 @@
         "password": "gmn0Dsm",
         "name": "Roxanna",
         "lastName": "Downe",
-        "pais": "Argentina",
-        "Imagen": "user_17.jpg"
+        "country": "Argentina",
+        "image": "user_17.jpg"
     },
     {
         "id": 18,
@@ -158,8 +158,8 @@
         "password": "uzwAlerqd",
         "name": "Arnoldo",
         "lastName": "Torrans",
-        "pais": "Argentina",
-        "Imagen": "user_18.jpg"
+        "country": "Argentina",
+        "image": "user_18.jpg"
     },
     {
         "id": 19,
@@ -167,8 +167,8 @@
         "password": "SXGaJg",
         "name": "Teresita",
         "lastName": "Gravestone",
-        "pais": "Brasil",
-        "Imagen": "user_19.jpg"
+        "country": "Brasil",
+        "image": "user_19.jpg"
     },
     {
         "id": 20,
@@ -176,7 +176,7 @@
         "password": "05tARlkl3CGb",
         "name": "Bertrando",
         "lastName": "Gilfether",
-        "pais": "Argentina",
-        "Imagen": "user_20.jpg"
+        "country": "Argentina",
+        "image": "user_20.jpg"
     }
 ]
