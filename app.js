@@ -8,7 +8,7 @@ const session = require('express-session')
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(session({secret: "Secreto"}));
+app.use(session({secret: "Secreto", resave: false, saveUninitialized: false}));
 
 // rutas
 const indexRoutes = require("./routes/index");

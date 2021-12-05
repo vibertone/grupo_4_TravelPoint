@@ -535,8 +535,18 @@ form .inputClass-forValidation {
     margin-bottom: 0;
 }
 
+form .inputClass-forValidation-login {
+    margin-top: 0;
+}
+
 .msg-error-form {
     margin-top: 0;
+    color: red;
+    font-size: 17px;
+}
+
+.msg-error-form-login {
+    margin-bottom: 0;
     color: red;
     font-size: 17px;
 }
