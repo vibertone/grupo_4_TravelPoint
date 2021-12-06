@@ -483,9 +483,6 @@ div #nro-documento {
     margin: auto;
 }
 
-
-/* Vicky */
-
 .login {
     border-radius: 40px;
     width: 80%;
@@ -507,6 +504,21 @@ div #nro-documento {
     padding: 10px;
     color: white;
     background-color: #154b9c;
+}
+
+.login form .remember-user {
+    text-align: left;
+    margin-left: 15%;
+}
+
+.login form .remember-user label {
+    margin-right: 15px;
+}
+
+.login form #remember_checkbox {
+    width: auto;
+    box-shadow: none;
+    margin: 0;
 }
 
 /*----exclusivo de register*/

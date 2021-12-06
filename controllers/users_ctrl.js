@@ -48,6 +48,12 @@ const controllers = {
             if (passwordValidation) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
+
+                //cookie
+                if(req.body.remember_checkbox) {
+                    res.cookie('userEmail', req.body.email, {maxAge: 1000})
+                };
+
                 res.redirect('/user/myaccount')
             }
             return res.render('login', {
