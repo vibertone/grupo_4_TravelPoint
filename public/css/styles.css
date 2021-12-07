@@ -547,10 +547,6 @@ form .inputClass-forValidation {
     margin-bottom: 0;
 }
 
-form .inputClass-forValidation-login {
-    margin-top: 0;
-}
-
 .msg-error-form {
     margin-top: 0;
     color: red;
@@ -558,7 +554,7 @@ form .inputClass-forValidation-login {
 }
 
 .msg-error-form-login {
-    margin-bottom: 0;
+    margin-top: 50px;
     color: red;
     font-size: 17px;
 }

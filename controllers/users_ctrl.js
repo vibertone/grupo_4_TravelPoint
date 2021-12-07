@@ -1,11 +1,6 @@
-const fs = require('fs');
-const path = require('path');
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-const User = require('../models/users');
-
-let usersFilePath = path.join(__dirname, '../data/users.json');
-let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const Model = require('../models/Model');
 
 const controllers = {
     register: (req, res) => {
@@ -19,7 +14,7 @@ const controllers = {
                 old: req.body
             });
         }
-        let usersInData = User.findByEmail('email', req.body.email);
+        let usersInData = Model.findByEmail('email', req.body.email);
         if (usersInData) {
             return res.render('register', {
                 errors: {
@@ -35,14 +30,23 @@ const controllers = {
             password: bcryptjs.hashSync(req.body.password, 10),
             image: ""
         }
-        User.create(userToCreate);
+        Model.create(userToCreate);
         res.redirect('/user/login')
     },
     login: (req, res) => {
         res.render('login');
     },
     processLogin: (req, res) => {
-        let userToLogin = User.findByEmail('email', req.body.email);
+        if(req.body.email == 0){
+            return res.render('login', {
+                errors: {
+                    email: {
+                        msg: 'Ingrese un email registrado'
+                    }
+                }
+            });
+        }
+        let userToLogin = Model.findByEmail('email', req.body.email);
         if (userToLogin) {
             let passwordValidation = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if (passwordValidation) {
