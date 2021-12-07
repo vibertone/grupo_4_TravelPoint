@@ -1,8 +1,8 @@
-const Model = require('../models/Model')
+const User = require('../models/Users')
 
 function userLoggedMiddleware(req, res, next){
     let emailCookie = req.cookies.userEmail;
-    let userFromCookie = Model.findByEmail('email', emailCookie);
+    let userFromCookie = User.findByEmail('email', emailCookie);
 
     if(userFromCookie){
         req.session.userLogged = userFromCookie;
