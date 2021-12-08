@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>Mi perfil</title>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+        <main>
+            <div class="my-account">
+                <h1>Mi perfil</h1>
+                <div>
+                    <form action="/user/myaccount/edit" method="POST">
+                        <h3>Datos personales:</h3>
+                        <p><label for="name">Nombre:</label><input type="text" name="name" id="name"></p>
+                        <p><label for="email">Email:</label><input type="text" name="email" id="email"></p>
+                        <p>
+                            <select id="country" name="country">
+                                <option value="">Nacionalidad</option>
+                                <% let countries=["Argentina", "Brasil" , "Chile" , "Venezuela" , "Uruguay" , "Peru"
+                                    , "Bolivia" , "Paraguay" ] %>
+                                    <% for (const oneCountry of countries) { %>
+                                        <option value="<%= oneCountry %>" <%=locals.old && oneCountry===old.country
+                                            ? 'selected' : null %>>
+                                            <%= oneCountry %>
+                                        </option>
+                                        <% } %>
+                            </select>
+                        </p>
+                        <button type="submit">Guardar cambios</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <%- include('./partials/footer') %>
+</body>
+
+</html>

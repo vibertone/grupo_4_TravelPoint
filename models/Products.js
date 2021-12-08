@@ -37,7 +37,6 @@ const Products = {
         }
         allProducts.push(product);
         fs.writeFileSync(this.productsJson, JSON.stringify(allProducts, null, ' '), 'utf-8');
-        return product
     },
 
     delete: function(id) {

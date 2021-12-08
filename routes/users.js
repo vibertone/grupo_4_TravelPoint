@@ -13,9 +13,11 @@ router.post(ENDPOINTS.user.LOGIN, controllers.processLogin);
 
 router.get(ENDPOINTS.user.REGISTER, loggedMiddleware, controllers.register);
 router.post(ENDPOINTS.user.REGISTER, validations, controllers.createMyAccount);
+router.get(ENDPOINTS.user.EDITMYACCOUNT, controllers.editMyAccount)
+router.post(ENDPOINTS.user.EDITMYACCOUNT, controllers.processEditMyAccount)
 
 router.get(ENDPOINTS.user.MYACCOUNT, guestMiddleware, controllers.myAccount);
-router.post(ENDPOINTS.user.MYACCOUNT, multerMiddleware.single('profilePicture'), controllers.myProfilePicture)
+router.post(ENDPOINTS.user.MYACCOUNT, multerMiddleware.single('image'), controllers.myProfilePicture)
 
 
 module.exports = router;

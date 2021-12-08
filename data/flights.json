@@ -55,43 +55,5 @@
   "escalasVuelta": "Directo",
   "aeropuertoOrigen": "EZE",
   "aeropuertoDestino": "BCN"
- },
- {
-  "id": 4,
-  "tipo": "Vuelo",
-  "origen": "saasd",
-  "aeropuertoOrigen": "sadasdas",
-  "destino": "dsadas",
-  "aeropuertoDestino": "dasd",
-  "ida": "2021-12-18",
-  "vuelta": "2021-12-17",
-  "horarioIda": "asdasdas",
-  "horarioLlegadaIda": "dads",
-  "escalasIda": "1 escala",
-  "duracionIda": "asdsad",
-  "horarioVuelta": "asdsadasd",
-  "horarioLlegadaVuelta": "asdasd",
-  "escalasVuelta": "1 escala",
-  "duracionVuelta": "dsada",
-  "precio": "asdsadsa"
- },
- {
-  "id": 5,
-  "tipo": "Actividad",
-  "origen": "sadasdasd",
-  "aeropuertoOrigen": "asd",
-  "destino": "sadasd",
-  "aeropuertoDestino": "sad",
-  "ida": "2021-12-02",
-  "vuelta": "2021-12-18",
-  "horarioIda": "asdsad",
-  "horarioLlegadaIda": "asdasd",
-  "escalasIda": "1 escala",
-  "duracionIda": "asdasdsa",
-  "horarioVuelta": "dasdas",
-  "horarioLlegadaVuelta": "dasd",
-  "escalasVuelta": "3 escalas",
-  "duracionVuelta": "asdasd",
-  "precio": "sadsad"
  }
 ]

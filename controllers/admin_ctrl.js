@@ -4,6 +4,10 @@ const { validationResult } = require('express-validator');
 
 const Product = require('../models/Products')
 
+let usersFilePath = path.join(__dirname, '../data/users.json');
+let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+
 let flightsFilePath = path.join(__dirname, '../data/flights.json');
 let flights = JSON.parse(fs.readFileSync(flightsFilePath, 'utf-8'));
 
@@ -13,7 +17,7 @@ const controllers = {
         res.render('productList', { data: flights });
     },
     usersList: (req, res) => {
-        res.render('usersList');
+        res.render('usersList', { data: users });
     },
     productCreate: (req, res) => {
         res.render('productCreate')
@@ -32,7 +36,7 @@ const controllers = {
         }
         Product.create(productToCreate);
 
-        res.redirect('/admin/productlist');
+        res.render('productList', { data: flights });
     },
 
     productEdit: (req, res) => {

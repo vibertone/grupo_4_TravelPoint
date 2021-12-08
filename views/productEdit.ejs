@@ -21,7 +21,6 @@
             <div class="product-create">
                 <h3>Edite el producto</h3>
                 <form action="/admin/productedit/<%= flight.id %>?_method=PUT" method="POST">
-                    <p><label for="id">Nro de ID:</label><input type="number" name="id" value="<%= flight.id %>"></p>
                     <span>Tipo de producto:</span><select name="tipo" id="tipo" required>
                         <option value="vuelo">Vuelo</option>
                         <option value="hospedaje">Hospedaje</option>

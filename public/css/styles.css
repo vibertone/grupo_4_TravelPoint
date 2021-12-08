@@ -483,6 +483,11 @@ div #nro-documento {
     margin: auto;
 }
 
+.my-account .profile-picture {
+    width: 30%;
+    border-radius: 60%;
+}
+
 .login {
     border-radius: 40px;
     width: 80%;
@@ -666,7 +671,7 @@ footer .container-footer-2 {
     color: white;
 }
 
-.product-list .descripcion-producto button, main form .product-review button {
+.list-format .description-list-format button, main form .product-review button {
     background-color: #837e7e;
     padding: 5px 20px;
     border: white solid 1px;
@@ -674,7 +679,7 @@ footer .container-footer-2 {
     color: white;
 }
 
-.product-list .descripcion-producto, main form .product-review {
+.list-format .description-list-format, main form .product-review {
     border-radius: 30px;
     width: 90%;
     background-color: #c4e4ff;
@@ -768,12 +773,12 @@ footer .container-footer-2 {
 
      /* PRODUCT LIST */
 
-    .product-list .descripcion-producto {
+    .list-format .description-list-format {
         width: 45%;
         margin-bottom: 20px;
     }
 
-    .product-list {
+    .list-format {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;

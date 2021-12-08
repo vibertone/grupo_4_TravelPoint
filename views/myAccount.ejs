@@ -13,14 +13,17 @@
                 <h1>Mi perfil</h1>
                     <div>
                         <form action="/user/myaccount" method="POST" enctype="multipart/form-data">
-                            <input type="file" name="profilePicture" class="profilePicture">
+                            <div>
+                                <img class="profile-picture" src="/uploads/<%= user.image %>" alt="foto de perfil">
+                            </div>
+                            <input type="file" name="image" class="image">
                             <button>Subir foto</button>
                         </form>
                         <h3>Datos personales:</h3>
-                        <p>Nombre: <%= user.name %> <%= user.lastName %>  </p>
-                        <p>Email: <%= user.email %> </p>
-                        <p>Nacionalidad: <%= user.country %> </p>
-                        <a href=""><button type="submit">Editar</button></a>
+                        <p>Nombre: <%= user.name %> <%= user.lastName %></p>
+                        <p>Email: <%= user.email %></p>
+                        <p>Nacionalidad: <%= user.country %></p>
+                        <a href="/user/myaccount/edit"><button type="submit">Editar</button></a>
                     </div>
             </div>
         </main>

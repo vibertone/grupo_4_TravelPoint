@@ -14,9 +14,9 @@
             <h1>Lista de Productos</h1>
             <a href="/admin/productcreate"><button type="submit">Agregar producto</button></a>
         </div>
-        <form class="product-list">
+        <form class="list-format">
             <% data.forEach(function(flight){ %>
-                <div class="descripcion-producto">
+                <div class="description-list-format">
                     <p>Nro de ID: <%= flight.id %></p>
                     <p>Tipo: <%= flight.tipo %></p>
                     <p>Origen: <%= flight.origen %> <%= flight.aeropuertoOrigen %></p>
