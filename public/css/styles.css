@@ -488,6 +488,30 @@ div #nro-documento {
     border-radius: 60%;
 }
 
+.my-account .image {
+    width: 80%;
+}
+
+.edit-my-account input{
+    width: 60%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    border: gray 0%;
+    border-radius: 5px;
+    border-style: none;
+    margin-left: 15px;
+}
+
+.edit-my-account select {
+    width: 60%;
+    padding: 5px 10px;
+    margin: 8px 0;
+    text-align: center;
+    border: none;
+    color: gray;
+    border-radius: 5px;
+}
+
 .login {
     border-radius: 40px;
     width: 80%;

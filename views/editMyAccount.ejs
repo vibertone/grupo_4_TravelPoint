@@ -11,7 +11,7 @@
         <main>
             <div class="my-account">
                 <h1>Mi perfil</h1>
-                <div>
+                <div class="edit-my-account">
                     <form action="/user/myaccount/edit" method="POST">
                         <h3>Datos personales:</h3>
                         <p><label for="name">Nombre:</label><input type="text" name="name" id="name"></p>
@@ -23,9 +23,7 @@
                                     , "Bolivia" , "Paraguay" ] %>
                                     <% for (const oneCountry of countries) { %>
                                         <option value="<%= oneCountry %>" <%=locals.old && oneCountry===old.country
-                                            ? 'selected' : null %>>
-                                            <%= oneCountry %>
-                                        </option>
+                                            ? 'selected' : null %>><%= oneCountry %></option>
                                         <% } %>
                             </select>
                         </p>
