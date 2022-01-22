@@ -13,7 +13,7 @@ router.post(ENDPOINTS.user.LOGIN, controllers.processLogin);
 
 router.get(ENDPOINTS.user.REGISTER, loggedMiddleware, controllers.register);
 router.post(ENDPOINTS.user.REGISTER, validations, controllers.createMyAccount);
-router.get(ENDPOINTS.user.EDITMYACCOUNT, controllers.editMyAccount)
+router.get(ENDPOINTS.user.EDITMYACCOUNT, guestMiddleware, controllers.editMyAccount)
 router.post(ENDPOINTS.user.EDITMYACCOUNT, controllers.processEditMyAccount)
 
 router.get(ENDPOINTS.user.MYACCOUNT, guestMiddleware, controllers.myAccount);

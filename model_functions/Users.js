@@ -1,11 +1,16 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models')
 
 
 const User = {
     usersJson: path.join(__dirname, '../data/users.json'),
     usersData: function() {
         return JSON.parse(fs.readFileSync(this.usersJson, 'utf-8'))
+    },
+    
+    usersDataBase: function() {
+        return db.User.findAll();
     },
 
     generateId: function() {

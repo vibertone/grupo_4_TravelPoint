@@ -14,15 +14,15 @@
                 <div class="edit-my-account">
                     <form action="/user/myaccount/edit" method="POST">
                         <h3>Datos personales:</h3>
-                        <p><label for="name">Nombre:</label><input type="text" name="name" id="name"></p>
-                        <p><label for="email">Email:</label><input type="text" name="email" id="email"></p>
+                        <p><label for="name">Nombre:</label><input type="text" name="name" id="name" value="<%= user.name %>"></p>
+                        <p><label for="lastName">Apellido:</label><input type="text" name="lastName" id="lastName" value= "<%= user.lastName %>"></p>
                         <p>
                             <select id="country" name="country">
                                 <option value="">Nacionalidad</option>
                                 <% let countries=["Argentina", "Brasil" , "Chile" , "Venezuela" , "Uruguay" , "Peru"
                                     , "Bolivia" , "Paraguay" ] %>
                                     <% for (const oneCountry of countries) { %>
-                                        <option value="<%= oneCountry %>" <%=locals.old && oneCountry===old.country
+                                        <option value="<%= oneCountry %>" <%=oneCountry===user.country
                                             ? 'selected' : null %>><%= oneCountry %></option>
                                         <% } %>
                             </select>

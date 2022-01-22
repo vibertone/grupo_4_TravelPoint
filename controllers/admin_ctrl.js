@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
+const db = require('../database/models')
 
-const Product = require('../models/Products')
+const Product = require('../model_functions/Products')
 
 let usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -17,7 +18,10 @@ const controllers = {
         res.render('productList', { data: flights });
     },
     usersList: (req, res) => {
-        res.render('usersList', { data: users });
+        db.User.findAll()
+            .then(function (users) {
+                res.render('usersList', { users })
+            })
     },
     productCreate: (req, res) => {
         res.render('productCreate')

@@ -2,8 +2,10 @@ const path = require('path');
 const fs = require('fs');
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-const User = require('../models/Users');
+const User = require('../model_functions/Users');
 const { user } = require('../endpoints');
+const db = require('../database/models')
+const { Op } = require("sequelize");
 
 let usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -20,24 +22,29 @@ const controllers = {
                 old: req.body
             });
         }
-        let usersInData = User.findByEmail('email', req.body.email);
-        if (usersInData) {
-            return res.render('register', {
-                errors: {
-                    email: {
-                        msg: 'Este email ya está registrado'
-                    }
-                },
-                old: req.body
-            });
-        }
-        let userToCreate = {
-            ...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            image: "/perfil-sin-foto.jpg"
-        }
-        User.create(userToCreate);
-        res.redirect('/user/login')
+
+        db.User.findOne({ where: { email: req.body.email } }).then(usersInData => {
+            if (usersInData) {
+                res.render('register', {
+                    errors: {
+                        email: {
+                            msg: 'Este email ya está registrado'
+                        }
+                    },
+                    old: req.body
+                });
+
+            } else {
+
+                let userToCreate = {
+                    ...req.body,
+                    password: bcryptjs.hashSync(req.body.password, 10),
+                    image: "/perfil-sin-foto.jpg"
+                }
+                db.User.create(userToCreate);
+                res.redirect('/user/login')
+            }
+        });
     },
     login: (req, res) => {
         res.render('login');
@@ -52,34 +59,35 @@ const controllers = {
                 }
             });
         }
-        let userToLogin = User.findByEmail('email', req.body.email);
-        if (userToLogin) {
-            let passwordValidation = bcryptjs.compareSync(req.body.password, userToLogin.password);
-            if (passwordValidation) {
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
+        db.User.findOne({ where: { email: req.body.email } }).then(userToLogin => {
+            if (userToLogin) {
+                let passwordValidation = bcryptjs.compareSync(req.body.password, userToLogin.password);
+                if (passwordValidation) {
+                    delete userToLogin.password;
+                    req.session.userLogged = userToLogin;
 
-                //cookie
-                if (req.body.remember_checkbox) {
-                    res.cookie('userEmail', req.body.email, { maxAge: 1000 })
-                };
+                    //cookie
+                    if (req.body.remember_checkbox) {
+                        res.cookie('userEmail', req.body.email, { maxAge: 1000 })
+                    };
 
-                res.redirect('/user/myaccount')
+                    res.redirect('/user/myaccount')
+                }
+                res.render('login', {
+                    errors: {
+                        email: {
+                            msg: 'Los datos ingresados son incorrectos'
+                        }
+                    }
+                });
             }
-            return res.render('login', {
+            res.render('login', {
                 errors: {
                     email: {
-                        msg: 'Los datos ingresados son incorrectos'
+                        msg: 'El email ingresado es incorrecto'
                     }
                 }
             });
-        }
-        return res.render('login', {
-            errors: {
-                email: {
-                    msg: 'El email ingresado es incorrecto'
-                }
-            }
         });
     },
     myAccount: (req, res) => {
@@ -88,35 +96,39 @@ const controllers = {
         });
     },
     editMyAccount: (req, res) => {
-        res.render('editMyAccount');
+        res.render('editMyAccount', {
+            user: req.session.userLogged
+        });
     },
     processEditMyAccount: (req, res) => {
         const {
-            name, email, nacionalidad
+            name, lastName, country
         } = req.body;
-;
-        const editProfile = [];
 
-        users.map(data => {
-            if (req.session.userLogged.id == data.id) {
-                data.name = name, data.email = email, data.nacionalidad = nacionalidad
-            };
-            editProfile.push(data);
-        });
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '), 'utf-8');
+        db.User.update({
+            name: name,
+            lastName: lastName,
+            country: country
+        },
+            {
+                where: {
+                    id: req.session.userLogged.id
+                }
+            })
+            .then()
         res.redirect('/user/myaccount')
     },
     myProfilePicture: (req, res) => {
-        const newPicture = [];
 
-        users.map(data => {
-            if (req.session.userLogged.id == data.id) {
-                data.image = req.file.filename
-            };
-            newPicture.push(data);
-        });
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '), 'utf-8');
-
+        db.User.update({
+            image: req.file.filename
+        },
+            {
+                where: {
+                    id: req.session.userLogged.id
+                }
+            })
+            .then()
         res.redirect('/user/myaccount')
     }
 };
