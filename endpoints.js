@@ -6,7 +6,8 @@ const ENDPOINTS = {
         "REGISTER": "/register",
         "LOGIN": "/login",
         "MYACCOUNT": "/myaccount",
-        "EDITMYACCOUNT": "/myaccount/edit"
+        "EDITMYACCOUNT": "/myaccount/edit",
+        "LOGOUT": "/logout"
     },
     flights: {
         "SHOPPINGDETAIL": "/shoppingdetail",

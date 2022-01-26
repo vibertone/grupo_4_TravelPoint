@@ -6,18 +6,18 @@ const User = require('../model_functions/Users');
 const { user } = require('../endpoints');
 const db = require('../database/models')
 const { Op } = require("sequelize");
-
-let usersFilePath = path.join(__dirname, '../data/users.json');
-let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const fetch = require ('node-fetch')
 
 const controllers = {
-    register: (req, res) => {
-        res.render('register');
+    register: async (req, res) => {
+        let countries = await fetch('https://restcountries.com/v3.1/all').then(response => response.json());
+        console.log(countries);
+        res.render('register', {countries});
     },
     createMyAccount: (req, res) => {
         let errors = validationResult(req);
         if (errors.errors.length > 0) {
-            return res.render('register', {
+            res.render('register', {
                 errors: errors.mapped(),
                 old: req.body
             });
@@ -130,6 +130,11 @@ const controllers = {
             })
             .then()
         res.redirect('/user/myaccount')
+    },
+    logout: (req, res) => {
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        return res.redirect('/')
     }
 };
 

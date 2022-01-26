@@ -102,12 +102,10 @@
                                                 <p class="inputClass-forValidation">
                                                     <select id="country" name="country">
                                                         <option value="">Nacionalidad</option>
-                                                        <% let countries=["Argentina", "Brasil" , "Chile" , "Venezuela",
-                                                                          "Uruguay" , "Peru", "Bolivia", "Paraguay" ] %>
-                                                            <% for (const oneCountry of countries) { %>
-                                                                <option value="<%= oneCountry %>" <%=locals.old &&
-                                                                    oneCountry === old.country ? 'selected' : null %>>
-                                                                    <%= oneCountry %>
+                                                            <% for (let i = 0; i<countries.length; i++) { %>
+                                                                <option value="<%= countries[i].name.common %>" <%=locals.old &&
+                                                                    countries[i].name.common === old.country ? 'selected' : null %>>
+                                                                    <%= countries[i].name.common %>
                                                                 </option>
                                                                 <% } %>
                                                     </select>
