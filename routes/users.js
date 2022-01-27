@@ -13,11 +13,11 @@ router.post(ENDPOINTS.user.LOGIN, controllers.processLogin);
 
 router.get(ENDPOINTS.user.REGISTER, loggedMiddleware, controllers.register);
 router.post(ENDPOINTS.user.REGISTER, validations, controllers.createMyAccount);
-router.get(ENDPOINTS.user.EDITMYACCOUNT, guestMiddleware, controllers.editMyAccount)
-router.post(ENDPOINTS.user.EDITMYACCOUNT, controllers.processEditMyAccount)
+router.get(ENDPOINTS.user.EDIT_MY_ACCOUNT, guestMiddleware, controllers.editMyAccount)
+router.post(ENDPOINTS.user.EDIT_MY_ACCOUNT, controllers.processEditMyAccount)
 
-router.get(ENDPOINTS.user.MYACCOUNT, guestMiddleware, controllers.myAccount);
-router.post(ENDPOINTS.user.MYACCOUNT, multerMiddleware.single('image'), controllers.myProfilePicture)
+router.get(ENDPOINTS.user.MY_ACCOUNT, guestMiddleware, controllers.myAccount);
+router.post(ENDPOINTS.user.MY_ACCOUNT, multerMiddleware.single('image'), controllers.myProfilePicture)
 
 router.get(ENDPOINTS.user.LOGOUT, controllers.logout)
 

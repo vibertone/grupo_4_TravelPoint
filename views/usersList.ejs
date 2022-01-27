@@ -11,9 +11,14 @@
         <%- include('./partials/header') %>
     </header>
     <main>
-        <h1 class="titulo-productos">Lista de Usuarios</h1>
+        <h1 class="titulo-productlist">Lista de Usuarios</h1>
+        <form action="/admin/search-users" method="GET">
+            <input type="search" class="search-users" name="searchUsers" placeholder="Buscar usuario">
+            <button type="submit">Buscar</button>
+        </form>
 
-        <form class="list-format">
+        <div class="list-format">
+             
             <% users.forEach(user => { %>
                 <div class="description-list-format">
                     <p>Foto de perfil: <%= user.image %></p>
@@ -23,8 +28,8 @@
                     <h4>Apellido: <%= user.lastName %></h4>
                     <p>Nacionalidad: <%= user.country %></p>
                 </div>
-                <% }) %>
-        </form>
+            <% }) %>
+        </div>
 
     </main>
     <%- include('./partials/footer') %>

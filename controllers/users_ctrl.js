@@ -68,7 +68,7 @@ const controllers = {
 
                     //cookie
                     if (req.body.remember_checkbox) {
-                        res.cookie('userEmail', req.body.email, { maxAge: 1000 })
+                        res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60})
                     };
 
                     res.redirect('/user/myaccount')

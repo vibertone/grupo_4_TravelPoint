@@ -5,21 +5,22 @@ const ENDPOINTS = {
     user: {
         "REGISTER": "/register",
         "LOGIN": "/login",
-        "MYACCOUNT": "/myaccount",
-        "EDITMYACCOUNT": "/myaccount/edit",
+        "MY_ACCOUNT": "/myaccount",
+        "EDIT_MY_ACCOUNT": "/myaccount/edit",
         "LOGOUT": "/logout"
     },
     flights: {
-        "SHOPPINGDETAIL": "/shoppingdetail",
-        "PRODUCTDETAIL": "/productdetail/:id"
+        "SHOPPING_DETAIL": "/shoppingdetail",
+        "PRODUCT_DETAIL": "/productdetail/:id"
     },
     administrator: {
-        "USERSLIST": "/userslist",
-        "PRODUCTLIST": "/productlist",
-        "PRODUCTCREATE": "/productcreate",
-        "PRODUCTREVIEW":"/productreview/:id",
-        "PRODUCTEDIT": "/productedit/:id",
-        "PRODUCTDELETE":"/productdelete/:id"
+        "USERS_LIST": "/userslist",
+        "PRODUCT_LIST": "/productlist",
+        "PRODUCT_CREATE": "/productcreate",
+        "PRODUCT_REVIEW":"/productreview/:id",
+        "PRODUCT_EDIT": "/productedit/:id",
+        "PRODUCT_DELETE":"/productdelete/:id",
+        "SEARCH_USERS": "/search-users"
     }
 };
 

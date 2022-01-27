@@ -2,12 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 const db = require('../database/models')
+const { Op } = require("sequelize");
 
 const Product = require('../model_functions/Products')
-
-let usersFilePath = path.join(__dirname, '../data/users.json');
-let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
 
 let flightsFilePath = path.join(__dirname, '../data/flights.json');
 let flights = JSON.parse(fs.readFileSync(flightsFilePath, 'utf-8'));
@@ -21,6 +18,16 @@ const controllers = {
         db.User.findAll()
             .then(function (users) {
                 res.render('usersList', { users })
+            });
+    },
+    searchUsers: (req, res) => {
+        db.User.findAll({
+            where: {
+                [Op.or]: [{name: { [Op.like]: '%' + req.query.searchUsers + '%' }}, {lastName: { [Op.like]: '%' + req.query.searchUsers + '%' }}]
+            }
+        })
+            .then(userFounded => {
+                res.json(userFounded)
             })
     },
     productCreate: (req, res) => {
