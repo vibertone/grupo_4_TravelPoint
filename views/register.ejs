@@ -90,13 +90,13 @@
                                     </p>
                                     <% } %>
                                         <p class="inputClass-forValidation">
-                                            <input type="text" id="last-name" name="lastName" placeholder="Apellido"
-                                                value="<%= locals.old && old.lastName ? old.lastName : '' %>"
+                                            <input type="text" id="last-name" name="last_name" placeholder="Apellido"
+                                                value="<%= locals.old && old.last_name ? old.last_name : '' %>"
                                                 class="form-control is-invalid">
                                         </p>
-                                        <% if(locals.errors && errors.lastName) { %>
+                                        <% if(locals.errors && errors.last_name) { %>
                                             <p class="msg-error-form">
-                                                <%= errors.lastName.msg %>
+                                                <%= errors.last_name.msg %>
                                             </p>
                                             <% } %>
                                                 <p class="inputClass-forValidation">

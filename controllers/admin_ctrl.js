@@ -15,15 +15,15 @@ const controllers = {
         res.render('productList', { data: flights });
     },
     usersList: (req, res) => {
-        db.User.findAll()
+        db.Users.findAll()
             .then(function (users) {
                 res.render('usersList', { users })
             });
     },
     searchUsers: (req, res) => {
-        db.User.findAll({
+        db.Users.findAll({
             where: {
-                [Op.or]: [{name: { [Op.like]: '%' + req.query.searchUsers + '%' }}, {lastName: { [Op.like]: '%' + req.query.searchUsers + '%' }}]
+                [Op.or]: [{name: { [Op.like]: '%' + req.query.searchUsers + '%' }}, {last_name: { [Op.like]: '%' + req.query.searchUsers + '%' }}]
             }
         })
             .then(userFounded => {

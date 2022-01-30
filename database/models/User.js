@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'User';
+    let alias = 'Users';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        lastName: {
+        last_name: {
             type: dataTypes.STRING(100),
             allowNull: false
         },
@@ -19,13 +19,15 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(150),
             allowNull: false
         },
-        country: {
+        image: {
+            type: dataTypes.STRING(500)
+        },
+        password: {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        image: dataTypes.BLOB('long'),
-        password: {
-            type: dataTypes.STRING(100),
+        country_id: {
+            type: dataTypes.INTEGER,
             allowNull: false
         }
     };
@@ -34,6 +36,21 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
     const User = sequelize.define(alias, cols, config);
+
+    User.associate = function(models) {
+        User.belongsTo(models.Countries, {
+            as: "countries",
+            foreignKey: "country_id"
+        });
+
+        User.belongsToMany(models.Itineraries, {
+            as: "itineraries",
+            through: "user_itinerary",
+            foreignKey: "user_id",
+            otherKey: "itinerary_id",
+            timestamps: false
+        });
+    };
 
     return User;
 };

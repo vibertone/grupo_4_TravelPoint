@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Aerport';
+    let alias = 'User_Itinerary';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -7,20 +7,20 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        name: {
-            type: dataTypes.STRING(200),
+        user_id: {
+            type: dataTypes.INTEGER,
             allowNull: false
         },
-        fk_city_id: {
+        itinerary_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         }
     };
     let config = {
-        tableName: 'aerports',
+        tableName: 'user_itinerary',
         timestamps: false
     }
-    const Aerport = sequelize.define(alias,cols,config);
+    const User_Itinerary = sequelize.define(alias,cols,config);
 
-    return Aerport;
+    return User_Itinerary;
 };

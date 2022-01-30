@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'City';
+    let alias = 'Airlines';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -7,16 +7,23 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        description: {
+        name: {
             type: dataTypes.STRING(200),
             allowNull: false
         }
     };
     let config = {
-        tableName: 'cities',
+        tableName: 'airlines',
         timestamps: false
     }
-    const City = sequelize.define(alias,cols,config);
+    const Airline = sequelize.define(alias,cols,config);
 
-    return City;
+    Airline.associate = function(models) {
+        Airline.hasMany(models.Flights, {
+            as: "flights",
+            foreignKey: "airline_id"
+        })
+    };
+
+    return Airline;
 };

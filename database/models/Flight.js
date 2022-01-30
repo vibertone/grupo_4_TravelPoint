@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Flight';
+    let alias = 'Flights';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -7,23 +7,19 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        date: {
-            type: dataTypes.DATE,
+        flight_number: {
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         duration: {
-            type: dataTypes.NUMBER,
+            type: dataTypes.TIME,
             allowNull: false
         },
-        price: {
-            type: dataTypes.NUMBER,
-            allowNull: false
-        },
-        fk_user_id: {
+        airline_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
-        id_type_of_flight: {
+        itinerary_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         }
@@ -33,6 +29,18 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
     const Flight = sequelize.define(alias,cols,config);
+
+    Flight.associate = function(models) {
+        Flight.belongsTo(models.Airlines, {
+            as: "airlines",
+            foreignKey: "airline_id"
+        });
+        
+        Flight.belongsTo(models.Itineraries, {
+            as: "itineraries",
+            foreignKey: "itinerary_id"
+        });
+    };
 
     return Flight;
 };

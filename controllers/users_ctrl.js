@@ -1,9 +1,5 @@
-const path = require('path');
-const fs = require('fs');
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-const User = require('../model_functions/Users');
-const { user } = require('../endpoints');
 const db = require('../database/models')
 const { Op } = require("sequelize");
 const fetch = require ('node-fetch')
@@ -11,7 +7,6 @@ const fetch = require ('node-fetch')
 const controllers = {
     register: async (req, res) => {
         let countries = await fetch('https://restcountries.com/v3.1/all').then(response => response.json());
-        console.log(countries);
         res.render('register', {countries});
     },
     createMyAccount: (req, res) => {
@@ -23,7 +18,7 @@ const controllers = {
             });
         }
 
-        db.User.findOne({ where: { email: req.body.email } }).then(usersInData => {
+        db.Users.findOne({ where: { email: req.body.email } }).then(usersInData => {
             if (usersInData) {
                 res.render('register', {
                     errors: {
@@ -41,7 +36,7 @@ const controllers = {
                     password: bcryptjs.hashSync(req.body.password, 10),
                     image: "/perfil-sin-foto.jpg"
                 }
-                db.User.create(userToCreate);
+                db.Users.create(userToCreate);
                 res.redirect('/user/login')
             }
         });
@@ -59,7 +54,7 @@ const controllers = {
                 }
             });
         }
-        db.User.findOne({ where: { email: req.body.email } }).then(userToLogin => {
+        db.Users.findOne({ where: { email: req.body.email } }).then(userToLogin => {
             if (userToLogin) {
                 let passwordValidation = bcryptjs.compareSync(req.body.password, userToLogin.password);
                 if (passwordValidation) {
@@ -102,12 +97,12 @@ const controllers = {
     },
     processEditMyAccount: (req, res) => {
         const {
-            name, lastName, country
+            name, last_name, country
         } = req.body;
 
-        db.User.update({
+        db.Users.update({
             name: name,
-            lastName: lastName,
+            last_name: last_name,
             country: country
         },
             {
@@ -120,7 +115,7 @@ const controllers = {
     },
     myProfilePicture: (req, res) => {
 
-        db.User.update({
+        db.Users.update({
             image: req.file.filename
         },
             {
