@@ -20,16 +20,18 @@ Victoria Federico Felipe
 *Plataforma utilizada para organizar el trabajo*
 https://github.com/vibertone/grupo_4_TravelPoint/projects/1
 
-5 sitios de referencia:
-DESPEGAR https://www.despegar.com.ar
 
-ATRÁPALO : https://www.atrapalo.com.ar/vuelos/
 
-ALMUNDO: https://almundo.com.ar/
+            5 sitios de referencia:
+            DESPEGAR https://www.despegar.com.ar
 
-TURISMO CITY: https://www.turismocity.com.ar/
+            ATRÁPALO : https://www.atrapalo.com.ar/vuelos/
 
-KIWI.COM: https://www.kiwi.com/
+            ALMUNDO: https://almundo.com.ar/
+
+            TURISMO CITY: https://www.turismocity.com.ar/
+
+            KIWI.COM: https://www.kiwi.com/
 
 
 
@@ -39,3 +41,7 @@ https://github.com/vibertone/grupo_4_TravelPoint/tree/main/public/design
 
 Retrospectivas y otras ceremonias
 https://github.com/vibertone/grupo_4_TravelPoint/public/otros/
+
+
+Donde está nuestro DER?
+https://app.diagrams.net/#Hvibertone%2Fgrupo_4_TravelPoint%2FDER%2FDER

@@ -10,6 +10,10 @@ module.exports = (sequelize, dataTypes) => {
         name: {
             type: dataTypes.STRING(200),
             allowNull: false
+        },
+        code: {
+            type:dataTypes.STRING(3),
+            allowNull:false
         }
     };
     let config = {
