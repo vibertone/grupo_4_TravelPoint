@@ -40,7 +40,7 @@ https://github.com/vibertone/grupo_4_TravelPoint/tree/main/public/design
 
 
 Retrospectivas y otras ceremonias
-https://github.com/vibertone/grupo_4_TravelPoint/public/otros/
+https://github.com/vibertone/grupo_4_TravelPoint/tree/main/public/otros
 
 
 Donde está nuestro DER?
