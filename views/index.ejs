@@ -10,36 +10,34 @@
     <%- include('./partials/header') %>
         <main>
             <div class="buscar-vuelo">
-                <div class="opcion-destino">
-                    <p>Ida y Vuelta</p>
-                    <p>Solo ida</p>
-                    <p>Multidestino</p>
+                <img src="/img/imagen-index.jpg" alt="" class="imagen-fondo">
+                <div class="menu-buscar-vuelo">
+                    <div class="opcion-destino">
+                        <p class="vuelo-ida-y-vuelta">Ida y Vuelta</p>
+                        <p class="vuelo-solo-ida">Solo ida</p>
+                        <p class="multidestino">Multidestino</p>
+                    </div>
+                    <form action="/" method="">
+                        <div class="grid-opciones-vuelos">
+                            <div><input type="search" name="Origen" placeholder="Origen"></div>
+                            <div><input type="search" name="Destino" placeholder="Destino"></div>
+                            <div><input type="text" placeholder="MM/DD/YYYY" name="fechas" id="fechas"></div>
+                            <div class="agregar-eliminar-tramo" id="div1">
+                                <div class="agregar-tramo">+ Agregar nuevo tramo</div>
+                                <div class="eliminar-tramo">- Eliminar tramo</div>
+                            </div>
+                            <div class="passengers"><input type="number" name="cant-pasajeros" id="cant-pasajeros"
+                                    placeholder="Pasajeros"></div>
+                        </div>
+                        <p class="opcion-sin-fecha">
+                            <label for="sin fecha">Todavía no decidí la fecha</label><input type="checkbox" name="sin fecha"
+                                id="sin fecha">
+                        </p>
+                        <p>
+                            <button type="submit">Buscar</button>
+                        </p>
+                    </form>
                 </div>
-                <form action="/" method="">
-                    <div class="opciones-vuelos">
-                        <p>
-                            <input type="search" name="Origen" placeholder="Origen">
-                        </p>
-                        <p>
-                            <input type="search" name="Destino" placeholder="Destino">
-                        </p>
-                    </div>
-                    <div class="fecha-pasajeros">
-                        <p>
-                            <input type="text" placeholder="MM/DD/YYYY" name= "fechas" id="fechas">
-                        </p>
-                        <p>
-                            <input type="number" name="cant-pasajeros" id="cant-pasajeros" placeholder="Pasajeros">
-                        </p>
-                    </div>
-                    <p class="opcion-sin-fecha">
-                        <label for="sin fecha">Todavía no decidí la fecha</label><input type="checkbox" name="sin fecha"
-                            id="sin fecha">
-                    </p>
-                    <p>
-                        <button type="submit">Buscar</button>
-                    </p>
-                </form>
             </div>
             <section class="vuelos">
                 <% data.forEach(function(flight){ %>
@@ -56,14 +54,15 @@
                         </article>
                     </a>
                     <% }); %>
-                    <form action="" class="buscar-vuelos-baratos">
-                        <label for="destinos">¿Buscas vuelos baratos a otro destino?</label>
-                        <input type="search" name="busqueda" placeholder="Quiero volar a...">
-                        <button type="submit" class="button1">Buscar</button>
-                    </form>
+                        <form action="" class="buscar-vuelos-baratos">
+                            <label for="destinos">¿Buscas vuelos baratos a otro destino?</label>
+                            <input type="search" name="busqueda" placeholder="Quiero volar a...">
+                            <button type="submit" class="button1">Buscar</button>
+                        </form>
             </section>
         </main>
         <%- include('./partials/footer') %>
+        <script src="/js/index.js"></script>
 </body>
 
 </html>

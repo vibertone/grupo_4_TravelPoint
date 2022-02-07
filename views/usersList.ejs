@@ -11,11 +11,13 @@
         <%- include('./partials/header') %>
     </header>
     <main>
-        <h1 class="titulo-productlist">Lista de Usuarios</h1>
-        <form action="/admin/search-users" method="GET">
-            <input type="search" class="search-users" name="searchUsers" placeholder="Buscar usuario">
-            <button type="submit">Buscar</button>
-        </form>
+        <div class="flex-buscar-usuario">
+            <h1 class="titulo-productlist">Lista de Usuarios</h1>
+            <form action="/admin/search-users" method="GET">
+                <input type="search" class="search-users" name="searchUsers" placeholder="Buscar usuario">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
 
         <div class="list-format">
              

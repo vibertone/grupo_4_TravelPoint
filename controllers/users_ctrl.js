@@ -2,12 +2,12 @@ const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const db = require('../database/models')
 const { Op } = require("sequelize");
-const fetch = require ('node-fetch')
+const fetch = require('node-fetch')
 
 const controllers = {
     register: async (req, res) => {
         let countries = await fetch('https://restcountries.com/v3.1/all').then(response => response.json());
-        res.render('register', {countries});
+        res.render('register', { countries });
     },
     createMyAccount: (req, res) => {
         let errors = validationResult(req);
@@ -18,28 +18,29 @@ const controllers = {
             });
         }
 
-        db.Users.findOne({ where: { email: req.body.email } }).then(usersInData => {
-            if (usersInData) {
-                res.render('register', {
-                    errors: {
-                        email: {
-                            msg: 'Este email ya está registrado'
-                        }
-                    },
-                    old: req.body
-                });
+        db.Users.findOne({ where: { email: req.body.email } })
+            .then(usersInData => {
+                if (usersInData) {
+                    res.render('register', {
+                        errors: {
+                            email: {
+                                msg: 'Este email ya está registrado'
+                            }
+                        },
+                        old: req.body
+                    });
 
-            } else {
+                } else {
 
-                let userToCreate = {
-                    ...req.body,
-                    password: bcryptjs.hashSync(req.body.password, 10),
-                    image: "/perfil-sin-foto.jpg"
+                    let userToCreate = {
+                        ...req.body,
+                        password: bcryptjs.hashSync(req.body.password, 10),
+                        image: "/perfil-sin-foto.jpg"
+                    }
+                    db.Users.create(userToCreate);
+                    res.redirect('/user/login')
                 }
-                db.Users.create(userToCreate);
-                res.redirect('/user/login')
-            }
-        });
+            });
     },
     login: (req, res) => {
         res.render('login');
@@ -63,7 +64,7 @@ const controllers = {
 
                     //cookie
                     if (req.body.remember_checkbox) {
-                        res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60})
+                        res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 })
                     };
 
                     res.redirect('/user/myaccount')

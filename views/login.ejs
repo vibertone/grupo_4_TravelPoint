@@ -10,29 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/31b9fa39aa.js" crossorigin="anonymous"></script>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <script> window.fbAsyncInit = function () {
-      FB.init({
-        appId: '402008404714331',
-        cookie: true,
-        xfbml: true,
-        version: '11'
-      });
-
-      FB.AppEvents.logPageView();
-
-    };
-
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) { return; }
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-
-  <meta name="google-signin-client_id" content="AIzaSyBrscPUe1Wa8k9ufXG9n5rUPN0gh-8WMJU">
 
 
   <title>Ingresá</title>
@@ -46,14 +23,8 @@
   <%- include('./partials/header') %>
     <main>
       <div class="login">
-        <h3>Accede con Google</h3>
-        <div class="apis">
-          <div class="g-signin2" data-onsuccess="onSignIn"></div>
-          <div class="fb-login-button" data-width="50px" data-size="medium" data-button-type="login_with"
-            data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-        </div>
         <form action="/user/login" method="POST">
-          <h3>O Ingresa con tu email</h3>
+          <h3>Ingresa con tu email</h3>
           <div>
             <% if(locals.errors && errors.email) { %>
               <p class="msg-error-form-login">

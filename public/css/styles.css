@@ -64,59 +64,135 @@ header {
     align-items: center;
 }
 
+.header-box3 .mini-profile-picture{
+    width: 8vw;
+    height: 8vw;
+    border-radius: 30px;
+    margin-top: 10%;
+}
+
 .header-box3 div a {
     color: #5962ff;
 }
 
+.imagen-fondo {
+    display: none;
+}
+
 .buscar-vuelo {
-    background-color: #c4e4ff;
+    background-color: #1669ad;
+    padding: 15px 0;
 }
 
 .opcion-destino {
     display: flex;
     justify-content: space-around;
-    font-weight: 700;
-    margin: 0 100px;
+    font-weight: 500;
+    margin: 0 20px;
 }
 
 .opcion-destino p {
     margin: 5px;
     margin-top: 10px;
+    border: white solid 2px;
+    border-radius: 20px;
+    padding: 3px 8px;
+    cursor: pointer;
+    color: white;
 }
 
-.opciones-vuelos {
+.grid-opciones-vuelos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin: 15px 0 20px 0;
+    justify-items: center;
+    padding: 0 10px;
+}
+
+.grid-multidestino {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.9fr 0.6fr;
+    gap: 10px;
+    margin: 15px 0 20px 0;
+    justify-items: center;
+    padding: 0 10px;
+}
+
+.passengers-cant {
+    grid-column: 1/4;
+    width: 35%;
+}
+
+.agregar-eliminar-tramo {
+    grid-column: 1/4;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    display: none;
+}
+
+.agregar-tramo {
+    border: solid white 2px;
+    border-radius: 20px;
+    padding: 8px 0;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.eliminar-tramo {
+    border: solid white 2px;
+    border-radius: 20px;
+    padding: 8px 0;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.nuevo-tramo-creado {
     display: flex;
+    grid-column: 1/4;
+    gap: 10px;
+    width: 100%;
     justify-content: space-around;
 }
 
-.opciones-vuelos p input {
+.nuevo-tramo-creado-none {
+    display: none;
+}
+
+.vuelo-ida-y-vuelta, .vuelo-solo-ida {
+    cursor: pointer;
+}
+
+
+.grid-opciones-vuelos input {
     border: none;
-    width: 45vw;
+    width: 100%;
     padding: 25px;
     border-radius: 5px;
     font-size: 25px;
     text-align: center;
-    background-color: white;
 }
 
-.fecha-pasajeros {
-    display: flex;
-    justify-content: space-around;
-}
-
-.fecha-pasajeros p input {
+.grid-multidestino input {
     border: none;
-    width: 45vw;
-    padding: 25px;
+    width: 100%;
+    padding: 15px;
     border-radius: 5px;
     font-size: 25px;
     text-align: center;
-    background-color: white;
+    font-size: 18px;
 }
 
 .opcion-sin-fecha {
     margin-top: 0;
     padding-left: 15px;
+    font-size: 14px;
+    color: white;
     font-size: 14px;
 }
 
@@ -141,7 +217,6 @@ article {
 
 main {
     background-color: #e6e6e6;
-    padding-top: 20px;
 }
 
 .vuelos {
@@ -492,7 +567,7 @@ div #nro-documento {
     width: 80%;
 }
 
-.edit-my-account input{
+.edit-my-account input {
     width: 60%;
     padding: 5px 20px;
     margin: 8px 0;
@@ -648,6 +723,58 @@ form .inputClass-forValidation {
     align-items: center;
 }
 
+.menu-desplegable {
+    position: absolute;
+    background-color: #5962ff;
+    color: white;
+    font-weight: 400;
+    font-size: 100%;
+    width: 35vw;
+    height: 100px;
+    top: 50px;
+    right: 2%;
+    border-radius: 5px 5px 10px 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 1;
+}
+
+.menu-desplegable {
+    display: none;
+}
+
+.menu-desplegable-block {
+    position: absolute;
+    background-color: #5962ff;
+    color: white;
+    font-weight: 400;
+    font-size: 100%;
+    width: 35vw;
+    height: 100px;
+    top: 50px;
+    right: 2%;
+    border-radius: 5px 5px 10px 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.8);
+    display: block;
+    z-index: 1;
+}
+
+.menu-desplegable-block p a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+}
+
+.icon-profile-logout span {
+    display: none;
+}
+
+.icon-profile-logout a {
+    cursor: pointer;
+}
+
 /*FOOTER*/
 
 footer hr {
@@ -717,17 +844,43 @@ footer .container-footer-2 {
 }
 
 @media (min-width: 481px) {
+
+    .header-box3 .mini-profile-picture{
+        width: 6vw;
+        height: 6vw;
+        border-radius: 30px;
+        margin-top: -3%;
+    }
+
+    .flex-icon-profile {
+        display: flex;
+    }
+
+    .header-box3 {
+        justify-content: right;
+        gap: 15px;
+        margin-right: 15px;
+        font-size: 5vw;
+    }
+
+    .icon-profile-logout span {
+        font-size: 2vw;
+        margin: 3px 0 0 5px;
+        padding: 0;
+        display: block;
+    }
+
     .container-header {
         grid-template-columns: 25% auto 30%;
         grid-template-rows: 70px 10px 60px;
     }
 
-    .header-box2 p {
-        font-size: 60%;
+    .opcion-destino {
+        margin: 0 70px;
     }
 
-    .header-box3 {
-        font-size: 5vw;
+    .header-box2 p {
+        font-size: 60%;
     }
 
     .buscar-vuelo form button {
@@ -795,7 +948,7 @@ footer .container-footer-2 {
         padding: 0 40% 0 10px;
     }
 
-     /* PRODUCT LIST */
+    /* PRODUCT LIST */
 
     .list-format .description-list-format {
         width: 45%;
@@ -809,6 +962,59 @@ footer .container-footer-2 {
     }
 
     main form .product-review {
-    width: 80vw;
+        width: 80vw;
+    }
+}
+
+@media (min-width: 769px) {
+
+    .header-box1 a img {
+        max-height: 130%;
+    }
+
+    .imagen-fondo {
+        display: block;
+        width: 100vw;
+    }
+
+    .buscar-vuelo {
+        background-color: #e6e6e6;
+        padding: 0;
+    }
+
+    .menu-buscar-vuelo {
+        width: 50%;
+        margin-left: 10%;
+        border-radius: 20px;
+        background-color: #1669ad;
+        padding: 35px 10px;
+        position: absolute;
+        top: 180px;
+    }
+
+    .opcion-destino {
+        margin: 0;
+    }
+
+    .grid-opciones-vuelos input {
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    .buscar-vuelo form button {
+        width: 100px;
+        padding: 15px;
+    }
+
+    .container-media769-footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .container-media769-footer .container-footer-2 {
+        width: 45%;
+        height: 50vw;
+        max-height: 250px;
     }
 }

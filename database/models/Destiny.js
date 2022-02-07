@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        city_code: {
+        airport_code_id: {
             type: dataTypes.STRING(20),
             allowNull: false
         },
