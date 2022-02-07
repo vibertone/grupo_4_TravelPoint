@@ -20,80 +20,82 @@
         nonce="VFH2JtUh"></script>
     <%- include('./partials/header') %>
         <main>
-            <div class="login">
-                <% if (locals.errors) { %>
-                    <% } %>
-                        <form action="/user/register" method="POST">
-                            <h3>Registrate con tus datos</h3>
-                            <div>
-                                <p class="inputClass-forValidation">
-                                    <input type="text" name="email" id="email" placeholder="Ingresa tu Email"
-                                        value="<%= locals.old && old.email ? old.email : '' %>"></p>
-                                <% if(locals.errors && errors.email) { %>
-                                    <p class="msg-error-form">
-                                        <%= errors.email.msg %>
-                                    </p>
-                                    <% } %>
-                                        <p class="inputClass-forValidation">
-                                            <input type="password" name="password" id="password"
-                                                placeholder="Contraseña">
+            <div class="padding-top-my-account">
+                <div class="login">
+                    <% if (locals.errors) { %>
+                        <% } %>
+                            <form action="/user/register" method="POST">
+                                <h3>Registrate con tus datos</h3>
+                                <div>
+                                    <p class="inputClass-forValidation">
+                                        <input type="text" name="email" id="email" placeholder="Ingresa tu Email"
+                                            value="<%= locals.old && old.email ? old.email : '' %>"></p>
+                                    <% if(locals.errors && errors.email) { %>
+                                        <p class="msg-error-form">
+                                            <%= errors.email.msg %>
                                         </p>
-                                        <% if(locals.errors && errors.password) { %>
-                                            <p class="msg-error-form">
-                                                <%= errors.password.msg %>
+                                        <% } %>
+                                            <p class="inputClass-forValidation">
+                                                <input type="password" name="password" id="password"
+                                                    placeholder="Contraseña">
                                             </p>
-                                            <% } %>
-                                                <p class="inputClass-forValidation">
-                                                    <input type="password" name="repeatPassword" id="repeat-password"
-                                                        placeholder="Repite Contraseña">
+                                            <% if(locals.errors && errors.password) { %>
+                                                <p class="msg-error-form">
+                                                    <%= errors.password.msg %>
                                                 </p>
-                                                <% if(locals.errors && errors.repeatPassword) { %>
-                                                    <p class="msg-error-form">
-                                                        <%= errors.repeatPassword.msg %>
+                                                <% } %>
+                                                    <p class="inputClass-forValidation">
+                                                        <input type="password" name="repeatPassword" id="repeat-password"
+                                                            placeholder="Repite Contraseña">
                                                     </p>
-                                                    <% } %>
-                            </div>
-                            <div>
-                                <p class="inputClass-forValidation">
-                                    <input type="text" id="name" name="name" placeholder="Nombre"
-                                        value="<%= locals.old && old.name ? old.name : '' %>">
-                                </p>
-                                <% if(locals.errors && errors.name) { %>
-                                    <p class="msg-error-form">
-                                        <%= errors.name.msg %>
-                                    </p>
-                                    <% } %>
-                                        <p class="inputClass-forValidation">
-                                            <input type="text" id="last-name" name="last_name" placeholder="Apellido"
-                                                value="<%= locals.old && old.last_name ? old.last_name : '' %>"
-                                                class="form-control is-invalid">
-                                        </p>
-                                        <% if(locals.errors && errors.last_name) { %>
-                                            <p class="msg-error-form">
-                                                <%= errors.last_name.msg %>
-                                            </p>
-                                            <% } %>
-                                                <p class="inputClass-forValidation">
-                                                    <select id="country" name="country">
-                                                        <option value="">Nacionalidad</option>
-                                                            <% for (let i = 0; i<countries.length; i++) { %>
-                                                                <option value="<%= countries[i].name.common %>" <%=locals.old &&
-                                                                    countries[i].name.common === old.country ? 'selected' : null %>>
-                                                                    <%= countries[i].name.common %>
-                                                                </option>
-                                                                <% } %>
-                                                    </select>
-                                                    <% if (locals.errors && errors.country) { %>
+                                                    <% if(locals.errors && errors.repeatPassword) { %>
                                                         <p class="msg-error-form">
-                                                            <%= errors.country.msg %>
+                                                            <%= errors.repeatPassword.msg %>
                                                         </p>
                                                         <% } %>
+                                </div>
+                                <div>
+                                    <p class="inputClass-forValidation">
+                                        <input type="text" id="name" name="name" placeholder="Nombre"
+                                            value="<%= locals.old && old.name ? old.name : '' %>">
+                                    </p>
+                                    <% if(locals.errors && errors.name) { %>
+                                        <p class="msg-error-form">
+                                            <%= errors.name.msg %>
+                                        </p>
+                                        <% } %>
+                                            <p class="inputClass-forValidation">
+                                                <input type="text" id="last-name" name="last_name" placeholder="Apellido"
+                                                    value="<%= locals.old && old.last_name ? old.last_name : '' %>"
+                                                    class="form-control is-invalid">
+                                            </p>
+                                            <% if(locals.errors && errors.last_name) { %>
+                                                <p class="msg-error-form">
+                                                    <%= errors.last_name.msg %>
                                                 </p>
-                            </div>
-                            <p>
-                                <button type="submit">Registrarse</button>
-                            </p>
-                        </form>
+                                                <% } %>
+                                                    <p class="inputClass-forValidation">
+                                                        <select id="country" name="country">
+                                                            <option value="">Nacionalidad</option>
+                                                                <% for (let i = 0; i<countries.length; i++) { %>
+                                                                    <option value="<%= countries[i].name.common %>" <%=locals.old &&
+                                                                        countries[i].name.common === old.country ? 'selected' : null %>>
+                                                                        <%= countries[i].name.common %>
+                                                                    </option>
+                                                                    <% } %>
+                                                        </select>
+                                                        <% if (locals.errors && errors.country) { %>
+                                                            <p class="msg-error-form">
+                                                                <%= errors.country.msg %>
+                                                            </p>
+                                                            <% } %>
+                                                    </p>
+                                </div>
+                                <p>
+                                    <button type="submit">Registrarse</button>
+                                </p>
+                            </form>
+                </div>
             </div>
         </main>
         <%- include('./partials/footer') %>

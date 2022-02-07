@@ -553,6 +553,19 @@ div #nro-documento {
     text-align: center;
 }
 
+.my-account button{
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    padding: 10px;
+    color: white;
+    background-color: #154b9c;
+}
+
+.padding-top-my-account{
+    padding-top: 20px;
+}
+
 .my-account div form {
     width: 90%;
     margin: auto;
@@ -968,6 +981,14 @@ footer .container-footer-2 {
 
 @media (min-width: 769px) {
 
+    .header-box3{
+        margin-top: 7%;
+    }
+
+    .my-account .image{
+        width: 60%;
+    }
+
     .header-box1 a img {
         max-height: 130%;
     }
@@ -987,7 +1008,7 @@ footer .container-footer-2 {
         margin-left: 10%;
         border-radius: 20px;
         background-color: #1669ad;
-        padding: 35px 10px;
+        padding: 15px 10px;
         position: absolute;
         top: 180px;
     }
@@ -1016,5 +1037,54 @@ footer .container-footer-2 {
         width: 45%;
         height: 50vw;
         max-height: 250px;
+    }
+
+    .login{
+        max-width: 500px;
+    }
+
+    main form .product-review{
+        max-width: 500px;
+    }
+    
+    .grid-multidestino {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 0.9fr 0.6fr;
+        gap: 10px;
+        margin: 15px 0 20px 0;
+        justify-items: center;
+        padding: 0 10px;
+    }
+    
+    .passengers-cant {
+        grid-column: 1/4;
+        width: 35%;
+    }
+    
+    .agregar-eliminar-tramo {
+        grid-column: 1/4;
+        margin: auto;
+        text-align: center;
+        width: 80%;
+        display: none;
+    }
+    
+    .agregar-tramo {
+        border: solid white 2px;
+        border-radius: 20px;
+        padding: 8px 0;
+        color: white;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    
+    .eliminar-tramo {
+        border: solid white 2px;
+        border-radius: 20px;
+        padding: 8px 0;
+        color: white;
+        font-weight: 700;
+        margin-bottom: 5px;
     }
 }

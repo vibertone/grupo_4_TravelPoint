@@ -9,28 +9,29 @@
 <body>
     <%- include('./partials/header') %>
     <main>
-        <h2 class="titulo-productreview">Estas seguro que querés eliminar este Vuelo?</h2>
-        <form action="/admin/productDelete/<%= flight.id %>?_method=delete" method="post">
-            <div class="product-review">
-                <p>Nro de ID: <%= flight.id %></p>
-                <p>Tipo: <%= flight.tipo %></p>
-                <p>Origen: <%= flight.origen %> <%= flight.aeropuertoOrigen %></p>
-                <p>Destino: <%= flight.destino %> <%= flight.aeropuertoDestino %></p>
-                <p>ida: <%= flight.ida %></p>
-                <p>vuelta: <%= flight.vuelta %></p>
-                <p>Horario de ida: <%= flight.horarioIda %></p>
-                <p>Horario de llegada: <%= flight.horarioLlegadaIda %></p>
-                <p>Duración: <%= flight.duracionIda %></p>
-                <p>Escalas: <%= flight.escalasIda %></p>
-                <p>Horario de vuelta: <%= flight.horarioVuelta %></p>
-                <p>Horario de llegada: <%= flight.horarioLlegadaVuelta %></p>
-                <p>Duración: <%= flight.duracionVuelta %></p>
-                <p>Escalas: <%= flight.escalasVuelta %></p>
-                <p>Precio: <%= flight.precio %></p>
-                <button type="submit">CONFIRMA ELIMINACIÓN</button>
-            </div>
-
-        </form>
+        <div class="padding-top-my-account">
+            <h2 class="titulo-productreview">Estas seguro que querés eliminar este Vuelo?</h2>
+            <form action="/admin/productDelete/<%= flight.id %>?_method=delete" method="post">
+                <div class="product-review">
+                    <p>Nro de ID: <%= flight.id %></p>
+                    <p>Tipo: <%= flight.tipo %></p>
+                    <p>Origen: <%= flight.origen %> <%= flight.aeropuertoOrigen %></p>
+                    <p>Destino: <%= flight.destino %> <%= flight.aeropuertoDestino %></p>
+                    <p>ida: <%= flight.ida %></p>
+                    <p>vuelta: <%= flight.vuelta %></p>
+                    <p>Horario de ida: <%= flight.horarioIda %></p>
+                    <p>Horario de llegada: <%= flight.horarioLlegadaIda %></p>
+                    <p>Duración: <%= flight.duracionIda %></p>
+                    <p>Escalas: <%= flight.escalasIda %></p>
+                    <p>Horario de vuelta: <%= flight.horarioVuelta %></p>
+                    <p>Horario de llegada: <%= flight.horarioLlegadaVuelta %></p>
+                    <p>Duración: <%= flight.duracionVuelta %></p>
+                    <p>Escalas: <%= flight.escalasVuelta %></p>
+                    <p>Precio: <%= flight.precio %></p>
+                    <button type="submit">CONFIRMA ELIMINACIÓN</button>
+                </div>
+            </form>
+        </div>
     </main>
     <%- include('./partials/footer') %>
 </body>

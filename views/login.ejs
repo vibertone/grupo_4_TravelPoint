@@ -22,30 +22,32 @@
     nonce="VFH2JtUh"></script>
   <%- include('./partials/header') %>
     <main>
-      <div class="login">
-        <form action="/user/login" method="POST">
-          <h3>Ingresa con tu email</h3>
-          <div>
-            <% if(locals.errors && errors.email) { %>
-              <p class="msg-error-form-login">
-                  <%= errors.email.msg %>
+      <div class="padding-top-my-account">
+        <div class="login">
+          <form action="/user/login" method="POST">
+            <h3>Ingresa con tu email</h3>
+            <div>
+              <% if(locals.errors && errors.email) { %>
+                <p class="msg-error-form-login">
+                    <%= errors.email.msg %>
+                </p>
+                <% } %> 
+              <p>
+                <input type="text" name="email" id="email" placeholder="Ingresa tu Email">
               </p>
-              <% } %> 
-            <p>
-              <input type="text" name="email" id="email" placeholder="Ingresa tu Email">
-            </p>
-            <p>
-              <input type="password" name="password" id="password" placeholder="Contraseña">
-            </p>
-            <p class="remember-user">
-              <label for="remember_checkbox">Recordar mi usuario</label><input type="checkbox" name="remember_checkbox" id="remember_checkbox">
-            </p>
-            <p>
-              <button type="submit">Ingresar</button>
-            </p>
-          </div>
-        </form>
-        <p>Si todavía no tenés una cuenta, registrate haciendo click <a href="/user/register">acá</a></p>
+              <p>
+                <input type="password" name="password" id="password" placeholder="Contraseña">
+              </p>
+              <p class="remember-user">
+                <label for="remember_checkbox">Recordar mi usuario</label><input type="checkbox" name="remember_checkbox" id="remember_checkbox">
+              </p>
+              <p>
+                <button type="submit">Ingresar</button>
+              </p>
+            </div>
+          </form>
+          <p>Si todavía no tenés una cuenta, registrate haciendo click <a href="/user/register">acá</a></p>
+        </div>
       </div>
     </main>
     <%- include('./partials/footer') %>
