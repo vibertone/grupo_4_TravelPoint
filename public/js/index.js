@@ -23,22 +23,35 @@ window.addEventListener('load', function () {
 
         let nuevoTramo = document.createElement("div");
         nuevoTramo.classList.add('nuevo-tramo-creado');
-        nuevoTramo.innerHTML = "<div class='div-creado'><input type='search' name='Origen' placeholder='Origen'></div><div class='div-creado'><input type='search' name='Destino' placeholder='Destino'></div><div class='div-creado'><input type='text' placeholder='MM/DD/YYYY' name='fechas' id='fechas'></div>";
+        nuevoTramo.innerHTML = "<div class='div-creado'><input type='search' name='Origen' placeholder='Origen'></div><div class='div-creado'><input type='search' name='Destino' placeholder='Destino'></div><div class='div-creado'><input type='text' placeholder='MM/DD/YYYY' name='fechas' id='fechas'></div><div class='icon-eliminar-tramo'><i class='far fa-times-circle'></i></div>";
         let gridMultidestino = document.querySelector('.grid-multidestino');
 
         var addBeforeDiv1 = document.getElementById("div1");
         gridMultidestino.insertBefore(nuevoTramo, addBeforeDiv1);
     });
 
-    let eliminarTramo = document.querySelector('.eliminar-tramo');
-
+    /* let eliminarTramo = document.querySelector('.eliminar-tramo');
+    
     eliminarTramo.addEventListener('click', function () {
         let tramoCreado = document.querySelector('.nuevo-tramo-creado')
         if (tramoCreado) {
             divCreado = tramoCreado.parentNode;
             divCreado.removeChild(tramoCreado);
-        }
-    })
+        };
+    }); */
+
+    let iconEliminarTramo = document.querySelector('.icon-eliminar-tramo');
+
+    if(iconEliminarTramo) {
+    iconEliminarTramo.addEventListener('click', function () {
+        main.style.color = 'red'
+        /* let tramoCreado = document.querySelector('.nuevo-tramo-creado')
+        if (tramoCreado) {
+            divCreado = tramoCreado.parentNode;
+            divCreado.removeChild(tramoCreado); 
+        };*/
+    });
+};
 
     let idaYVuelta = document.querySelector('.vuelo-ida-y-vuelta');
 
