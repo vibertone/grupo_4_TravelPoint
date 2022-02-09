@@ -1,8 +1,7 @@
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
 
     let multidestino = document.querySelector('.multidestino');
     let agregarEliminarTramo = document.querySelector('.agregar-eliminar-tramo');
-    let agregarTramo = document.querySelector('.agregar-tramo');
     let gridOpcionesVuelos = document.querySelector('.grid-opciones-vuelos');
     let passengers = document.querySelector('.passengers');
 
@@ -18,6 +17,7 @@ window.addEventListener('load', function() {
     });
 
     //Se agrega nuevo tramo al clickear en +Agregar tramo, en la opcion multidestino
+    let agregarTramo = document.querySelector('.agregar-tramo');
 
     agregarTramo.addEventListener('click', function () {
 
@@ -29,6 +29,16 @@ window.addEventListener('load', function() {
         var addBeforeDiv1 = document.getElementById("div1");
         gridMultidestino.insertBefore(nuevoTramo, addBeforeDiv1);
     });
+
+    let eliminarTramo = document.querySelector('.eliminar-tramo');
+
+    eliminarTramo.addEventListener('click', function () {
+        let tramoCreado = document.querySelector('.nuevo-tramo-creado')
+        if (tramoCreado) {
+            divCreado = tramoCreado.parentNode;
+            divCreado.removeChild(tramoCreado);
+        }
+    })
 
     let idaYVuelta = document.querySelector('.vuelo-ida-y-vuelta');
 
@@ -44,6 +54,11 @@ window.addEventListener('load', function() {
         if (nuevoTramoCreado) {
             nuevoTramoCreado.style.display = 'none';
         }
+        multidestino.addEventListener('click', function () {
+        if (nuevoTramoCreado.style.display = 'none'){
+            nuevoTramoCreado.style.display = 'flex'
+        }
+        })
     });
 
 })

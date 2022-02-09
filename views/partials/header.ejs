@@ -1,47 +1,53 @@
-<header class="container-header">
-    <div class="header-box1">
-        <a href="/"><img src="/img/Logotransp.png" alt="Logo" class="logo"></a>
+<header>
+    <div class="container-header">
+        <div class="header-box1">
+            <a href="/"><img src="/img/Logotransp.png" alt="Logo" class="logo"></a>
+        </div>
+        <div class="header-box2">
+            <div>
+                <i class="fas fa-plane"></i>
+                <p> Vuelos </p>
+            </div>
+            <div>
+                <i class="fas fa-concierge-bell"></i>
+                <p> Hoteles </p>
+            </div>
+            <div>
+                <i class="fas fa-suitcase"></i>
+                <p> Paquetes </p>
+            </div>
+            <div>
+                <i class="fas fa-briefcase-medical"></i>
+                <p> Asistencias </p>
+            </div>
+            <div>
+                <i class="fas fa-car-side"></i>
+                <p> Autos </p>
+            </div>
+            <div>
+                <i class="fas fa-skiing-nordic"></i>
+                <p> Actividades </p>
+            </div>
+        </div>
+        <div class="header-box3">
+            <div><a href=""><i class="fas fa-phone-alt"></i></a></div>
+            <div><a href=""><i class="fas fa-suitcase-rolling"></i></a></div>
+            <% if(locals.isLogged) { %>
+                <div class="icon-profile-logout"><a class="flex-icon-profile"><img class="mini-profile-picture"
+                            src="/uploads/<%= locals.userLogged.image %> " alt=""><span>
+                            <%= locals.userLogged.name %>
+                                <%= locals.userLogged.last_name %>
+                        </span></a></div>
+                <% } else { %>
+                    <div class="icon-profile-logout"><a href="/user/login"><i class="fas fa-user"></i></a></div>
+                    <% } %>
+                        <div><a href=""><i class="fas fa-question-circle"></i></a></div>
+        </div>
+        <% if(locals.isLogged) { %>
+            <div class="menu-desplegable">
+                <p><a href="/user/login"><i class="fas fa-user-circle"></i> My perfil</a></p>
+                <p><a href="/user/logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></p>
+            </div>
+            <% } %>
     </div>
-    <div class="header-box2">
-        <div>
-            <i class="fas fa-plane"></i>
-            <p> Vuelos </p>
-        </div>
-        <div>
-            <i class="fas fa-concierge-bell"></i>
-            <p> Hoteles </p>
-        </div>
-        <div>
-            <i class="fas fa-suitcase"></i>
-            <p> Paquetes </p>
-        </div>
-        <div>
-            <i class="fas fa-briefcase-medical"></i>
-            <p> Asistencias </p>
-        </div>
-        <div>
-            <i class="fas fa-car-side"></i>
-            <p> Autos </p>
-        </div>
-        <div>
-            <i class="fas fa-skiing-nordic"></i>
-            <p> Actividades </p>
-        </div>
-    </div>
-    <div class="header-box3">
-        <div><a href=""><i class="fas fa-phone-alt"></i></a></div>
-        <div><a href=""><i class="fas fa-suitcase-rolling"></i></a></div>
-        <% if(locals.isLogged) { %> 
-            <div class="icon-profile-logout"><a class="flex-icon-profile"><img class="mini-profile-picture" src="/uploads/<%= locals.userLogged.image %> " alt=""><span><%= locals.userLogged.name %> <%= locals.userLogged.last_name %></span></a></div>
-        <% } else { %>
-            <div class="icon-profile-logout"><a href="/user/login"><i class="fas fa-user"></i></a></div>
-            <% } %> 
-        <div><a href=""><i class="fas fa-question-circle"></i></a></div>
-    </div>
-    <% if(locals.isLogged) { %>
-        <div class="menu-desplegable">
-            <p><a href="/user/login"><i class="fas fa-user-circle"></i> My perfil</a></p>
-            <p><a href="/user/logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></p>
-        </div>
-    <% } %> 
 </header>
