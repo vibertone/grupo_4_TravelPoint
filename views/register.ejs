@@ -28,7 +28,7 @@
                                 <h3>Registrate con tus datos</h3>
                                 <div>
                                     <p class="inputClass-forValidation">
-                                        <input type="text" name="email" id="email" placeholder="Ingresa tu Email"
+                                        <input type="text" name="email" placeholder="Ingresa tu Email"
                                             value="<%= locals.old && old.email ? old.email : '' %>"></p>
                                     <% if(locals.errors && errors.email) { %>
                                         <p class="msg-error-form">
@@ -36,7 +36,7 @@
                                         </p>
                                         <% } %>
                                             <p class="inputClass-forValidation">
-                                                <input type="password" name="password" id="password"
+                                                <input type="password" name="password"
                                                     placeholder="Contraseña">
                                             </p>
                                             <% if(locals.errors && errors.password) { %>
@@ -45,7 +45,7 @@
                                                 </p>
                                                 <% } %>
                                                     <p class="inputClass-forValidation">
-                                                        <input type="password" name="repeatPassword" id="repeat-password"
+                                                        <input type="password" name="repeatPassword" 
                                                             placeholder="Repite Contraseña">
                                                     </p>
                                                     <% if(locals.errors && errors.repeatPassword) { %>
@@ -56,7 +56,7 @@
                                 </div>
                                 <div>
                                     <p class="inputClass-forValidation">
-                                        <input type="text" id="name" name="name" placeholder="Nombre"
+                                        <input type="text" name="name" placeholder="Nombre"
                                             value="<%= locals.old && old.name ? old.name : '' %>">
                                     </p>
                                     <% if(locals.errors && errors.name) { %>
@@ -65,7 +65,7 @@
                                         </p>
                                         <% } %>
                                             <p class="inputClass-forValidation">
-                                                <input type="text" id="last-name" name="last_name" placeholder="Apellido"
+                                                <input type="text" name="last_name" placeholder="Apellido"
                                                     value="<%= locals.old && old.last_name ? old.last_name : '' %>"
                                                     class="form-control is-invalid">
                                             </p>
@@ -74,22 +74,19 @@
                                                     <%= errors.last_name.msg %>
                                                 </p>
                                                 <% } %>
-                                                    <p class="inputClass-forValidation">
-                                                        <select id="country" name="country">
-                                                            <option value="">Nacionalidad</option>
-                                                                <% for (let i = 0; i<countries.length; i++) { %>
-                                                                    <option value="<%= countries[i].name.common %>" <%=locals.old &&
-                                                                        countries[i].name.common === old.country ? 'selected' : null %>>
-                                                                        <%= countries[i].name.common %>
-                                                                    </option>
-                                                                    <% } %>
-                                                        </select>
-                                                        <% if (locals.errors && errors.country) { %>
-                                                            <p class="msg-error-form">
-                                                                <%= errors.country.msg %>
-                                                            </p>
-                                                            <% } %>
-                                                    </p>
+                                                <p class="inputClass-forValidation">
+                                                    <select name="country">
+                                                        <option value="">Nacionalidad</option>
+                                                            <% for (const oneCountry of countries) { %>
+                                                                <option value="<%= oneCountry.id %>"><%= oneCountry.id %></option>
+                                                                <% } %>
+                                                    </select>
+                                                    <% if (locals.errors && errors.country) { %>
+                                                        <p class="msg-error-form">
+                                                            <%= errors.country.msg %>
+                                                        </p>
+                                                        <% } %>
+                                                </p>
                                 </div>
                                 <p>
                                     <button type="submit">Registrarse</button>

@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "proyecto_integrador_g4",
+    "database": "travelpoint_db2",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

@@ -7,24 +7,25 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        name: {
+        country: {
             type: dataTypes.STRING(200),
             allowNull: false
         }
     };
     let config = {
         tableName: 'countries',
-        timestamps: false
+        timestamps: false,
+        underscored: true
     }
-    const Country = sequelize.define(alias,cols,config);
+    const Country = sequelize.define(alias, cols, config);
 
-    Country.associate = function(models) {
+    Country.associate = function (models) {
         Country.hasMany(models.Users, {
             as: "users",
             foreignKey: "country_id"
         });
-        
-        Country.hasMany(models.Origins, {
+
+        /* Country.hasMany(models.Origins, {
             as: "origins",
             foreignKey: "country_id"
         });
@@ -32,7 +33,7 @@ module.exports = (sequelize, dataTypes) => {
         Country.hasMany(models.Destinations, {
             as: "destinations",
             foreignKey: "country_id"
-        });
+        }); */
     };
 
     return Country;

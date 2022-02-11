@@ -6,8 +6,10 @@ const fetch = require('node-fetch')
 
 const controllers = {
     register: async (req, res) => {
-        let countries = await fetch('https://restcountries.com/v3.1/all').then(response => response.json());
-        res.render('register', { countries });
+        //let countries = await fetch('https://restcountries.com/v3.1/all').then(response => response.json());
+        let countries = await db.Users.findAll({include: ["countries"]});
+        console.log(countries)
+        res.render('register', countries);
     },
     createMyAccount: (req, res) => {
         let errors = validationResult(req);
@@ -37,8 +39,13 @@ const controllers = {
                         password: bcryptjs.hashSync(req.body.password, 10),
                         image: "/perfil-sin-foto.jpg"
                     }
+
+                    let countryToCreate = {
+                        country: req.body.country
+                    }
+                    db.Countries.create(countryToCreate);
                     db.Users.create(userToCreate);
-                    res.redirect('/user/login')
+                    res.redirect('/user/login');
                 }
             });
     },

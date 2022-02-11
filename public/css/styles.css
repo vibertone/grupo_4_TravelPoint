@@ -1006,21 +1006,24 @@ footer .container-footer-2 {
     .imagen-fondo {
         display: block;
         width: 100vw;
-    }
+    } 
 
     .buscar-vuelo {
         background-color: #e6e6e6;
-        padding: 0;
+        padding: 40px 0;
+        background-image: url("/img/imagen-index.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 550px;
     }
 
     .menu-buscar-vuelo {
         width: 60%;
+        max-width: 500px;
         margin-left: 10%;
         border-radius: 20px;
         background-color: #1669ad;
         padding: 15px 10px;
-        position: absolute;
-        top: 180px;
     }
 
     .opcion-destino {
@@ -1059,6 +1062,7 @@ footer .container-footer-2 {
 
     .agregar-eliminar-tramo{
         width: 100%;
+        grid-column: 1/5;
     }
 
     .flex-agregar-eliminar-tramo{
@@ -1088,12 +1092,7 @@ footer .container-footer-2 {
     }
 
     .nuevo-tramo-creado{
-        grid-column: 1/5;
-    }
-
-    .icon-eliminar-tramo{
-        display: block;
-        width: 100%;
+        grid-column: 1/4;
     }
 
     .div-creado{

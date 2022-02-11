@@ -33,23 +33,24 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         tableName: 'users',
-        timestamps: false
+        timestamps: false,
+        underscored: true
     }
     const User = sequelize.define(alias, cols, config);
 
-    User.associate = function(models) {
+    User.associate = function (models) {
         User.belongsTo(models.Countries, {
             as: "countries",
             foreignKey: "country_id"
         });
 
-        User.belongsToMany(models.Itineraries, {
-            as: "itineraries",
-            through: "user_itinerary",
-            foreignKey: "user_id",
-            otherKey: "itinerary_id",
-            timestamps: false
-        });
+        /*  User.belongsToMany(models.Itineraries, {
+             as: "itineraries",
+             through: "user_itinerary",
+             foreignKey: "user_id",
+             otherKey: "itinerary_id",
+             timestamps: false
+         }); */
     };
 
     return User;
