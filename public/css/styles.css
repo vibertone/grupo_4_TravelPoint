@@ -774,7 +774,7 @@ form .inputClass-forValidation {
     width: 35vw;
     height: 100px;
     top: 50px;
-    right: 2%;
+    right: 10%;
     border-radius: 5px 5px 10px 10px;
     padding: 10px;
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.8);
@@ -987,12 +987,19 @@ footer .container-footer-2 {
     .agregar-eliminar-tramo{
         max-width: 400px;
     }
+
+    .menu-desplegable-block{
+        width: 170px;
+        top: 10%;
+    }
 }
 
 @media (min-width: 769px) {
 
     .header-box3{
         margin-top: 7%;
+        font-size: 3vw;
+        padding: 0 6%;
     }
 
     .my-account .image{
@@ -1099,6 +1106,21 @@ footer .container-footer-2 {
         width: 100%;
     }
 
+    .icon-profile-logout span{
+        font-size: 1.5vw;
+        margin: 0;
+    }
+
+    .header-box3 .mini-profile-picture{
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .menu-desplegable-block{
+        right: 8%;
+        top: 11%;
+    }
+
     @media (min-width: 1024px) {
         .header-box2{
             grid-row: 1/2;
@@ -1107,6 +1129,7 @@ footer .container-footer-2 {
 
         .header-box3{
             font-size: 36px;
+            padding: 0 5px 0 30%;
         }
 
         .header-box1{
@@ -1114,13 +1137,34 @@ footer .container-footer-2 {
         }
  
         .container-header{
-            max-width: 1100px;
+            
             margin: auto;
         }
 
         header{
             padding-bottom: 0;
             max-height: 110px;
+        }
+
+        .header-box3 div a{
+            font-size: 2.5vw;
+            align-items: center;
+        }
+
+        .header-box3 .mini-profile-picture{
+            width: 2.5vw;
+            height: 2.5vw;
+            margin-top: 0;
+        }
+
+        .icon-profile-logout span{
+            font-size: 1.3vw;
+        }
+
+        .menu-desplegable-block{
+            right: 5%;
+            top: 12%;
+            height: 115px;
         }
     }
 }

@@ -6,19 +6,17 @@ const fetch = require('node-fetch')
 
 const controllers = {
     register: async (req, res) => {
-        //let countries = await fetch('https://restcountries.com/v3.1/all').then(response => response.json());
-        let countries = await db.Users.findAll({include: ["countries"]});
-        console.log(countries)
-        res.render('register', countries);
+        let countries = await fetch('https://restcountries.com/v3.1/all').then(response => response.json());
+        res.render('register', { countries });
     },
     createMyAccount: (req, res) => {
-        let errors = validationResult(req);
-        if (errors.errors.length > 0) {
-            res.render('register', {
-                errors: errors.mapped(),
-                old: req.body
-            });
-        }
+        /*   let errors = validationResult(req);
+          if (errors.errors.length > 0) {
+              res.render('register', {
+                  errors: errors.mapped(),
+                  old: req.body
+              });
+          } */
 
         db.Users.findOne({ where: { email: req.body.email } })
             .then(usersInData => {
@@ -32,19 +30,32 @@ const controllers = {
                         old: req.body
                     });
 
+                } else if (req.body.password !== req.body.repeatPassword) {
+                    res.render('register', {
+                        errors: {
+                            repeatPassword: {
+                                msg: 'Las contraseñas deben coincidir'
+                            }
+                        }
+                    })
+
                 } else {
+
+                    let countryToCreate = {
+                        id: Number(req.body.country),
+                        country: req.body.countryId
+                    }
 
                     let userToCreate = {
                         ...req.body,
+                        country_id: Number(req.body.country),
                         password: bcryptjs.hashSync(req.body.password, 10),
                         image: "/perfil-sin-foto.jpg"
                     }
 
-                    let countryToCreate = {
-                        country: req.body.country
-                    }
-                    db.Countries.create(countryToCreate);
-                    db.Users.create(userToCreate);
+                    let newCountry = db.Countries.create(countryToCreate);
+                    let newUser = db.Users.create(userToCreate);
+                    Promise.all([newCountry, newUser]).then(data => { data });
                     res.redirect('/user/login');
                 }
             });
@@ -94,13 +105,18 @@ const controllers = {
         });
     },
     myAccount: (req, res) => {
+        let countries = db.Countries.findOne({where: {id: req.session.userLogged.country_id}});
+        let country = JSON.stringify(countries)
         res.render('myAccount', {
-            user: req.session.userLogged
+            user: req.session.userLogged,
+            country
         });
     },
-    editMyAccount: (req, res) => {
+    editMyAccount: async (req, res) => {
+        let countries = await fetch('https://restcountries.com/v3.1/all').then(response => response.json());
         res.render('editMyAccount', {
-            user: req.session.userLogged
+            user: req.session.userLogged,
+            countries
         });
     },
     processEditMyAccount: (req, res) => {

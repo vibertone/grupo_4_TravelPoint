@@ -29,15 +29,15 @@
                                 <div>
                                     <p class="inputClass-forValidation">
                                         <input type="text" name="email" placeholder="Ingresa tu Email"
-                                            value="<%= locals.old && old.email ? old.email : '' %>"></p>
+                                            value="<%= locals.old && old.email ? old.email : '' %>">
+                                    </p>
                                     <% if(locals.errors && errors.email) { %>
                                         <p class="msg-error-form">
                                             <%= errors.email.msg %>
                                         </p>
                                         <% } %>
                                             <p class="inputClass-forValidation">
-                                                <input type="password" name="password"
-                                                    placeholder="Contraseña">
+                                                <input type="password" name="password" placeholder="Contraseña">
                                             </p>
                                             <% if(locals.errors && errors.password) { %>
                                                 <p class="msg-error-form">
@@ -45,7 +45,7 @@
                                                 </p>
                                                 <% } %>
                                                     <p class="inputClass-forValidation">
-                                                        <input type="password" name="repeatPassword" 
+                                                        <input type="password" name="repeatPassword"
                                                             placeholder="Repite Contraseña">
                                                     </p>
                                                     <% if(locals.errors && errors.repeatPassword) { %>
@@ -74,28 +74,37 @@
                                                     <%= errors.last_name.msg %>
                                                 </p>
                                                 <% } %>
-                                                <p class="inputClass-forValidation">
-                                                    <select name="country">
-                                                        <option value="">Nacionalidad</option>
-                                                            <% for (const oneCountry of countries) { %>
-                                                                <option value="<%= oneCountry.id %>"><%= oneCountry.id %></option>
+                                                    <p class="inputClass-forValidation">
+                                                        <select id="country" name="country">
+                                                            <option value="">Nacionalidad</option>
+                                                            <% for (oneCountry of countries) { %>
+                                                                <option value="<%= oneCountry.idd.suffixes %>"
+                                                                    <%=locals.old &&
+                                                                    oneCountry.name.common===old.country ? 'selected' :
+                                                                    null %>>
+                                                                    <%= oneCountry.name.common %>
+                                                                </option>
                                                                 <% } %>
-                                                    </select>
-                                                    <% if (locals.errors && errors.country) { %>
-                                                        <p class="msg-error-form">
-                                                            <%= errors.country.msg %>
-                                                        </p>
-                                                        <% } %>
-                                                </p>
+                                                        </select>
+                                                        <% if (locals.errors && errors.country) { %>
+                                                            <p class="msg-error-form">
+                                                                <%= errors.country.msg %>
+                                                            </p>
+                                                            <% } %>
+                                                    </p>
+
+                                                    <input id="capturaDataCountry" type="hidden" name="countryId">
+
                                 </div>
                                 <p>
-                                    <button type="submit">Registrarse</button>
+                                    <button id="sendDataCountry" type="submit">Registrarse</button>
                                 </p>
                             </form>
                 </div>
             </div>
         </main>
         <%- include('./partials/footer') %>
+            <script src="/js/register.js"></script>
 </body>
 
 </html>

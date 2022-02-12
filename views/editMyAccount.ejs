@@ -19,12 +19,12 @@
                         <p>
                             <select id="country" name="country">
                                 <option value="">Nacionalidad</option>
-                                <% let countries=["Argentina", "Brasil" , "Chile" , "Venezuela" , "Uruguay" , "Peru"
-                                    , "Bolivia" , "Paraguay" ] %>
-                                    <% for (const oneCountry of countries) { %>
-                                        <option value="<%= oneCountry %>" <%=oneCountry===user.country
-                                            ? 'selected' : null %>><%= oneCountry %></option>
-                                        <% } %>
+                                <% for (oneCountry of countries) { %>
+                                    <option value="<%= oneCountry.idd.suffixes %>"
+                                        <%=oneCountry.name.common === user.country ? 'selected' : null %>>
+                                        <%= oneCountry.name.common %>
+                                    </option>
+                                    <% } %>
                             </select>
                         </p>
                         <button type="submit">Guardar cambios</button>
