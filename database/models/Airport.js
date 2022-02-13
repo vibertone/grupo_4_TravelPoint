@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         code: {
-            type:dataTypes.STRING(3),
+            type:dataTypes.STRING(50),
             allowNull:false
         }
     };

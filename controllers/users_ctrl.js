@@ -2,7 +2,8 @@ const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const db = require('../database/models')
 const { Op } = require("sequelize");
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
+const Country = require('../database/models/Country');
 
 const controllers = {
     register: async (req, res) => {
@@ -104,13 +105,10 @@ const controllers = {
             });
         });
     },
-    myAccount: (req, res) => {
-        let countries = db.Countries.findOne({where: {id: req.session.userLogged.country_id}});
-        let country = JSON.stringify(countries)
-        res.render('myAccount', {
-            user: req.session.userLogged,
-            country
-        });
+    myAccount: async (req, res) => {
+        let country = await db.Countries.findOne({ where: { id: req.session.userLogged.country_id } });
+        res.render('myAccount', { user: req.session.userLogged, country })
+
     },
     editMyAccount: async (req, res) => {
         let countries = await fetch('https://restcountries.com/v3.1/all').then(response => response.json());
@@ -120,21 +118,16 @@ const controllers = {
         });
     },
     processEditMyAccount: (req, res) => {
-        const {
-            name, last_name, country
-        } = req.body;
+        const body = {
+            ...req.body,
+        }
 
-        db.Users.update({
-            name: name,
-            last_name: last_name,
-            country: country
-        },
-            {
-                where: {
-                    id: req.session.userLogged.id
-                }
-            })
-            .then()
+        db.Users.update({ body }, {
+            where: {
+                id: req.session.userLogged.id
+            }
+        })
+        .then()
         res.redirect('/user/myaccount')
     },
     myProfilePicture: (req, res) => {

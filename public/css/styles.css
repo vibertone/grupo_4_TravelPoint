@@ -1125,6 +1125,7 @@ footer .container-footer-2 {
         .header-box2{
             grid-row: 1/2;
             margin-top: 20px;
+            grid-column: auto;
         }
 
         .header-box3{
