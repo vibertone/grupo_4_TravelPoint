@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-02-2022 a las 02:23:52
+-- Tiempo de generación: 18-02-2022 a las 02:29:11
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `travelpoint_db2`
 --
+CREATE DATABASE IF NOT EXISTS `travelpoint_db2` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `travelpoint_db2`;
 
 -- --------------------------------------------------------
 
