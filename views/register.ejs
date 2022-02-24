@@ -2,15 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/31b9fa39aa.js" crossorigin="anonymous"></script>
-    <meta name="google-signin-client_id" content="AIzaSyBrscPUe1Wa8k9ufXG9n5rUPN0gh-8WMJU">
+    <%- include('./partials/head') %>
     <title>Creá tu cuenta</title>
 </head>
 
@@ -78,11 +70,11 @@
                                                         <select id="country" name="country">
                                                             <option value="">Nacionalidad</option>
                                                             <% for (oneCountry of countries) { %>
-                                                                <option value="<%= oneCountry.idd.suffixes %>"
+                                                                <option value="<%= oneCountry.id %>"
                                                                     <%=locals.old &&
-                                                                    oneCountry.name.common===old.country ? 'selected' :
+                                                                    oneCountry.country===old.country ? 'selected' :
                                                                     null %>>
-                                                                    <%= oneCountry.name.common %>
+                                                                    <%= oneCountry.country %>
                                                                 </option>
                                                                 <% } %>
                                                         </select>
@@ -92,19 +84,15 @@
                                                             </p>
                                                             <% } %>
                                                     </p>
-
-                                                    <input id="capturaDataCountry" type="hidden" name="countryId">
-
                                 </div>
                                 <p>
-                                    <button id="sendDataCountry" type="submit">Registrarse</button>
+                                    <button type="submit">Registrarse</button>
                                 </p>
                             </form>
                 </div>
             </div>
         </main>
         <%- include('./partials/footer') %>
-            <script src="/js/register.js"></script>
 </body>
 
 </html>

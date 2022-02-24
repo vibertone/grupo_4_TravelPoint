@@ -65,7 +65,7 @@ header {
     padding-right: 15px;
 }
 
-.header-box3 .mini-profile-picture{
+.header-box3 .mini-profile-picture {
     width: 8vw;
     height: 8vw;
     border-radius: 30px;
@@ -155,7 +155,7 @@ header {
     cursor: pointer;
 }
 
-.icon-eliminar-tramo{
+.icon-eliminar-tramo {
     display: none;
 }
 
@@ -522,6 +522,72 @@ div #nro-documento {
     padding: 10px 0 10px 5%;
 }
 
+.inputClass-forValidation-autocomplete {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.autocomplete-input-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.autocomplete-list li:hover, .autocomplete-list-2 li:hover {
+    background-color: #84c8ff;
+    color: black;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.autocomplete-list, .autocomplete-list-2 {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    display: none;
+    z-index: 2;
+    position: absolute;
+}
+
+.autocomplete-list li, .autocomplete-list-2 li {
+    padding: 5px 10px;
+    width: 50vw;
+    background-color: #d9eeff;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    border-bottom: 1px solid silver;
+    font-weight: 300;
+    color: #6c7275;
+}
+
+#codAeropuertoOrigen, #codAeropuertoDestino {
+    width: 55px;
+}
+
+#nroVuelo {
+    max-width: 150px;
+}
+
+#fechaVuelo {
+    max-width: 220px;
+}
+
+#duration, #precio {
+    width: 130px;
+}
+
+#aeropuertoOrigen, #aeropuertoDestino, #airline {
+    width: 40%;
+    max-width: 250px;
+}
+
+#autocomplete-input, #autocomplete-input-2 {
+    max-width: 250px;
+}
+
 .product-create form p label, .product-create form span {
     margin-right: 20px;
 }
@@ -536,12 +602,13 @@ div #nro-documento {
 }
 
 .product-create form input {
-    width: 50%;
+    width: 50vw;
     border: 1px solid silver;
     border-radius: 5px;
     height: 35px;
     padding: 0 10px;
     background-color: white;
+    font-size: 17px;
 }
 
 .product-create form select {
@@ -561,7 +628,7 @@ div #nro-documento {
     text-align: center;
 }
 
-.my-account button{
+.my-account button {
     border: none;
     border-radius: 5px;
     width: 100px;
@@ -570,7 +637,7 @@ div #nro-documento {
     background-color: #154b9c;
 }
 
-.padding-top-my-account{
+.padding-top-my-account {
     padding-top: 20px;
 }
 
@@ -693,10 +760,6 @@ form .inputClass-forValidation {
     padding: 20px;
     margin-bottom: 20px;
 }
-
-/* .div-vuelo:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0;
-} */
 
 .vuelos {
     padding-top: 40px;
@@ -866,7 +929,7 @@ footer .container-footer-2 {
 
 @media (min-width: 481px) {
 
-    .header-box3 .mini-profile-picture{
+    .header-box3 .mini-profile-picture {
         width: 6vw;
         height: 6vw;
         border-radius: 30px;
@@ -980,15 +1043,15 @@ footer .container-footer-2 {
         width: 80vw;
     }
 
-    .grid-multidestino{
+    .grid-multidestino {
         padding: 0 30px;
     }
 
-    .agregar-eliminar-tramo{
+    .agregar-eliminar-tramo {
         max-width: 400px;
     }
 
-    .menu-desplegable-block{
+    .menu-desplegable-block {
         width: 170px;
         top: 10%;
     }
@@ -996,13 +1059,13 @@ footer .container-footer-2 {
 
 @media (min-width: 769px) {
 
-    .header-box3{
+    .header-box3 {
         margin-top: 7%;
         font-size: 3vw;
         padding: 0 6%;
     }
 
-    .my-account .image{
+    .my-account .image {
         width: 60%;
     }
 
@@ -1013,7 +1076,7 @@ footer .container-footer-2 {
     .imagen-fondo {
         display: block;
         width: 100vw;
-    } 
+    }
 
     .buscar-vuelo {
         background-color: #e6e6e6;
@@ -1059,35 +1122,35 @@ footer .container-footer-2 {
         max-height: 250px;
     }
 
-    .login{
+    .login {
         max-width: 500px;
     }
 
-    main form .product-review{
+    main form .product-review {
         max-width: 500px;
     }
 
-    .agregar-eliminar-tramo{
+    .agregar-eliminar-tramo {
         width: 100%;
         grid-column: 1/5;
     }
 
-    .flex-agregar-eliminar-tramo{
+    .flex-agregar-eliminar-tramo {
         display: flex;
         justify-content: space-around;
         gap: 10px;
     }
 
-    .agregar-tramo{
+    .agregar-tramo {
         width: 100%;
         margin: 0 0 5px;
     }
 
-    .eliminar-tramo{
+    .eliminar-tramo {
         width: 100%;
     }
 
-    .grid-multidestino{
+    .grid-multidestino {
         padding: 0 5px;
         grid-template-columns: repeat(4, 1fr);
     }
@@ -1098,71 +1161,71 @@ footer .container-footer-2 {
         width: 100%;
     }
 
-    .nuevo-tramo-creado{
+    .nuevo-tramo-creado {
         grid-column: 1/4;
     }
 
-    .div-creado{
+    .div-creado {
         width: 100%;
     }
 
-    .icon-profile-logout span{
+    .icon-profile-logout span {
         font-size: 1.5vw;
         margin: 0;
     }
 
-    .header-box3 .mini-profile-picture{
+    .header-box3 .mini-profile-picture {
         width: 4vw;
         height: 4vw;
     }
 
-    .menu-desplegable-block{
+    .menu-desplegable-block {
         right: 8%;
         top: 11%;
     }
 
     @media (min-width: 1024px) {
-        .header-box2{
+        .header-box2 {
             grid-row: 1/2;
             margin-top: 20px;
             grid-column: auto;
         }
 
-        .header-box3{
+        .header-box3 {
             font-size: 36px;
             padding: 0 5px 0 30%;
         }
 
-        .header-box1{
+        .header-box1 {
             grid-row: 1/3;
         }
- 
-        .container-header{
-            
+
+        .container-header {
+
             margin: auto;
         }
 
-        header{
+        header {
             padding-bottom: 0;
             max-height: 110px;
         }
 
-        .header-box3 div a{
+        .header-box3 div a {
             font-size: 2.5vw;
             align-items: center;
         }
 
-        .header-box3 .mini-profile-picture{
+        .header-box3 .mini-profile-picture {
             width: 2.5vw;
             height: 2.5vw;
             margin-top: 0;
         }
 
-        .icon-profile-logout span{
+        .icon-profile-logout span {
             font-size: 1.3vw;
         }
 
-        .menu-desplegable-block{
+        .menu-desplegable-block {
             right: 5%;
             top: 12%;
             height: 115px;

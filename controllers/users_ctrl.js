@@ -1,23 +1,22 @@
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const db = require('../database/models')
-const { Op } = require("sequelize");
 const fetch = require('node-fetch');
-const Country = require('../database/models/Country');
 
 const controllers = {
     register: async (req, res) => {
-        let countries = await fetch('https://restcountries.com/v3.1/all').then(response => response.json());
+        let countries = await db.Countries.findAll();
         res.render('register', { countries });
     },
     createMyAccount: (req, res) => {
-        /*   let errors = validationResult(req);
-          if (errors.errors.length > 0) {
-              res.render('register', {
-                  errors: errors.mapped(),
-                  old: req.body
-              });
-          } */
+
+        /* let errors = validationResult(req);
+         if (errors.errors.length > 0) {
+             res.render('register', {
+                 errors: errors.mapped(),
+                 old: req.body
+             });
+         } */
 
         db.Users.findOne({ where: { email: req.body.email } })
             .then(usersInData => {
@@ -42,11 +41,6 @@ const controllers = {
 
                 } else {
 
-                    let countryToCreate = {
-                        id: Number(req.body.country),
-                        country: req.body.countryId
-                    }
-
                     let userToCreate = {
                         ...req.body,
                         country_id: Number(req.body.country),
@@ -54,9 +48,8 @@ const controllers = {
                         image: "/perfil-sin-foto.jpg"
                     }
 
-                    let newCountry = db.Countries.create(countryToCreate);
-                    let newUser = db.Users.create(userToCreate);
-                    Promise.all([newCountry, newUser]).then(data => { data });
+                    db.Users.create(userToCreate);
+
                     res.redirect('/user/login');
                 }
             });
@@ -106,35 +99,41 @@ const controllers = {
         });
     },
     myAccount: async (req, res) => {
-        let country = await db.Countries.findOne({ where: { id: req.session.userLogged.country_id } });
-        res.render('myAccount', { user: req.session.userLogged, country })
+        if (req.session.userLogged) {
+            let country = await db.Countries.findOne({ where: { id: req.session.userLogged.country_id } });
+            res.render('myAccount', { user: req.session.userLogged, country })
+        };
 
     },
     editMyAccount: async (req, res) => {
-        let countries = await fetch('https://restcountries.com/v3.1/all').then(response => response.json());
+        let countries = await db.Countries.findAll();
         res.render('editMyAccount', {
             user: req.session.userLogged,
             countries
         });
     },
-    processEditMyAccount: (req, res) => {
-        const body = {
-            ...req.body,
-        }
+    processEditMyAccount:  (req, res) => {
 
-        db.Users.update({ body }, {
-            where: {
-                id: req.session.userLogged.id
-            }
-        })
-        .then()
+        db.Users.update(
+            {
+                name: req.body.name,
+                last_name: req.body.last_name,
+                country_id: Number(req.body.country)
+            },
+            {
+                where: {
+                    id: req.session.userLogged.id
+                }
+            })
+            .then()
         res.redirect('/user/myaccount')
     },
     myProfilePicture: (req, res) => {
 
-        db.Users.update({
-            image: req.file.filename
-        },
+        db.Users.update(
+            {
+                image: req.file.filename
+            },
             {
                 where: {
                     id: req.session.userLogged.id

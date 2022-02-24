@@ -20,9 +20,9 @@
                             <select id="country" name="country">
                                 <option value="">Nacionalidad</option>
                                 <% for (oneCountry of countries) { %>
-                                    <option value="<%= oneCountry.idd.suffixes %>"
-                                        <%=oneCountry.name.common === user.country ? 'selected' : null %>>
-                                        <%= oneCountry.name.common %>
+                                    <option value="<%= oneCountry.id %>"
+                                        <%=oneCountry.id === user.country_id ? 'selected' : null %>>
+                                        <%= oneCountry.country %>
                                     </option>
                                     <% } %>
                             </select>

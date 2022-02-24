@@ -3,6 +3,7 @@ const path = require('path');
 const { validationResult } = require('express-validator');
 const db = require('../database/models')
 const { Op } = require("sequelize");
+const fetch = require('node-fetch');
 
 const Product = require('../model_functions/Products')
 
@@ -23,31 +24,56 @@ const controllers = {
     searchUsers: (req, res) => {
         db.Users.findAll({
             where: {
-                [Op.or]: [{name: { [Op.like]: '%' + req.query.searchUsers + '%' }}, {last_name: { [Op.like]: '%' + req.query.searchUsers + '%' }}]
+                [Op.or]: [{ name: { [Op.like]: '%' + req.query.searchUsers + '%' } }, { last_name: { [Op.like]: '%' + req.query.searchUsers + '%' } }]
             }
         })
             .then(userFounded => {
                 res.json(userFounded)
             })
     },
-    productCreate: (req, res) => {
-        res.render('productCreate')
+    productCreate: async (req, res) => {
+        let airlines = await fetch('https://airlabs.co/api/v9/airlines?api_key=2be1ed3e-fcdc-496b-b266-ef53411c6522').then(response => response.json());
+        let airports = await fetch('https://airlabs.co/api/v9/airports?api_key=2be1ed3e-fcdc-496b-b266-ef53411c6522').then(response => response.json());
+        let countries = await fetch('https://restcountries.com/v2/all').then(response => response.json());
+        res.render('productCreate', { airlines: airlines.response , airports: airports.response , countries })
     },
 
-    store: (req, res) => {
-        let errors = validationResult(req);
-        if (errors.errors.length > 0) {
-            return res.render('productCreate', {
-                errors: errors.mapped(),
-                old: req.body
-            });
+    store: async (req, res) => {
+
+        /*  let errors = validationResult(req);
+         if (errors.errors.length > 0) {
+             return res.render('productCreate', {
+                 errors: errors.mapped(),
+                 old: req.body
+             });
+         } */
+
+        let airportToCreate = {
+            airport: [req.body.aeropuertoOrigen,
+                      req.body.aeropuertoDestino],
+            code: [req.body.codAeropuertoOrigen,
+                   req.body.codAeropuertoDestino]
         }
+
+        let airlineToCreate = {
+            airline: req.body.airline
+        }
+
+        let countryToCreate = {
+            id: [Number(req.body.origen),
+                 Number(req.body.destino)],
+            country: [req.body.origen,
+                      req.body.destino]
+        }
+
         let productToCreate = {
             ...req.body,
+            flight_number: req.body.nroVuelo,
+
         }
         Product.create(productToCreate);
 
-        res.render('productList', { data: flights });
+        res.redirect('/admin/productList');
     },
 
     productEdit: (req, res) => {

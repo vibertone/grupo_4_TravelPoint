@@ -5,7 +5,7 @@ window.addEventListener('load', function () {
     let gridOpcionesVuelos = document.querySelector('.grid-opciones-vuelos');
     let passengers = document.querySelector('.passengers');
 
-    // Cuando se clickea multidestino, cambia el formato de eleccion de vuelo
+    // Cuando se clickea multidestino, cambia el formato de eleccion de vuelo a multidestino
     multidestino.addEventListener('click', function () {
 
         if (gridOpcionesVuelos.classList.contains('grid-opciones-vuelos')) {
@@ -30,6 +30,7 @@ window.addEventListener('load', function () {
         gridMultidestino.insertBefore(nuevoTramo, addBeforeDiv1);
     });
 
+    //Se elimina el tramo creado al clickear en +Eliminar tramo, en la opcion multidestino
     let eliminarTramo = document.querySelector('.eliminar-tramo');
     
     eliminarTramo.addEventListener('click', function () {
@@ -40,6 +41,7 @@ window.addEventListener('load', function () {
         };
     }); 
 
+    // Cuando se clickea en ida y vuelta, cambia el formato de eleccion de vuelo a ida y vuelta
     let idaYVuelta = document.querySelector('.vuelo-ida-y-vuelta');
 
     idaYVuelta.addEventListener('click', function () {

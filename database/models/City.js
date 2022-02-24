@@ -10,6 +10,10 @@ module.exports = (sequelize, dataTypes) => {
         city: {
             type: dataTypes.STRING(200),
             allowNull: false
+        },
+        country_code: {
+            type: dataTypes.STRING(5),
+            allowNull: false
         }
     };
     let config = {

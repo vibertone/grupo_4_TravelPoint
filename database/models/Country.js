@@ -7,8 +7,16 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
+        country_code1: {
+            type: dataTypes.STRING(5),
+            allowNull: false
+        },
         country: {
-            type: dataTypes.STRING(200),
+            type: dataTypes.STRING(300),
+            allowNull: false
+        },
+        country_code2: {
+            type: dataTypes.STRING(5),
             allowNull: false
         }
     };
