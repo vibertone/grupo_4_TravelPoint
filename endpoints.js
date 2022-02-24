@@ -7,7 +7,8 @@ const ENDPOINTS = {
         "LOGIN": "/login",
         "MY_ACCOUNT": "/myaccount",
         "EDIT_MY_ACCOUNT": "/myaccount/edit",
-        "LOGOUT": "/logout"
+        "LOGOUT": "/logout",
+        
     },
     flights: {
         "SHOPPING_DETAIL": "/shoppingdetail",
@@ -21,7 +22,11 @@ const ENDPOINTS = {
         "PRODUCT_EDIT": "/productedit/:id",
         "PRODUCT_DELETE":"/productdelete/:id",
         "SEARCH_USERS": "/search-users"
-    }
+    },
+    api:{
+        "APIUSERS_LIST": "/users",
+        "APIUSERS_DETAIL": "/users/:id"
+    },
 };
 
 
