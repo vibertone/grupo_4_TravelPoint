@@ -33,10 +33,10 @@ const controllers = {
     },
     productCreate: async (req, res) => {
 
-        let airlines = await fetch('https://airlabs.co/api/v9/airlines?api_key=2be1ed3e-fcdc-496b-b266-ef53411c6522').then(response => response.json());
-        let airports = await fetch('https://airlabs.co/api/v9/airports?api_key=2be1ed3e-fcdc-496b-b266-ef53411c6522').then(response => response.json());
+        let airlines = await db.Airlines.findAll();
+        let airports = await db.Airports.findAll();
         let countries = await db.Countries.findAll();
-        res.render('productCreate2', { airlines: airlines.response , airports: airports.response, countries });
+        res.render('productCreate2', { airlines , airports, countries });
 
     },
 

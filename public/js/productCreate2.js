@@ -2,16 +2,14 @@ window.addEventListener('load', function() {
 
     let destinyCountry = document.getElementById('destinyCountry');
     let aeropuertoDestino = document.getElementById('aeropuertoDestino');
+    let aeropuertoDestinoOption = document.getElementById('aeropuertoDestino-option')
 
     destinyCountry.addEventListener('blur', function() {
-        var getCountrySelected = destinyCountry.options[destinyCountry.selectedIndex].class;
-        var codAeropuertoDestino = aeropuertoDestino.options[aeropuertoDestino.selectedIndex].id;
+        let getCountrySelected = destinyCountry.options[destinyCountry.selectedIndex].className;
 
-        if (getCountrySelected == codAeropuertoDestino) {
-            
+        if (getCountrySelected == aeropuertoDestinoOption.className) {
+            aeropuertoDestinoOption.style.display = 'block'
         }
-
-
     })
 
 })

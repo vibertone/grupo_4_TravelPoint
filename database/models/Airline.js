@@ -10,6 +10,10 @@ module.exports = (sequelize, dataTypes) => {
         airline: {
             type: dataTypes.STRING(200),
             allowNull: false
+        },
+        country: {
+            type: dataTypes.STRING(200),
+            allowNull: false
         }
     };
     let config = {

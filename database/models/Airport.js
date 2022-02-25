@@ -7,13 +7,17 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
+        code: {
+            type: dataTypes.STRING(5),
+            allowNull:false
+        },
         airport: {
             type: dataTypes.STRING(200),
             allowNull: false
         },
-        code: {
-            type:dataTypes.STRING(50),
-            allowNull:false
+        country_code: {
+            type: dataTypes.STRING(5),
+            allowNull: false
         }
     };
     let config = {
