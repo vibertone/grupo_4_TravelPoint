@@ -1,6 +1,3 @@
-const db = require('../database/models')
-const { Op } = require("sequelize");
-
 window.addEventListener('load', function () {
     let autocompleteInput = document.getElementById('autocomplete-input');
     let autocompleteList = document.getElementById('autocomplete-list');

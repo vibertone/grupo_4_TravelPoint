@@ -19,12 +19,17 @@
 
                     <div class="inputClass-forValidation-autocomplete"><label for="origen">Origen:</label>
                         <div class="autocomplete-input-list">
-                            <div>
-                                <input type="text" name="origen" id="autocomplete-input" placeholder="Ej: Argentina" 
-                                value="<%= locals.old && old.origen ? old.origen : '' %>">
-                                <ul class="autocomplete-list" id="autocomplete-list"></ul>
-                                
-                            </div>
+                            <select name="origen" id="aeropuertoOrigen"> 
+                                <option value="">Selecciona el país de origen</option>
+                                <% countries.forEach(oneCountry => { %>                                    
+                                    <option value="<%= oneCountry.id %>"
+                                        <%=locals.old &&
+                                        oneCountry.country===old.origen ? 'selected' :
+                                        null %>>
+                                        <%= oneCountry.country %>
+                                    </option>
+                                    <% }) %>
+                            </select>
                         </div>
                     </div>
                         <% if(locals.errors && errors.origen) { %>
@@ -67,11 +72,17 @@
 
                             <div class="inputClass-forValidation-autocomplete"><label for="destino">Destino:</label>
                                 <div class="autocomplete-input-list">
-                                    <div>
-                                        <input type="text" name="destino" id="autocomplete-input-2" placeholder="Ej: Argentina"  
-                                        value="<%= locals.old && old.destino ? old.destino : '' %>">
-                                        <ul class="autocomplete-list-2" id="autocomplete-list-2"></ul>
-                                    </div>
+                                    <select name="origen" id="destinyCountry"> 
+                                        <option value="">Selecciona el país de origen</option>
+                                        <% countries.forEach(oneCountry => { %>                                    
+                                            <option value="<%= oneCountry.id %>" class="<%= oneCountry.country_code2 %>"
+                                                <%=locals.old &&
+                                                oneCountry.country===old.origen ? 'selected' :
+                                                null %>>
+                                                <%= oneCountry.country %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
                                 </div>
                             </div>
                         <% if(locals.errors && errors.destino) { %>
@@ -86,8 +97,8 @@
                                     <option value="">Seleccione el aeropuerto</option>
                                     <% for (oneAirport of airports) { %>
         
-                                        <option class="airport-item" id="<%= oneAirport.iata_code%>">
-                                    
+                                        <option class="<%= oneAirport.country_code %>" id="<%= oneAirport.iata_code%>" 
+                                            value="<%=  %>">
                                     <%=locals.old &&
                                     oneAirport.name===old.aeropuertoDestino ? 'selected' :
                                     null %>
@@ -173,10 +184,6 @@
             </div>
         </main>
         <%- include('./partials/footer') %>
-        <script src="/js/productCreateOrigin.js"></script>
-        <script src="/js/productCreateDestiny.js"></script>
-        <script src="/js/productCreateAirportsOrigin.js"></script>
-        <script src="/js/productCreateAirportsDestiny.js"></script>
 </body>
 
 </html>

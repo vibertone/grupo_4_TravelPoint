@@ -1,22 +1,26 @@
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-const db = require('../database/models')
+const db = require('../database/models');
 const fetch = require('node-fetch');
 
 const controllers = {
-    register: async (req, res) => {
-        let countries = await db.Countries.findAll();
-        res.render('register', { countries });
+    register: (req, res) => {
+        db.Countries.findAll().then(countries => {
+            res.render('register', { countries });
+        });
     },
     createMyAccount: (req, res) => {
 
-        /* let errors = validationResult(req);
-         if (errors.errors.length > 0) {
-             res.render('register', {
-                 errors: errors.mapped(),
-                 old: req.body
-             });
-         } */
+       /*  let errors = validationResult(req);
+        db.Countries.findAll().then(countries => {
+            if (errors.errors.length > 0) {
+                res.render('register', {
+                    errors: errors.mapped(),
+                    old: req.body,
+                    countries
+                });
+            }
+        }) */
 
         db.Users.findOne({ where: { email: req.body.email } })
             .then(usersInData => {
@@ -112,7 +116,7 @@ const controllers = {
             countries
         });
     },
-    processEditMyAccount:  (req, res) => {
+    processEditMyAccount: (req, res) => {
 
         db.Users.update(
             {

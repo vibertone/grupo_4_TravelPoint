@@ -32,14 +32,14 @@ window.addEventListener('load', function () {
 
     //Se elimina el tramo creado al clickear en +Eliminar tramo, en la opcion multidestino
     let eliminarTramo = document.querySelector('.eliminar-tramo');
-    
+
     eliminarTramo.addEventListener('click', function () {
         let tramoCreado = document.querySelector('.nuevo-tramo-creado')
         if (tramoCreado) {
             divCreado = tramoCreado.parentNode;
             divCreado.removeChild(tramoCreado);
         };
-    }); 
+    });
 
     // Cuando se clickea en ida y vuelta, cambia el formato de eleccion de vuelo a ida y vuelta
     let idaYVuelta = document.querySelector('.vuelo-ida-y-vuelta');
@@ -55,12 +55,13 @@ window.addEventListener('load', function () {
         let nuevoTramoCreado = document.querySelector('.nuevo-tramo-creado');
         if (nuevoTramoCreado) {
             nuevoTramoCreado.style.display = 'none';
-        }
+        };
+
         multidestino.addEventListener('click', function () {
-        if (nuevoTramoCreado.style.display = 'none'){
-            nuevoTramoCreado.style.display = 'flex'
-        }
-        })
+            if (nuevoTramoCreado.style.display = 'none') {
+                nuevoTramoCreado.style.display = 'flex'
+            };
+        });
     });
 
-})
+});

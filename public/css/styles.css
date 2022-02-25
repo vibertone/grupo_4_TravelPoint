@@ -563,6 +563,10 @@ div #nro-documento {
     color: #6c7275;
 }
 
+#aeropuertoDestino option {
+    display: none;
+}
+
 #codAeropuertoOrigen, #codAeropuertoDestino {
     width: 55px;
 }

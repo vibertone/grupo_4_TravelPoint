@@ -69,14 +69,14 @@
                                                     <p class="inputClass-forValidation">
                                                         <select id="country" name="country">
                                                             <option value="">Nacionalidad</option>
-                                                            <% for (oneCountry of countries) { %>
+                                                            <% countries.forEach(oneCountry => { %>                                    
                                                                 <option value="<%= oneCountry.id %>"
                                                                     <%=locals.old &&
                                                                     oneCountry.country===old.country ? 'selected' :
                                                                     null %>>
                                                                     <%= oneCountry.country %>
                                                                 </option>
-                                                                <% } %>
+                                                                <% }) %>
                                                         </select>
                                                         <% if (locals.errors && errors.country) { %>
                                                             <p class="msg-error-form">
