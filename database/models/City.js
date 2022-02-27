@@ -18,7 +18,8 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         tableName: 'cities',
-        timestamps: false
+        timestamps: false,
+        underscore: true
     }
     const City = sequelize.define(alias,cols,config);
 

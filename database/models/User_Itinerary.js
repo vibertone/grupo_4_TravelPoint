@@ -12,7 +12,8 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         tableName: 'user_itinerary',
-        timestamps: false
+        timestamps: false,
+        underscore: true
     }
     const User_Itinerary = sequelize.define(alias,cols,config);
 

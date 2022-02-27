@@ -5,7 +5,6 @@ const db = require('../database/models')
 const { Op } = require("sequelize");
 const fetch = require('node-fetch');
 
-const Product = require('../model_functions/Products')
 
 let flightsFilePath = path.join(__dirname, '../data/flights.json');
 let flights = JSON.parse(fs.readFileSync(flightsFilePath, 'utf-8'));
@@ -36,8 +35,8 @@ const controllers = {
         let airlines = await db.Airlines.findAll();
         let airports = await db.Airports.findAll();
         let countries = await db.Countries.findAll();
-        res.render('productCreate2', { airlines , airports, countries });
-
+        let cities = await db.Cities.findAll();
+        res.render('productCreate2', { airlines , airports, countries, cities });
     },
 
     store: async (req, res) => {
@@ -50,30 +49,31 @@ const controllers = {
              });
          } */
 
-        let airportToCreate = {
-            airport: [req.body.aeropuertoOrigen,
-                      req.body.aeropuertoDestino],
-            code: [req.body.codAeropuertoOrigen,
-                   req.body.codAeropuertoDestino]
-        }
-
-        let airlineToCreate = {
-            airline: req.body.airline
-        }
-
-        let countryToCreate = {
-            id: [Number(req.body.origen),
-                 Number(req.body.destino)],
-            country: [req.body.origen,
-                      req.body.destino]
-        }
-
-        let productToCreate = {
-            ...req.body,
+        let flightToCreate = {
             flight_number: req.body.nroVuelo,
-
+            duration: req.body.duration,
+            airline_id: Number(req.body.airline),
+            date: req.body.fechaVuelo,
+            price: req.body.price
         }
-        Product.create(productToCreate);
+
+        let originToCreate = {
+            airport_id: Number(req.body.aeropuertoOrigen),
+            country_id: Number(req.body.originCountry),
+            city_id: Number(req.body.originCity)
+        }
+
+        let destinyToCreate = {
+            airport_id: Number(req.body.aeropuertoDestino),
+            country_id: Number(req.body.destinyCountry),
+            city_id: Number(req.body.destinyCity)
+        }
+
+        let flight = db.Flights.create(flightToCreate);
+        let origin = db.Origins.create(originToCreate);
+        let destiny = db.Destinations.create(destinyToCreate);
+
+        Promise.all([flight, origin, destiny]).then(data => { data });
 
         res.redirect('/admin/productList');
     },

@@ -7,6 +7,10 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
+        date: {
+            type: dataTypes.DATE,
+            allowNull: false
+        },
         flight_number: {
             type: dataTypes.STRING(50),
             allowNull: false
@@ -15,18 +19,19 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TIME,
             allowNull: false
         },
-        airline_id: {
-            type: dataTypes.INTEGER,
+        price: {
+            type: dataTypes.STRING(20),
             allowNull: false
         },
-        itinerary_id: {
+        airline_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         }
     };
     let config = {
         tableName: 'flights',
-        timestamps: false
+        timestamps: false,
+        underscore: true
     }
     const Flight = sequelize.define(alias,cols,config);
 

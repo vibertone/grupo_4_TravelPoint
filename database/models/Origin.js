@@ -7,10 +7,6 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        code_id: {
-            type: dataTypes.STRING(20),
-            allowNull: false
-        },
         airport_id: {
             type: dataTypes.INTEGER,
             allowNull: false
@@ -26,7 +22,8 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         tableName: 'origins',
-        timestamps: false
+        timestamps: false,
+        underscore: true
     }
     const Origin = sequelize.define(alias,cols,config);
 

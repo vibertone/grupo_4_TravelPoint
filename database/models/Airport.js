@@ -22,7 +22,8 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         tableName: 'airports',
-        timestamps: false
+        timestamps: false,
+        underscore: true
     }
     const Airport = sequelize.define(alias, cols, config);
 

@@ -7,14 +7,6 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        date: {
-            type: dataTypes.DATE,
-            allowNull: false
-        },
-        price: {
-            type: dataTypes.NUMBER,
-            allowNull: false
-        },
         origin_id: {
             type: dataTypes.INTEGER,
             allowNull: false
@@ -22,11 +14,16 @@ module.exports = (sequelize, dataTypes) => {
         destiny_id: {
             type: dataTypes.INTEGER,
             allowNull: false
+        },
+        flight_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false
         }
     };
     let config = {
         tableName: 'itineraries',
-        timestamps: false
+        timestamps: false,
+        underscore: true
     }
     const Itinerary = sequelize.define(alias,cols,config);
 

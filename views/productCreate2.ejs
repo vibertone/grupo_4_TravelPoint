@@ -17,14 +17,14 @@
                     <% } %>
                 <form action="/admin/productcreate" method="POST">
 
-                    <div class="inputClass-forValidation-autocomplete"><label for="origen">Origen:</label>
+                    <div class="inputClass-forValidation-autocomplete"><label for="originCountry">Pais de origen:</label>
                         <div class="autocomplete-input-list">
-                            <select name="origen" id="origen"> 
+                            <select name="originCountry" id="originCountry"> 
                                 <option value="">Selecciona el país de origen</option>
                                 <% countries.forEach(oneCountry => { %>                                    
                                     <option value="<%= oneCountry.id %>" class="<%= oneCountry.country_code2 %>"
                                         <%=locals.old &&
-                                        oneCountry.country===old.origen ? 'selected' :
+                                        oneCountry.country===old.originCountry ? 'selected' :
                                         null %>>
                                         <%= oneCountry.country %>
                                     </option>
@@ -32,18 +32,39 @@
                             </select>
                         </div>
                     </div>
-                        <% if(locals.errors && errors.origen) { %>
+                        <% if(locals.errors && errors.originCountry) { %>
                             <p class="msg-error-form">
-                                <%= errors.origen.msg %>
+                                <%= errors.originCountry.msg %>
+                            </p>
+                            <% } %>
+
+                    <div class="inputClass-forValidation-autocomplete"><label for="originCity">Ciudad de origen:</label>
+                        <div class="autocomplete-input-list">
+                            <select name="originCity" id="originCity"> 
+                                <option value="">Selecciona la ciudad de origen</option>
+                                <% cities.forEach(oneCity => { %>                                    
+                                    <option value="<%= oneCity.id %>" class="<%= oneCity.country_code %>"
+                                        <%=locals.old &&
+                                        oneCity.city===old.originCity ? 'selected' :
+                                        null %>>
+                                        <%= oneCity.city %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                        </div>
+                    </div>
+                        <% if(locals.errors && errors.originCity) { %>
+                            <p class="msg-error-form">
+                                <%= errors.originCity.msg %>
                             </p>
                             <% } %>
 
                     <p class="inputClass-forValidation">
                         <span>Aeropuerto de origen: </span>
                         <select id="aeropuertoOrigen" name="aeropuertoOrigen">
-                            <option value="">Seleccione el aeropuerto</option>
+                            <option value="">Seleccione el aeropuerto de origen</option>
                             <% for (oneAirport of airports) { %>
-                                <option class="<%= oneAirport.country_code %>" id="<%= oneAirport.code%>" >
+                                <option class="<%= oneAirport.country_code %>" value="<%= oneAirport.id %>" id="<%= oneAirport.code%>" >
                             <%=locals.old && oneAirport.airport===old.aeropuertoOrigen ? 'selected' : null %>
                                 <%= oneAirport.airport %>                        
                                 </option>
@@ -66,14 +87,14 @@
                             </p>
                             <% } %>
 
-                            <div class="inputClass-forValidation-autocomplete"><label for="destino">Destino:</label>
+                            <div class="inputClass-forValidation-autocomplete"><label for="destinyCountry">Pais de destino:</label>
                                 <div class="autocomplete-input-list">
-                                    <select name="origen" id="destinyCountry"> 
-                                        <option value="">Selecciona el país de origen</option>
+                                    <select name="destinyCountry" id="destinyCountry"> 
+                                        <option value="">Selecciona el país de destino</option>
                                         <% countries.forEach(oneCountry => { %>                                    
                                             <option value="<%= oneCountry.id %>" class="<%= oneCountry.country_code2 %>"
                                                 <%=locals.old &&
-                                                oneCountry.country===old.origen ? 'selected' :
+                                                oneCountry.country===old.destinyCountry ? 'selected' :
                                                 null %>>
                                                 <%= oneCountry.country %>
                                             </option>
@@ -81,21 +102,40 @@
                                     </select>
                                 </div>
                             </div>
-                        <% if(locals.errors && errors.destino) { %>
+                        <% if(locals.errors && errors.destinyCountry) { %>
                             <p class="msg-error-form">
-                                <%= errors.destino.msg %>
+                                <%= errors.destinyCountry.msg %>
                             </p>
                             <% } %>
+
+                            <div class="inputClass-forValidation-autocomplete"><label for="destinyCity">Ciudad de destino:</label>
+                                <div class="autocomplete-input-list">
+                                    <select name="destinyCity" id="destinyCity"> 
+                                        <option value="">Selecciona la ciudad de origen</option>
+                                        <% cities.forEach(oneCity => { %>                                    
+                                            <option value="<%= oneCity.id %>" class="<%= oneCity.country_code %>"
+                                                <%=locals.old &&
+                                                oneCity.city===old.destinyCity ? 'selected' :
+                                                null %>>
+                                                <%= oneCity.city %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                </div>
+                            </div>
+                                <% if(locals.errors && errors.destinyCity) { %>
+                                    <p class="msg-error-form">
+                                        <%= errors.destinyCity.msg %>
+                                    </p>
+                                    <% } %>
 
                             <p class="inputClass-forValidation">
                                 <span>Aeropuerto de destino: </span>
                                 <select id="aeropuertoDestino" name="aeropuertoDestino">
-                                    <option value="">Seleccione el aeropuerto</option>
+                                    <option value="">Seleccione el aeropuerto de destino</option>
                                     <% for (oneAirport of airports) { %>
-                                        <option id="aeropuertoDestino-option" class="<%= oneAirport.country_code %>">
-                                    <%=locals.old &&
-                                    oneAirport.airport===old.aeropuertoDestino ? 'selected' :
-                                    null %>
+                                        <option class="<%= oneAirport.country_code %>" value="<%= oneAirport.id %>" id="<%= oneAirport.code%>" >
+                                    <%=locals.old && oneAirport.airport===old.aeropuertoDestino ? 'selected' : null %>
                                         <%= oneAirport.airport %>                        
                                         </option>
                                         <% } %>
@@ -125,8 +165,8 @@
                             </p>
                             <% } %>
 
-                    <p class="inputClass-forValidation"><label for="duration">Duración:</label><input type="text"
-                        name="duration" id="duration" placeholder="Ej: 10h 30min" 
+                    <p class="inputClass-forValidation"><label for="duration">Duración:</label><input type="time"
+                        name="duration" id="duration" 
                         value="<%= locals.old && old.duration ? old.duration : '' %>"></p>
                         <% if(locals.errors && errors.duration) { %>
                             <p class="msg-error-form">
@@ -134,12 +174,12 @@
                             </p>
                             <% } %>
 
-                    <p class="inputClass-forValidation"><label for="precio">Precio:</label><input type="text" name="precio"
-                         id="precio" placeholder="Ej: $50.000"
-                        value="<%= locals.old && old.precio ? old.precio : '' %>"></p>
-                        <% if(locals.errors && errors.precio) { %>
+                    <p class="inputClass-forValidation"><label for="price">Precio:</label><input type="text" name="price"
+                         id="price" placeholder="Ej: $50.000"
+                        value="<%= locals.old && old.price ? old.price : '' %>"></p>
+                        <% if(locals.errors && errors.price) { %>
                             <p class="msg-error-form">
-                                <%= errors.precio.msg %>
+                                <%= errors.price.msg %>
                             </p>
                             <% } %>
 
@@ -180,7 +220,7 @@
         <%- include('./partials/footer') %>
         <script src="/js/productCreateAirportsOrigin.js"></script>
         <script src="/js/productCreateAirportsDestiny.js"></script>
-        <script src="/js/productCreate2.js"></script>
+        <!-- <script src="/js/productCreate2.js"></script> -->
 </body>
 
 </html>
