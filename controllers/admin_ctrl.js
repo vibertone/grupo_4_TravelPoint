@@ -75,6 +75,24 @@ const controllers = {
 
         Promise.all([flight, origin, destiny]).then(data => { data });
 
+        let lastOrigin = db.Origins.findOne({where: {
+            airport_id: Number(req.body.aeropuertoOrigen),
+            country_id: Number(req.body.originCountry),
+            city_id: Number(req.body.originCity)
+        }});
+
+        let lastDestiny = db.Destinations.findOne({where: {
+            airport_id: Number(req.body.aeropuertoDestino),
+            country_id: Number(req.body.destinyCountry),
+            city_id: Number(req.body.destinyCity)
+        }})
+
+        let itineraryToCreate = {
+            origin_id: db.Origins.findOne({where: {id: lastOrigin.id}}),
+            destiny_id: db.Destinations.findOne({where: {id: lastDestiny.id}}),
+            destiny_id: db.Destinations.findOne({where: {id: lastDestiny.id}})
+        }
+
         res.redirect('/admin/productList');
     },
 

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2022 a las 00:28:53
+-- Tiempo de generación: 27-02-2022 a las 20:16:48
 -- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Versión de PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -9835,11 +9835,17 @@ INSERT INTO `countries` (`id`, `country_code1`, `country`, `country_code2`) VALU
 
 CREATE TABLE `destinations` (
   `id` int(11) NOT NULL,
-  `code_id` int(11) NOT NULL,
   `airport_id` int(11) NOT NULL,
   `city_id` int(11) NOT NULL,
   `country_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `destinations`
+--
+
+INSERT INTO `destinations` (`id`, `airport_id`, `city_id`, `country_id`) VALUES
+(1, 2595, 207, 31);
 
 -- --------------------------------------------------------
 
@@ -9849,11 +9855,19 @@ CREATE TABLE `destinations` (
 
 CREATE TABLE `flights` (
   `id` int(11) NOT NULL,
+  `date` datetime NOT NULL,
   `flight_number` varchar(50) NOT NULL,
   `duration` time NOT NULL,
-  `airline_id` int(11) NOT NULL,
-  `itinerary_id` int(11) NOT NULL
+  `price` varchar(20) NOT NULL,
+  `airline_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `flights`
+--
+
+INSERT INTO `flights` (`id`, `date`, `flight_number`, `duration`, `price`, `airline_id`) VALUES
+(5, '2022-03-04 21:20:00', 'KOL5846', '06:24:00', '$30.000', 36);
 
 -- --------------------------------------------------------
 
@@ -9863,10 +9877,9 @@ CREATE TABLE `flights` (
 
 CREATE TABLE `itineraries` (
   `id` int(11) NOT NULL,
-  `date` date NOT NULL,
-  `price` decimal(10,0) NOT NULL,
   `origin_id` int(11) NOT NULL,
-  `destiny_id` int(11) NOT NULL
+  `destiny_id` int(11) NOT NULL,
+  `flight_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -9877,11 +9890,17 @@ CREATE TABLE `itineraries` (
 
 CREATE TABLE `origins` (
   `id` int(11) NOT NULL,
-  `code_id` int(11) NOT NULL,
   `airport_id` int(11) NOT NULL,
   `city_id` int(11) NOT NULL,
   `country_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `origins`
+--
+
+INSERT INTO `origins` (`id`, `airport_id`, `city_id`, `country_id`) VALUES
+(1, 484, 69, 9);
 
 -- --------------------------------------------------------
 
@@ -9912,7 +9931,8 @@ INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `country_id`, `image`, 
 (76, 'Sol', 'Fontana', 'sol@hotmail.com', 119, '/perfil-sin-foto.jpg', '$2a$10$KNWs2dm71fCtocnMHLeGYeoWMWx0VOKR0nHfMWwH5MGeeY9HB9LBy', 'user'),
 (80, 'Juan', 'Martin', 'juan@hotmail.com', 110, '/perfil-sin-foto.jpg', '$2a$10$GT2awknqUk1lswO/sfunT.YVkCG/MFBPlsI6U7ElvExxH7R4AoS.q', ''),
 (83, 'sdsd', 'sdsd', 'dsds', 14, '/perfil-sin-foto.jpg', '$2a$10$vlvmiDQ5ApQdbN1Kw1IUC.sAVoyHKtYZS4afz9FsGwH1wijFCe3mi', ''),
-(84, 'sdsd', 'sdsd', 'dsds@hotm', 15, '/perfil-sin-foto.jpg', '$2a$10$QVlTfor3Cud9ac5tYiiQyOr5E89s9XEuDytqQX7aZT/wxanCYNEUO', '');
+(84, 'sdsd', 'sdsd', 'dsds@hotm', 15, '/perfil-sin-foto.jpg', '$2a$10$QVlTfor3Cud9ac5tYiiQyOr5E89s9XEuDytqQX7aZT/wxanCYNEUO', ''),
+(85, 'Federico', 'Gomez', 'sadase@hotmail.com', 1, '/perfil-sin-foto.jpg', '$2a$10$jYylEhfDmUbBg5kAmNaveedlEQvg8diANAD0AC6y7pbbRpHXUI1B6', '');
 
 -- --------------------------------------------------------
 
@@ -9958,8 +9978,6 @@ ALTER TABLE `countries`
 --
 ALTER TABLE `destinations`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `airport_code_id` (`code_id`,`airport_id`,`city_id`,`country_id`),
-  ADD KEY `code_id` (`code_id`),
   ADD KEY `city_id` (`city_id`),
   ADD KEY `airport_id` (`airport_id`),
   ADD KEY `country_id` (`country_id`);
@@ -9969,8 +9987,7 @@ ALTER TABLE `destinations`
 --
 ALTER TABLE `flights`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `airline_id` (`airline_id`,`itinerary_id`),
-  ADD KEY `itinerary_id` (`itinerary_id`);
+  ADD KEY `airline_id` (`airline_id`);
 
 --
 -- Indices de la tabla `itineraries`
@@ -9978,14 +9995,15 @@ ALTER TABLE `flights`
 ALTER TABLE `itineraries`
   ADD PRIMARY KEY (`id`),
   ADD KEY `origin_id` (`origin_id`,`destiny_id`),
-  ADD KEY `destiny_id` (`destiny_id`);
+  ADD KEY `destiny_id` (`destiny_id`),
+  ADD KEY `flight_id_1` (`flight_id`),
+  ADD KEY `flight_id` (`flight_id`);
 
 --
 -- Indices de la tabla `origins`
 --
 ALTER TABLE `origins`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `code_id` (`code_id`,`airport_id`,`city_id`,`country_id`),
   ADD KEY `city_id` (`city_id`),
   ADD KEY `airport_id` (`airport_id`),
   ADD KEY `country_id` (`country_id`);
@@ -10021,10 +10039,28 @@ ALTER TABLE `countries`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=240;
 
 --
+-- AUTO_INCREMENT de la tabla `destinations`
+--
+ALTER TABLE `destinations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `flights`
+--
+ALTER TABLE `flights`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `origins`
+--
+ALTER TABLE `origins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- Restricciones para tablas volcadas
@@ -10035,28 +10071,30 @@ ALTER TABLE `users`
 --
 ALTER TABLE `destinations`
   ADD CONSTRAINT `destinations_ibfk_1` FOREIGN KEY (`city_id`) REFERENCES `cities` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `destinations_ibfk_5` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `destinations_ibfk_5` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `destinations_ibfk_6` FOREIGN KEY (`airport_id`) REFERENCES `airports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `flights`
 --
 ALTER TABLE `flights`
-  ADD CONSTRAINT `flights_ibfk_1` FOREIGN KEY (`airline_id`) REFERENCES `airlines` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `flights_ibfk_2` FOREIGN KEY (`itinerary_id`) REFERENCES `itineraries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `flights_ibfk_1` FOREIGN KEY (`airline_id`) REFERENCES `airlines` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `itineraries`
 --
 ALTER TABLE `itineraries`
-  ADD CONSTRAINT `itineraries_ibfk_1` FOREIGN KEY (`origin_id`) REFERENCES `origins` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `itineraries_ibfk_2` FOREIGN KEY (`destiny_id`) REFERENCES `destinations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `itineraries_ibfk_3` FOREIGN KEY (`flight_id`) REFERENCES `flights` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `itineraries_ibfk_4` FOREIGN KEY (`destiny_id`) REFERENCES `destinations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `itineraries_ibfk_5` FOREIGN KEY (`origin_id`) REFERENCES `origins` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `origins`
 --
 ALTER TABLE `origins`
   ADD CONSTRAINT `origins_ibfk_1` FOREIGN KEY (`city_id`) REFERENCES `cities` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `origins_ibfk_4` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `origins_ibfk_4` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `origins_ibfk_5` FOREIGN KEY (`airport_id`) REFERENCES `airports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `users`

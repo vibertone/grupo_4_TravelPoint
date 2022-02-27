@@ -11,16 +11,17 @@ const controllers = {
     },
     createMyAccount: (req, res) => {
 
-       /*  let errors = validationResult(req);
-        db.Countries.findAll().then(countries => {
-            if (errors.errors.length > 0) {
+        let errors = validationResult(req);
+        if (errors.errors.length > 0) {
+            db.Countries.findAll().then(countries => {
                 res.render('register', {
                     errors: errors.mapped(),
                     old: req.body,
                     countries
                 });
-            }
-        }) */
+            })
+        }
+
 
         db.Users.findOne({ where: { email: req.body.email } })
             .then(usersInData => {
