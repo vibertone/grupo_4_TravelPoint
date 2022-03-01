@@ -42,19 +42,19 @@
                 </div>
             </div>
             <section class="vuelos">
-                <% data.forEach(function(flight){ %>
-                    <a href="/products/productDetail/<%= flight.id %>">
-                        <article>
-                            <div class="imagen-destino">
-                                <img src="/img/<%= flight.image %>" alt="imagen de <%= flight.destiny %>">
-                                <div class="descripcion-vuelos">
-                                    <p><%= flight.destiny %></p>
-                                    <p class="desde"><%= flight.from %></p>
-                                    <p><%= flight.price %></p>
+                    <% itineraries.forEach(function(itinerary){ %>
+                        <a href="/products/productDetail/<%=  %>">
+                            <article>
+                                <div class="imagen-destino">
+                                    <img src="/img/" alt="imagen de <%= itinerary.destinations.cities.city %>">
+                                    <div class="descripcion-vuelos">
+                                        <p><%= itinerary.destinations.cities.city %></p>
+                                        <p class="desde">Desde <%= itinerary.origins.cities.city %></p>
+                                        <p><%= itinerary.flights.price %></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    </a>
+                            </article>
+                        </a>
                     <% }); %>
                         <form action="" class="buscar-vuelos-baratos">
                             <label for="destinos">¿Buscas vuelos baratos a otro destino?</label>

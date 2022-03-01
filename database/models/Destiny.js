@@ -43,7 +43,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "country_id"
         });
 
-        Destiny.belongsTo(models.Itineraries, {
+        Destiny.hasMany(models.Itineraries, {
             as: "itineraries",
             foreignKey: "destiny_id"
         });

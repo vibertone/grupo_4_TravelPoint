@@ -43,7 +43,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "country_id"
         });
 
-        Origin.belongsTo(models.Itineraries, {
+        Origin.hasMany(models.Itineraries, {
             as: "itineraries",
             foreignKey: "origin_id"
         });

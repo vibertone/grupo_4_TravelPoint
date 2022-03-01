@@ -14,7 +14,7 @@
             <h1>Lista de Productos</h1>
             <a href="/admin/productcreate"><button type="submit">Agregar producto</button></a>
         </div>
-        <form class="list-format">
+        <form class="list-format" action="/admin/confirm-productcreate/" method="POST">
             <% itineraries.forEach(function(itinerary){ %>
                 <div class="description-list-format">
                     <p>Origen: <%= itinerary.origins.countries.country %>, <%= itinerary.origins.cities.city %></p>

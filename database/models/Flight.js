@@ -8,7 +8,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         date: {
-            type: dataTypes.DATE,
+            type: dataTypes.STRING(200),
             allowNull: false
         },
         flight_number: {
@@ -41,9 +41,9 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "airline_id"
         });
         
-        Flight.belongsTo(models.Itineraries, {
+        Flight.hasMany(models.Itineraries, {
             as: "itineraries",
-            foreignKey: "itinerary_id"
+            foreignKey: "flight_id"
         });
     };
 

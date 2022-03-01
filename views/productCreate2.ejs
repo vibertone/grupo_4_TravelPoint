@@ -15,7 +15,7 @@
                 <h3>Agregá un vuelo</h3>
                 <% if (locals.errors) { %>
                     <% } %>
-                <form action="/admin/productcreate" method="POST">
+                <form action="/admin/productcreate" method="POST" enctype="multipart/form-data">
 
                     <div class="inputClass-forValidation-autocomplete"><label for="originCountry">Pais de origen:</label>
                         <div class="autocomplete-input-list">
@@ -212,7 +212,14 @@
                                 <%= errors.nroVuelo.msg %>
                             </p>
                             <% } %>
+
+                    <div>
+                        <img class="profile-picture" src="/uploads/<%= user.image %>" alt="foto de perfil">
+                    </div>
+                    <input type="file" name="image" class="image">
+                    
                     <br><br>
+
                     <p><button type="submit">Agregar producto</button></p>
                 </form>
             </div>

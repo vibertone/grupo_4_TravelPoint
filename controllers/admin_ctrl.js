@@ -11,8 +11,29 @@ let flights = JSON.parse(fs.readFileSync(flightsFilePath, 'utf-8'));
 
 const controllers = {
 
-    productList: (req, res) => {
-        res.render('productList', { data: flights });
+    productList: async (req, res) => {
+        let itineraries = await db.Itineraries.findAll({
+            include: [
+                {
+                    association: "flights", include: [
+                        { association: "airlines" }
+                    ]
+                },
+                {
+                    association: "origins", include: [
+                        { association: "airports" },
+                        { association: "cities" },
+                        { association: "countries" }
+                    ]
+                },
+                {
+                    association: "destinations", include: [
+                        { association: "airports" },
+                        { association: "cities" },
+                        { association: "countries" }]
+                }]
+        });
+        res.render('productList', { itineraries });
     },
     usersList: (req, res) => {
         db.Users.findAll()
@@ -36,10 +57,11 @@ const controllers = {
         let airports = await db.Airports.findAll();
         let countries = await db.Countries.findAll();
         let cities = await db.Cities.findAll();
-        res.render('productCreate2', { airlines , airports, countries, cities });
+
+        res.render('productCreate2', { airlines, airports, countries, cities });
     },
 
-    store: async (req, res) => {
+    store: (req, res) => {
 
         /*  let errors = validationResult(req);
          if (errors.errors.length > 0) {
@@ -69,63 +91,120 @@ const controllers = {
             city_id: Number(req.body.destinyCity)
         }
 
-        let flight = db.Flights.create(flightToCreate);
-        let origin = db.Origins.create(originToCreate);
-        let destiny = db.Destinations.create(destinyToCreate);
-
-        Promise.all([flight, origin, destiny]).then(data => { data });
-
-        let lastOrigin = db.Origins.findOne({where: {
-            airport_id: Number(req.body.aeropuertoOrigen),
-            country_id: Number(req.body.originCountry),
-            city_id: Number(req.body.originCity)
-        }});
-
-        let lastDestiny = db.Destinations.findOne({where: {
-            airport_id: Number(req.body.aeropuertoDestino),
-            country_id: Number(req.body.destinyCountry),
-            city_id: Number(req.body.destinyCity)
-        }})
-
-        let itineraryToCreate = {
-            origin_id: db.Origins.findOne({where: {id: lastOrigin.id}}),
-            destiny_id: db.Destinations.findOne({where: {id: lastDestiny.id}}),
-            destiny_id: db.Destinations.findOne({where: {id: lastDestiny.id}})
-        }
-
-        res.redirect('/admin/productList');
-    },
-
-    productEdit: (req, res) => {
-        elID = req.params.id;
-        let flightID = flights.find(oneFlight => {
-            if (oneFlight.id == elID) {
-                return oneFlight;
+        // Aca arranca la creaction de itineraries que no funciona la concha de su madre
+        
+        let lastOrigin = db.Origins.findOne({
+            where: {
+                airport_id: Number(req.body.aeropuertoOrigen),
+                country_id: Number(req.body.originCountry),
+                city_id: Number(req.body.originCity)
             }
         });
-        res.render('productEdit', { flight: flightID });
+
+        let lastDestiny = db.Destinations.findOne({
+            where: {
+                airport_id: Number(req.body.aeropuertoDestino),
+                country_id: Number(req.body.destinyCountry),
+                city_id: Number(req.body.destinyCity)
+            }
+        });
+
+        let flightCreated = db.Flights.findOne({
+            where: {
+                flight_number: req.body.nroVuelo
+            }
+        })
+        
+        let itineraryToCreate = {
+            origin_id: Number(lastOrigin.id),
+            destiny_id: Number(lastDestiny.id),
+            flight_id: Number(flightCreated.id)
+        }
+        
+        function itinerary(){
+            db.Itineraries.create(itineraryToCreate)
+        }
+
+         let creaton = async () => {
+            db.Flights.create(flightToCreate);
+            db.Origins.create(originToCreate);
+            db.Destinations.create(destinyToCreate);
+            await itinerary().then(data => {data});
+        }
+
+        creaton();
+        
+        res.redirect('/admin/productList');
+    },
+    
+    confirmProductCreate: async (req, res) => {
+
+        let airlines = await db.Airlines.findAll();
+        let airports = await db.Airports.findAll();
+        let countries = await db.Countries.findAll();
+        let cities = await db.Cities.findAll();
+
+        res.render('confirmProductCreate', {})
+    },
+
+    succesProductCreation: (req, res) => {
+
+    },
+
+    productEdit: async (req, res) => {
+        let itineraries = await db.Itineraries.findByPk(req.params.id, {
+            include: [
+                {
+                    association: "flights", include: [
+                        { association: "airlines" }
+                    ]
+                },
+                {
+                    association: "origins", include: [
+                        { association: "airports" },
+                        { association: "cities" },
+                        { association: "countries" }
+                    ]
+                },
+                {
+                    association: "destinations", include: [
+                        { association: "airports" },
+                        { association: "cities" },
+                        { association: "countries" }]
+                }]
+        });
+        let airlines = await db.Airlines.findAll();
+        let airports = await db.Airports.findAll();
+        let allCountries = await db.Countries.findAll();
+        let cities = await db.Cities.findAll();
+        res.render('productEdit', { itineraries, airlines, airports, allCountries, cities });
     },
 
     update: (req, res) => {
-        const {
-            origen, destino, precio, tipo, ida, vuelta, horarioIda, horarioLlegadaIda,
-            duracionIda, escalasIda, horarioVuelta, horarioLlegadaVuelta, duracionVuelta,
-            escalasVuelta, aeropuertoOrigen, aeropuertoDestino
-        } = req.body;
-        elID = req.params.id;
-        const newProduct = [];
+        /*     let flightToUpdate = {
+                flight_number: req.body.nroVuelo,
+                duration: req.body.duration,
+                airline_id: Number(req.body.airline),
+                date: req.body.fechaVuelo,
+                price: req.body.price
+            }
+    
+            let originToUpdate = {
+                airport_id: Number(req.body.aeropuertoOrigen),
+                country_id: Number(req.body.originCountry),
+                city_id: Number(req.body.originCity)
+            }
+    
+            let destinyToUpdate = {
+                airport_id: Number(req.body.aeropuertoDestino),
+                country_id: Number(req.body.destinyCountry),
+                city_id: Number(req.body.destinyCity)
+            }
+    
+            db.Flights.update({flightToUpdate}, {where: {id: req.params.id}});
+            db.Origins.update({originToUpdate}, {where: {id: req.params.id}});
+            db.Destinations.update({destinyToUpdate}, {where: {id: req.params.id}}); */
 
-        flights.map(data => {
-            if (data.id == elID) {
-                data.origen = origen, data.destino = destino, data.precio = precio, data.tipo = tipo, data.ida = ida,
-                    data.vuelta = vuelta, data.horarioIda = horarioIda, data.horarioLlegadaIda = horarioLlegadaIda, data.duracionIda = duracionIda,
-                    data.escalasIda = escalasIda, data.horarioVuelta = horarioVuelta, data.horarioLlegadaVuelta = horarioLlegadaVuelta,
-                    data.duracionVuelta = duracionVuelta, data.escalasVuelta = escalasVuelta, data.aeropuertoOrigen = aeropuertoOrigen,
-                    data.aeropuertoDestino = aeropuertoDestino
-            };
-            newProduct.push(data);
-        });
-        fs.writeFileSync(flightsFilePath, JSON.stringify(flights), 'utf-8');
         res.redirect('/admin/productList')
     },
 

@@ -21,7 +21,8 @@ const ENDPOINTS = {
         "PRODUCT_REVIEW":"/productreview/:id",
         "PRODUCT_EDIT": "/productedit/:id",
         "PRODUCT_DELETE":"/productdelete/:id",
-        "SEARCH_USERS": "/search-users"
+        "SEARCH_USERS": "/search-users",
+        "CONFIRM_PRODUCT_CREATE": "/confirm-productcreate"
     },
     api:{
         "APIUSERS_LIST": "/users",

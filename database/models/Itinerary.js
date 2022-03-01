@@ -28,9 +28,9 @@ module.exports = (sequelize, dataTypes) => {
     const Itinerary = sequelize.define(alias,cols,config);
 
     Itinerary.associate = function(models) {
-        Itinerary.hasMany(models.Flights, {
+        Itinerary.belongsTo(models.Flights, {
             as: "flights",
-            foreignKey: "itinerary_id"
+            foreignKey: "flight_id"
         });
 
         Itinerary.belongsTo(models.Origins, {
@@ -43,13 +43,13 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "destiny_id"
         });
 
-        Itinerary.belongsToMany(models.Users, {
+       /*  Itinerary.belongsToMany(models.Users, {
             as: "users",
             through: "user_itinerary",
             foreignKey: "itinerary_id",
             otherKey: "user_id",
             timestamps: false
-        });
+        }); */
     };
 
     return Itinerary;

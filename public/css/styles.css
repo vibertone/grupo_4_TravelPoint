@@ -238,7 +238,6 @@ main {
 
 .vuelos article {
     position: relative;
-
 }
 
 .vuelos article div img {
@@ -250,7 +249,7 @@ main {
 .descripcion-vuelos {
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 1px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -566,7 +565,7 @@ div #nro-documento {
 
 
 #codAeropuertoOrigen, #codAeropuertoDestino {
-    width: 55px;
+    width: 58px;
 }
 
 #nroVuelo {
@@ -1189,13 +1188,18 @@ footer .container-footer-2 {
     @media (min-width: 1024px) {
         .header-box2 {
             grid-row: 1/2;
-            margin-top: 20px;
+            margin-top: 8px;
             grid-column: auto;
+        }
+
+        .header-box2 p {
+            margin-top: 2px;
         }
 
         .header-box3 {
             font-size: 36px;
-            padding: 0 5px 0 30%;
+            margin-top: 0;
+            margin-right: 15%;
         }
 
         .header-box1 {
@@ -1203,8 +1207,8 @@ footer .container-footer-2 {
         }
 
         .container-header {
-
             margin: auto;
+            max-height: 80px;
         }
 
         header {
@@ -1213,7 +1217,7 @@ footer .container-footer-2 {
         }
 
         .header-box3 div a {
-            font-size: 2.5vw;
+            font-size: 28px;
             align-items: center;
         }
 
@@ -1228,9 +1232,59 @@ footer .container-footer-2 {
         }
 
         .menu-desplegable-block {
-            right: 5%;
-            top: 12%;
+            right: 10%;
+            top: 10%;
+            width: 180px;
             height: 115px;
+        }
+
+        .vuelos article div img {
+            width: 23vw;
+            height: 23vw;
+            max-width: 280px;
+            max-height: 230px;
+        }
+        
+        .descripcion-vuelos p {
+            font-size: 2.5vw;
+        }
+
+        section.vuelos {
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        .vuelos article div img {
+            border-radius: 8px;
+        }
+        
+        .descripcion-vuelos {
+            border-radius: 8px;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        .descripcion-vuelos p {
+            font-size: 22px;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+
+        .desde {
+            font-weight: 400;
+        }
+
+        .header-box1 a img {
+            max-height: 80%;
+            margin-left: 10%;
+        }
+
+        footer .container-footer-2 {
+            width: 76vw;
+        }
+
+        footer {
+            padding: 0 10%;
         }
     }
 }
