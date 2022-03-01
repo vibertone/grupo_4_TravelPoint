@@ -23,6 +23,9 @@ const indexRoutes = require("./routes/index");
 const usersRoutes = require("./routes/users");
 const productsRoutes = require("./routes/products");
 const adminRoutes = require("./routes/admin");
+const usersapiRoutes = require("./routes/usersapi");
+// const flightsapiRoutes = require("./routes/flightsapi");
+const api =require("./routes/api");
 
 app.listen(5000, () => {
     console.log("Levantando un servidor con Express pto 5000")
@@ -38,6 +41,10 @@ app.use('/', indexRoutes);
 app.use('/user', usersRoutes);
 app.use('/products', productsRoutes);
 app.use('/admin', adminRoutes);
+app.use('/usersapi', usersapiRoutes);
+app.use('/api',api);
+// app.use('/api', flightsapiRoutes);
+
 
 //error 404 
 app.use((req, res, next) => {

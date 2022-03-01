@@ -25,8 +25,12 @@ const ENDPOINTS = {
         "CONFIRM_PRODUCT_CREATE": "/confirm-productcreate"
     },
     api:{
-        "APIUSERS_LIST": "/users",
-        "APIUSERS_DETAIL": "/users/:id"
+        "API":"/users",
+        "API2":"/api/:id",
+        "USERSAPI": "/list",
+        // "FLIGHTSAPI": "/list",
+        // "FLIGHTSAPI2": "/list/:id",
+      
     },
 };
 
