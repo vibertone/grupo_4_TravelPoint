@@ -24,8 +24,12 @@ const ENDPOINTS = {
         "SEARCH_USERS": "/search-users"
     },
     api:{
-        "APIUSERS_LIST": "/users",
-        "APIUSERS_DETAIL": "/users/:id"
+        "API":"/users",
+        "API2":"/api/:id",
+        "USERSAPI": "/list",
+        // "FLIGHTSAPI": "/list",
+        // "FLIGHTSAPI2": "/list/:id",
+      
     },
 };
 
