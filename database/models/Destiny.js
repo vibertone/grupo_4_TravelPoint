@@ -18,6 +18,10 @@ module.exports = (sequelize, dataTypes) => {
         country_id: {
             type: dataTypes.INTEGER,
             allowNull: false
+        },
+        image: {
+            type: dataTypes.STRING(300),
+            allowNull: true
         }
     };
     let config = {

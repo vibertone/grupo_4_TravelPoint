@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require('uuid');
 
 var multerConfig = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './public/uploads')
+        cb(null, './public/productsPictures')
     },
     filename: function (req, file, cb) {
         cb(null, uuidv4() + "." + file.originalname)

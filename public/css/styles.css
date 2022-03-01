@@ -530,7 +530,8 @@ div #nro-documento {
 .autocomplete-input-list {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 50%;
+    max-width: 250px;
     margin-left: 20px;
 }
 
@@ -562,8 +563,6 @@ div #nro-documento {
     color: #6c7275;
 }
 
-
-
 #codAeropuertoOrigen, #codAeropuertoDestino {
     width: 58px;
 }
@@ -573,16 +572,20 @@ div #nro-documento {
 }
 
 #fechaVuelo {
-    max-width: 220px;
+    max-width: 170px;
+}
+
+#horarioVuelo {
+    max-width: 100px;
 }
 
 #duration, #precio {
-    width: 130px;
+    width: 100px;
 }
 
 #aeropuertoOrigen, #aeropuertoDestino, #airline {
     width: 40%;
-    max-width: 250px;
+    max-width: 300px;
 }
 
 #autocomplete-input, #autocomplete-input-2 {
@@ -602,14 +605,26 @@ div #nro-documento {
     background-color: #154b9c;
 }
 
-.product-create form input {
+.product-create form input:not([type="file"]) {
     width: 50vw;
+    max-width: 130px;
     border: 1px solid silver;
     border-radius: 5px;
     height: 35px;
     padding: 0 10px;
     background-color: white;
     font-size: 17px;
+}
+
+.productPicture {
+    background-color: white;
+    width: 90%;
+    max-width: 400px;
+    height: 35px;
+    margin-top: -15px;
+    border-radius: 5px;
+    padding: 4px;
+    border: 1px solid silver;
 }
 
 .product-create form select {

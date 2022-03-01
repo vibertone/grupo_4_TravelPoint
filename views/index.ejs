@@ -43,10 +43,10 @@
             </div>
             <section class="vuelos">
                     <% itineraries.forEach(function(itinerary){ %>
-                        <a href="/products/productDetail/<%=  %>">
+                        <a href="/products/productDetail/<%= itinerary.id %>">
                             <article>
                                 <div class="imagen-destino">
-                                    <img src="/img/" alt="imagen de <%= itinerary.destinations.cities.city %>">
+                                    <img src="/productsPictures/<%= itinerary.destinations.image %>" alt="imagen de <%= itinerary.destinations.cities.city %>">
                                     <div class="descripcion-vuelos">
                                         <p><%= itinerary.destinations.cities.city %></p>
                                         <p class="desde">Desde <%= itinerary.origins.cities.city %></p>

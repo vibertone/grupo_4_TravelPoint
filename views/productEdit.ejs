@@ -154,11 +154,19 @@
                             </p>
                             <% } %>
 
-                    <p class="inputClass-forValidation"><label for="fechaVuelo">Fecha de vuelo:</label><input type="datetime-local"
+                    <p class="inputClass-forValidation"><label for="fechaVuelo">Fecha de vuelo:</label><input type="date"
                          name="fechaVuelo" id="fechaVuelo" value="<%= itineraries.flights.date %>"></p>
                         <% if(locals.errors && errors.fechaVuelo) { %>
                             <p class="msg-error-form">
                                 <%= errors.fechaVuelo.msg %>
+                            </p>
+                            <% } %>
+
+                    <p class="inputClass-forValidation"><label for="horarioVuelo">Horario del vuelo:</label><input type="time"
+                        name="horarioVuelo" id="horarioVuelo" value="<%= itineraries.flights.time %>"></p>
+                        <% if(locals.errors && errors.horarioVuelo) { %>
+                            <p class="msg-error-form">
+                                <%= errors.horarioVuelo.msg %>
                             </p>
                             <% } %>
 

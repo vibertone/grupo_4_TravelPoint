@@ -11,6 +11,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(200),
             allowNull: false
         },
+        time: {
+            type: dataTypes.STRING(50),
+            allowNull: false
+        },
         flight_number: {
             type: dataTypes.STRING(50),
             allowNull: false

@@ -76,6 +76,7 @@ const controllers = {
             duration: req.body.duration,
             airline_id: Number(req.body.airline),
             date: req.body.fechaVuelo,
+            time: req.body.horarioVuelo,
             price: req.body.price
         }
 
@@ -85,14 +86,23 @@ const controllers = {
             city_id: Number(req.body.originCity)
         }
 
-        let destinyToCreate = {
-            airport_id: Number(req.body.aeropuertoDestino),
-            country_id: Number(req.body.destinyCountry),
-            city_id: Number(req.body.destinyCity)
+        if (req.file) {
+            var destinyToCreate = {
+                airport_id: Number(req.body.aeropuertoDestino),
+                country_id: Number(req.body.destinyCountry),
+                city_id: Number(req.body.destinyCity),
+                image: req.file.filename
+            }
+        } else {
+            var destinyToCreate = {
+                airport_id: Number(req.body.aeropuertoDestino),
+                country_id: Number(req.body.destinyCountry),
+                city_id: Number(req.body.destinyCity)
+            }
         }
 
         // Aca arranca la creaction de itineraries que no funciona la concha de su madre
-        
+
         let lastOrigin = db.Origins.findOne({
             where: {
                 airport_id: Number(req.body.aeropuertoOrigen),
@@ -114,29 +124,29 @@ const controllers = {
                 flight_number: req.body.nroVuelo
             }
         })
-        
+
         let itineraryToCreate = {
             origin_id: Number(lastOrigin.id),
             destiny_id: Number(lastDestiny.id),
             flight_id: Number(flightCreated.id)
         }
-        
-        function itinerary(){
+
+        function itinerary() {
             db.Itineraries.create(itineraryToCreate)
         }
 
-         let creaton = async () => {
+        let creaton = async () => {
             db.Flights.create(flightToCreate);
             db.Origins.create(originToCreate);
             db.Destinations.create(destinyToCreate);
-            await itinerary().then(data => {data});
+            await itinerary().then(data => { data });
         }
 
         creaton();
-        
+
         res.redirect('/admin/productList');
     },
-    
+
     confirmProductCreate: async (req, res) => {
 
         let airlines = await db.Airlines.findAll();
@@ -181,41 +191,58 @@ const controllers = {
     },
 
     update: (req, res) => {
-        /*     let flightToUpdate = {
-                flight_number: req.body.nroVuelo,
-                duration: req.body.duration,
-                airline_id: Number(req.body.airline),
-                date: req.body.fechaVuelo,
-                price: req.body.price
-            }
-    
-            let originToUpdate = {
-                airport_id: Number(req.body.aeropuertoOrigen),
-                country_id: Number(req.body.originCountry),
-                city_id: Number(req.body.originCity)
-            }
-    
-            let destinyToUpdate = {
-                airport_id: Number(req.body.aeropuertoDestino),
-                country_id: Number(req.body.destinyCountry),
-                city_id: Number(req.body.destinyCity)
-            }
-    
-            db.Flights.update({flightToUpdate}, {where: {id: req.params.id}});
-            db.Origins.update({originToUpdate}, {where: {id: req.params.id}});
-            db.Destinations.update({destinyToUpdate}, {where: {id: req.params.id}}); */
+        let flightToUpdate = {
+            flight_number: req.body.nroVuelo,
+            duration: req.body.duration,
+            airline_id: Number(req.body.airline),
+            date: req.body.fechaVuelo,
+            time: req.body.horarioVuelo,
+            price: req.body.price
+        }
+
+        let originToUpdate = {
+            airport_id: Number(req.body.aeropuertoOrigen),
+            country_id: Number(req.body.originCountry),
+            city_id: Number(req.body.originCity)
+        }
+
+        let destinyToUpdate = {
+            airport_id: Number(req.body.aeropuertoDestino),
+            country_id: Number(req.body.destinyCountry),
+            city_id: Number(req.body.destinyCity)
+        }
+
+        db.Flights.update({ flightToUpdate });
+        db.Origins.update({ originToUpdate });
+        db.Destinations.update({ destinyToUpdate });
+        db.Itineraries.update({itineraryToUpdate, where: {id: req.params.id}})
 
         res.redirect('/admin/productList')
     },
 
-    productReview: (req, res) => {
-        elID = req.params.id;
-        let flightID = flights.find(oneFlight => {
-            if (oneFlight.id == elID) {
-                return oneFlight;
-            }
+    productReview: async (req, res) => {
+        let itineraries = await db.Itineraries.findAll({
+            include: [
+                {
+                    association: "flights", include: [
+                        { association: "airlines" }
+                    ]
+                },
+                {
+                    association: "origins", include: [
+                        { association: "airports" },
+                        { association: "cities" },
+                        { association: "countries" }
+                    ]
+                },
+                {
+                    association: "destinations", include: [
+                        { association: "airports" },
+                        { association: "cities" },
+                        { association: "countries" }]
+                }]
         });
-        res.render('productReview', { flight: flightID });
+        res.render('productReview', { itineraries });
     },
 
     productDelete: (req, res) => {

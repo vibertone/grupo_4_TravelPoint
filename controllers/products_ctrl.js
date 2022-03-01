@@ -1,12 +1,31 @@
-let fs = require('fs');
-const path = require('path');
+const db = require("../database/models");
 
-const flightsFilePath = path.join(__dirname, '../data/flights.json');
-const flights = JSON.parse(fs.readFileSync(flightsFilePath, 'utf-8'));
 
 const controllers = {
-    productDetail: (req, res) => {
-        res.render('productDetail', {data: flights});
+    productDetail: async (req, res) => {
+        let itineraries = await db.Itineraries.findAll(
+            {
+            include: [
+                {
+                    association: "flights", include: [
+                        { association: "airlines" }
+                    ]
+                },
+                {
+                    association: "origins", include: [
+                        { association: "airports" },
+                        { association: "cities" },
+                        { association: "countries" }
+                    ]
+                },
+                {
+                    association: "destinations", include: [
+                        { association: "airports" },
+                        { association: "cities" },
+                        { association: "countries" }]
+                }]
+        });
+        res.render('productDetail', { itineraries });
     },
     shoppingDetail: (req, res) => {
         res.render('shoppingDetail');
