@@ -654,7 +654,8 @@ div #nro-documento {
 }
 
 .padding-top-my-account {
-    padding-top: 20px;
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 
 .my-account div form {
@@ -698,6 +699,7 @@ div #nro-documento {
     margin: auto;
     padding: 20px;
     text-align: center;
+    box-shadow: 0px 0px 20px 3px rgba(133,126,133,1);
 }
 
 .apis {
@@ -889,7 +891,7 @@ footer {
 footer .container-footer-2 {
     width: 90vw;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 15px;
     padding: 20px;
     margin: auto;
 }
@@ -905,13 +907,23 @@ footer .container-footer-2 {
     background-color: #c8e4e6;
 }
 
-/* PRODUCT LIST */
+/* PRODUCT LIST Y USERS LIST */
+
+.flex-buscar-usuario {
+    margin: 0 0 35px 45px;
+}
+
+.search-users {
+    width: 70%;
+    max-width: 300px;
+}
 
 .titulo-productlist {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 25px;
+    padding: 55px 5% 25px 5%;
+    margin-top: 0;
 }
 
 .titulo-productlist a button {
@@ -920,6 +932,14 @@ footer .container-footer-2 {
     border: white solid 1px;
     border-radius: 10px;
     color: white;
+}
+
+.list-format {
+    padding-bottom: 35px;
+}
+
+.list-format .description-list-format {
+    box-shadow: 0px 0px 20px 3px rgba(133,126,133,1);
 }
 
 .list-format .description-list-format button, main form .product-review button {
@@ -934,9 +954,10 @@ footer .container-footer-2 {
     border-radius: 30px;
     width: 90%;
     background-color: #c4e4ff;
-    padding: 20px 10%;
+    padding: 20px 20px;
     text-align: left;
     margin: auto;
+    margin-top: 25px;
 }
 
 .titulo-productreview {
@@ -1046,6 +1067,7 @@ footer .container-footer-2 {
 
     .list-format .description-list-format {
         width: 45%;
+        max-width: 400px;
         margin-bottom: 20px;
     }
 
@@ -1300,6 +1322,14 @@ footer .container-footer-2 {
 
         footer {
             padding: 0 10%;
+        }
+
+        .titulo-productlist {
+            justify-content: flex-start;
+        }
+
+        .titulo-productlist a button {
+            margin-left: 35px;
         }
     }
 }

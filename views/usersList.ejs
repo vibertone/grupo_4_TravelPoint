@@ -11,28 +11,30 @@
         <%- include('./partials/header') %>
     </header>
     <main>
-        <div class="flex-buscar-usuario">
-            <h1 class="titulo-productlist">Lista de Usuarios</h1>
-            <form action="/admin/search-users" method="GET">
-                <input type="search" class="search-users" name="searchUsers" placeholder="Buscar usuario">
-                <button type="submit">Buscar</button>
-            </form>
-        </div>
+        <div>
+            <div class="flex-buscar-usuario">
+                <h1 class="titulo-productlist">Lista de Usuarios</h1>
+                <form action="/admin/search-users" method="GET">
+                    <input type="search" class="search-users" name="searchUsers" placeholder="Buscar usuario">
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
 
-        <div class="list-format">
-             
-            <% users.forEach(user => { %>
-                <div class="description-list-format">
-                    <p>Foto de perfil: <%= user.image %></p>
-                    <h4>ID: <%= user.id %></h4>
-                    <p>Email: <%= user.email %></p>
-                    <h4>Nombre: <%= user.name %></h4>
-                    <h4>Apellido: <%= user.last_name %></h4>
-                    <p>Nacionalidad: <%= user.country %></p>
-                </div>
-            <% }) %>
+            <div class="list-format">
+                    
+                <% users.forEach(user => { %>
+                    <div class="description-list-format">
+                        <h4>ID: <%= user.id %></h4>
+                        <p>Foto de perfil: <%= user.image %></p>
+                        <p>Email: <%= user.email %></p>
+                        <h4>Nombre: <%= user.name %></h4>
+                        <h4>Apellido: <%= user.last_name %></h4>
+                        <p>Nacionalidad: <%= user.countries.country %></p>
+                        <p>Categoría: <%= user.category %></p>
+                    </div>
+                <% }) %>
+            </div>
         </div>
-
     </main>
     <%- include('./partials/footer') %>
 </body>

@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 
 const controllers = {
     register: (req, res) => {
-        db.Countries.findAll().then(countries => {
+        db.Countries.findAll({order: [['country', 'ASC']]}).then(countries => {
             res.render('register', { countries });
         });
     },
@@ -21,7 +21,6 @@ const controllers = {
                 });
             })
         }
-
 
         db.Users.findOne({ where: { email: req.body.email } })
             .then(usersInData => {
@@ -50,7 +49,8 @@ const controllers = {
                         ...req.body,
                         country_id: Number(req.body.country),
                         password: bcryptjs.hashSync(req.body.password, 10),
-                        image: "/perfil-sin-foto.jpg"
+                        image: "/perfil-sin-foto.jpg",
+                        category: "user"
                     }
 
                     db.Users.create(userToCreate);
@@ -111,7 +111,7 @@ const controllers = {
 
     },
     editMyAccount: async (req, res) => {
-        let countries = await db.Countries.findAll();
+        let countries = await db.Countries.findAll({order: [['country', 'ASC']]});
         res.render('editMyAccount', {
             user: req.session.userLogged,
             countries

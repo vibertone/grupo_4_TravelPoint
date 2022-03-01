@@ -3,10 +3,13 @@ const { body } = require('express-validator');
 const validations = [
     body('email').notEmpty().withMessage('Tienes que escribir un correo').bail()
                  .isEmail().withMessage('Tienes que escribir un correo válido').trim(),
-    body('password').notEmpty().withMessage('Tienes que crear una contraseña').isLength({min: 4, max: 30}), //falta marcar error cuando la contraseña tiene menos de 4 y mas de 30 caracteres
+    body('password').notEmpty().withMessage('Tienes que crear una contraseña').bail()
+    .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres').trim(),
     body('repeatPassword').notEmpty().withMessage('Tienes que repetir la contraseña creada'),
-    body('name').notEmpty().withMessage('Tienes que escribir tu nombre').isString(),
-    body('last_name').notEmpty().withMessage('Tienes que escribir tu apellido').isString(),
+    body('name').notEmpty().withMessage('Tienes que escribir tu nombre').isString().bail()
+    .isLength({min: 2}).withMessage('El nombre debe tener al menos 2 caracteres').trim(),
+    body('last_name').notEmpty().withMessage('Tienes que escribir tu apellido').isString().bail()
+    .isLength({min: 2}).withMessage('El apellido debe tener al menos 2 caracteres').trim(),
     body('country').notEmpty().withMessage('Tienes que elegir un país')
 ];
 

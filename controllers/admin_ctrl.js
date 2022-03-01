@@ -6,9 +6,6 @@ const { Op } = require("sequelize");
 const fetch = require('node-fetch');
 
 
-let flightsFilePath = path.join(__dirname, '../data/flights.json');
-let flights = JSON.parse(fs.readFileSync(flightsFilePath, 'utf-8'));
-
 const controllers = {
 
     productList: async (req, res) => {
@@ -36,7 +33,7 @@ const controllers = {
         res.render('productList', { itineraries });
     },
     usersList: (req, res) => {
-        db.Users.findAll()
+        db.Users.findAll({include: [{association: "countries"}]})
             .then(function (users) {
                 res.render('usersList', { users })
             });
@@ -53,10 +50,10 @@ const controllers = {
     },
     productCreate: async (req, res) => {
 
-        let airlines = await db.Airlines.findAll();
-        let airports = await db.Airports.findAll();
-        let countries = await db.Countries.findAll();
-        let cities = await db.Cities.findAll();
+        let airlines = await db.Airlines.findAll({order: [['airline', 'ASC']]});
+        let airports = await db.Airports.findAll({order: [['airport', 'ASC']]});
+        let countries = await db.Countries.findAll({order: [['country', 'ASC']]});
+        let cities = await db.Cities.findAll({order: [['city', 'ASC']]});
 
         res.render('productCreate2', { airlines, airports, countries, cities });
     },
@@ -183,14 +180,14 @@ const controllers = {
                         { association: "countries" }]
                 }]
         });
-        let airlines = await db.Airlines.findAll();
-        let airports = await db.Airports.findAll();
-        let allCountries = await db.Countries.findAll();
-        let cities = await db.Cities.findAll();
+        let airlines = await db.Airlines.findAll({order: [['airline', 'ASC']]});
+        let airports = await db.Airports.findAll({order: [['airport', 'ASC']]});
+        let allCountries = await db.Countries.findAll({order: [['country', 'ASC']]});
+        let cities = await db.Cities.findAll({order: [['city', 'ASC']]});
         res.render('productEdit', { itineraries, airlines, airports, allCountries, cities });
     },
 
-    update: (req, res) => {
+    update: async (req, res) => {
         let flightToUpdate = {
             flight_number: req.body.nroVuelo,
             duration: req.body.duration,
@@ -211,6 +208,12 @@ const controllers = {
             country_id: Number(req.body.destinyCountry),
             city_id: Number(req.body.destinyCity)
         }
+        
+        let flights = await db.Flights.update({  });
+        let origin = await db.Origins.update({  });
+        let destiny = await db.Destinations.update({  });
+        let itinerary = await db.Itineraries.update({itineraryToUpdate, where: {id: req.params.id}})
+
 
         db.Flights.update({ flightToUpdate });
         db.Origins.update({ originToUpdate });
@@ -221,7 +224,7 @@ const controllers = {
     },
 
     productReview: async (req, res) => {
-        let itineraries = await db.Itineraries.findAll({
+        let itineraries = await db.Itineraries.findByPk(req.params.id, {
             include: [
                 {
                     association: "flights", include: [
@@ -246,12 +249,7 @@ const controllers = {
     },
 
     productDelete: (req, res) => {
-        let elID = req.params.id;
-        flights = flights.filter(oneflight => {
-            return oneflight.id != elID;
-        })
-        let newProductList = JSON.stringify(flights);
-        fs.writeFileSync(flightsFilePath, newProductList)
+        db.Itineraries.destroy({where: {id: req.params.id}})
         res.redirect("/admin/productlist")
     }
 }

@@ -10,25 +10,20 @@
     <%- include('./partials/header') %>
     <main>
         <div class="padding-top-my-account">
-            <h2 class="titulo-productreview">Estas seguro que querés eliminar este Vuelo?</h2>
+            <h2 class="titulo-productreview">Estas seguro que querés eliminar este vuelo?</h2>
             <form action="/admin/productDelete/<%= itineraries.id %>?_method=delete" method="post">
                 <div class="product-review">
-                    <p>Nro de ID: <%= flight.id %></p>
-                    <p>Tipo: <%= flight.tipo %></p>
-                    <p>Origen: <%= flight.origen %> <%= flight.aeropuertoOrigen %></p>
-                    <p>Destino: <%= flight.destino %> <%= flight.aeropuertoDestino %></p>
-                    <p>ida: <%= flight.ida %></p>
-                    <p>vuelta: <%= flight.vuelta %></p>
-                    <p>Horario de ida: <%= flight.horarioIda %></p>
-                    <p>Horario de llegada: <%= flight.horarioLlegadaIda %></p>
-                    <p>Duración: <%= flight.duracionIda %></p>
-                    <p>Escalas: <%= flight.escalasIda %></p>
-                    <p>Horario de vuelta: <%= flight.horarioVuelta %></p>
-                    <p>Horario de llegada: <%= flight.horarioLlegadaVuelta %></p>
-                    <p>Duración: <%= flight.duracionVuelta %></p>
-                    <p>Escalas: <%= flight.escalasVuelta %></p>
-                    <p>Precio: <%= flight.precio %></p>
-                    <button type="submit">CONFIRMA ELIMINACIÓN</button>
+                    <p>Nro de ID: <%= itineraries.id %></p>
+                    <p>Origen: <%= itineraries.origins.countries.country %>, <%= itineraries.origins.cities.city %></p>
+                    <p>Aeropuerto de origen: <%= itineraries.origins.airports.airport %>, <%= itineraries.origins.airports.code %></p>
+                    <p>Destino: <%= itineraries.destinations.countries.country %>, <%= itineraries.destinations.cities.city %></p>
+                    <p>Aeropuerto de destino: <%= itineraries.destinations.airports.airport %>, <%= itineraries.destinations.airports.code %></p>
+                    <p>Fecha y hora del vuelo: <%= itineraries.flights.date %>, <%= itineraries.flights.time %></p>
+                    <p>Duración: <%= itineraries.flights.duration %></p>
+                    <p>Nro de vuelo: <%= itineraries.flights.flight_number %></p>
+                    <p>Aerolínea: <%= itineraries.flights.airlines.airline %></p>
+                    <p>Precio: <%= itineraries.flights.price %></p>
+                    <button type="submit">CONFIRMAR ELIMINACIÓN</button>
                 </div>
             </form>
         </div>

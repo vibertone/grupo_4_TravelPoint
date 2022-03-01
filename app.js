@@ -25,7 +25,7 @@ const productsRoutes = require("./routes/products");
 const adminRoutes = require("./routes/admin");
 const usersapiRoutes = require("./routes/usersapi");
 // const flightsapiRoutes = require("./routes/flightsapi");
-const api =require("./routes/api");
+const api =require("./routes/api/api");
 
 app.listen(5000, () => {
     console.log("Levantando un servidor con Express pto 5000")

@@ -33,7 +33,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "country_id"
         });
 
-        /* Country.hasMany(models.Origins, {
+        Country.hasMany(models.Origins, {
             as: "origins",
             foreignKey: "country_id"
         });
@@ -41,7 +41,7 @@ module.exports = (sequelize, dataTypes) => {
         Country.hasMany(models.Destinations, {
             as: "destinations",
             foreignKey: "country_id"
-        }); */
+        });
     };
 
     return Country;

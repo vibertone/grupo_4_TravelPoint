@@ -30,6 +30,10 @@ module.exports = (sequelize, dataTypes) => {
         country_id: {
             type: dataTypes.INTEGER,
             allowNull: false
+        },
+        category: {
+            type: dataTypes.STRING(10),
+            allowNull: false
         }
     };
     let config = {

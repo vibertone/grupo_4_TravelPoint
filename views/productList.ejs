@@ -17,6 +17,7 @@
         <form class="list-format">
             <% itineraries.forEach(function(itinerary){ %>
                 <div class="description-list-format">
+                    <p>Nro de ID: <%= itinerary.id %></p>
                     <p>Origen: <%= itinerary.origins.countries.country %>, <%= itinerary.origins.cities.city %></p>
                     <p>Aeropuerto de origen: <%= itinerary.origins.airports.airport %>, <%= itinerary.origins.airports.code %></p>
                     <p>Destino: <%= itinerary.destinations.countries.country %>, <%= itinerary.destinations.cities.city %></p>
