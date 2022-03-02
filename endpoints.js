@@ -26,10 +26,15 @@ const ENDPOINTS = {
     },
     api:{
         "API":"/users",
-        "API2":"/api/:id",
+        "API2":"/users/:id",
         "USERSAPI": "/list",
-        // "FLIGHTSAPI": "/list",
-        // "FLIGHTSAPI2": "/list/:id",
+        "FLIGHTSAPI": "/list",
+        "FLIGHTSAPI2": "/list/:id",
+        "CITIESAPI":"/list",
+        "COUNTRIESAPI": "/list",
+        "DESTINIESAPI": "/list",
+        "AIRLINESAPI":"/list",
+
       
     },
 };

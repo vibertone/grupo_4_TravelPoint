@@ -24,7 +24,11 @@ const usersRoutes = require("./routes/users");
 const productsRoutes = require("./routes/products");
 const adminRoutes = require("./routes/admin");
 const usersapiRoutes = require("./routes/usersapi");
-// const flightsapiRoutes = require("./routes/flightsapi");
+const flightsapiRoutes = require("./routes/flightsapi");
+const citiesapiRoutes = require("./routes/citiesapi");
+const countriesapiRoutes = require("./routes/countriesapi");
+const destiniesapiRoutes = require("./routes/destiniesapi");
+const airlinesapiRoutes = require("./routes/airlinesapi");
 const api =require("./routes/api/api");
 
 app.listen(5000, () => {
@@ -43,7 +47,11 @@ app.use('/products', productsRoutes);
 app.use('/admin', adminRoutes);
 app.use('/usersapi', usersapiRoutes);
 app.use('/api',api);
-// app.use('/api', flightsapiRoutes);
+app.use('/flightsapi', flightsapiRoutes);
+app.use('/citiesapi', citiesapiRoutes );
+app.use('/countriesapi', countriesapiRoutes );
+app.use('/destiniesapi', destiniesapiRoutes );
+app.use('/airlinesapi', airlinesapiRoutes );
 
 
 //error 404 
