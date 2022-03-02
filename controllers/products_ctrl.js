@@ -3,7 +3,7 @@ const db = require("../database/models");
 
 const controllers = {
     productDetail: async (req, res) => {
-        let itineraries = await db.Itineraries.findAll(
+        let itineraries = await db.Itineraries.findByPk(req.params.id,
             {
             include: [
                 {

@@ -8,47 +8,46 @@
 
 <body>
     <%- include('./partials/header') %>
-        <main>
-            <section class="vuelos">
-                <% itineraries.forEach(function(itinerary){ %>
+        <main class="main-productDetail">
+            <section id="vuelos-detail">
+                <div id="flex-productDetail">
                     <div class="div-vuelo">
                         <div class="ida-y-vuelta">
-                            <h3>IDA - <%= itinerary.flights.date %></h3>
+                            <h3>IDA - <%= itineraries.flights.date %></h3>
                             <div class="detalle-de-vuelo">
                                 <div>
-                                    <div><%= itinerary.flights.time %></div>
-                                    <div><%= itinerary.origins.airports.code %></div>
+                                    <div id="flight-time"><%= itineraries.flights.time %></div>
+                                    <div><%= itineraries.origins.airports.code %></div>
                                 </div>
                                 <div class="escalas">
                                     <div>Sin escalas</div>
                                     <hr>
-                                    <div><%= itinerary.flights.duration %></div>
+                                    <div id="flight-duration"><%= itineraries.flights.duration %></div>
                                 </div>
                                 <div>
-                                    <div>undefined</div>
-                                    <div><%= itinerary.destinations.airports.code %></div>
+                                    <div class="resultado"></div>
+                                    <div><%= itineraries.destinations.airports.code %></div>
                                 </div>
                             </div>
-                            <h3>VUELTA - <%= itinerary.flights.date %></h3>
+                            <h3></h3>
                             <div class="detalle-de-vuelo">
                                 <div>
-                                    <div><%= itinerary.flights.time %></div>
-                                    <div><%= itinerary.origins.airports.code %></div>
+                                    <div></div>
+                                    <div></div>
                                 </div>
                                 <div class="escalas">
-                                    <div>Sin escalas</div>
-                                    <hr>
-                                    <div><%= itinerary.flights.duration %></div>
+                                    <div></div>
+                                    <div></div>
                                 </div>
                                 <div>
-                                    <div>undefined</div>
-                                    <div><%= itinerary.destinations.airports.code %></div>
+                                    <div></div>
+                                    <div></div>
                                 </div>
                             </div>
                         </div>
                         <div class="price-button">
                             <div class="price">
-                                <span><%= itinerary.flights.price %></span>
+                                <span><%= itineraries.flights.price %></span>
                                 <a href="/"><p>Ver detalle</p></a>
                             </div>
                             <div>
@@ -56,7 +55,10 @@
                             </div>
                         </div>
                     </div>
-                <% }) %>
+                    <div class="publicidad-seguro">
+                        <img src="/img/universal-assistance..png" alt="universal-assistance">
+                    </div>
+                </div>
             </section>
         </main>
         <%- include('./partials/footer') %>

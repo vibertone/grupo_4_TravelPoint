@@ -3,7 +3,7 @@
 
 <head>
     <%- include('./partials/head') %>
-    <title>Creá tu cuenta</title>
+        <title>Creá tu cuenta</title>
 </head>
 
 <body>
@@ -14,76 +14,102 @@
         <main>
             <div class="padding-top-my-account">
                 <div class="login">
+                    <div class="erroresDeValidacion">
+                        <ul></ul>
+                    </div>
                     <% if (locals.errors) { %>
                         <% } %>
-                            <form action="/user/register" method="POST">
+                            <form action="/user/register" method="POST" id="formulario">
                                 <h3>Registrate con tus datos</h3>
                                 <div>
-                                    <p class="inputClass-forValidation">
-                                        <input type="text" name="email" placeholder="Ingresa tu Email"
-                                            value="<%= locals.old && old.email ? old.email : '' %>">
-                                    </p>
+                                    <div class="formulario__grupo" id="grupo__email">
+                                        <div class="formulario__grupo-input">
+                                            <input class="formulario__input" type="text" name="email"
+                                                placeholder="Ingresa tu Email" id="email"
+                                                value="<%= locals.old && old.email ? old.email : '' %>">
+                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                        </div>
+                                        <p class="formulario__input-error">Ingrese un correo válido.</p>
+                                    </div>
                                     <% if(locals.errors && errors.email) { %>
-                                        <p class="msg-error-form">
-                                            <%= errors.email.msg %>
-                                        </p>
-                                        <% } %>
-                                            <p class="inputClass-forValidation">
-                                                <input type="password" name="password" placeholder="Contraseña">
-                                            </p>
-                                            <% if(locals.errors && errors.password) { %>
-                                                <p class="msg-error-form">
-                                                    <%= errors.password.msg %>
-                                                </p>
-                                                <% } %>
-                                                    <p class="inputClass-forValidation">
-                                                        <input type="password" name="repeatPassword"
-                                                            placeholder="Repite Contraseña">
-                                                    </p>
-                                                    <% if(locals.errors && errors.repeatPassword) { %>
-                                                        <p class="msg-error-form">
-                                                            <%= errors.repeatPassword.msg %>
-                                                        </p>
-                                                        <% } %>
+                                    <p class="msg-error-form">
+                                        <%= errors.email.msg %>
+                                    </p>
+                                    <% } %>
+                                    <div class="formulario__grupo" id="grupo__password">
+                                        <div class="formulario__grupo-input">
+                                            <input class="formulario__input" type="password" name="password"
+                                            placeholder="Contraseña" id="password">
+                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                        </div>
+                                        <p class="formulario__input-error">La contraseña no puede ser menor a 2 caracteres y debe tener por lo menos 1 letra minúscula, 1 letra mayúscula y 1 simbolo.</p>
+                                    </div>
+                                    <% if(locals.errors && errors.password) { %>
+                                    <p class="msg-error-form">
+                                        <%= errors.password.msg %>
+                                    </p>
+                                    <% } %>
+                                    <div class="formulario__grupo" id="grupo__repeatPassword">
+                                        <div class="formulario__grupo-input">
+                                            <input class="formulario__input" type="password"
+                                            name="repeatPassword" placeholder="Repite Contraseña"
+                                            id="repeatPassword">
+                                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                        </div>
+                                        <p class="formulario__input-error">Las contraseñas deben ser iguales.</p>
+                                    </div>
+                                    <% if(locals.errors && errors.repeatPassword) { %>
+                                    <p class="msg-error-form">
+                                        <%= errors.repeatPassword.msg %>
+                                    </p>
+                                    <% } %>
                                 </div>
                                 <div>
-                                    <p class="inputClass-forValidation">
-                                        <input type="text" name="name" placeholder="Nombre"
-                                            value="<%= locals.old && old.name ? old.name : '' %>">
-                                    </p>
+                                    <div class="formulario__grupo" id="grupo__name">
+                                        <div class="formulario__grupo-input">
+                                            <input class="formulario__input" type="text" name="name" placeholder="Nombre"
+                                                id="name" value="<%= locals.old && old.name ? old.name : '' %>">
+                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                        </div>
+                                        <p class="formulario__input-error">El nombre tiene que ser mayor a 2 caracteres y solo puede contener letras.</p>
+                                    </div>
                                     <% if(locals.errors && errors.name) { %>
-                                        <p class="msg-error-form">
-                                            <%= errors.name.msg %>
-                                        </p>
-                                        <% } %>
-                                            <p class="inputClass-forValidation">
-                                                <input type="text" name="last_name" placeholder="Apellido"
-                                                    value="<%= locals.old && old.last_name ? old.last_name : '' %>"
-                                                    class="form-control is-invalid">
+                                    <p class="msg-error-form">
+                                        <%= errors.name.msg %>
+                                    </p>
+                                    <% } %>
+                                    <div class="formulario__grupo" id="grupo__last_name">
+                                        <div class="formulario__grupo-input">
+                                            <input class="formulario__input" type="text" name="last_name"
+                                                placeholder="Apellido" id="last_name"
+                                                value="<%= locals.old && old.last_name ? old.last_name : '' %>">
+                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                        </div>
+                                        <p class="formulario__input-error">El apellido tiene que ser mayor a 2 caracteres y solo puede contener letras.</p>
+                                    </div>
+                                    <% if(locals.errors && errors.last_name) { %>
+                                    <p class="msg-error-form">
+                                        <%= errors.last_name.msg %>
+                                    </p>
+                                    <% } %>
+                                    <p>
+                                        <select id="country" name="country">
+                                            <option value="">Nacionalidad</option>
+                                            <% countries.forEach(oneCountry=> { %>
+                                                <option value="<%= oneCountry.id %>"
+                                                    id="registerCountry" <%=locals.old &&
+                                                    oneCountry.country===old.country ? 'selected' : null
+                                                    %>>
+                                                    <%= oneCountry.country %>
+                                                </option>
+                                                <% }) %>
+                                        </select>
+                                        <% if (locals.errors && errors.country) { %>
+                                            <p class="msg-error-form">
+                                                <%= errors.country.msg %>
                                             </p>
-                                            <% if(locals.errors && errors.last_name) { %>
-                                                <p class="msg-error-form">
-                                                    <%= errors.last_name.msg %>
-                                                </p>
-                                                <% } %>
-                                                    <p class="inputClass-forValidation">
-                                                        <select id="country" name="country">
-                                                            <option value="">Nacionalidad</option>
-                                                            <% countries.forEach(oneCountry => { %>                                    
-                                                                <option value="<%= oneCountry.id %>"
-                                                                    <%=locals.old &&
-                                                                    oneCountry.country===old.country ? 'selected' :
-                                                                    null %>>
-                                                                    <%= oneCountry.country %>
-                                                                </option>
-                                                                <% }) %>
-                                                        </select>
-                                                        <% if (locals.errors && errors.country) { %>
-                                                            <p class="msg-error-form">
-                                                                <%= errors.country.msg %>
-                                                            </p>
-                                                            <% } %>
-                                                    </p>
+                                            <% } %>
+                                    </p>
                                 </div>
                                 <p>
                                     <button type="submit">Registrarse</button>
@@ -93,6 +119,7 @@
             </div>
         </main>
         <%- include('./partials/footer') %>
+            <script src="/js/registerValidations.js"></script>
 </body>
 
 </html>

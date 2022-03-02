@@ -144,20 +144,6 @@ const controllers = {
         res.redirect('/admin/productList');
     },
 
-    confirmProductCreate: async (req, res) => {
-
-        let airlines = await db.Airlines.findAll();
-        let airports = await db.Airports.findAll();
-        let countries = await db.Countries.findAll();
-        let cities = await db.Cities.findAll();
-
-        res.render('confirmProductCreate', {})
-    },
-
-    succesProductCreation: (req, res) => {
-
-    },
-
     productEdit: async (req, res) => {
         let itineraries = await db.Itineraries.findByPk(req.params.id, {
             include: [

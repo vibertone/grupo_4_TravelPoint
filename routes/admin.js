@@ -15,9 +15,6 @@ router.get(ENDPOINTS.administrator.SEARCH_USERS, controllers.searchUsers)
 router.get(ENDPOINTS.administrator.PRODUCT_CREATE, onlyAdminMiddleware, controllers.productCreate);
 router.post(ENDPOINTS.administrator.PRODUCT_CREATE, multerMiddleware.single('productPicture'), validations, controllers.store);
 
-router.get(ENDPOINTS.administrator.CONFIRM_PRODUCT_CREATE, controllers.confirmProductCreate);
-router.post(ENDPOINTS.administrator.CONFIRM_PRODUCT_CREATE, controllers.succesProductCreation);
-
 router.get(ENDPOINTS.administrator.PRODUCT_EDIT, onlyAdminMiddleware, controllers.productEdit);
 router.put(ENDPOINTS.administrator.PRODUCT_EDIT, controllers.update);
 

@@ -15,10 +15,22 @@
                         <div>
                             <form action="/user/myaccount" method="POST" enctype="multipart/form-data">
                                 <div>
+                                    <% if(user.image != null) { %> 
                                     <img class="profile-picture" src="/profilePictures/<%= user.image %>" alt="foto de perfil">
+                                    <% } else { %> 
+                                        <img class="profile-picture" src="/profilePictures/perfil-sin-foto.jpg" alt="foto de perfil">
+                                    <% } %> 
                                 </div>
+                                <% if (locals.errors) { %>
+                                    <% } %> 
                                 <input type="file" name="image" class="image">
-                                <button>Subir foto</button>
+                                <button type="submit">Subir foto</button>
+                                <% if(locals.errors && errors.image) { %>
+                                    <p class="msg-error-form">
+                                        <%= errors.image.msg %>
+                                    </p>
+                                    <% } %>
+                              
                             </form>
                             <h3>Datos personales:</h3>
                             <p>Nombre: <%= user.name %> <%= user.last_name %></p>

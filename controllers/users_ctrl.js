@@ -5,13 +5,13 @@ const fetch = require('node-fetch');
 
 const controllers = {
     register: (req, res) => {
-        db.Countries.findAll({order: [['country', 'ASC']]}).then(countries => {
+        db.Countries.findAll({ order: [['country', 'ASC']] }).then(countries => {
             res.render('register', { countries });
         });
     },
     createMyAccount: (req, res) => {
 
-        let errors = validationResult(req);
+      /*   let errors = validationResult(req);
         if (errors.errors.length > 0) {
             db.Countries.findAll().then(countries => {
                 res.render('register', {
@@ -20,7 +20,7 @@ const controllers = {
                     countries
                 });
             })
-        }
+        } */
 
         db.Users.findOne({ where: { email: req.body.email } })
             .then(usersInData => {
@@ -111,7 +111,7 @@ const controllers = {
 
     },
     editMyAccount: async (req, res) => {
-        let countries = await db.Countries.findAll({order: [['country', 'ASC']]});
+        let countries = await db.Countries.findAll({ order: [['country', 'ASC']] });
         res.render('editMyAccount', {
             user: req.session.userLogged,
             countries
@@ -134,6 +134,14 @@ const controllers = {
         res.redirect('/user/myaccount')
     },
     myProfilePicture: (req, res) => {
+
+        let errors = validationResult(req);
+        if (errors.errors.length > 0) {
+            res.render('myaccount', {
+                errors: errors.mapped(),
+                old: req.body
+            });
+        }
 
         db.Users.update(
             {

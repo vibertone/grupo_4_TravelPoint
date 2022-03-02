@@ -15,8 +15,9 @@
                 <h3>Agregá un vuelo</h3>
                 <% if (locals.errors) { %>
                     <% } %>
-                <form action="/admin/productcreate" method="POST" enctype="multipart/form-data">
+                <form action="/admin/productcreate" method="POST" enctype="multipart/form-data" class="form-product-create">
 
+                    <div class="div1-productCreate">
                     <div class="inputClass-forValidation-autocomplete"><label for="originCountry">Pais de origen:</label>
                         <div class="autocomplete-input-list">
                             <select name="originCountry" id="originCountry"> 
@@ -81,11 +82,6 @@
                         <input type="text" name="codAeropuertoOrigen" id="codAeropuertoOrigen"
                         value="<%= locals.old && old.codAeropuertoOrigen ? old.codAeropuertoOrigen : '' %>" readonly>
                     </p>
-                        <% if(locals.errors && errors.codAeropuertoOrigen) { %>
-                            <p class="msg-error-form">
-                                <%= errors.codAeropuertoOrigen.msg %>
-                            </p>
-                            <% } %>
 
                             <div class="inputClass-forValidation-autocomplete"><label for="destinyCountry">Pais de destino:</label>
                                 <div class="autocomplete-input-list">
@@ -151,13 +147,9 @@
                         <input type="text" name="codAeropuertoDestino" readonly
                         id="codAeropuertoDestino" 
                         value="<%= locals.old && old.codAeropuertoDestino ? old.codAeropuertoDestino : '' %>"></p>
-                        <% if(locals.errors && errors.codAeropuertoDestino) { %>
-                            <p class="msg-error-form">
-                                <%= errors.codAeropuertoDestino.msg %>
-                            </p>
-                            <% } %>
-
-                    <p class="inputClass-forValidation"><label for="fechaVuelo">Fecha del vuelo:</label><input type="date"
+                </div>
+                <div class="div2-productCreate">
+                        <p class="inputClass-forValidation"><label for="fechaVuelo">Fecha del vuelo:</label><input type="date"
                          name="fechaVuelo" id="fechaVuelo" value="<%= locals.old && old.fechaVuelo ? old.fechaVuelo : '' %>"></p>
                         <% if(locals.errors && errors.fechaVuelo) { %>
                             <p class="msg-error-form">
@@ -223,10 +215,16 @@
 
                         <p>(Opcional) Seleccionar una foto del destino:</p>
                         <input type="file" name="productPicture" class="productPicture">
+                        <% if(locals.errors && errors.productPicture) { %>
+                            <p class="msg-error-form">
+                                <%= errors.productPicture.msg %>
+                            </p>
+                            <% } %>
+                    </div>
                     
                     <br><br>
 
-                    <p><button type="submit">Agregar producto</button></p>
+                    <p class="div3-productCreate"><button type="submit">Agregar producto</button></p>
                 </form>
             </div>
         </main>

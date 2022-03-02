@@ -6,6 +6,10 @@
 
 /* index */
 
+.publicidad-seguro img{
+    display: none;
+}
+
 button {
     cursor: pointer;
 }
@@ -572,7 +576,7 @@ div #nro-documento {
 }
 
 #fechaVuelo {
-    max-width: 170px;
+    max-width: 180px;
 }
 
 #horarioVuelo {
@@ -583,9 +587,13 @@ div #nro-documento {
     width: 100px;
 }
 
-#aeropuertoOrigen, #aeropuertoDestino, #airline {
+#aeropuertoOrigen, #aeropuertoDestino {
     width: 40%;
     max-width: 300px;
+}
+
+#airline {
+    width: 25%;
 }
 
 #autocomplete-input, #autocomplete-input-2 {
@@ -699,7 +707,7 @@ div #nro-documento {
     margin: auto;
     padding: 20px;
     text-align: center;
-    box-shadow: 0px 0px 20px 3px rgba(133,126,133,1);
+    box-shadow: 0px 0px 20px 3px rgba(133, 126, 133, 1);
 }
 
 .apis {
@@ -733,24 +741,159 @@ div #nro-documento {
 
 /*----exclusivo de register*/
 
+
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.formulario__grupo-input {
+    position: relative;
+}
+
+.formulario__input {
+    width: 100%;
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+
+.formulario__input:focus {
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.formulario__input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    margin-top: 0;
+    display: none;
+}
+
+.formulario__input-error-activo {
+    display: block;
+}
+
+.formulario__validacion-estado {
+    position: absolute;
+    right: 65px;
+    bottom: 23px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+.formulario__grupo-terminos,
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+    grid-column: span 2;
+}
+
+.formulario__mensaje {
+    height: 45px;
+    line-height: 45px;
+    background: #F66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje-activo {
+    display: block;
+}
+
+.formulario__mensaje p {
+    margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario__btn {
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+}
+
+.formulario__btn:hover {
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 1);
+}
+
+.formulario__mensaje-exito {
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
+
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+    color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+    border: 3px solid #bb2929;
+}
+
+#vuelos-detail {
+    padding: 45px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
 .login input {
-    width: 60%;
+    width: 80%;
     padding: 10px 20px;
     margin: 8px 0;
     border: gray 0%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
     border-style: none;
+    max-width: 350px;
 }
 
 .login select {
-    width: 60%;
+    width: 80%;
     padding: 10px 10px;
     margin: 8px 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
     border: none;
     color: gray;
+    max-width: 350px;
 }
 
 form .inputClass-forValidation {
@@ -772,11 +915,12 @@ form .inputClass-forValidation {
 /* PRODUCT DETAIL */
 
 .div-vuelo {
-    width: 95%;
+    width: 85%;
     background-color: white;
     border-radius: 25px;
     padding: 20px;
     margin-bottom: 20px;
+    margin: auto;
 }
 
 .vuelos {
@@ -888,6 +1032,15 @@ footer {
     background-color: #e6e6e6;
 }
 
+.erroresDeValidacion ul {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    color: red;
+}
+
 footer .container-footer-2 {
     width: 90vw;
     background-color: white;
@@ -939,7 +1092,7 @@ footer .container-footer-2 {
 }
 
 .list-format .description-list-format {
-    box-shadow: 0px 0px 20px 3px rgba(133,126,133,1);
+    box-shadow: 0px 0px 20px 3px rgba(133, 126, 133, 1);
 }
 
 .list-format .description-list-format button, main form .product-review button {
@@ -1046,7 +1199,7 @@ footer .container-footer-2 {
     }
 
     .price {
-        font-size: 4.5vw;
+        font-size: 4vw;
     }
 
     .price-button {
@@ -1058,7 +1211,7 @@ footer .container-footer-2 {
     }
 
     .price-button button {
-        font-size: 2.7vw;
+        font-size: 2.3vw;
     }
 
     .container-1 .sub-1 .info {
@@ -1222,6 +1375,10 @@ footer .container-footer-2 {
         top: 11%;
     }
 
+    .div-vuelo{
+        max-width: 770px;
+    }
+
     @media (min-width: 1024px) {
         .header-box2 {
             grid-row: 1/2;
@@ -1281,20 +1438,20 @@ footer .container-footer-2 {
             max-width: 280px;
             max-height: 230px;
         }
-        
+
         .descripcion-vuelos p {
             font-size: 2.5vw;
         }
 
         section.vuelos {
-            padding-right: 10%;
-            padding-left: 10%;
+            padding-right: 0;
+            padding-left: 40px;
         }
 
         .vuelos article div img {
             border-radius: 8px;
         }
-        
+
         .descripcion-vuelos {
             border-radius: 8px;
             justify-content: flex-end;
@@ -1330,6 +1487,75 @@ footer .container-footer-2 {
 
         .titulo-productlist a button {
             margin-left: 35px;
+        }
+
+        .form-product-create {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+        .div1-productCreate{
+            grid-column: 1/1;
+            grid-row: 1;
+        }
+
+        .div2-productCreate{
+            grid-column: 2/2;
+            grid-row: 1;
+        }
+
+        .div3-productCreate{
+            grid-column: 1/1;
+            grid-row: 2;
+        }
+
+        .product-create form button {
+            margin-top: 15px;
+        }
+
+        #airline{
+            width: 40%;
+        }
+
+        .price {
+            font-size: 30px;
+        }
+
+        .price-button button {
+            font-size: 17px;
+        }
+
+        #flex-productDetail {
+            display: flex;
+            justify-content: space-around;
+            pad: 0 15px;
+        }
+        
+        .publicidad-seguro img{
+            display: block;
+            height: 250px;
+            width: 250px;
+            border-radius: 25px;
+        }
+
+        #vuelos-detail {
+            padding: 25px;
+        }
+
+        .publicidad-seguro {
+            margin-right: 8%;
+        }
+
+        .div-vuelo {
+            margin-left: 5%;
+            width: 55%;
+        }
+
+        .main-productDetail{
+            padding-left: 70px;
+            padding-right: 40px;
         }
     }
 }
