@@ -9,38 +9,39 @@ const controllers = {
             res.render('register', { countries });
         });
     },
-    createMyAccount: (req, res) => {
+    createMyAccount: async (req, res) => {
 
-      /*   let errors = validationResult(req);
-        if (errors.errors.length > 0) {
-            db.Countries.findAll().then(countries => {
-                res.render('register', {
-                    errors: errors.mapped(),
-                    old: req.body,
-                    countries
-                });
-            })
-        } */
+        let countries = await db.Countries.findAll();
+
+        let errors = validationResult(req);
+        if (errors.errors.length > 0 && countries) {
+            return res.render('register', {
+                errors: errors.mapped(),
+                old: req.body,
+                countries
+            });
+        }
 
         db.Users.findOne({ where: { email: req.body.email } })
             .then(usersInData => {
-                if (usersInData) {
+                if (usersInData && countries) {
                     res.render('register', {
                         errors: {
                             email: {
                                 msg: 'Este email ya está registrado'
                             }
                         },
-                        old: req.body
+                        old: req.body,
+                        countries
                     });
-
                 } else if (req.body.password !== req.body.repeatPassword) {
                     res.render('register', {
                         errors: {
                             repeatPassword: {
                                 msg: 'Las contraseñas deben coincidir'
                             }
-                        }
+                        },
+                        countries
                     })
 
                 } else {

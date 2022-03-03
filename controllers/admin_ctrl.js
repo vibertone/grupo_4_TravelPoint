@@ -55,18 +55,27 @@ const controllers = {
         let countries = await db.Countries.findAll({order: [['country', 'ASC']]});
         let cities = await db.Cities.findAll({order: [['city', 'ASC']]});
 
-        res.render('productCreate2', { airlines, airports, countries, cities });
+        res.render('productCreate', { airlines, airports, countries, cities });
     },
 
-    store: (req, res) => {
+    store: async (req, res) => {
 
-        /*  let errors = validationResult(req);
-         if (errors.errors.length > 0) {
+        let airlines = await db.Airlines.findAll({order: [['airline', 'ASC']]});
+        let airports = await db.Airports.findAll({order: [['airport', 'ASC']]});
+        let countries = await db.Countries.findAll({order: [['country', 'ASC']]});
+        let cities = await db.Cities.findAll({order: [['city', 'ASC']]});
+
+        let errors = validationResult(req);
+         if (errors.errors.length > 0 && airlines && airports && countries && cities) {
              return res.render('productCreate', {
                  errors: errors.mapped(),
-                 old: req.body
+                 old: req.body,
+                 airlines,
+                 countries,
+                 airports,
+                 cities
              });
-         } */
+         } 
 
         let flightToCreate = {
             flight_number: req.body.nroVuelo,
