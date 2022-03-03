@@ -45,3 +45,22 @@ https://github.com/vibertone/grupo_4_TravelPoint/tree/main/public/otros
 
 Donde está nuestro DER?
 https://app.diagrams.net/#Hvibertone%2Fgrupo_4_TravelPoint%2FDER%2FDER
+
+
+Donde está nuestro proyecto React con el Dashboard?
+https://github.com/vibertone/g4_dashboard
+
+Cuáles son los endpoints para consumir?
+/api/users     Lista de usuarios en la Base
+   /api/users/:id      Consulta de usuarios por Id
+
+/flightsapi/list      Listado de vuelos
+    /flightsapi/list/:Id  Consulta de vuelos por Id 
+
+/citiesapi/list      Listado de Ciudades
+
+/countriesapi/list   Listado de Paises y codigo
+
+/destiniesapi/list   Listado de destinos
+
+/airlinesapi/list     Listados de lineas Aéreas
