@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-02-2022 a las 20:16:48
+-- Tiempo de generación: 03-03-2022 a las 06:32:23
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -9837,15 +9837,35 @@ CREATE TABLE `destinations` (
   `id` int(11) NOT NULL,
   `airport_id` int(11) NOT NULL,
   `city_id` int(11) NOT NULL,
-  `country_id` int(11) NOT NULL
+  `country_id` int(11) NOT NULL,
+  `image` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `destinations`
 --
 
-INSERT INTO `destinations` (`id`, `airport_id`, `city_id`, `country_id`) VALUES
-(1, 2595, 207, 31);
+INSERT INTO `destinations` (`id`, `airport_id`, `city_id`, `country_id`, `image`) VALUES
+(34, 2158, 116, 9, '/mendoza.jpg'),
+(35, 270, 654, 67, '/barcelona.jpg'),
+(36, 484, 69, 9, '/buenos-aires.jpg'),
+(37, 485, 69, 9, '/buenos-aires.jpg'),
+(38, 1053, 3793, 224, '/nueva-york.jpg'),
+(39, 422, 3812, 224, '/boston.png'),
+(40, 484, 69, 9, '/buenos-aires.jpg'),
+(67, 2158, 116, 9, '5b63c6f2-5d2e-4b6f-9d47-4168b16d3c23.mendoza.jpg'),
+(68, 2158, 116, 9, '0b554f7b-809e-4707-ad53-ace94037a028.mendoza.jpg'),
+(69, 270, 654, 67, 'c7cb4f36-974a-47ec-be77-97315db5b85a.barcelona.jpg'),
+(70, 270, 654, 67, '6f9a971c-05a9-4b3e-955b-f5fd9ea94488.barcelona.jpg'),
+(72, 3658, 1532, 110, '277dfd37-ad27-435f-b145-bbf524a4a4b5.tokio.jpg'),
+(73, 4232, 130, 15, 'f21c04d9-7fb6-47d2-b1f6-b847426ce8e7.autralia.jpg'),
+(74, 3637, 682, 48, 'b241ac84-cb33-4fec-9c09-d3e86a9c0b09.cartagena.jpg'),
+(75, 2208, 3839, 224, 'f0938844-e158-4099-a0ff-32305265b977.miami.jpg'),
+(76, 2626, 3897, 224, '515cb351-1fd5-452f-89d4-68d85905cc44.orlando.jpg'),
+(77, 3038, 1464, 107, 'c9391739-562b-43a4-bc62-0206079c8710.roma.jpg'),
+(78, 17, 5, 159, '0239bbf8-650e-4456-9712-eeed4412721f.amsterdam.jpg'),
+(79, 3816, 1474, 107, 'ce0ae8aa-1980-4cf9-b624-7c7359367fa3.venecia.jpg'),
+(80, 3724, 3492, 223, '32941951-7cdf-4524-bca7-a1f292bf04a0.montevideo.jpg');
 
 -- --------------------------------------------------------
 
@@ -9855,7 +9875,8 @@ INSERT INTO `destinations` (`id`, `airport_id`, `city_id`, `country_id`) VALUES
 
 CREATE TABLE `flights` (
   `id` int(11) NOT NULL,
-  `date` datetime NOT NULL,
+  `date` varchar(200) NOT NULL,
+  `time` varchar(50) NOT NULL,
   `flight_number` varchar(50) NOT NULL,
   `duration` time NOT NULL,
   `price` varchar(20) NOT NULL,
@@ -9866,8 +9887,28 @@ CREATE TABLE `flights` (
 -- Volcado de datos para la tabla `flights`
 --
 
-INSERT INTO `flights` (`id`, `date`, `flight_number`, `duration`, `price`, `airline_id`) VALUES
-(5, '2022-03-04 21:20:00', 'KOL5846', '06:24:00', '$30.000', 36);
+INSERT INTO `flights` (`id`, `date`, `time`, `flight_number`, `duration`, `price`, `airline_id`) VALUES
+(38, '2022-03-02', '21:09', 'AGG5846', '01:48:00', '$6.000', 36),
+(39, '2022-03-24', '11:46', 'HOF5568', '10:35:00', '$60.000', 495),
+(40, '2022-04-10', '12:20', 'GOG5599', '13:35:00', '$55.000', 495),
+(41, '2022-04-14', '18:45', 'DOW2235', '01:38:00', '$4.500', 36),
+(42, '2022-05-30', '13:25', 'RRO5599', '12:02:00', '$55.000', 189),
+(43, '2022-06-10', '07:25', 'OELE558', '02:30:00', '$25.000', 937),
+(44, '2022-06-17', '13:25', 'PPW8856', '12:50:00', '$65.000', 189),
+(60, '2022-06-25', '14:25', 'ROP5899', '10:30:00', '$58.000', 189),
+(71, '2022-05-04', '10:30', 'FJE5998', '01:45:00', '$4.500', 36),
+(72, '2022-06-06', '17:45', 'DOE5985', '01:35:00', '$5.200', 36),
+(73, '2022-04-01', '06:25', 'PEL5952', '10:35:00', '$45.000', 495),
+(74, '2023-02-06', '10:25', 'GOP5989', '10:25:00', '$60.000', 495),
+(76, '2022-11-05', '06:30', 'SDO9866', '23:03:00', '$120.000', 925),
+(77, '2022-12-06', '05:30', 'FFF8899', '10:25:00', '$80.000', 225),
+(78, '2023-03-12', '05:59', 'DDS8996', '06:30:00', '$20.000', 21),
+(79, '2022-08-05', '09:30', 'POE9533', '10:30:00', '$60.000', 189),
+(80, '2022-12-25', '08:59', 'GJG6332', '12:30:00', '$85.000', 189),
+(81, '2022-10-02', '10:55', 'GJD8966', '10:20:00', '$50.000', 528),
+(82, '2022-11-25', '10:50', 'SWP8526', '12:30:00', '$85.000', 679),
+(83, '2022-12-06', '10:25', 'FPP5983', '05:20:00', '$35.000', 521),
+(84, '2022-10-02', '02:30', 'DPP5933', '04:30:00', '$11.000', 534);
 
 -- --------------------------------------------------------
 
@@ -9881,6 +9922,27 @@ CREATE TABLE `itineraries` (
   `destiny_id` int(11) NOT NULL,
   `flight_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `itineraries`
+--
+
+INSERT INTO `itineraries` (`id`, `origin_id`, `destiny_id`, `flight_id`) VALUES
+(1, 34, 34, 38),
+(2, 35, 35, 39),
+(3, 36, 36, 40),
+(5, 38, 38, 42),
+(6, 39, 39, 43),
+(7, 40, 40, 44),
+(55, 72, 72, 76),
+(56, 73, 73, 77),
+(57, 74, 74, 78),
+(58, 75, 75, 79),
+(59, 76, 76, 80),
+(60, 77, 77, 81),
+(61, 78, 78, 82),
+(62, 79, 79, 83),
+(64, 80, 80, 84);
 
 -- --------------------------------------------------------
 
@@ -9900,7 +9962,26 @@ CREATE TABLE `origins` (
 --
 
 INSERT INTO `origins` (`id`, `airport_id`, `city_id`, `country_id`) VALUES
-(1, 484, 69, 9);
+(34, 484, 69, 9),
+(35, 484, 69, 9),
+(36, 270, 654, 67),
+(37, 2158, 116, 9),
+(38, 484, 69, 9),
+(39, 2540, 3793, 224),
+(40, 422, 3812, 224),
+(67, 484, 69, 9),
+(68, 484, 69, 9),
+(69, 484, 69, 9),
+(70, 484, 69, 9),
+(72, 484, 69, 9),
+(73, 484, 69, 9),
+(74, 484, 69, 9),
+(75, 484, 69, 9),
+(76, 484, 69, 9),
+(77, 484, 69, 9),
+(78, 484, 69, 9),
+(79, 270, 654, 67),
+(80, 659, 3539, 228);
 
 -- --------------------------------------------------------
 
@@ -9924,15 +10005,15 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `country_id`, `image`, `password`, `category`) VALUES
-(72, 'Federico', 'Gomez', 'fede@hotmail.com', 9, 'c94203d4-4181-4231-bf3c-08d07e28721a.valderrama.jpg', '$2a$10$gCXyd/tHfXAISSTjTWG9r.j6A4JBldUrQd8OpoeLxFjp9Md9GBG3y', 'admin'),
+(72, 'Federico', 'Gomez', 'fede@hotmail.com', 9, '/perfil-sin-foto.jpg', '$2a$10$gCXyd/tHfXAISSTjTWG9r.j6A4JBldUrQd8OpoeLxFjp9Md9GBG3y', 'admin'),
 (73, 'Marcos', 'Martinez', 'marcos@hotmail.com', 9, '/perfil-sin-foto.jpg', '$2a$10$RjMaQJyUcZTvryYTnBtqbeqy51Lu96KqpXQHhScytB/hmCWLr60TG', 'user'),
 (74, 'Carla', 'Suarez', 'carla@hotmail.com', 31, '/perfil-sin-foto.jpg', '$2a$10$jxzoDfWBUeE3OIQ1m9gSbuQnDIevx6cmRas7sdosdCw5O02EcAT6y', 'user'),
 (75, 'Malena', 'Mansilla', 'malena@hotmail.com', 95, '/perfil-sin-foto.jpg', '$2a$10$VsbFB94pw0rv.oxtXXuZO.T2lY64fRj9BzYl7ErFJNm1MmWquv0OG', 'user'),
 (76, 'Sol', 'Fontana', 'sol@hotmail.com', 119, '/perfil-sin-foto.jpg', '$2a$10$KNWs2dm71fCtocnMHLeGYeoWMWx0VOKR0nHfMWwH5MGeeY9HB9LBy', 'user'),
-(80, 'Juan', 'Martin', 'juan@hotmail.com', 110, '/perfil-sin-foto.jpg', '$2a$10$GT2awknqUk1lswO/sfunT.YVkCG/MFBPlsI6U7ElvExxH7R4AoS.q', ''),
-(83, 'sdsd', 'sdsd', 'dsds', 14, '/perfil-sin-foto.jpg', '$2a$10$vlvmiDQ5ApQdbN1Kw1IUC.sAVoyHKtYZS4afz9FsGwH1wijFCe3mi', ''),
-(84, 'sdsd', 'sdsd', 'dsds@hotm', 15, '/perfil-sin-foto.jpg', '$2a$10$QVlTfor3Cud9ac5tYiiQyOr5E89s9XEuDytqQX7aZT/wxanCYNEUO', ''),
-(85, 'Federico', 'Gomez', 'sadase@hotmail.com', 1, '/perfil-sin-foto.jpg', '$2a$10$jYylEhfDmUbBg5kAmNaveedlEQvg8diANAD0AC6y7pbbRpHXUI1B6', '');
+(80, 'Juan', 'Martin', 'juan@hotmail.com', 110, '/perfil-sin-foto.jpg', '$2a$10$GT2awknqUk1lswO/sfunT.YVkCG/MFBPlsI6U7ElvExxH7R4AoS.q', 'admin'),
+(87, 'Laura', 'Ramirez', 'laura@hotmail.com', 133, '/perfil-sin-foto.jpg', '$2a$10$Zjg7iJ6ZQBhRukIclI.eI.zkZhSl9z/ers/DMNrkPPaHnYNdjUbwW', 'user'),
+(92, 'Juanita', 'Silva', 'juanita@hotmail.com', 31, '/perfil-sin-foto.jpg', '$2a$10$T1asccFY8koUb/kP.zHPre199wwTNkfW9FzfI8paACxAFQ82mSwt6', 'user'),
+(94, 'Carolina', 'Sanchez', 'carolina@hotmail.com', 9, '/perfil-sin-foto.jpg', '$2a$10$WQjOBlVD7BK.VKM2drHgWOBzvIHk6iz4QxuCn1vmDAnvVheYl03S.', 'user');
 
 -- --------------------------------------------------------
 
@@ -9996,7 +10077,6 @@ ALTER TABLE `itineraries`
   ADD PRIMARY KEY (`id`),
   ADD KEY `origin_id` (`origin_id`,`destiny_id`),
   ADD KEY `destiny_id` (`destiny_id`),
-  ADD KEY `flight_id_1` (`flight_id`),
   ADD KEY `flight_id` (`flight_id`);
 
 --
@@ -10042,25 +10122,31 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT de la tabla `destinations`
 --
 ALTER TABLE `destinations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT de la tabla `flights`
 --
 ALTER TABLE `flights`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+
+--
+-- AUTO_INCREMENT de la tabla `itineraries`
+--
+ALTER TABLE `itineraries`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT de la tabla `origins`
 --
 ALTER TABLE `origins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- Restricciones para tablas volcadas
@@ -10084,9 +10170,9 @@ ALTER TABLE `flights`
 -- Filtros para la tabla `itineraries`
 --
 ALTER TABLE `itineraries`
-  ADD CONSTRAINT `itineraries_ibfk_3` FOREIGN KEY (`flight_id`) REFERENCES `flights` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `itineraries_ibfk_4` FOREIGN KEY (`destiny_id`) REFERENCES `destinations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `itineraries_ibfk_5` FOREIGN KEY (`origin_id`) REFERENCES `origins` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `itineraries_ibfk_3` FOREIGN KEY (`flight_id`) REFERENCES `flights` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `itineraries_ibfk_4` FOREIGN KEY (`destiny_id`) REFERENCES `destinations` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `itineraries_ibfk_5` FOREIGN KEY (`origin_id`) REFERENCES `origins` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `origins`

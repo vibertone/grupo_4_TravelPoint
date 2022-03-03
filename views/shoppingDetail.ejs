@@ -14,15 +14,20 @@
                     <div class="sub-1">
                         <div class="icon-cart"><i class="fas fa-shopping-cart"></i></div>
                         <div class="info">
-                            <div>Detalle de tu compra</div>
-                            <div class="info-fecha">Jue 22/10 al Mie 07/11 - 2 persona(s)</div>
+                            <div>
+                                <div>Detalle de tu compra</div>
+                                <div class="info-fecha"><%= itineraries.flights.date %>  - 1 persona(s)</div>
+                            </div>
+                            <div>
+                                <h4><%= itineraries.destinations.cities.city %></h4>
+                            </div>
                         </div>
                         <div class="flecha"><i class="fas fa-angle-down"></i></div>
                     </div>
                     <br>
                     <div class="sub-2">
                         <div class="total">TOTAL</div>
-                        <div class="valor">$71.540</div>
+                        <div class="valor"><%= itineraries.flights.price %></div>
                     </div>
                 </div>
                 <br>

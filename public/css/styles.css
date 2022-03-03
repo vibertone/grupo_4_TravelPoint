@@ -1117,6 +1117,10 @@ footer .container-footer-2 {
     margin-left: 30px;
 }
 
+.info h4{
+    margin-top: 0;
+}
+
 @media (min-width: 481px) {
 
     .header-box3 .mini-profile-picture {
@@ -1210,12 +1214,12 @@ footer .container-footer-2 {
         padding-left: 10px;
     }
 
-    .price-button button {
-        font-size: 2.3vw;
+    .info h4{
+        font-size: 20px;
     }
 
-    .container-1 .sub-1 .info {
-        padding: 0 40% 0 10px;
+    .price-button button {
+        font-size: 2.3vw;
     }
 
     .list-format .description-list-format {
@@ -1246,9 +1250,22 @@ footer .container-footer-2 {
         width: 170px;
         top: 10%;
     }
+
+    .info{
+        display: flex;
+        gap: 30px;
+    }
 }
 
 @media (min-width: 769px) {
+
+    .info h4{
+        font-size: 24px;
+    }
+
+    .info{
+        gap: 200px;
+    }
 
     .header-box3 {
         margin-top: 7%;
@@ -1707,5 +1724,10 @@ footer .container-footer-2 {
             border-radius: 5px;
             padding: 5px;
         }
+
+        .info{
+            gap: 150px;
+        }
+        
     }
 }

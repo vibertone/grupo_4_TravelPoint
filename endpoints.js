@@ -11,7 +11,7 @@ const ENDPOINTS = {
         
     },
     flights: {
-        "SHOPPING_DETAIL": "/shoppingdetail",
+        "SHOPPING_DETAIL": "/shoppingdetail/:id",
         "PRODUCT_DETAIL": "/productdetail/:id"
     },
     administrator: {
