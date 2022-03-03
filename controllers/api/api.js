@@ -23,6 +23,7 @@ const APIController = {
         return res.status(200).json({
             total: Users.length,
             data: Users, 
+            url: "/api/users" ,
             status:200
         })
     })
@@ -34,6 +35,7 @@ const APIController = {
         .then( user =>{
             return res.status(200).json({
         data: user,
+        url:"/api/users/:id" ,
         status:200
 
             })
